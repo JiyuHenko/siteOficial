@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#07060b"/>
+
+  <title>Zuri — Crescimento orgânico inteligente para Instagram | Custom Mind</title>
+  <meta name="description" content="Zuri é a automação inteligente da Custom Mind para crescer no Instagram com público real, tráfego orgânico e constância. Mais visitas, seguidores e conversões — com segurança e estratégia."/>
+  <link rel="canonical" href="https://custommind.solutions/products/zuri.html"/>
+
+  <meta property="og:title" content="Zuri — Crescimento orgânico inteligente para Instagram | Custom Mind"/>
+  <meta property="og:description" content="Tráfego orgânico inteligente no Instagram: mais visitas, seguidores reais e constância com estratégia e segurança."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="../assets/img/capa.png"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="Custom Mind | Software Solutions"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Zuri — Crescimento orgânico inteligente"/>
+  <meta name="twitter:description" content="Zuri: tráfego orgânico inteligente no Instagram com constância e segurança."/>
+  <meta name="twitter:image" content="../assets/img/capa.png"/>
+
+  <link rel="icon" href="../assets/img/logo.png"/>
+  <link rel="preload" as="image" href="../assets/img/zuri.png"/>
+  <link rel="preload" as="image" href="../assets/img/capa.png"/>
+
+  <style>
+    :root{
+      --bg: #07060b;
+      --bg2:#0c0a14;
+      --card:#0f0c1c;
+      --text:#e9e7ff;
+      --muted:#b9b6d9;
+      --line: rgba(255,255,255,.10);
+      --violet:#8b5cf6;
+      --violet2:#a78bfa;
+      --cyan:#22d3ee;
+      --shadow: 0 14px 50px rgba(0,0,0,.55);
+      --radius: 20px;
+      --radius2: 28px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(900px 500px at 45% 80%, rgba(167,139,250,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background: rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .skip:focus{left:10px; z-index:9999; outline:none}
+
+    .link{color:var(--text); border-bottom:1px solid rgba(255,255,255,.18)}
+    .link:hover{border-bottom-color: rgba(255,255,255,.35)}
+
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,6,11,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:70px;
+      gap:14px;
+      position:relative;
+    }
+
+    .brand{display:flex; align-items:center; gap:12px; min-width: 220px}
+    .brand img{width:34px; height:34px; border-radius:10px; object-fit:contain; background: rgba(255,255,255,.06); border:1px solid var(--line)}
+    .brand .t{display:flex; flex-direction:column; line-height:1.15}
+    .brand .t strong{font-size:14px; letter-spacing:.2px}
+    .brand .t span{font-size:12px; color:var(--muted)}
+
+    /* Logo estilo premium */
+    .brand img.brand-logo{
+      width:34px;
+      height:34px;
+      border-radius:0;
+      background: transparent;
+      border:0;
+      object-fit:contain;
+      filter: drop-shadow(0 0 12px rgba(139,92,246,.55));
+    }
+
+    .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .nav-links a{font-size:13px; color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:2px; border-radius:10px}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      background: linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
+      color:#0b0713;
+      font-weight:750; font-size:13px;
+      box-shadow: 0 10px 30px rgba(139,92,246,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      white-space:nowrap;
+    }
+    .cta:hover{filter:brightness(1.05)}
+    .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:42px; padding:0 16px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650; font-size:13px;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
+    .btn.ghost{background: rgba(0,0,0,.12)}
+
+    /* Hamburger (mobile) */
+    .nav-right{display:flex; align-items:center; gap:10px}
+    .nav-toggle{
+      display:none;
+      height:40px;
+      width:44px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+    }
+    .nav-toggle:hover{background: rgba(255,255,255,.06)}
+    .nav-toggle:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
+    .nav-toggle svg{width:18px;height:18px}
+
+    .nav-panel{
+      display:none;
+      position:absolute;
+      left:0; right:0;
+      top:72px;
+      border:1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(10,8,16,.85);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding:12px;
+      overflow:hidden;
+    }
+    .nav-panel .nav-panel-links{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding:6px;
+    }
+    .nav-panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:650;
+      font-size:14px;
+    }
+    .nav-panel a span{color: var(--muted); font-weight:600; font-size:12px}
+    .nav-panel a:hover{border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    .nav-panel .nav-panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:8px 6px 6px;
+    }
+    .nav-open .nav-panel{display:block}
+
+    /* ===== HERO ===== */
+    .hero{padding:56px 0 22px; position:relative}
+    .hero-bg{
+      position:absolute; inset:-120px -120px -60px -120px;
+      background: url("../assets/img/capa.png") center/cover no-repeat;
+      opacity:.09;
+      filter: blur(1px);
+      pointer-events:none;
+    }
+
+    .hero-grid{position:relative; display:grid; grid-template-columns: 1.1fr .9fr; gap:26px; align-items:stretch}
+
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .badge b{color:var(--text)}
+    .badge-ico{
+      display:inline-grid; place-items:center;
+      width:18px; height:18px; border-radius:6px;
+      background:rgba(139,92,246,.18);
+      border:1px solid var(--line);
+    }
+    .badge svg{width:14px; height:14px}
+
+    .h1{font-size:44px; line-height:1.05; margin:14px 0 12px; letter-spacing:-.7px}
+    .grad{
+      background:linear-gradient(90deg,var(--violet),var(--cyan));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .lead{font-size:16px; color:var(--muted); max-width: 68ch}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:18px}
+    .small{font-size:12px; color:var(--muted)}
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      width: fit-content;
+    }
+
+    .prod-top{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .prod-img{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+    }
+    .prod-img img{width:100%; height:100%; object-fit:cover; display:block}
+    .prod-head h2{margin:6px 0 0}
+
+    .kpi{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px}
+    .kpi .k{padding:12px; border-radius: 16px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
+    .k strong{display:block; font-size:18px}
+    .k span{display:block; font-size:12px; color:var(--muted)}
+
+    .note{
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:12px;
+      margin-top:12px;
+    }
+
+    .section{padding:28px 0}
+    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
+    .h2{font-size:22px; margin:0 0 10px}
+    .p{color:var(--muted); margin:0 0 16px}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+
+    .feature{padding:16px}
+    .icon{
+      width:40px; height:40px; border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      margin-bottom:10px;
+    }
+    .icon svg{width:20px; height:20px}
+    .feature h3{margin:0 0 6px; font-size:15px}
+    .feature p{margin:0; color:var(--muted); font-size:13px}
+
+    .list{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+    .list li{
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .list li b{color:var(--text)}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .pill svg{width:14px;height:14px; opacity:.9}
+
+    /* Case / métricas */
+    .case{
+      padding:16px;
+    }
+    .case-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .metric{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+    }
+    .metric .label{font-size:12px; color:var(--muted)}
+    .metric .value{font-size:18px; font-weight:850; margin-top:4px}
+    .metric .sub{font-size:12px; color:var(--muted); margin-top:4px}
+
+    .compare{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .compare .col{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .badge-mini{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+      color:var(--muted);
+    }
+    .good{color: rgba(34,211,238,.95)}
+    .warn{color: rgba(167,139,250,.95)}
+
+    /* Planos */
+    .plans{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+    }
+    .plan{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 360px;
+      position:relative;
+      overflow:hidden;
+    }
+    .plan .plan-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      width: fit-content;
+    }
+    .plan h3{margin:0; font-size:16px}
+    .price{
+      font-weight:900;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+    .price span{font-weight:650; font-size:12px; color:var(--muted)}
+    .plan .actions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
+    .plan.highlight{
+      border-color: rgba(34,211,238,.25);
+      box-shadow: 0 18px 60px rgba(34,211,238,.08), var(--shadow);
+    }
+    .plan.highlight::before{
+      content:"";
+      position:absolute;
+      inset:-80px -80px auto -80px;
+      height:160px;
+      background: radial-gradient(closest-side, rgba(34,211,238,.20), transparent 70%);
+      pointer-events:none;
+    }
+
+    /* FAQ */
+    details.faq{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: rgba(0,0,0,.12);
+      padding:12px 14px;
+    }
+    details.faq + details.faq{margin-top:10px}
+    details.faq summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:750;
+      color:var(--text);
+      outline:none;
+    }
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq p{margin:10px 0 0; color:var(--muted); font-size:13px}
+
+    /* Footer */
+    .footer{
+      padding:30px 0 44px;
+      border-top:1px solid var(--line);
+      margin-top:20px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    .footer-card{padding:16px}
+    .footer-links{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .footer-links a{
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .footer-links a:hover{color:var(--text); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    hr.sep{border:0; border-top:1px solid var(--line); margin:14px 0}
+
+    /* Acessibilidade */
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .cta, .btn{transition:none}
+    }
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .h1{font-size:38px}
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .plans{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+      .hero-bg{inset:-80px -80px -40px -80px}
+
+      .nav-links{display:none}
+      .nav-toggle{display:inline-flex}
+      .footer-grid{grid-template-columns: 1fr}
+      .footer-links{grid-template-columns: 1fr}
+    }
+    @media (max-width: 520px){
+      .nav-inner{height:auto; padding:10px 0}
+      .cta{height:38px}
+      .compare{grid-template-columns: 1fr}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Zuri",
+    "brand":{"@type":"Organization","name":"Custom Mind | Software Solutions"},
+    "description":"Automação inteligente para crescimento orgânico no Instagram com foco em público real, visitas e constância.",
+    "image":"https://custommind.solutions/assets/img/zuri.png",
+    "url":"https://custommind.solutions/products/zuri.html"
+  }
+  </script>
+</head>
+
+<body class="product-page">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-inner" id="navRoot">
+        <a class="brand" href="../index.html#sobre" aria-label="Voltar para o site da Custom Mind">
+          <img class="brand-logo" src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+          <div class="t">
+            <strong>Custom Mind</strong>
+            <span>Software Solutions</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="../index.html#sobre">Sobre</a>
+          <a href="../index.html#produtos">Produtos</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#planos">Planos</a>
+          <a href="#faq">FAQ</a>
+          <a href="../index.html#contato">Contato</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+
+          <button class="nav-toggle" id="navToggle"
+                  type="button"
+                  aria-label="Abrir menu"
+                  aria-controls="navPanel"
+                  aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="nav-panel" id="navPanel" role="dialog" aria-label="Menu">
+          <div class="nav-panel-links">
+            <a href="../index.html#produtos">Produtos <span>voltar</span></a>
+            <a href="#o-que-faz">O que faz <span>na prática</span></a>
+            <a href="#como-funciona">Como funciona <span>etapas</span></a>
+            <a href="#case">Case <span>números</span></a>
+            <a href="#planos">Planos <span>valores</span></a>
+            <a href="#faq">FAQ <span>dúvidas</span></a>
+          </div>
+          <div class="nav-panel-cta">
+            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+            <a class="btn" href="../index.html#contato">Contato</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-label="Apresentação da Zuri">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              <span class="badge-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 4c3.5 0 6 2.5 6 6 0 5-5 10-10 10-3.5 0-6-2.5-6-6 0-5 5-10 10-10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M9 15l-4 4 1-5 3 1zm6-6l4-4-1 5-3-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span><b>Zuri</b> • Crescimento orgânico • Custom Mind</span>
+            </div>
+
+            <h1 class="h1">
+              Crescimento orgânico
+              <span class="grad">inteligente</span>
+              para Instagram.
+            </h1>
+
+            <p class="lead">
+              Zuri resolve um problema comum: <b>poucas pessoas certas chegando no seu perfil</b>.
+              Ela gera <b>tráfego orgânico</b> com estratégia e constância — para você receber mais visitas, seguidores reais
+              e mensagens de quem tem chance de comprar.
+            </p>
+
+            <div class="pillrow" aria-label="Benefícios rápidos">
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 12h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Mais visitas no perfil
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Público real no nicho
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                Limites de segurança
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M9 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Constância diária
+              </span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="cta" id="waZuri" href="#" target="_blank" rel="noreferrer">Quero ver na minha conta</a>
+              <a class="btn" href="#planos">Ver planos</a>
+              <a class="btn ghost" href="#como-funciona">Como funciona</a>
+            </div>
+
+            <p class="small" style="margin-top:10px">
+              Importante: resultados variam por nicho, cidade, oferta e qualidade do perfil. A Zuri é feita para
+              <b>melhorar seus indicadores</b>, não para prometer número mágico.
+            </p>
+          </div>
+
+          <aside class="card hero-card" aria-label="Resumo">
+            <div class="prod-top">
+              <div class="prod-img">
+                <img src="../assets/img/zuri.png" alt="Zuri" loading="lazy"/>
+              </div>
+              <div class="prod-head">
+                <div class="tag">Zuri • Crescimento</div>
+                <h2 class="h2" style="margin:6px 0 0">Resumo rápido</h2>
+              </div>
+            </div>
+
+            <div class="kpi" aria-label="Indicadores">
+              <div class="k"><strong>Tráfego</strong><span>mais visitas/dia</span></div>
+              <div class="k"><strong>Alvo</strong><span>pessoas do nicho</span></div>
+              <div class="k"><strong>Ritmo</strong><span>constância 7/7</span></div>
+              <div class="k"><strong>Setup</strong><span>ajuste fino</span></div>
+            </div>
+
+            <div class="note">
+              Quer saber se faz sentido no seu caso? Me diga:
+              <b>(1)</b> nicho, <b>(2)</b> cidade/alcance, <b>(3)</b> objetivo (leads/vendas).
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="cta" id="waAside" href="#" target="_blank" rel="noreferrer">Falar com a equipe</a>
+              <a class="btn" href="../index.html#produtos">Voltar aos produtos</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="o-que-faz" aria-label="O que a Zuri faz">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">O que a Zuri faz na prática</h2>
+            <p class="p">
+              Em vez de depender apenas de anúncio ou “postar e torcer”, você passa a aparecer para as pessoas certas
+              de forma constante, todos os dias.
+            </p>
+          </div>
+          <a class="btn" href="#case">Ver números do case</a>
+        </div>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4h16v16H4V4Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Público ideal automaticamente</h3>
+            <p>Segmentação por nicho e contexto para atrair quem realmente tem chance de virar cliente.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7 7l10 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Visibilidade estratégica</h3>
+            <p>Interações controladas e consistentes para gerar visibilidade real e visitas no perfil.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <h3>Constância 24/7</h3>
+            <p>O trabalho repetitivo que ninguém mantém manualmente vira rotina automática com cadência.</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px; margin-top:14px">
+          <h3 style="margin:0 0 10px">O que você nota no dia a dia</h3>
+          <ul class="list">
+            <li><b>Mais visitas no perfil</b> todos os dias, com tendência de aumento de alcance.</li>
+            <li><b>Seguidores mais alinhados</b> com seu nicho, cidade e oferta.</li>
+            <li><b>Mais DMs</b> e oportunidades — principalmente quando combinado com conteúdo e bons destaques.</li>
+          </ul>
+          <div class="hero-actions" style="margin-top:12px">
+            <a class="cta" id="waMid" href="#" target="_blank" rel="noreferrer">Quero ver no meu perfil</a>
+            <a class="btn" href="#como-funciona">Ver as etapas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sinergia" aria-label="Sinergia Zuri e Violet">
+      <div class="container">
+        <div class="split">
+          <div class="card" style="padding:16px">
+            <h2 class="h2">Sinergia perfeita: Zuri + Violet</h2>
+            <p class="p">
+              A Zuri traz as pessoas certas. A Violet conversa, qualifica e ajuda a transformar atenção em venda.
+              Se o seu gargalo hoje é <b>responder rápido</b> e <b>converter</b>, a combinação fica muito forte.
+            </p>
+
+            <ul class="list">
+              <li><b>Zuri:</b> abastece o topo do funil com visitas qualificadas.</li>
+              <li><b>Violet:</b> responde, entende a dor e conduz para fechamento.</li>
+              <li><b>Resultado:</b> mais vendas sem aumentar equipe na mesma proporção.</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn" href="violet.html">Ver Violet</a>
+              <a class="cta" id="waCombo" href="#" target="_blank" rel="noreferrer">Quero Zuri + Violet</a>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <h3 style="margin:0 0 10px">Quando a Zuri é ideal?</h3>
+            <ul class="list">
+              <li>Você tem uma <b>oferta clara</b> e quer mais gente certa vendo o perfil.</li>
+              <li>Seu perfil está “parado” e falta <b>constância</b> de tráfego.</li>
+              <li>Você já posta, mas sente que <b>pouca gente nova</b> chega.</li>
+              <li>Você quer <b>reduzir dependência</b> de anúncio para visitas básicas.</li>
+            </ul>
+
+            <div class="note">
+              Se seu perfil ainda não tem proposta/destaques/bio minimamente claros, a gente te orienta no ajuste rápido
+              (sem virar “agência” do nada).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona" aria-label="Como funciona a Zuri">
+      <div class="container">
+        <h2 class="h2">Como a Zuri trabalha por você</h2>
+        <p class="p">
+          Zuri não é “automação no modo louco”. Ela segue critérios, filtros e uma estratégia baseada no seu nicho,
+          com ritmo e limites pensados para reduzir risco e manter consistência.
+        </p>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20V4h16v16H4Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 8h10M7 12h10M7 16h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>1) Diagnóstico</h3>
+            <p>Entendemos nicho, cidade, oferta, e o tipo de público que faz sentido atrair.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 10h6M7 13h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>2) Configuração</h3>
+            <p>Ajuste de filtros, horários e ritmo. Tudo com base no contexto do seu perfil.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18V6h12v12H6Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M8 14l2-2 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>3) Operação contínua</h3>
+            <p>Rodando em segundo plano, Zuri gera visitas e seguidores enquanto você foca no negócio.</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px; margin-top:14px">
+          <h3 style="margin:0 0 10px">O que influencia o resultado (de verdade)</h3>
+          <ul class="list">
+            <li><b>Nicho + cidade</b>: demanda e volume de público disponível.</li>
+            <li><b>Oferta e posicionamento</b>: clareza do que você vende e para quem.</li>
+            <li><b>Perfil “arrumado”</b>: bio/destaques/links básicos ajudam a converter.</li>
+            <li><b>Conteúdo mínimo</b>: Zuri atrai, mas o conteúdo retém e converte.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case" aria-label="Case real">
+      <div class="container">
+        <h2 class="h2">Case real — antes e depois da Zuri</h2>
+        <p class="p">
+          Exemplo de um cliente real atendido em Passos-MG. Resultados variam por perfil, mas o impacto de tráfego e
+          custo por visita fica bem claro.
+        </p>
+
+        <div class="grid2" style="margin-top:14px">
+          <div class="card case">
+            <div class="case-top">
+              <div>
+                <div class="tag">Seguidores</div>
+                <div style="margin-top:8px; font-weight:900; font-size:20px; letter-spacing:-.2px;">
+                  144 → 1.450 em 30 dias
+                </div>
+                <div class="small" style="margin-top:6px">Crescimento orgânico acelerado no primeiro mês.</div>
+              </div>
+              <div class="metric">
+                <div class="label">Diferença (aprox.)</div>
+                <div class="value good">+1.306</div>
+                <div class="sub">seguidores em 30 dias</div>
+              </div>
+            </div>
+
+            <div class="compare">
+              <div class="col">
+                <span class="badge-mini"><b class="good">Com Zuri</b></span>
+                <div class="value" style="margin-top:8px; font-weight:900">+1.306 seguidores</div>
+                <div class="small">crescimento orgânico no período</div>
+              </div>
+              <div class="col">
+                <span class="badge-mini"><b class="warn">Sem Zuri</b></span>
+                <div class="value" style="margin-top:8px; font-weight:900">+101 seguidores</div>
+                <div class="small">mesmo período, com tráfego pago</div>
+              </div>
+            </div>
+
+            <div class="note" style="margin-top:12px">
+              Leitura prática: base maior aumenta o alcance de tudo que você posta depois (efeito composto).
+            </div>
+          </div>
+
+          <div class="card case">
+            <div class="case-top">
+              <div>
+                <div class="tag">Alcance & custo por visita</div>
+                <div style="margin-top:8px; font-weight:900; font-size:20px; letter-spacing:-.2px;">
+                  Visitas com custo muito menor
+                </div>
+                <div class="small" style="margin-top:6px">Comparativo do custo por visita vs anúncio.</div>
+              </div>
+              <div class="metric">
+                <div class="label">Custo por visita (case)</div>
+                <div class="value good">≈ R$ 0,04</div>
+                <div class="sub">plano mensal de R$ 450</div>
+              </div>
+            </div>
+
+            <div class="compare">
+              <div class="col">
+                <span class="badge-mini"><b class="good">Com Zuri</b></span>
+                <div class="value" style="margin-top:8px; font-weight:900">56,7 mil views</div>
+                <div class="small">views de perfil em 30 dias</div>
+              </div>
+              <div class="col">
+                <span class="badge-mini"><b class="warn">Tráfego pago (case)</b></span>
+                <div class="value" style="margin-top:8px; font-weight:900">≈ R$ 0,47</div>
+                <div class="small">R$ 77 em anúncios, 162 visitas</div>
+              </div>
+            </div>
+
+            <div class="note" style="margin-top:12px">
+              No case, visitas chegaram por um custo aproximado <b>~10x menor</b> do que anúncio.
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:14px">
+          <a class="cta" id="waCase" href="#" target="_blank" rel="noreferrer">Quero aplicar no meu perfil</a>
+          <a class="btn" href="#planos">Ver planos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos" aria-label="Planos Zuri">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Planos pensados para pequenos e médios negócios</h2>
+            <p class="p">
+              A ideia é simples: testar, validar e escalar com previsibilidade — sem “amarra” de contrato longo.
+            </p>
+          </div>
+          <a class="btn" href="#faq">Ver dúvidas</a>
+        </div>
+
+        <div class="plans" style="margin-top:14px">
+          <article class="card plan">
+            <div class="plan-tag">Plano teste</div>
+            <h3>Mensal</h3>
+            <div class="price">R$ 450 <span>/ mês • total R$ 450</span></div>
+            <ul class="list">
+              <li>Ideal para experimentar sem compromisso longo.</li>
+              <li>Valida o potencial do seu perfil e do seu nicho.</li>
+              <li>Suporte e ajustes básicos no período.</li>
+            </ul>
+            <div class="actions">
+              <a class="cta" id="waPlanMensal" href="#" target="_blank" rel="noreferrer">Quero testar</a>
+              <a class="btn" href="#como-funciona">Como funciona</a>
+            </div>
+          </article>
+
+          <article class="card plan">
+            <div class="plan-tag">Custo-benefício</div>
+            <h3>Trimestral</h3>
+            <div class="price">R$ 390 <span>/ mês • R$ 1.170 a cada 3 meses</span></div>
+            <ul class="list">
+              <li>Tempo ideal para entrar em ritmo e consolidar.</li>
+              <li>Otimizações com base no desempenho mensal.</li>
+              <li>Relatório resumido com aprendizados.</li>
+            </ul>
+            <div class="actions">
+              <a class="cta" id="waPlanTri" href="#" target="_blank" rel="noreferrer">Fechar trimestral</a>
+              <a class="btn" href="#case">Ver case</a>
+            </div>
+          </article>
+
+          <article class="card plan highlight">
+            <div class="plan-tag">Mais contratado</div>
+            <h3>Semestral</h3>
+            <div class="price">R$ 300 <span>/ mês • total R$ 1.800 (6 meses)</span></div>
+            <ul class="list">
+              <li>Melhor valor mensal para consistência real.</li>
+              <li>Planejamento de crescimento de médio prazo.</li>
+              <li>Acompanhamento mais próximo e ajustes estratégicos.</li>
+            </ul>
+            <div class="actions">
+              <a class="cta" id="waPlanSem" href="#" target="_blank" rel="noreferrer">Fechar semestral</a>
+              <a class="btn" href="violet.html">Ver Violet</a>
+            </div>
+          </article>
+
+          <article class="card plan">
+            <div class="plan-tag">Escala</div>
+            <h3>Sob medida</h3>
+            <div class="price">A combinar <span>/ mês</span></div>
+            <ul class="list">
+              <li>Para múltiplos perfis ou operação maior.</li>
+              <li>Estratégias por unidade, cidade ou segmento.</li>
+              <li>Suporte próximo e acompanhamento mais estratégico.</li>
+            </ul>
+            <div class="actions">
+              <a class="cta" id="waPlanScale" href="#" target="_blank" rel="noreferrer">Falar sobre escala</a>
+              <a class="btn" href="../index.html#contato">Contato</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="note" style="margin-top:14px">
+          Se você está em dúvida, o melhor caminho costuma ser: <b>1 mês</b> para validação e, se fizer sentido,
+          migrar para <b>trimestral/semestral</b> para otimizar custo e consolidar resultado.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <h2 class="h2">Perguntas frequentes</h2>
+        <p class="p">As dúvidas mais comuns antes do primeiro passo com a Zuri.</p>
+
+        <details class="faq">
+          <summary>É seguro para a minha conta?</summary>
+          <p>
+            A Zuri trabalha com ritmo e limites pensados para reduzir risco, com ajustes por nicho e contexto.
+            Ainda assim, redes sociais mudam regras e comportamento. Por isso, a proposta é operar com
+            constância e bom senso — não “modo agressivo”.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>Vou precisar mudar tudo no meu Instagram?</summary>
+          <p>
+            Não. A Zuri potencializa o que você já faz. Só recomendamos o básico: bio clara, destaques organizados,
+            e uma oferta compreensível. Isso aumenta conversão sem você virar agência.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>Em quanto tempo começo a ver resultado?</summary>
+          <p>
+            Normalmente os primeiros sinais aparecem nos primeiros dias (mais visitas e movimento).
+            O impacto maior costuma ficar mais claro ao longo de semanas, conforme o tráfego se mantém.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>Resultados são garantidos?</summary>
+          <p>
+            Não dá para prometer número exato porque depende de nicho, região, oferta e perfil.
+            O que dá para garantir é processo: segmentação, cadência, ajustes e acompanhamento.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>Qual a melhor forma de eu pedir orçamento rápido?</summary>
+          <p>
+            Mande no WhatsApp: (1) nicho, (2) cidade/atuação, (3) seu @, (4) objetivo (leads/vendas),
+            e (5) se você já roda anúncios ou não. Em poucos minutos dá para sugerir o melhor plano.
+          </p>
+        </details>
+
+        <div class="hero-actions" style="margin-top:14px">
+          <a class="cta" id="waFaq" href="#" target="_blank" rel="noreferrer">Tirar dúvida no WhatsApp</a>
+          <a class="btn" href="../index.html#produtos">Voltar aos produtos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Chamada final">
+      <div class="container">
+        <div class="card" style="padding:16px">
+          <h2 class="h2">Pronto para destravar seu Instagram?</h2>
+          <p class="p" style="margin-bottom:10px">
+            Se você sente que o seu perfil poderia trazer mais retorno, mas hoje está travado em alcance baixo e seguidores parados,
+            a Zuri pode ser o próximo passo natural.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" id="waFinal" href="#" target="_blank" rel="noreferrer">Quero ver na minha conta</a>
+            <a class="btn" href="../index.html#contato">Falar com a equipe</a>
+          </div>
+          <p class="small" style="margin-top:10px">
+            Ao chamar, se puder já mande seu <b>@</b> e diga se você atende por WhatsApp, Direct ou ambos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="card footer-card">
+          <div class="brand">
+            <img class="brand-logo" src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+            <div class="t">
+              <strong>Custom Mind</strong>
+              <span>Software Solutions</span>
+            </div>
+          </div>
+
+          <p class="small" style="margin:10px 0 0">
+            Sistemas, automações e IA sob medida — com foco em resultado, velocidade e clareza.
+          </p>
+
+          <div class="footer-links" aria-label="Links rápidos">
+            <a href="../index.html#produtos">Produtos</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#planos">Planos</a>
+            <a href="#faq">FAQ</a>
+          </div>
+
+          <hr class="sep"/>
+          <p class="small" style="margin:0">© <span id="y"></span> Custom Mind. Todos os direitos reservados.</p>
+        </div>
+
+        <div class="card footer-card">
+          <div class="small"><b>Atendimento</b></div>
+          <div class="small" style="margin-top:10px">WhatsApp: <span id="waPretty">+55 11 92373-4039</span></div>
+          <div class="small">E-mail: <span id="mail">custommind.softwaresolutions@gmail.com</span></div>
+          <div class="small">Instagram: @custommind.solutions</div>
+          <hr class="sep"/>
+          <div class="small">Brasil</div>
+
+          <div style="margin-top:10px">
+            <a class="cta" id="waFooter" href="#" target="_blank" rel="noreferrer">Chamar agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for in-page anchors
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href^='#']");
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    (function () {
+      function qs(id) { return document.getElementById(id); }
+      function setText(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.textContent = value)); }
+      function setHref(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.href = value)); }
+      function onlyDigits(s) { return String(s || "").replace(/\D/g, ""); }
+
+      function formatBRFromE164(e164) {
+        const d = onlyDigits(e164);
+        if (d.length < 12) return e164;
+        const cc = d.slice(0, 2);
+        const ddd = d.slice(2, 4);
+        const num = d.slice(4);
+        if (num.length === 9) return `+${cc} (${ddd}) ${num.slice(0, 5)}-${num.slice(5)}`;
+        if (num.length === 8) return `+${cc} (${ddd}) ${num.slice(0, 4)}-${num.slice(4)}`;
+        return `+${cc} (${ddd}) ${num}`;
+      }
+
+      function waUrl(phoneE164OrDigits, text) {
+        const phone = onlyDigits(phoneE164OrDigits);
+        return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
+      }
+
+      const CONTACT = {
+        whatsapp_e164: "+5511923734039",
+        email: "custommind.softwaresolutions@gmail.com",
+        instagram: "custommind.solutions",
+        msg_default: "Oi! Vim pela página da Zuri e queria entender se serve para o meu perfil. Meu @ é: ",
+        msg_zuri: "Quero conhecer a Zuri e ver na minha conta. Meu @ é: ",
+        msg_combo: "Quero Zuri + Violet. Meu @ é: ",
+        msg_mensal: "Quero testar a Zuri no plano mensal. Meu @ é: ",
+        msg_tri: "Quero fechar o plano trimestral da Zuri. Meu @ é: ",
+        msg_sem: "Quero fechar o plano semestral da Zuri. Meu @ é: ",
+        msg_scale: "Tenho mais de um perfil e quero falar sobre um plano sob medida da Zuri. Meu @ é: "
+      };
+
+      // Ano
+      const yearEl = qs("y");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Textos contato
+      setText(["mail"], CONTACT.email);
+      setText(["waPretty"], formatBRFromE164(CONTACT.whatsapp_e164));
+
+      // Links WhatsApp
+      const waDefault = waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default);
+      setHref(["waTop","waTopMobile","waFooter"], waDefault);
+
+      setHref(["waZuri","waMid","waAside","waCase","waFinal"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_zuri));
+      setHref(["waCombo"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_combo));
+      setHref(["waFaq"], waDefault);
+
+      setHref(["waPlanMensal"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_mensal));
+      setHref(["waPlanTri"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_tri));
+      setHref(["waPlanSem"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_sem));
+      setHref(["waPlanScale"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_scale));
+
+      // ===== Menu Mobile =====
+      const navRoot = qs("navRoot");
+      const toggle = qs("navToggle");
+      const panel = qs("navPanel");
+
+      if (navRoot && toggle && panel) {
+        function openMenu() {
+          navRoot.classList.add("nav-open");
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Fechar menu");
+        }
+        function closeMenu() {
+          navRoot.classList.remove("nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Abrir menu");
+        }
+        function isOpen() { return navRoot.classList.contains("nav-open"); }
+
+        toggle.addEventListener("click", () => { isOpen() ? closeMenu() : openMenu(); });
+
+        panel.addEventListener("click", (e) => {
+          const a = e.target.closest("a");
+          if (!a) return;
+          closeMenu();
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!isOpen()) return;
+          const inside = e.target.closest("#navRoot");
+          if (!inside) closeMenu();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && isOpen()) closeMenu();
+        });
+
+        const mq = window.matchMedia("(max-width: 980px)");
+        function handleMq() { if (!mq.matches) closeMenu(); }
+        if (mq.addEventListener) mq.addEventListener("change", handleMq);
+        else mq.addListener(handleMq);
+      }
+    })();
+  </script>
+</body>
+</html>

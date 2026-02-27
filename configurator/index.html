@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Configurar Loja Inteligente — Custom Mind</title>
+  <meta name="description" content="Configure tema e módulos da Loja Inteligente em minutos. Escolha: fazer você mesmo com tutorial ou deixar a Custom Mind configurar tudo por você."/>
+  <meta name="theme-color" content="#07060b"/>
+  <link rel="icon" href="../assets/img/logo.png"/>
+
+  <style>
+    :root{
+      --bg: #07060b;
+      --bg2:#0c0a14;
+      --card:#0f0c1c;
+      --text:#e9e7ff;
+      --muted:#b9b6d9;
+      --line: rgba(255,255,255,.10);
+      --violet:#8b5cf6;
+      --violet2:#a78bfa;
+      --cyan:#22d3ee;
+      --shadow: 0 14px 50px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1180px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+      /* UI tokens */
+      --surface: rgba(255,255,255,.03);
+      --surface2: rgba(0,0,0,.18);
+      --focus: rgba(139,92,246,.6);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(900px 500px at 45% 80%, rgba(167,139,250,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    button, input, select, textarea{font-family:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background: rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .skip:focus{left:10px; z-index:9999; outline:none}
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(12px);
+      background: rgba(7,6,11,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width:34px; height:34px; border-radius:0;
+      object-fit:contain;
+      background: transparent;
+      border:0;
+      filter: drop-shadow(0 0 12px rgba(139,92,246,.55));
+    }
+    .brand .t{display:flex; flex-direction:column; line-height:1.15; min-width:0}
+    .brand .t strong{font-size:14px; letter-spacing:.2px}
+    .brand .t span{font-size:12px; color:var(--muted)}
+
+    .top-actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      background: linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
+      color:#0b0713;
+      font-weight:800; font-size:13px;
+      box-shadow: 0 10px 30px rgba(139,92,246,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      white-space:nowrap;
+    }
+    .cta:hover{filter:brightness(1.05)}
+    .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:700; font-size:13px;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn:focus-visible{outline:2px solid var(--focus); outline-offset:3px}
+    .btn.ghost{background: rgba(0,0,0,.12)}
+    .btn.danger{border-color: rgba(255,90,90,.25); background: rgba(255,90,90,.06)}
+    .btn.danger:hover{background: rgba(255,90,90,.10)}
+
+    /* ===== Layout ===== */
+    .shell{ padding: 18px 0 30px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:14px;
+      align-items:start;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+    .panel{padding:16px}
+    .h1{font-size:28px; margin:0; letter-spacing:-.4px; line-height:1.12}
+    .h2{font-size:18px; margin:0 0 10px}
+    .p{color:var(--muted); margin:8px 0 0; max-width: 70ch; overflow-wrap:anywhere; word-break:break-word}
+    .small{font-size:12px; color:var(--muted)}
+    .hr{border:0; border-top:1px solid var(--line); margin:14px 0}
+
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+      width:fit-content;
+    }
+    .badge b{color:var(--text)}
+    .grad{
+      background:linear-gradient(90deg,var(--violet),var(--cyan));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+
+    /* ===== Step chooser ===== */
+    .chooser{
+      padding:18px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.12);
+      min-width:0;
+    }
+    .chooser-grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .choice{
+      padding:14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 170px;
+      min-width:0;
+    }
+    .choice .title{font-weight:850; font-size:14px}
+    .choice .desc{color:var(--muted); font-size:12.5px; margin-top:-4px; overflow-wrap:anywhere}
+    .choice .actions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(139,92,246,.12);
+      color: var(--text);
+      font-size:12px;
+      font-weight:750;
+      width:fit-content;
+    }
+
+    /* ===== Video ===== */
+    .video{
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      aspect-ratio: 16 / 9;
+    }
+    .video iframe{width:100%; height:100%; border:0}
+
+    /* ===== Mobile notice ===== */
+    .device-note{
+      display:none;
+      margin-top:12px;
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px solid rgba(34,211,238,.18);
+      background: rgba(34,211,238,.08);
+      color: var(--text);
+      font-size:12.5px;
+    }
+    .device-note b{color:#fff}
+    .device-note .muted{color: rgba(233,231,255,.78)}
+    .device-note .actions{margin-top:10px; display:flex; gap:10px; flex-wrap:wrap}
+
+    /* ===== Config UI ===== */
+    .tabs{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      padding:10px;
+      border-radius: 18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.10);
+    }
+    .tab{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:13px;
+      font-weight:750;
+      cursor:pointer;
+      user-select:none;
+    }
+    .tab[aria-selected="true"]{
+      color: var(--text);
+      border-color: rgba(139,92,246,.40);
+      background: rgba(139,92,246,.12);
+    }
+
+    .section{margin-top:12px; min-width:0}
+    .field{display:flex; flex-direction:column; gap:6px; margin-top:10px; min-width:0}
+    label{font-size:12px; color:var(--muted); font-weight:700}
+    input[type="text"], textarea, select{
+      height:42px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding:0 12px;
+      outline:none;
+      min-width:0;
+    }
+    textarea{
+      height:auto;
+      min-height: 220px;
+      padding:12px;
+      resize: vertical;
+      line-height:1.5;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px;
+    }
+    input[type="text"]:focus, textarea:focus, select:focus{
+      outline:2px solid rgba(139,92,246,.55);
+      outline-offset:2px;
+    }
+    input[type="color"]{
+      width:46px; height:42px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:0;
+      cursor:pointer;
+    }
+
+    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap; min-width:0}
+    /* FIX: não forçar 'flex:0 0 auto' em todos os filhos.
+       Isso impedia o texto de encolher e quebrar linha em algumas larguras. */
+    .row > *{min-width:0;}
+    .row .grow{flex:1 1 auto}
+    .row .stack{display:flex; gap:10px; align-items:center; flex-wrap:wrap; min-width:0; width:100%}
+    .row .stack > *{flex:1 1 auto; min-width: 0}
+    .row .stack input[type="text"]{width:100%}
+
+    .note{
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:12px;
+      margin-top:10px;
+      overflow-wrap:anywhere;
+    }
+
+    .mods{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .mod{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.12);
+      min-width:0;
+    }
+    .mod input{margin-top:3px}
+    .mod .ttl{font-weight:850; font-size:13px}
+    .mod .sub{color:var(--muted); font-size:12px; margin-top:4px}
+
+    /* Preview */
+    .preview-wrap{
+      position:sticky;
+      top: 86px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-width:0;
+    }
+    .preview-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      min-width:0;
+    }
+    .frame{
+      width:100%;
+      height: 640px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      overflow:hidden;
+      background: rgba(0,0,0,.15);
+      min-width:0;
+    }
+    .frame iframe{width:100%; height:100%; border:0; background:#0b0b0b}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      .preview-wrap{position:static}
+      .frame{height: 560px}
+      .chooser-grid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 520px){
+      .topbar-inner{height:auto; padding:10px 0}
+      .brand{min-width:auto}
+      .device-note{display:block}
+      .frame{height: 520px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+
+  <header class="topbar" role="banner">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="../index.html#produtos" aria-label="Voltar para o site da Custom Mind">
+          <img src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+          <div class="t">
+            <strong>Custom Mind</strong>
+            <span>Configuração • Loja Inteligente</span>
+          </div>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn" href="../products/loja-inteligente.html">Sobre o sistema</a>
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="container">
+      <!-- ENTRY / DECISION -->
+      <section class="card panel" id="entry">
+        <div class="badge"><b>Comece por aqui</b> • escolha o caminho</div>
+        <h1 class="h1" style="margin-top:10px">
+          Configure sua <span class="grad">Loja Inteligente</span> do jeito certo.
+        </h1>
+        <p class="p">
+          Se você quer rapidez e zero preocupação técnica, a Custom Mind configura tudo por você.
+          Se prefere testar e montar o seu pacote agora, use o configurador abaixo com preview ao vivo.
+        </p>
+
+        <!-- Mobile / device notice -->
+        <div class="device-note" id="deviceNote" role="note" aria-label="Aviso para celular">
+          <b>Dica rápida:</b> no celular funciona, mas <span class="muted">a melhor experiência é no computador</span> (fica mais fácil ajustar cores e tenants).
+          <div class="actions">
+            <button class="btn" id="startDIYMobile" type="button">Mesmo assim, abrir configurador</button>
+            <a class="btn ghost" href="checkout.html">Prefiro que configurem</a>
+          </div>
+        </div>
+
+        <div class="chooser" style="margin-top:14px">
+          <div class="row" style="justify-content:space-between; align-items:flex-start">
+            <div style="min-width:0">
+              <div class="pill">Tutorial rápido (passo a passo)</div>
+              <p class="p" style="margin-top:8px">
+                Assista o vídeo e entenda como escolher tema, tenants e módulos. Depois, você decide se faz sozinho ou se a gente faz por você.
+              </p>
+            </div>
+            <button class="btn ghost" id="openConfig" type="button">Pular tutorial e configurar agora</button>
+          </div>
+
+          <div class="video" style="margin-top:12px" aria-label="Vídeo tutorial">
+            <iframe
+              src="https://www.youtube.com/embed/bwELzY4TyH4?rel=0&modestbranding=1"
+              title="Tutorial — Como configurar a Loja Inteligente"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="chooser-grid">
+            <div class="choice">
+              <div class="pill" style="background: rgba(34,211,238,.10)">Recomendado</div>
+              <div class="title">Quero que a Custom Mind configure pra mim</div>
+              <div class="desc">
+                A gente coleta seu briefing, define módulos, tema e deixa pronto do jeito que sua operação funciona.
+              </div>
+              <div class="actions">
+                <a class="cta" href="checkout.html">Ir para o checkout</a>
+                <a class="btn" id="waManaged" href="#" target="_blank" rel="noreferrer">Quero que vocês configurem</a>
+              </div>
+              <div class="small">Você não mexe em nada técnico. Nós montamos e entregamos.</div>
+            </div>
+
+            <div class="choice">
+              <div class="pill">DIY</div>
+              <div class="title">Quero configurar agora (faça você mesmo)</div>
+              <div class="desc">
+                Monte tema, módulos e tenants e exporte o JSON. Preview ao vivo para validar antes.
+              </div>
+              <div class="actions">
+                <button class="btn" id="startDIY" type="button">Abrir configurador</button>
+                <a class="btn ghost" href="#previewArea">Ver preview</a>
+              </div>
+              <div class="small">Ideal para testar e entender o pacote antes de fechar.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <b>Importante:</b> esta página salva tudo no cache do navegador (localStorage). Em produção, o JSON gerado configura o sistema real.
+        </div>
+      </section>
+
+      <!-- CONFIGURATOR -->
+      <section class="grid" id="configArea" style="margin-top:14px; display:none;">
+        <!-- LEFT: CONTROLS -->
+        <div>
+          <div class="card panel">
+            <div class="row" style="justify-content:space-between; align-items:flex-start">
+              <div style="min-width:0">
+                <div class="badge"><b>Configuração</b> • com preview</div>
+                <h2 class="h2" style="margin-top:10px">Monte o seu pacote</h2>
+                <p class="p" style="margin-top:6px">
+                  Ajuste empresa, tema, tenants e módulos. Tudo atualiza automaticamente.
+                </p>
+              </div>
+              <div class="row">
+                <div class="small" id="saved">Salvando em cache automaticamente…</div>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="tabs" role="tablist" aria-label="Seções do configurador">
+              <button class="tab" role="tab" aria-selected="true" aria-controls="tabApp" id="tApp" type="button">Empresa</button>
+              <button class="tab" role="tab" aria-selected="false" aria-controls="tabTheme" id="tTheme" type="button">Tema</button>
+              <button class="tab" role="tab" aria-selected="false" aria-controls="tabTenants" id="tTenants" type="button">Tenants</button>
+              <button class="tab" role="tab" aria-selected="false" aria-controls="tabModules" id="tModules" type="button">Módulos</button>
+              <button class="tab" role="tab" aria-selected="false" aria-controls="tabExport" id="tExport" type="button">Exportar</button>
+            </div>
+
+            <!-- TAB: APP -->
+            <div class="section" id="tabApp" role="tabpanel" aria-labelledby="tApp">
+              <div class="field">
+                <label for="company">Nome do negócio</label>
+                <input id="company" type="text" placeholder="Ex.: Loja do Bairro, Auto Peças, Café..." />
+              </div>
+
+              <div class="field">
+                <label for="domain">Domínio (opcional)</label>
+                <input id="domain" type="text" placeholder="Ex.: minhloja.com.br" />
+              </div>
+
+              <div class="note">
+                Dica: se você quer que a Custom Mind configure por você, a gente só precisa do seu segmento e fluxo atual.
+              </div>
+
+              <div class="row" style="margin-top:12px">
+                <a class="btn" href="checkout.html">Quero que vocês configurem</a>
+                <a class="cta" id="waHelp" href="#" target="_blank" rel="noreferrer">Tirar dúvida no WhatsApp</a>
+              </div>
+            </div>
+
+            <!-- TAB: THEME -->
+            <div class="section" id="tabTheme" role="tabpanel" aria-labelledby="tTheme" style="display:none">
+              <div class="badge">Tema global (fallback)</div>
+              <p class="p">
+                Esse tema vale como padrão. Você pode personalizar por tenant também.
+              </p>
+
+              <div class="row" style="margin-top:10px">
+                <div class="field" style="flex:1">
+                  <label>Accent</label>
+                  <div class="row stack">
+                    <input type="color" id="g_acc"/>
+                    <input type="text" id="g_acc_txt" placeholder="#8b5cf6"/>
+                  </div>
+                </div>
+                <div class="field" style="flex:1">
+                  <label>Accent 2</label>
+                  <div class="row stack">
+                    <input type="color" id="g_acc2"/>
+                    <input type="text" id="g_acc2_txt" placeholder="#22d3ee"/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field" style="flex:1">
+                  <label>Background</label>
+                  <div class="row stack">
+                    <input type="color" id="g_bg"/>
+                    <input type="text" id="g_bg_txt" placeholder="#07060b"/>
+                  </div>
+                </div>
+                <div class="field" style="flex:1">
+                  <label>Text</label>
+                  <div class="row stack">
+                    <input type="color" id="g_text"/>
+                    <input type="text" id="g_text_txt" placeholder="#e9e7ff"/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="note">
+                Em produção, o tema pode gerar variações light/dark e tokens adicionais (bordas, superfície, botões).
+              </div>
+            </div>
+
+            <!-- TAB: TENANTS -->
+            <div class="section" id="tabTenants" role="tabpanel" aria-labelledby="tTenants" style="display:none">
+              <div class="row" style="justify-content:space-between">
+                <div style="min-width:0">
+                  <div class="badge">Tenants</div>
+                  <p class="p" style="margin-top:6px">
+                    Use tenants para múltiplas unidades/lojas. Cada tenant pode ter tema e logo próprios.
+                  </p>
+                </div>
+                <button class="btn" id="addTenant" type="button">Adicionar tenant</button>
+              </div>
+
+              <div class="field" style="margin-top:12px">
+                <label for="tenantSelect">Preview do tenant</label>
+                <select id="tenantSelect"></select>
+              </div>
+
+              <div id="tenants" class="section"></div>
+
+              <div class="note">
+                Logo é opcional e fica salvo no cache do navegador. Em produção, a logo vai para o storage do sistema.
+              </div>
+            </div>
+
+            <!-- TAB: MODULES -->
+            <div class="section" id="tabModules" role="tabpanel" aria-labelledby="tModules" style="display:none">
+              <div class="badge">Módulos</div>
+              <p class="p">Marque o que você quer ativar. Dá para começar só com o essencial e evoluir depois.</p>
+              <div id="modules" class="mods"></div>
+            </div>
+
+            <!-- TAB: EXPORT -->
+            <div class="section" id="tabExport" role="tabpanel" aria-labelledby="tExport" style="display:none">
+              <div class="badge">Exportar</div>
+              <p class="p">
+                Você pode copiar ou baixar o JSON para enviar no WhatsApp / e-mail ou usar no sistema.
+              </p>
+
+              <div class="row" style="margin-top:12px">
+                <button class="btn" id="copy" type="button">Copiar JSON</button>
+                <button class="btn" id="download" type="button">Baixar JSON</button>
+                <button class="btn danger" id="reset" type="button">Resetar</button>
+                <span class="small" id="copyStatus"></span>
+              </div>
+
+              <div class="field" style="margin-top:12px">
+                <label for="json">app_config.json (gerado)</label>
+                <textarea id="json" spellcheck="false"></textarea>
+              </div>
+
+              <div class="note">
+                Se quiser, você pode só <b>copiar o JSON</b> e mandar para a Custom Mind que a gente configura por você.
+              </div>
+
+              <div class="row" style="margin-top:12px">
+                <a class="cta" id="waSendJson" href="#" target="_blank" rel="noreferrer">Enviar para a Custom Mind</a>
+                <a class="btn" href="checkout.html">Quero que vocês configurem</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: PREVIEW -->
+        <div class="preview-wrap" id="previewArea">
+          <div class="card panel">
+            <div class="preview-head">
+              <div style="min-width:0">
+                <div class="badge"><b>Preview</b> • sem backend</div>
+                <div class="small" style="margin-top:6px">Valide tema, logo e módulos antes de fechar.</div>
+              </div>
+              <div class="row">
+                <a class="btn ghost" href="#entry">Voltar ao início</a>
+                <a class="btn" href="../products/loja-inteligente.html">Ver produto</a>
+              </div>
+            </div>
+
+            <div class="frame" style="margin-top:12px">
+              <iframe id="preview" title="Preview da Loja Inteligente"></iframe>
+            </div>
+
+            <div class="note">
+              O preview é demonstrativo. Em produção, o JSON define as mesmas escolhas no sistema real.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // ===== Smooth scroll (in-page) =====
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href^='#']");
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // ===== Entry actions =====
+    (function(){
+      const cfg = document.getElementById("configArea");
+      const openConfig = document.getElementById("openConfig");
+      const startDIY = document.getElementById("startDIY");
+      const startDIYMobile = document.getElementById("startDIYMobile");
+
+      function showConfigurator(){
+        cfg.style.display = "";
+        setTimeout(()=> cfg.scrollIntoView({behavior:"smooth", block:"start"}), 10);
+      }
+
+      openConfig?.addEventListener("click", showConfigurator);
+      startDIY?.addEventListener("click", showConfigurator);
+      startDIYMobile?.addEventListener("click", showConfigurator);
+    })();
+
+    // ===== WhatsApp links =====
+    (function(){
+      function onlyDigits(s){ return String(s||"").replace(/\D/g,""); }
+      function waUrl(phoneE164OrDigits, text){
+        const phone = onlyDigits(phoneE164OrDigits);
+        return `https://wa.me/${phone}?text=${encodeURIComponent(text||"")}`;
+      }
+
+      const PHONE = "+5511923734039";
+
+      const msgDefault = "Oi! Vim pelo configurador da Loja Inteligente e queria ajuda para montar o melhor pacote. Meu segmento é: ";
+      const msgManaged = "Quero que a Custom Mind configure a Loja Inteligente pra mim. Meu segmento é: ";
+      const msgHelp = "Estou no configurador da Loja Inteligente. Pode me ajudar a escolher módulos/tema? Meu segmento é: ";
+      const msgSendJson = "Vou te enviar o JSON do meu configurador. Pode avaliar e me orientar?";
+
+      const waTop = document.getElementById("waTop");
+      const waManaged = document.getElementById("waManaged");
+      const waHelp = document.getElementById("waHelp");
+      const waSendJson = document.getElementById("waSendJson");
+
+      if(waTop) waTop.href = waUrl(PHONE, msgDefault);
+      if(waManaged) waManaged.href = waUrl(PHONE, msgManaged);
+      if(waHelp) waHelp.href = waUrl(PHONE, msgHelp);
+      if(waSendJson) waSendJson.href = waUrl(PHONE, msgSendJson);
+    })();
+
+    // ===== Configurator app.js (INLINE) =====
+    const LS_KEY = "cm_loja_config_v1";
+
+    const DEFAULTS = {
+      app: { company_name: "Loja", domain: "", favicon_png: "static/generated/favicon.png", icon_ico: "static/generated/icon.ico" },
+      theme: { accent: "#8b5cf6", accent2: "#22d3ee", bg: "#07060b", text: "#e9e7ff" },
+      tenants: [
+        { id:"loja", name:"Loja", logo:"", theme:{ accent:"#8b5cf6", accent2:"#22d3ee", bg:"#07060b", text:"#e9e7ff" } }
+      ],
+      modules: { default: { config:true, crediario:true, dashboard:true, etiquetas:false, financeiro:true, produtos:true, registro_vendas:true, vendas:true }, tenants: { "loja": {} } },
+      etiquetas: {}
+    };
+
+    const MODULE_LABELS = {
+      dashboard: "Dashboard",
+      vendas: "Vendas",
+      registro_vendas: "Registro de vendas",
+      produtos: "Produtos",
+      financeiro: "Financeiro",
+      crediario: "Crediário",
+      etiquetas: "Etiquetas",
+      config: "Configuração"
+    };
+
+    function deepClone(o){ return JSON.parse(JSON.stringify(o)); }
+
+    function loadState(){
+      try{
+        const raw = localStorage.getItem(LS_KEY);
+        if(!raw) return deepClone(DEFAULTS);
+        return { ...deepClone(DEFAULTS), ...JSON.parse(raw) };
+      }catch(e){ return deepClone(DEFAULTS); }
+    }
+    function saveState(state){
+      localStorage.setItem(LS_KEY, JSON.stringify(state));
+      const s = document.getElementById("saved");
+      if(s){
+        s.textContent = "Salvo ✓";
+        setTimeout(()=> s.textContent = "Salvando em cache automaticamente…", 1200);
+      }
+    }
+
+    function toSlug(s){
+      return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+        .replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,40) || "loja";
+    }
+
+    function setVar(doc, name, val){ doc.documentElement.style.setProperty(name, val); }
+
+    async function fetchTemplate(){
+      const tryPaths = ["templates/index.html","templates/preview.html","templates/base.html","templates/home.html"];
+      for(const p of tryPaths){
+        try{
+          const r = await fetch(p, { cache:"no-store" });
+          if(r.ok){
+            const t = await r.text();
+            if(t && t.trim().length > 50) return t;
+          }
+        }catch(e){}
+      }
+
+      // fallback seguro (IMPORTANTE: usar <\/script> para não quebrar o script principal)
+      return `
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+:root{--accent:#8b5cf6;--accent-2:#22d3ee;--bg:#07060b;--text:#e9e7ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui;background:radial-gradient(800px 400px at 15% 10%, rgba(139,92,246,.22), transparent 60%), linear-gradient(180deg, var(--bg), #0c0a14); color:var(--text)}
+header{padding:18px; border-bottom:1px solid rgba(255,255,255,.12); background:rgba(0,0,0,.25); backdrop-filter: blur(10px)}
+.wrap{padding:16px}
+.hero{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{width:46px;height:46px;border-radius:14px;object-fit:cover;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14)}
+.brand b{font-size:16px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-size:12px;opacity:.95}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.card{border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:12px;background:rgba(255,255,255,.06)}
+.card b{display:block}
+.sub{opacity:.78;font-size:12px;margin-top:6px;line-height:1.45}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header>
+  <div class="hero">
+    <div class="brand">
+      <img id="logo" src="" alt="Logo"/>
+      <div>
+        <b id="company">Loja</b>
+        <div class="sub">Preview — Loja Inteligente (sem backend)</div>
+      </div>
+    </div>
+    <div class="badge" id="modsCount">Módulos: —</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid" id="mods"></div>
+  <div class="sub" style="margin-top:12px">* Preview demonstrativo (sem backend). Valida tema e módulos.</div>
+</div>
+
+<script>
+window.addEventListener("message",(e)=>{
+  if(!e.data||e.data.type!=="APPLY") return;
+  const st=e.data.state; const labels=e.data.labels||{};
+  document.getElementById("company").textContent = st.app.company_name || "Loja";
+  document.getElementById("logo").src = (st.tenants&&st.tenants[0]&&st.tenants[0].logo)||"";
+  const mods=(st.modules&&st.modules.default)||{};
+  const el=document.getElementById("mods"); el.innerHTML="";
+  let c=0;
+  Object.keys(mods).forEach(k=>{
+    if(!mods[k]) return;
+    c++;
+    const d=document.createElement("div"); d.className="card";
+    d.innerHTML="<b>"+(labels[k]||k)+"</b><div class='sub'>Módulo habilitado no pacote</div>";
+    el.appendChild(d);
+  });
+  document.getElementById("modsCount").textContent = "Módulos: " + (c||"—");
+});
+<\/script></body></html>`;
+    }
+
+    function escapeHtml(s){ return (s||"").replace(/[&<>"']/g,(c)=>({ "&":"&amp;","<":"&lt;"," >":"&gt;",'"':"&quot;","'":"&#39;" }[c] || c)); }
+
+    function setPath(obj, path, value){
+      const parts = path.split(".");
+      let ref = obj;
+      for(let i=0;i<parts.length-1;i++){
+        ref[parts[i]] = ref[parts[i]] || {};
+        ref = ref[parts[i]];
+      }
+      ref[parts[parts.length-1]] = value;
+    }
+
+    function fileToDataUrl(file){
+      return new Promise((res, rej)=>{
+        const r=new FileReader();
+        r.onload=()=>res(r.result);
+        r.onerror=rej;
+        r.readAsDataURL(file);
+      });
+    }
+
+    function fillTenantSelect(state){
+      const sel=document.getElementById("tenantSelect");
+      if(!sel) return;
+      sel.innerHTML="";
+      (state.tenants||[]).forEach(t=>{
+        const o=document.createElement("option");
+        o.value=t.id; o.textContent=t.name||t.id;
+        sel.appendChild(o);
+      });
+    }
+
+    function pickTenant(state){
+      const sel=document.getElementById("tenantSelect");
+      const id=sel?.value || (state.tenants?.[0]?.id);
+      return (state.tenants||[]).find(t=>t.id===id) || state.tenants?.[0];
+    }
+
+    function buildTenantsUI(state){
+      const wrap=document.getElementById("tenants");
+      if(!wrap) return;
+      wrap.innerHTML="";
+      state.tenants.forEach((t, idx)=>{
+        const box=document.createElement("div");
+        box.className="card";
+        box.style.padding="12px";
+        box.style.marginBottom="10px";
+        box.innerHTML=`
+          <div class="row" style="justify-content:space-between; align-items:flex-start">
+            <div style="min-width:0">
+              <b>${escapeHtml(t.name||("Tenant "+(idx+1)))}</b>
+              <div class="small">${escapeHtml(t.id||"")}</div>
+            </div>
+            <button class="btn danger" data-act="remove" data-i="${idx}" type="button">Remover</button>
+          </div>
+
+          <div class="field" style="margin-top:10px">
+            <label>Nome</label>
+            <input type="text" value="${escapeHtml(t.name||"")}" data-k="name" data-i="${idx}"/>
+          </div>
+
+          <div class="field">
+            <label>ID (slug)</label>
+            <input type="text" value="${escapeHtml(t.id||"")}" data-k="id" data-i="${idx}"/>
+          </div>
+
+          <div class="row" style="margin-top:10px">
+            <div class="field" style="flex:1">
+              <label>Accent</label>
+              <div class="row stack">
+                <input type="color" value="${t.theme?.accent||"#8b5cf6"}" data-k="theme.accent" data-i="${idx}"/>
+                <input type="text" value="${escapeHtml(t.theme?.accent||"#8b5cf6")}" data-k="theme.accent" data-i="${idx}"/>
+              </div>
+            </div>
+
+            <div class="field" style="flex:1">
+              <label>Accent 2</label>
+              <div class="row stack">
+                <input type="color" value="${t.theme?.accent2||"#22d3ee"}" data-k="theme.accent2" data-i="${idx}"/>
+                <input type="text" value="${escapeHtml(t.theme?.accent2||"#22d3ee")}" data-k="theme.accent2" data-i="${idx}"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field" style="flex:1">
+              <label>Background</label>
+              <div class="row stack">
+                <input type="color" value="${t.theme?.bg||"#07060b"}" data-k="theme.bg" data-i="${idx}"/>
+                <input type="text" value="${escapeHtml(t.theme?.bg||"#07060b")}" data-k="theme.bg" data-i="${idx}"/>
+              </div>
+            </div>
+
+            <div class="field" style="flex:1">
+              <label>Text</label>
+              <div class="row stack">
+                <input type="color" value="${t.theme?.text||"#e9e7ff"}" data-k="theme.text" data-i="${idx}"/>
+                <input type="text" value="${escapeHtml(t.theme?.text||"#e9e7ff")}" data-k="theme.text" data-i="${idx}"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Logo (upload opcional — salvo no cache do navegador)</label>
+            <input type="file" accept="image/*" data-k="logoUpload" data-i="${idx}"/>
+            <div class="small">O preview aplica na hora.</div>
+          </div>
+        `;
+        wrap.appendChild(box);
+      });
+
+      // remove
+      wrap.querySelectorAll("button[data-act='remove']").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const i=Number(btn.dataset.i);
+          state.tenants.splice(i,1);
+          if(state.tenants.length===0){
+            state.tenants.push(deepClone(DEFAULTS.tenants[0]));
+          }
+          render(state);
+        });
+      });
+
+      // inputs handlers (IMPORTANT: do not re-render during color picker interaction)
+      wrap.querySelectorAll("input").forEach(inp=>{
+        const isColor = inp.type === "color";
+        const k = inp.dataset.k || "";
+
+        // logo upload: use change + full render
+        if(k === "logoUpload"){
+          inp.addEventListener("change", async (e)=>{
+            const i = Number(e.target.dataset.i);
+            const f = e.target.files?.[0];
+            if(!f) return;
+            state.tenants[i].logo = await fileToDataUrl(f);
+            render(state);
+          });
+          return;
+        }
+
+        // color picker: use input + light update (NO render)
+        if(isColor){
+          inp.addEventListener("input", (e)=>{
+            const i = Number(e.target.dataset.i);
+            const key = e.target.dataset.k;
+            const val = e.target.value;
+
+            setPath(state.tenants[i], key, val);
+
+            // sync hex text next to it
+            const row = e.target.closest(".row");
+            const txt = row?.querySelector(`input[type="text"][data-k="${CSS.escape(key)}"][data-i="${i}"]`);
+            if(txt) txt.value = val;
+
+            lightUpdate(state);
+          });
+
+          return;
+        }
+
+        // text inputs
+        inp.addEventListener("input", (e)=>{
+          const i = Number(e.target.dataset.i);
+          const key = e.target.dataset.k;
+          const val = e.target.value;
+
+          // if it's a theme.* hex text, update + sync to color only when valid
+          if(key && key.startsWith("theme.")){
+            setPath(state.tenants[i], key, val);
+
+            if(/^#([0-9a-fA-F]{6})$/.test(val.trim())){
+              const row = e.target.closest(".row");
+              const col = row?.querySelector(`input[type="color"][data-k="${CSS.escape(key)}"][data-i="${i}"]`);
+              if(col) col.value = val.trim();
+            }
+            lightUpdate(state);
+            return;
+          }
+
+          // name/id = structural -> full render ok
+          setPath(state.tenants[i], key, val);
+
+          if(key==="name" && (!state.tenants[i].id || state.tenants[i].id.trim()==="")){
+            state.tenants[i].id = toSlug(state.tenants[i].name);
+          }
+
+          render(state, true);
+        });
+      });
+    }
+
+    function buildModulesUI(state){
+      const wrap=document.getElementById("modules");
+      if(!wrap) return;
+      wrap.innerHTML="";
+      Object.keys(MODULE_LABELS).forEach(k=>{
+        const checked=!!state.modules?.default?.[k];
+        const div=document.createElement("div");
+        div.className="mod";
+        div.innerHTML=`
+          <input type="checkbox" data-k="${k}" ${checked?"checked":""}/>
+          <div>
+            <div class="ttl">${MODULE_LABELS[k]}</div>
+            <div class="sub">Ativa/desativa este módulo no pacote.</div>
+          </div>`;
+        wrap.appendChild(div);
+      });
+      wrap.querySelectorAll("input[type='checkbox']").forEach(ch=>{
+        ch.addEventListener("change",(e)=>{
+          state.modules.default[e.target.dataset.k]=!!e.target.checked;
+          render(state);
+        });
+      });
+    }
+
+    function applyPreview(state){
+      const frame=document.getElementById("preview");
+      const doc=frame?.contentDocument; if(!doc) return;
+      const tenant=pickTenant(state);
+      const theme=tenant?.theme || state.theme;
+
+      setVar(doc,"--accent", theme.accent);
+      setVar(doc,"--accent-2", theme.accent2);
+      setVar(doc,"--bg", theme.bg);
+      setVar(doc,"--text", theme.text);
+
+      frame.contentWindow.postMessage({ type:"APPLY", state, labels: MODULE_LABELS }, "*");
+    }
+
+    function downloadJson(state){
+      const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+      const a=document.createElement("a");
+      a.href=URL.createObjectURL(blob);
+      a.download="app_config.json";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(a.href),800);
+    }
+
+    function copyJson(state){
+      const txt=JSON.stringify(state,null,2);
+      navigator.clipboard.writeText(txt).then(()=>{
+        const b=document.getElementById("copyStatus");
+        if(b){ b.textContent="Copiado ✓"; setTimeout(()=>b.textContent="",1200); }
+      });
+    }
+
+    function syncThemeTextInputs(){
+      const pairs = [
+        ["g_acc","g_acc_txt"],
+        ["g_acc2","g_acc2_txt"],
+        ["g_bg","g_bg_txt"],
+        ["g_text","g_text_txt"]
+      ];
+      pairs.forEach(([c,t])=>{
+        const color=document.getElementById(c);
+        const text=document.getElementById(t);
+        if(color && text) text.value = color.value;
+      });
+    }
+
+    // LIGHT update (no re-render) — keeps color picker open
+    function lightUpdate(state){
+      const jsonEl = document.getElementById("json");
+      if(jsonEl) jsonEl.value = JSON.stringify(state,null,2);
+      applyPreview(state);
+      saveState(state);
+    }
+
+    async function init(){
+      const state=loadState();
+
+      // fill app
+      document.getElementById("company").value=state.app.company_name||"";
+      document.getElementById("domain").value=state.app.domain||"";
+
+      // theme inputs
+      document.getElementById("g_acc").value=state.theme.accent;
+      document.getElementById("g_acc2").value=state.theme.accent2;
+      document.getElementById("g_bg").value=state.theme.bg;
+      document.getElementById("g_text").value=state.theme.text;
+      syncThemeTextInputs();
+
+      // load template inside iframe
+      const tpl=await fetchTemplate();
+      const frame=document.getElementById("preview");
+      frame.contentDocument.open(); frame.contentDocument.write(tpl); frame.contentDocument.close();
+
+      fillTenantSelect(state);
+      buildTenantsUI(state);
+      buildModulesUI(state);
+
+      // events
+      document.getElementById("tenantSelect").addEventListener("change", ()=>render(state,true));
+
+      document.getElementById("company").addEventListener("input",(e)=>{ state.app.company_name=e.target.value; render(state); });
+      document.getElementById("domain").addEventListener("input",(e)=>{ state.app.domain=e.target.value; render(state,true); });
+
+      const bind=(id,key)=> document.getElementById(id).addEventListener("input",(e)=>{
+        state.theme[key]=e.target.value;
+        render(state,true);
+        syncThemeTextInputs();
+      });
+      bind("g_acc","accent"); bind("g_acc2","accent2"); bind("g_bg","bg"); bind("g_text","text");
+
+      // text fields for theme
+      function bindText(txtId, colorId, key){
+        const txt = document.getElementById(txtId);
+        const col = document.getElementById(colorId);
+        if(!txt || !col) return;
+        txt.addEventListener("input",(e)=>{
+          const v = e.target.value.trim();
+          state.theme[key]=v;
+          // sync only when valid hex
+          if(/^#([0-9a-fA-F]{6})$/.test(v)) col.value = v;
+          render(state,true);
+        });
+      }
+      bindText("g_acc_txt","g_acc","accent");
+      bindText("g_acc2_txt","g_acc2","accent2");
+      bindText("g_bg_txt","g_bg","bg");
+      bindText("g_text_txt","g_text","text");
+
+      document.getElementById("addTenant").addEventListener("click", ()=>{
+        const n=state.tenants.length+1;
+        state.tenants.push({
+          id:"loja-"+n,
+          name:"Loja "+n,
+          logo:"",
+          theme:{ accent: state.theme.acent, accent2: state.theme.accent2, bg: state.theme.bg, text: state.theme.text }
+        });
+        render(state);
+      });
+
+      document.getElementById("reset").addEventListener("click", ()=>{ localStorage.removeItem(LS_KEY); location.reload(); });
+      document.getElementById("download").addEventListener("click", ()=>downloadJson(state));
+      document.getElementById("copy").addEventListener("click", ()=>copyJson(state));
+
+      // tab logic
+      function selectTab(id){
+        const tabs = ["App","Theme","Tenants","Modules","Export"];
+        tabs.forEach(t=>{
+          const btn = document.getElementById("t"+t);
+          const pane = document.getElementById("tab"+t);
+          const on = (t===id);
+          if(btn) btn.setAttribute("aria-selected", on ? "true" : "false");
+          if(pane) pane.style.display = on ? "" : "none";
+        });
+      }
+      document.getElementById("tApp").addEventListener("click", ()=>selectTab("App"));
+      document.getElementById("tTheme").addEventListener("click", ()=>selectTab("Theme"));
+      document.getElementById("tTenants").addEventListener("click", ()=>selectTab("Tenants"));
+      document.getElementById("tModules").addEventListener("click", ()=>selectTab("Modules"));
+      document.getElementById("tExport").addEventListener("click", ()=>selectTab("Export"));
+
+      render(state,true);
+    }
+
+    function render(state, quiet){
+      const sel=document.getElementById("tenantSelect");
+      const keep=sel?.value;
+
+      fillTenantSelect(state);
+      if(sel && keep && [...sel.options].some(o=>o.value===keep)) sel.value=keep;
+
+      buildTenantsUI(state);
+      buildModulesUI(state);
+
+      const jsonEl = document.getElementById("json");
+      if(jsonEl) jsonEl.value = JSON.stringify(state,null,2);
+
+      applyPreview(state);
+      saveState(state);
+    }
+
+    init();
+  </script>
+</body>
+</html>
+

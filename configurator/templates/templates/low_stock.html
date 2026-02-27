@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}Baixo estoque — {{ tenant|capitalize }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/low_stock.css') }}">
+
+{# pagina atual (fallback via querystring) #}
+{% set current_page = (request.args.get('page', 1)|int) %}
+{% set total_pages = (pages|default(1))|int %}
+{% set per_page_val = (per_page|default(request.args.get('per_page', 30))|int) %}
+
+{# helper: monta querystring preservando args atuais (tirando page/per_page quando necessário) #}
+{% set qs_base = "" %}
+{% for k, v in request.args.items() %}
+  {% if k not in ['page'] %}
+    {% set qs_base = qs_base + k + "=" + (v|string) + "&" %}
+  {% endif %}
+{% endfor %}
+
+<div class="ls-page">
+  <div class="ls-scope">
+
+    <div class="ls-head">
+      <h1 class="ls-title">
+        <span class="ls-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16"></path>
+            <path d="M6 7l1 14h10l1-14"></path>
+            <path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
+          </svg>
+        </span>
+        Baixo estoque <small>(≤ {{ threshold }})</small>
+      </h1>
+
+      <div class="ls-actions">
+        <a class="btn" href="{{ url_for('produtos.lista') }}">Voltar aos produtos</a>
+      </div>
+    </div>
+
+    <section class="ls-card ls-summary">
+      <div class="ls-summary-left">
+        <div class="ls-kpi">
+          <div class="ls-kpi-label">Itens em alerta</div>
+          <div class="ls-kpi-value">{{ total }}</div>
+        </div>
+
+        <div class="ls-summary-text">
+          Mostrando produtos com estoque <strong>≤ {{ threshold }}</strong>.
+          {% if total_pages > 1 %}
+            <span class="ls-muted">Página {{ current_page }} de {{ total_pages }}.</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ls-summary-right">
+        <form method="get" class="ls-perpage">
+          {# preserva filtros existentes (exceto per_page e page) #}
+          {% for k, v in request.args.items() %}
+            {% if k not in ['per_page', 'page'] %}
+              <input type="hidden" name="{{ k }}" value="{{ v }}">
+            {% endif %}
+          {% endfor %}
+
+          <label for="per_page">Por página</label>
+          <select id="per_page" name="per_page" onchange="this.form.submit()">
+            {% for n in [20, 30, 50, 100] %}
+              <option value="{{ n }}" {{ 'selected' if per_page_val == n else '' }}>{{ n }}</option>
+            {% endfor %}
+          </select>
+          <input type="hidden" name="page" value="1">
+        </form>
+      </div>
+    </section>
+
+    <section class="ls-card">
+      <div class="ls-table-wrap">
+        <table class="ls-table">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th style="width: 160px;">Qtd</th>
+              <th style="width: 220px;">Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for p in produtos %}
+              {% set q = (p.quantidade or 0) %}
+              <tr>
+                <td class="ls-prod-cell">
+                  <div class="ls-prod-name">{{ p.nome }}</div>
+                  <div class="ls-prod-sub">ID: {{ p.id }}</div>
+                </td>
+
+                <td>
+                  <span class="ls-qty {{ 'danger' if q == 0 else 'warn' if q <= threshold else '' }}">
+                    {{ q }}
+                  </span>
+                </td>
+
+                <td class="ls-row-actions">
+                  <a class="btn btn-primary" href="{{ url_for('produtos.lista') }}#p-{{ p.id }}">Ir ao produto</a>
+                </td>
+              </tr>
+            {% endfor %}
+
+            {% if not produtos %}
+              <tr>
+                <td colspan="3" class="ls-empty">Nenhum item em baixo estoque.</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+
+      {# ===== Paginação ===== #}
+      {% if total_pages > 1 %}
+        <div class="ls-pagination">
+          <div class="ls-pageinfo">
+            Página <strong>{{ current_page }}</strong> de <strong>{{ total_pages }}</strong>
+          </div>
+
+          <div class="ls-pager">
+            {# primeira + anterior #}
+            {% if current_page > 1 %}
+              <a class="btn btn-mini" href="?{{ qs_base }}page=1&per_page={{ per_page_val }}">« Primeiro</a>
+              <a class="btn btn-mini" href="?{{ qs_base }}page={{ current_page - 1 }}&per_page={{ per_page_val }}">‹ Anterior</a>
+            {% else %}
+              <span class="btn btn-mini is-disabled">« Primeiro</span>
+              <span class="btn btn-mini is-disabled">‹ Anterior</span>
+            {% endif %}
+
+            {# números (janela) #}
+            {% set start = (current_page - 2) if (current_page - 2) > 1 else 1 %}
+            {% set end = (current_page + 2) if (current_page + 2) < total_pages else total_pages %}
+
+            {% if start > 1 %}
+              <a class="btn btn-mini" href="?{{ qs_base }}page=1&per_page={{ per_page_val }}">1</a>
+              {% if start > 2 %}
+                <span class="ls-dots">…</span>
+              {% endif %}
+            {% endif %}
+
+            {% for pnum in range(start, end + 1) %}
+              {% if pnum == current_page %}
+                <span class="btn btn-mini is-active">{{ pnum }}</span>
+              {% else %}
+                <a class="btn btn-mini" href="?{{ qs_base }}page={{ pnum }}&per_page={{ per_page_val }}">{{ pnum }}</a>
+              {% endif %}
+            {% endfor %}
+
+            {% if end < total_pages %}
+              {% if end < total_pages - 1 %}
+                <span class="ls-dots">…</span>
+              {% endif %}
+              <a class="btn btn-mini" href="?{{ qs_base }}page={{ total_pages }}&per_page={{ per_page_val }}">{{ total_pages }}</a>
+            {% endif %}
+
+            {# próxima + última #}
+            {% if current_page < total_pages %}
+              <a class="btn btn-mini" href="?{{ qs_base }}page={{ current_page + 1 }}&per_page={{ per_page_val }}">Próxima ›</a>
+              <a class="btn btn-mini" href="?{{ qs_base }}page={{ total_pages }}&per_page={{ per_page_val }}">Último »</a>
+            {% else %}
+              <span class="btn btn-mini is-disabled">Próxima ›</span>
+              <span class="btn btn-mini is-disabled">Último »</span>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+    </section>
+
+  </div>
+</div>
+{% endblock %}

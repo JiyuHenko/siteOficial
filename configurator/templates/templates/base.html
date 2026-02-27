@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or (app_company_name ~ " - Sistema") }}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+  {# CSS extra por página (ex: dashboard) #}
+  {% block extra_head %}{% endblock %}
+
+  {# Tema por tenant (sempre por último para sobrescrever estilos) #}
+  <link rel="stylesheet" href="{{ url_for('theme_css.theme_css') }}">
+  {% if app_favicon %}
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename=app_favicon.replace('static/','')) }}">
+  {% endif %}
+</head>
+<body>
+  <input type="checkbox" id="nav-toggle" aria-hidden="true">
+
+  <div class="app-shell">
+
+    <label for="nav-toggle" class="backdrop" aria-hidden="true"></label>
+
+    <aside class="sidebar">
+      <div class="brand">
+        {% if tenant_logo %}
+          <img src="{{ url_for('static', filename=tenant_logo.replace('static/','')) }}" alt="{{ tenant_name }}">
+        {% endif %}
+        <span>{{ tenant_name or app_company_name }}</span>
+      </div>
+
+      <nav class="nav">
+        {% if session.get('usuario') %}
+          {% if enabled_modules.dashboard %}
+            <a href="{{ url_for('dashboard.home') }}">Dashboard</a>
+          {% endif %}
+
+          {% if enabled_modules.produtos and session.get('usuario') == 'Gizele' %}
+            <a href="{{ url_for('produtos.lista') }}">Produtos</a>
+          {% endif %}
+
+          {% if enabled_modules.vendas %}
+            <a href="{{ url_for('vendas.vendas') }}">Vender</a>
+          {% endif %}
+
+          {% if enabled_modules.financeiro %}
+		    <a href="{{ url_for('financeiro.home') }}">Financeiro</a>
+          {% endif %}
+
+          {% if enabled_modules.crediario %}
+            <a href="{{ url_for('crediario.index') }}">Crediário</a>
+          {% endif %}
+
+          {% if enabled_modules.etiquetas %}
+            <a href="{{ url_for('etiquetas.home') }}">Etiquetas</a>
+          {% endif %}
+
+          {% if enabled_modules.config and session.get('usuario') == 'Gizele' %}
+            <a href="{{ url_for('config.index') }}">Configurações</a>
+          {% endif %}
+
+          {% if enabled_modules.registro_vendas %}
+            <a href="{{ url_for('registro_vendas.index') }}">Registro</a>
+          {% endif %}
+
+          <a href="{{ url_for('select_tenant.select') }}">Selecionar</a>
+          <a href="{{ url_for('auth.logout') }}">Sair</a>
+        {% endif %}
+      </nav>
+
+      <div class="sidebar-footer">
+        <small>© 2026 - {{ app_company_name }}</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <label class="hamburger" for="nav-toggle" aria-label="Menu">
+          ☰
+        </label>
+        <div class="topbar-title">{{ title or app_company_name }}</div>
+      </header>
+
+      <section class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-wrap">
+              {% for cat,msg in messages %}
+                <div class="flash {{ cat }}">{{ msg }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>

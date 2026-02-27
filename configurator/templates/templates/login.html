@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - {{ tenant_name or app_company_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body class="tenant-{{ current_tenant or 'default' }}">
+  <main class="login-page">
+    <section class="login-card">
+
+      <div class="login-brand">
+        <div class="login-logo">
+          {% if tenant_logo %}
+            <img src="{{ url_for('static', filename=tenant_logo.replace('static/','')) }}" alt="{{ tenant_name }}">
+          {% endif %}
+          <div>
+            <div class="login-title">{{ tenant_name or app_company_name }}</div>
+            <div class="login-subtitle">Acesse sua conta para continuar.</div>
+          </div>
+        </div>
+      </div>
+
+      {% with msgs = get_flashed_messages(with_categories=true) %}
+        {% if msgs %}
+          <div class="flash-stack">
+            {% for cat, msg in msgs %}
+              <div class="flash {{ cat }}">{{ msg }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      {% if expired %}
+        <div class="final-msg">
+          Contrato finalizado. Para continuar usando o sistema, entre em contato com
+          <strong>(35) 99762-5467</strong> para renovação e atualização do sistema.
+        </div>
+      {% else %}
+        <form method="post" class="login-form" autocomplete="on">
+          <div class="field">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+          </div>
+
+          <div class="field">
+            <label for="senha">Senha</label>
+
+            <div class="pw-wrap">
+              <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+              <button
+                type="button"
+                class="pw-toggle"
+                data-target="senha"
+                aria-label="Mostrar senha"
+                title="Mostrar senha">
+                <span class="pw-toggle-text">Mostrar</span>
+              </button>
+            </div>
+          </div>
+
+          {% if require_code or show_code_field %}
+            <div class="license-block">
+              <div class="license-head">
+                <div class="license-title">Liberação do mês</div>
+                <span class="license-badge {{ 'req' if require_code else 'opt' }}">
+                  {{ 'Obrigatória' if require_code else 'Opcional' }}
+                </span>
+              </div>
+
+              <label for="license_code">Senha de liberação</label>
+
+              <div class="pw-wrap">
+                <input
+                  type="password"
+                  id="license_code"
+                  name="license_code"
+                  placeholder="{{ 'Obrigatória (carência encerrada)' if require_code else 'Opcional (carência até 5 dias após o dia 15)' }}"
+                  {{ 'required' if require_code else '' }}>
+                <button
+                  type="button"
+                  class="pw-toggle"
+                  data-target="license_code"
+                  aria-label="Mostrar senha de liberação"
+                  title="Mostrar senha de liberação">
+                  <span class="pw-toggle-text">Mostrar</span>
+                </button>
+              </div>
+
+              <div class="info">
+                {% if require_code %}
+                  Carência encerrada — informe a senha para liberar o uso deste ciclo.
+                {% else %}
+                  Opcional durante a carência. Após 5 dias do vencimento, a senha passa a ser obrigatória para login.
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
+          <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+      {% endif %}
+
+      <footer class="login-footer">
+        <small>© 2025 - Sistema Custom Mind</small>
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    // flashes fadeout
+    setTimeout(() => {
+      document.querySelectorAll('.flash').forEach(el => el.classList.add('fadeout'));
+      setTimeout(() => document.querySelectorAll('.flash').forEach(el => el.remove()), 400);
+    }, 3500);
+
+    // mostrar/ocultar senha
+    function togglePassword(btn){
+      const id = btn.getAttribute("data-target");
+      const input = document.getElementById(id);
+      if (!input) return;
+
+      const isHidden = input.type === "password";
+      input.type = isHidden ? "text" : "password";
+
+      const txt = btn.querySelector(".pw-toggle-text");
+      if (txt) txt.textContent = isHidden ? "Ocultar" : "Mostrar";
+
+      btn.setAttribute("aria-label", isHidden ? "Ocultar senha" : "Mostrar senha");
+      btn.setAttribute("title", isHidden ? "Ocultar senha" : "Mostrar senha");
+    }
+
+    document.querySelectorAll(".pw-toggle").forEach(btn => {
+      btn.addEventListener("click", () => togglePassword(btn));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Checkout — Configuração Loja Inteligente | Custom Mind</title>
+  <meta name="description" content="Finalize a contratação da configuração da Loja Inteligente. Copie a chave Pix, escaneie o QR Code e envie o comprovante no WhatsApp."/>
+  <meta name="theme-color" content="#07060b"/>
+  <link rel="icon" href="../assets/img/logo.png"/>
+
+  <style>
+    :root{
+      --bg: #07060b;
+      --bg2:#0c0a14;
+      --text:#e9e7ff;
+      --muted:#b9b6d9;
+      --line: rgba(255,255,255,.10);
+      --violet:#8b5cf6;
+      --violet2:#a78bfa;
+      --cyan:#22d3ee;
+      --shadow: 0 14px 50px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+      --surface: rgba(255,255,255,.03);
+      --surface2: rgba(0,0,0,.18);
+      --focus: rgba(139,92,246,.6);
+      --ok: rgba(34,211,238,.16);
+      --warn: rgba(255,210,99,.14);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(900px 500px at 45% 80%, rgba(167,139,250,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto}
+    button, input, select, textarea{font-family:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background: rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .skip:focus{left:10px; z-index:9999; outline:none}
+
+    /* ===== Topbar (mesmo padrão do configurator) ===== */
+    .topbar{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(12px);
+      background: rgba(7,6,11,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width:34px; height:34px; border-radius:0;
+      object-fit:contain;
+      background: transparent;
+      border:0;
+      filter: drop-shadow(0 0 12px rgba(139,92,246,.55));
+    }
+    .brand .t{display:flex; flex-direction:column; line-height:1.15}
+    .brand .t strong{font-size:14px; letter-spacing:.2px}
+    .brand .t span{font-size:12px; color:var(--muted)}
+
+    .top-actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      background: linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
+      color:#0b0713;
+      font-weight:800; font-size:13px;
+      box-shadow: 0 10px 30px rgba(139,92,246,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .cta:hover{filter:brightness(1.05)}
+    .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:700; font-size:13px;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn:focus-visible{outline:2px solid var(--focus); outline-offset:3px}
+    .btn.ghost{background: rgba(0,0,0,.12)}
+
+    /* ===== Layout ===== */
+    .shell{padding: 18px 0 34px}
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .panel{padding:16px}
+    .hero{
+      padding: 22px 0 8px;
+      position:relative;
+    }
+    .hero-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+      width:fit-content;
+    }
+    .badge b{color:var(--text)}
+    .grad{
+      background:linear-gradient(90deg,var(--violet),var(--cyan));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .h1{font-size:32px; margin:10px 0 0; letter-spacing:-.5px; line-height:1.12}
+    .lead{color:var(--muted); margin:10px 0 0; max-width: 82ch}
+    .small{font-size:12px; color:var(--muted)}
+    .hr{border:0; border-top:1px solid var(--line); margin:14px 0}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      align-items:start;
+      margin-top:14px;
+    }
+
+    .notice{
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .notice.ok{
+      border-style:solid;
+      background: var(--ok);
+      border-color: rgba(34,211,238,.22);
+      color: rgba(233,231,255,.92);
+    }
+    .notice.warn{
+      border-style:solid;
+      background: var(--warn);
+      border-color: rgba(255,210,99,.22);
+      color: rgba(233,231,255,.92);
+    }
+
+    /* ===== Pix block ===== */
+    .pix-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .pix-row{
+      display:flex;
+      gap:10px;
+      align-items:stretch;
+      flex-wrap:wrap;
+    }
+    .pix-key{
+      flex: 1 1 420px;
+      padding:12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+    }
+    .pix-key .label{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      font-size:12px;
+      line-height:1.55;
+      color: rgba(233,231,255,.95);
+      word-break: break-all;
+      overflow-wrap:anywhere;
+      user-select:text;
+    }
+    .copy{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .copy svg{width:16px;height:16px}
+    .copy[aria-busy="true"]{opacity:.85}
+
+    .qr{
+      flex: 0 0 260px;
+      padding:12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+    }
+    .qr img{
+      width:200px;
+      height:200px;
+      object-fit:contain;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      /* Efeito para “puxar” a cor pro tema (funciona bem com QR preto) */
+      opacity:.95;
+    }
+
+    .steps{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .steps li{
+      padding:12px 12px 12px 44px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.12);
+      color: var(--muted);
+      position:relative;
+      font-size:13px;
+    }
+    .steps li b{color:var(--text)}
+    .steps li::before{
+      content: attr(data-n);
+      position:absolute;
+      left:12px;
+      top:12px;
+      width:24px;
+      height:24px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background: rgba(139,92,246,.18);
+      border:1px solid rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    .faq details{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      background: rgba(0,0,0,.12);
+      padding:12px 14px;
+    }
+    .faq details + details{margin-top:10px}
+    .faq summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:800;
+      color: var(--text);
+      outline:none;
+      font-size:13px;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin:10px 0 0; color: var(--muted); font-size:13px}
+
+    /* ===== Footer (mesmo vibe do index) ===== */
+    .footer{
+      padding:30px 0 44px;
+      border-top:1px solid var(--line);
+      margin-top:10px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    .footer-card{padding:16px}
+    .footer-links{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .footer-links a{
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .footer-links a:hover{color:var(--text); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    hr.sep{border:0; border-top:1px solid var(--line); margin:14px 0}
+
+    /* responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      .qr{flex:1 1 260px}
+    }
+    @media (max-width: 520px){
+      .topbar-inner{height:auto; padding:10px 0}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-links{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+    }
+
+    /* deixa o layout mais “centralizável” quando quebrar no mobile */
+.pix-row{
+  display:flex;
+  gap:10px;
+  align-items:stretch;
+  flex-wrap:wrap;
+  justify-content:center; /* <<< ADICIONE */
+}
+
+/* garante que o card do QR fique centralizado */
+.qr{
+  flex: 0 0 260px;
+  margin-inline:auto;      /* <<< ADICIONE */
+  padding:12px;
+  border-radius: 18px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.18);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+}
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+
+  <!-- HEADER (reutilizado) -->
+  <header class="topbar" role="banner">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="../index.html#produtos" aria-label="Voltar para o site da Custom Mind">
+          <img src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+          <div class="t">
+            <strong>Custom Mind</strong>
+            <span>Checkout • Loja Inteligente</span>
+          </div>
+        </a>
+
+        <div class="top-actions">
+          <a class="btn" href="../products/loja-inteligente.html">Sobre o sistema</a>
+          <a class="btn ghost" href="index.html">Voltar ao configurador</a>
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="container">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="badge"><b>Pagamento via Pix</b> • rápido e seguro</div>
+        <div class="hero-head">
+          <div>
+            <h1 class="h1">Finalize sua contratação com <span class="grad">conforto</span>.</h1>
+            <p class="lead">
+              Aqui você consegue pagar em poucos segundos: copie a chave Pix ou escaneie o QR Code.
+              Depois, é só enviar o comprovante no WhatsApp para a gente iniciar/confirmar sua configuração.
+            </p>
+          </div>
+          <div class="small">Dúvidas? A gente te guia no WhatsApp.</div>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Checkout Pix">
+        <!-- LEFT: PIX + ACTIONS -->
+        <div class="card panel">
+          <h2 style="margin:0 0 6px; font-size:18px">1) Pague com Pix</h2>
+          <p class="small" style="margin:0 0 10px">Você pode usar a chave “copia e cola” ou escanear o QR Code.</p>
+
+          <div class="pix-wrap">
+            <div class="pix-row">
+              <div class="pix-key" aria-label="Chave Pix copia e cola">
+                <div class="label">
+                  <div class="badge"><b>Chave Pix</b> • copia e cola</div>
+                  <button class="btn copy" id="copyPix" type="button" aria-busy="false" aria-label="Copiar chave Pix">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                      <path d="M5 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <span id="copyPixText">Copiar</span>
+                  </button>
+                </div>
+
+                <div class="mono" id="pixKey" aria-label="Código Pix">
+00020126330014br.gov.bcb.pix0111700202196605204000053039865802BR5912Mateus Lemos6001*5406300.00621505114UI0XO0U6IX63049874
+                </div>
+
+                <div class="notice warn" style="margin-top:12px">
+                  <b>Importante:</b> após pagar, <b>envie o comprovante no WhatsApp</b> para a gente confirmar e dar sequência.
+                </div>
+
+                <div class="pix-row" style="margin-top:12px">
+                  <button class="cta" id="waReceipt" type="button">Enviar comprovante no WhatsApp</button>
+                  <a class="btn" href="../products/loja-inteligente.html">Voltar para a Loja Inteligente</a>
+                </div>
+              </div>
+
+              <div class="qr" aria-label="QR Code Pix">
+                <div class="badge"><b>QR Code</b> • escaneie</div>
+                <!-- Troque o arquivo conforme o nome real -->
+                <img src="../assets/img/qrcode.png" alt="QR Code Pix"/>
+                <div class="small" style="text-align:center">
+                  Abra o app do banco → Pix → <b>ler QR</b>.
+                </div>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+
+            <h2 style="margin:0 0 6px; font-size:18px">2) Próximos passos</h2>
+            <ul class="steps" aria-label="Passos após pagamento">
+              <li data-n="1"><b>Faça o Pix</b> (chave ou QR Code).</li>
+              <li data-n="2"><b>Envie o comprovante</b> no WhatsApp da Custom Mind (botão acima).</li>
+              <li data-n="3"><b>A gente confirma</b> e já te puxa um briefing rápido para configurar do jeito certo.</li>
+            </ul>
+
+            <div class="notice ok" style="margin-top:12px">
+              <b>Dica:</b> se você já configurou algo no configurador, pode mandar também o <b>JSON</b> (ou print dos módulos) junto com o comprovante.
+              Isso acelera o início.
+            </div>
+
+            <div class="pix-row" style="margin-top:12px">
+              <a class="btn ghost" href="../index.html#produtos">Voltar para Produtos</a>
+              <a class="btn" href="../index.html#contato">Contato</a>
+              <a class="cta" id="waHelp" href="#" target="_blank" rel="noreferrer">Tirar dúvida antes de pagar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RESUMO + FAQ -->
+        <aside class="card panel">
+          <div class="badge"><b>Resumo</b> • o que acontece depois</div>
+          <h2 style="margin:10px 0 0; font-size:18px">Você fica no controle.</h2>
+          <p class="small" style="margin:8px 0 0">
+            A ideia do checkout é simples: você paga, manda o comprovante e a gente assume a parte técnica com clareza.
+          </p>
+
+          <div class="hr"></div>
+
+          <div class="badge"><b>Confiança</b> • sem pegadinha</div>
+          <div class="notice" style="margin-top:10px">
+            <b>Você não precisa “adivinhar” módulos.</b> Se tiver dúvida, a gente recomenda o pacote certo conforme seu fluxo
+            (loja, serviço, restaurante, delivery, etc.).
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="badge"><b>FAQ</b> • dúvidas rápidas</div>
+          <div class="faq" style="margin-top:10px">
+            <details>
+              <summary>Como eu pago usando a chave copia e cola?</summary>
+              <p>Abra o app do banco → Pix → Copia e cola → cole a chave → confira os dados → confirme o pagamento.</p>
+            </details>
+            <details>
+              <summary>Posso pagar pelo QR Code?</summary>
+              <p>Sim. Use Pix → Ler QR Code. Se o QR estiver “preto”, ele ainda funciona — aqui ele está com um efeito visual para combinar com o tema.</p>
+            </details>
+            <details>
+              <summary>O que eu mando no WhatsApp depois?</summary>
+              <p>Envie o comprovante e, se possível, seu segmento e como funciona seu atendimento/vendas. Se você já usou o configurador, mande também o JSON ou prints.</p>
+            </details>
+            <details>
+              <summary>Posso voltar e mudar algo antes de pagar?</summary>
+              <p>Claro. Você pode voltar ao configurador e ajustar tema, tenants e módulos antes. Depois é só retornar aqui.</p>
+            </details>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="pix-row">
+            <a class="cta" id="waStart" href="#" target="_blank" rel="noreferrer">Falar com a Custom Mind</a>
+            <a class="btn" href="index.html">Voltar ao configurador</a>
+          </div>
+
+          <div class="small" style="margin-top:10px">
+            * Este checkout é um fluxo simples para agilizar. Em produção, dá para evoluir com emissão, status e confirmação automática.
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER (mesma vibe do index) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="card footer-card">
+          <div class="brand">
+            <img src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+            <div class="t">
+              <strong>Custom Mind</strong>
+              <span>Software Solutions</span>
+            </div>
+          </div>
+
+          <p class="small" style="margin:10px 0 0">
+            Sistemas, automações e IA sob medida — com foco em resultado, velocidade e clareza.
+          </p>
+
+          <div class="footer-links" aria-label="Links rápidos">
+            <a href="../index.html#produtos">Produtos</a>
+            <a href="../products/loja-inteligente.html">Loja Inteligente</a>
+            <a href="../index.html#como-funciona">Como funciona</a>
+            <a href="../index.html#contato">Contato</a>
+          </div>
+
+          <hr class="sep"/>
+          <p class="small" style="margin:0">© <span id="y"></span> Custom Mind. Todos os direitos reservados.</p>
+        </div>
+
+        <div class="card footer-card">
+          <div class="small"><b>Atendimento</b></div>
+          <div class="small" style="margin-top:10px">WhatsApp: <span id="waPretty">+55 11 92373-4039</span></div>
+          <div class="small">E-mail: <span id="mailPretty">custommind.softwaresolutions@gmail.com</span></div>
+          <div class="small">Instagram: @custommind.solutions</div>
+          <hr class="sep"/>
+          <div class="small">Brasil</div>
+          <div class="small" style="margin-top:8px">
+            <a class="cta" id="waFooter" href="#" target="_blank" rel="noreferrer">Chamar agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      function onlyDigits(s){ return String(s||"").replace(/\D/g,""); }
+      function waUrl(phone, text){
+        const p = onlyDigits(phone);
+        return `https://wa.me/${p}?text=${encodeURIComponent(text||"")}`;
+      }
+      function qs(id){ return document.getElementById(id); }
+      function setHref(id, href){ const el=qs(id); if(el) el.href = href; }
+      function setTxt(id, txt){ const el=qs(id); if(el) el.textContent = txt; }
+
+      // Ano
+      const y = qs("y");
+      if(y) y.textContent = new Date().getFullYear();
+
+      // Config de contato
+      const CONTACT = {
+        whatsapp_e164: "+5511923734039",
+        email: "custommind.softwaresolutions@gmail.com",
+        msg_default: "Oi! Vim pelo checkout da Loja Inteligente. Preciso de ajuda / quero finalizar.",
+        msg_receipt: "Oi! Acabei de fazer o pagamento via Pix da configuração da Loja Inteligente. Segue comprovante. Meu segmento é: ",
+        msg_help: "Estou no checkout da Loja Inteligente e tenho uma dúvida antes de pagar. Meu segmento é: "
+      };
+
+      // Mostrar contato no footer
+      setTxt("mailPretty", CONTACT.email);
+
+      // WhatsApp links
+      setHref("waTop", waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default));
+      setHref("waStart", waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default));
+      setHref("waHelp", waUrl(CONTACT.whatsapp_e164, CONTACT.msg_help));
+      setHref("waFooter", waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default));
+
+      // Botão para enviar comprovante
+      const waReceipt = qs("waReceipt");
+      if(waReceipt){
+        waReceipt.addEventListener("click", () => {
+          window.open(waUrl(CONTACT.whatsapp_e164, CONTACT.msg_receipt), "_blank", "noopener");
+        });
+      }
+
+      // Copiar Pix
+      const pixKey = (qs("pixKey")?.textContent || "").trim();
+      const copyBtn = qs("copyPix");
+      const copyTxt = qs("copyPixText");
+
+      async function copyToClipboard(text){
+        try{
+          if(navigator.clipboard && window.isSecureContext){
+            await navigator.clipboard.writeText(text);
+            return true;
+          }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          ta.style.top = "0";
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          const ok = document.execCommand("copy");
+          ta.remove();
+          return ok;
+        }catch(e){
+          return false;
+        }
+      }
+
+      if(copyBtn){
+        copyBtn.addEventListener("click", async () => {
+          if(!pixKey) return;
+          copyBtn.setAttribute("aria-busy", "true");
+          const ok = await copyToClipboard(pixKey);
+          copyBtn.setAttribute("aria-busy", "false");
+          if(copyTxt){
+            copyTxt.textContent = ok ? "Copiado ✓" : "Falhou";
+            setTimeout(()=> copyTxt.textContent = "Copiar", 1400);
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

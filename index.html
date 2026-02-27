@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#07060b"/>
+
+  <title>Custom Mind | Software Solutions — Softwares, Automação e IA sob medida</title>
+  <meta name="description" content="A Custom Mind cria softwares, automações e IA sob medida para atendimento, vendas e operação. Produtos: Zuri (crescimento orgânico), Violet (atendimento e conversão) e Loja Inteligente (gestão modular)."/>
+
+  <link rel="canonical" href="https://custommind.solutions/"/>
+
+  <meta property="og:title" content="Custom Mind | Software Solutions — Softwares, Automação e IA sob medida"/>
+  <meta property="og:description" content="Sistemas, automações e IA para negócios reais. Conheça Zuri, Violet e Loja Inteligente."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/img/capa.png"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="Custom Mind | Software Solutions"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Custom Mind | Software Solutions"/>
+  <meta name="twitter:description" content="Sistemas, automações e IA sob medida. Produtos: Zuri, Violet e Loja Inteligente."/>
+  <meta name="twitter:image" content="assets/img/capa.png"/>
+
+  <link rel="icon" href="assets/img/logo.png"/>
+  <link rel="preload" as="image" href="assets/img/capa.png"/>
+
+  <style>
+    :root{
+      --bg: #07060b;
+      --bg2:#0c0a14;
+      --card:#0f0c1c;
+      --text:#e9e7ff;
+      --muted:#b9b6d9;
+      --line: rgba(255,255,255,.10);
+      --violet:#8b5cf6;
+      --violet2:#a78bfa;
+      --cyan:#22d3ee;
+      --shadow: 0 14px 50px rgba(0,0,0,.55);
+      --radius: 20px;
+      --radius2: 28px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(900px 500px at 45% 80%, rgba(167,139,250,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background: rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .skip:focus{left:10px; z-index:9999; outline:none}
+
+    .link{color:var(--text); border-bottom:1px solid rgba(255,255,255,.18)}
+    .link:hover{border-bottom-color: rgba(255,255,255,.35)}
+
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,6,11,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:70px;
+      gap:14px;
+      position:relative;
+    }
+
+    .brand{display:flex; align-items:center; gap:12px; min-width: 220px}
+    .brand img{width:34px; height:34px; border-radius:10px; object-fit:contain; background: rgba(255,255,255,.06); border:1px solid var(--line)}
+    .brand .t{display:flex; flex-direction:column; line-height:1.15}
+    .brand .t strong{font-size:14px; letter-spacing:.2px}
+    .brand .t span{font-size:12px; color:var(--muted)}
+
+    .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .nav-links a{font-size:13px; color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:2px; border-radius:10px}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      background: linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
+      color:#0b0713;
+      font-weight:750; font-size:13px;
+      box-shadow: 0 10px 30px rgba(139,92,246,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      white-space:nowrap;
+    }
+    .cta:hover{filter:brightness(1.05)}
+    .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:42px; padding:0 16px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650; font-size:13px;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
+    .btn.ghost{background: rgba(0,0,0,.12)}
+
+    /* Hamburger (mobile) */
+    .nav-right{display:flex; align-items:center; gap:10px}
+    .nav-toggle{
+      display:none;
+      height:40px;
+      width:44px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+    }
+    .nav-toggle:hover{background: rgba(255,255,255,.06)}
+    .nav-toggle:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
+
+    .nav-toggle svg{width:18px;height:18px}
+
+    /* Mobile panel */
+    .nav-panel{
+      display:none;
+      position:absolute;
+      left:0; right:0;
+      top:72px;
+      border:1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(10,8,16,.95);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding:12px;
+      overflow:hidden;
+    }
+    .nav-panel .nav-panel-links{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding:6px;
+    }
+    .nav-panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:650;
+      font-size:14px;
+    }
+    .nav-panel a span{color: var(--muted); font-weight:600; font-size:12px}
+    .nav-panel a:hover{border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    .nav-panel .nav-panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:8px 6px 6px;
+    }
+
+    .nav-open .nav-panel{display:block}
+
+    /* ===== HERO ===== */
+    .hero{padding:56px 0 22px; position:relative}
+    .hero-bg{
+      position:absolute; inset:-120px -120px -60px -120px;
+      background: url("assets/img/capa.png") center/cover no-repeat;
+      opacity:.09;
+      filter: blur(1px);
+      pointer-events:none;
+    }
+
+    .hero-grid{position:relative; display:grid; grid-template-columns: 1.15fr .85fr; gap:26px; align-items:stretch}
+
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .badge b{color:var(--text)}
+    .badge-ico{
+      display:inline-grid; place-items:center;
+      width:18px; height:18px; border-radius:6px;
+      background:rgba(139,92,246,.18);
+      border:1px solid var(--line);
+    }
+    .badge svg{width:14px; height:14px}
+
+    .h1{font-size:44px; line-height:1.05; margin:14px 0 14px; letter-spacing:-.7px}
+    .grad{
+      background:linear-gradient(90deg,var(--violet),var(--cyan));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .lead{font-size:16px; color:var(--muted); max-width: 66ch}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .micro{
+      margin-top:14px;
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+    .dot{opacity:.65}
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card{padding:18px}
+
+    .kpi{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px}
+    .kpi .k{padding:12px; border-radius: 16px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
+    .k strong{display:block; font-size:18px}
+    .k span{display:block; font-size:12px; color:var(--muted)}
+
+    .section{padding:28px 0}
+    .h2{font-size:22px; margin:0 0 10px}
+    .p{color:var(--muted); margin:0 0 16px}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+    .grid4{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px}
+
+    .feature{padding:16px}
+    .icon{
+      width:40px; height:40px; border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      margin-bottom:10px;
+    }
+    .icon svg{width:20px; height:20px}
+    .feature h3{margin:0 0 6px; font-size:15px}
+    .feature p{margin:0; color:var(--muted); font-size:13px}
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      width: fit-content;
+    }
+
+    /* Produtos */
+    .product{
+      padding:16px;
+      display:flex; flex-direction:column; gap:10px;
+      position:relative;
+      min-height: 360px;
+    }
+    .product h3{margin:0; font-size:16px}
+    .product p{margin:0; color:var(--muted); font-size:13px}
+    .product .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:auto}
+
+    .prod-top{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .prod-img{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+    }
+    .prod-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .prod-head h3{margin:6px 0 0;}
+
+    /* Conteúdo extra */
+    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
+    .section-head .p{max-width:80ch}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .pill svg{width:14px;height:14px; opacity:.9}
+
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+
+    .list{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+    .list li{
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .list li b{color:var(--text)}
+
+    .steps{counter-reset: step}
+    .steps li{position:relative; padding-left:48px}
+    .steps li::before{
+      counter-increment: step;
+      content: counter(step);
+      position:absolute;
+      left:12px; top:12px;
+      width:26px; height:26px;
+      border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(139,92,246,.18);
+      border:1px solid var(--line);
+      color: var(--text);
+      font-weight:800;
+      font-size:12px;
+    }
+
+    details.faq{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: rgba(0,0,0,.12);
+      padding:12px 14px;
+    }
+    details.faq + details.faq{margin-top:10px}
+    details.faq summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:700;
+      color:var(--text);
+      outline:none;
+    }
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq p{margin:10px 0 0; color:var(--muted); font-size:13px}
+
+    .notice{
+      padding:14px 14px;
+      border-radius: 18px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:12px;
+    }
+
+    /* ===== Footer (refeito) ===== */
+    .footer{
+      padding:30px 0 44px;
+      border-top:1px solid var(--line);
+      margin-top:20px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    .footer-card{padding:16px}
+    .footer-links{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .footer-links a{
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .footer-links a:hover{color:var(--text); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    .small{font-size:12px; color:var(--muted)}
+    hr.sep{border:0; border-top:1px solid var(--line); margin:14px 0}
+
+    /* Logo estilo */
+    .brand img.brand-logo{
+      width:34px;
+      height:34px;
+      border-radius:0;
+      background: transparent;
+      border:0;
+      object-fit:contain;
+      filter: drop-shadow(0 0 12px rgba(139,92,246,.55));
+    }
+
+    /* Micro com ícones */
+    .micro.micro-icons{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .micro-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+    .micro-link:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.18);
+    }
+    .micro-ico{
+      width:16px;
+      height:16px;
+      display:inline-grid;
+      place-items:center;
+      color: rgba(233,231,255,.9);
+    }
+    .micro-ico svg{width:16px;height:16px}
+
+    /* Acessibilidade */
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .cta, .btn{transition:none}
+    }
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .h1{font-size:38px}
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .grid4{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+      .hero-bg{inset:-80px -80px -40px -80px}
+
+      /* Desktop links somem no mobile */
+      .nav-links{display:none}
+      .nav-toggle{display:inline-flex}
+    }
+
+    @media (max-width: 520px){
+      .nav-inner{height:auto; padding:10px 0}
+      .cta{height:38px}
+      .footer-grid{grid-template-columns: 1fr}
+      .footer-links{grid-template-columns: 1fr}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Custom Mind | Software Solutions",
+    "url": "https://custommind.solutions/",
+    "logo": "https://custommind.solutions/assets/img/logo.png",
+    "image": "https://custommind.solutions/assets/img/capa.png",
+    "email": "custommind.softwaresolutions@gmail.com",
+    "sameAs": [
+      "https://instagram.com/custommind.solutions"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Passos",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#sobre">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-inner" id="navRoot">
+        <a class="brand" href="#sobre" aria-label="Custom Mind | Software Solutions">
+          <img class="brand-logo" src="assets/img/logo.png" alt="Logo da Custom Mind"/>
+          <div class="t">
+            <strong>Custom Mind</strong>
+            <span>Software Solutions</span>
+          </div>
+        </a>
+
+        <!-- Links desktop -->
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#sob-medida">Sob medida</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="cta" id="waTop"
+             href="https://wa.me/5511923734039?text=Oi!%20Vim%20pelo%20site%20da%20Custom%20Mind%20e%20quero%20falar%20sobre%20um%20projeto."
+             target="_blank" rel="noreferrer">
+            Falar no WhatsApp
+          </a>
+
+          <!-- Botão mobile -->
+          <button class="nav-toggle" id="navToggle"
+                  type="button"
+                  aria-label="Abrir menu"
+                  aria-controls="navPanel"
+                  aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Painel mobile -->
+        <div class="nav-panel" id="navPanel" role="dialog" aria-label="Menu">
+          <div class="nav-panel-links">
+            <a href="#sobre">Sobre <span>visão geral</span></a>
+            <a href="#produtos">Produtos <span>Zuri • Violet • Loja</span></a>
+            <a href="#como-funciona">Como funciona <span>etapas</span></a>
+            <a href="#sob-medida">Sob medida <span>cases específicos</span></a>
+            <a href="#faq">FAQ <span>dúvidas</span></a>
+            <a href="#contato">Contato <span>WhatsApp e e-mail</span></a>
+          </div>
+          <div class="nav-panel-cta">
+            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+            <a class="btn" href="mailto:custommind.softwaresolutions@gmail.com">Enviar e-mail</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="sobre" aria-label="Apresentação">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              <span class="badge-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 4c3.5 0 6 2.5 6 6 0 5-5 10-10 10-3.5 0-6-2.5-6-6 0-5 5-10 10-10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M9 15l-4 4 1-5 3 1zm6-6l4-4-1 5-3-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span><b>Softwares • Automação • IA</b> sob medida • foco em conversão e operação</span>
+            </div>
+
+            <h1 class="h1">
+              Transforme processos em
+              <span class="grad">resultado</span>
+              com tecnologia sob medida.
+            </h1>
+
+            <p class="lead">
+              A <b>Custom Mind</b> cria soluções para negócios que precisam de <b>agilidade</b>, <b>controle</b> e <b>crescimento</b>.
+              Fazemos do diagnóstico ao deploy: sites e landing pages, sistemas internos, integrações e automações.
+              E para acelerar seu funil, temos produtos prontos: <b>Zuri</b> (crescimento orgânico) e <b>Violet</b> (atendimento e vendas).
+            </p>
+
+            <div class="pillrow" aria-label="Principais áreas de atuação">
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Funil & conversão
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                Segurança & escala
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+                Sistemas modulares
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+                Automação com IA
+              </span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="cta" href="#produtos">Ver produtos</a>
+              <a class="btn" href="#como-funciona">Entender o processo</a>
+              <a class="btn ghost" href="#contato">Falar com a equipe</a>
+            </div>
+
+            <div class="micro micro-icons" aria-label="Canais de contato">
+              <a class="micro-link" id="igLink" href="https://instagram.com/custommind.solutions" target="_blank" rel="noopener">
+                <span class="micro-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Z" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span>@custommind.solutions</span>
+              </a>
+
+              <span class="dot">•</span>
+
+              <a class="micro-link" id="mailInline" href="mailto:custommind.softwaresolutions@gmail.com">
+                <span class="micro-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6.5h16c.6 0 1 .4 1 1v9c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1v-9c0-.6.4-1 1-1Z" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M4 8l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span id="mail2">custommind.softwaresolutions@gmail.com</span>
+              </a>
+            </div>
+
+            <div class="section" style="padding-top:18px">
+              <div class="grid3">
+                <div class="card feature">
+                  <div class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2L3 14h8l-1 8 11-14h-8l0-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3>Entrega rápida</h3>
+                  <p>Prototipamos rápido, validamos cedo e evoluímos em ciclos curtos.</p>
+                </div>
+
+                <div class="card feature">
+                  <div class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3>Qualidade & segurança</h3>
+                  <p>Boas práticas, versionamento e base preparada para escalar.</p>
+                </div>
+
+                <div class="card feature">
+                  <div class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                  </div>
+                  <h3>Modular & escalável</h3>
+                  <p>Arquitetura que facilita módulos, integrações e novas unidades.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="card hero-card" aria-label="Resumo do que entregamos">
+            <div class="small" style="color:var(--muted)">Resumo</div>
+            <h2 class="h2" style="margin-top:6px">O que entregamos</h2>
+
+            <ul class="list">
+              <li><b>Sites e landing pages</b> com foco em conversão e performance.</li>
+              <li><b>Automações</b> para captação, follow-up e rotinas internas.</li>
+              <li><b>IA aplicada</b> em atendimento, vendas e operação.</li>
+              <li><b>Sistemas internos</b> (CRM/ERP/estoque/financeiro/agendamento) sob medida.</li>
+            </ul>
+
+            <div class="kpi" aria-label="Diferenciais">
+              <div class="k"><strong>Clareza</strong><span>escopo + roadmap objetivo</span></div>
+              <div class="k"><strong>Performance</strong><span>experiência leve no mobile</span></div>
+              <div class="k"><strong>Escala</strong><span>cresce por módulos</span></div>
+              <div class="k"><strong>Suporte</strong><span>melhorias contínuas</span></div>
+            </div>
+
+            <div class="notice" style="margin-top:12px">
+              <b>Quer agilizar?</b> Mande 3 itens no WhatsApp:
+              (1) o que você vende, (2) onde você trava hoje, (3) como é seu processo atual.
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="cta" href="#contato">Pedir orçamento</a>
+              <a class="btn" href="#faq">Tirar dúvidas</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="produtos" aria-label="Produtos da Custom Mind">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Produtos</h2>
+            <p class="p">
+              Três frentes principais — cada uma resolve um problema específico de crescimento e operação.
+              Se você precisa de algo mais particular, a parte de <a class="link" href="#sob-medida">software sob medida</a> resolve.
+            </p>
+          </div>
+          <a class="btn" href="#como-funciona">Como a gente implementa</a>
+        </div>
+
+        <div class="grid3" style="margin-top:14px">
+          <article class="card product">
+            <div class="prod-top">
+              <div class="prod-img">
+                <img src="assets/img/zuri.png" alt="Zuri — IA para crescimento orgânico no Instagram" loading="lazy" />
+              </div>
+              <div class="prod-head">
+                <div class="tag">Zuri • Crescimento</div>
+                <h3>Zuri</h3>
+              </div>
+            </div>
+
+            <p>
+              IA para <b>tráfego orgânico inteligente</b> no Instagram. Encontra o público ideal, interage de forma estratégica
+              e faz o perfil aparecer para as pessoas certas — gerando visitas, seguidores reais e mensagens no direct.
+            </p>
+
+            <ul class="list" style="margin-top:10px">
+              <li><b>Descoberta de público:</b> mira perfis e interesses relevantes.</li>
+              <li><b>Ação estratégica:</b> interações com cadência e variação.</li>
+              <li><b>Resultado prático:</b> mais visitas, seguidores e DMs.</li>
+            </ul>
+
+            <div class="actions">
+              <a class="cta" href="products/zuri.html">Ver detalhes</a>
+              <a class="btn" id="waZuri" href="#" target="_blank" rel="noreferrer">Quero ver na minha conta</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="prod-top">
+              <div class="prod-img">
+                <img src="assets/img/violet.png" alt="Violet — IA para atendimento e vendas" loading="lazy" />
+              </div>
+              <div class="prod-head">
+                <div class="tag">Violet • Atendimento & Vendas</div>
+                <h3>Violet</h3>
+              </div>
+            </div>
+
+            <p>
+              IA de atendimento e vendas: conversa de forma natural, <b>qualifica</b>, organiza o funil e conduz para o momento certo.
+              Ideal para WhatsApp e Instagram, com foco em <b>resposta rápida</b> e <b>conversão</b>.
+            </p>
+
+            <ul class="list" style="margin-top:10px">
+              <li><b>Qualificação:</b> entende intenção e prioriza leads.</li>
+              <li><b>Roteiro de vendas:</b> guia por etapas sem soar robótico.</li>
+              <li><b>Organização:</b> tags, etapas e contexto do cliente.</li>
+            </ul>
+
+            <div class="actions">
+              <a class="cta" href="products/violet.html">Ver detalhes</a>
+              <a class="btn" id="waViolet" href="#" target="_blank" rel="noreferrer">Quero uma Violet</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="prod-top">
+              <div class="prod-img">
+                <img src="assets/img/loja.png" alt="Loja Inteligente — sistema modular de gestão" loading="lazy" />
+              </div>
+              <div class="prod-head">
+                <div class="tag">Loja Inteligente • Gestão</div>
+                <h3>Loja Inteligente</h3>
+              </div>
+            </div>
+
+            <p>
+              Sistema modular para gestão e vendas — adaptável para o seu fluxo (lojas, serviços, restaurantes).
+              Módulos sob demanda (comandas, agendamento, etiquetas, crediário e mais).
+            </p>
+
+            <ul class="list" style="margin-top:10px">
+              <li><b>Modular:</b> você ativa o que precisa, quando precisa.</li>
+              <li><b>Operação:</b> reduz retrabalho e centraliza informação.</li>
+              <li><b>Evolução:</b> pronto para integrações e novas unidades.</li>
+            </ul>
+
+            <div class="actions">
+              <a class="cta" href="products/loja-inteligente.html">Ver detalhes</a>
+              <a class="btn" href="configurator/index.html">Personalizar</a>
+              <a class="btn" id="waLoja" href="#" target="_blank" rel="noreferrer">Quero proposta</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona" aria-label="Como a Custom Mind trabalha">
+      <div class="container">
+        <h2 class="h2">Como funciona</h2>
+        <p class="p">
+          O objetivo aqui é simples: entregar algo que <b>funciona no dia a dia</b> e melhora resultado.
+          A gente evita “software gigante” e faz por etapas — com validação e métricas.
+        </p>
+
+        <div class="split">
+          <div class="card" style="padding:16px">
+            <h3 style="margin:0 0 10px">Etapas do projeto</h3>
+            <ul class="list steps">
+              <li><b>Diagnóstico rápido</b>: entendemos processo e gargalos.</li>
+              <li><b>Proposta objetiva</b>: escopo, fases, prazos e prioridades.</li>
+              <li><b>Protótipo</b>: telas/fluxo para validar antes de codar pesado.</li>
+              <li><b>Implementação</b>: build por módulos com checkpoints.</li>
+              <li><b>Go-live</b>: deploy, ajustes finos e acompanhamento.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <h3 style="margin:0 0 10px">O que você ganha</h3>
+            <ul class="list">
+              <li><b>Menos retrabalho</b>: processos claros e automatizados.</li>
+              <li><b>Mais conversão</b>: resposta rápida, funil e follow-up.</li>
+              <li><b>Visão do negócio</b>: relatórios e indicadores acionáveis.</li>
+              <li><b>Base escalável</b>: cresce com módulos e integrações.</li>
+              <li><b>Treinamento simples</b>: foco em usabilidade para o time.</li>
+            </ul>
+
+            <div class="notice" style="margin-top:12px">
+              <b>Dica prática:</b> se o seu processo depende de “pessoas lembrando de fazer”, é um bom candidato a automação.
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="cta" href="#contato">Quero implementar</a>
+              <a class="btn" href="#sob-medida">Tenho um caso específico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sob-medida" aria-label="Software sob medida">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Software sob medida</h2>
+            <p class="p">
+              Nem todo problema se resolve com ferramenta genérica. Se você tem um fluxo específico, integrações ou operação única,
+              a gente desenha a solução e entrega do jeito certo — simples de usar e pronta para crescer.
+            </p>
+          </div>
+          <a class="btn" href="#contato">Falar agora</a>
+        </div>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20V4h16v16H4z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 8h10M7 12h10M7 16h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>CRM / Funil / Atendimento</h3>
+            <p>Captação, qualificação, etapas, follow-up, histórico e automações por evento.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7h16v14H4V7z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 4h10v3H7V4z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 11h10M7 15h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Operação & Gestão</h3>
+            <p>Estoque, pedidos, financeiro, agendamento, comanda e relatórios por unidade.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7 8l-3 4 3 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 8l3 4-3 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Integrações</h3>
+            <p>APIs, pagamentos, planilhas, ERPs e automações entre ferramentas.</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px; margin-top:14px">
+          <h3 style="margin:0 0 10px">Exemplos do que a gente automatiza</h3>
+          <ul class="list">
+            <li><b>Captação:</b> formulário → CRM → WhatsApp → tarefa de follow-up.</li>
+            <li><b>Vendas:</b> lead qualificado → proposta → pagamento → onboarding.</li>
+            <li><b>Operação:</b> solicitação → fila → status → relatório diário.</li>
+            <li><b>Gestão:</b> indicadores e alertas (ex.: queda de conversão).</li>
+          </ul>
+
+          <div class="hero-actions" style="margin-top:12px">
+            <a class="cta" id="waSobMedida" href="#" target="_blank" rel="noreferrer">Falar do meu caso</a>
+            <a class="btn" id="mailLink" href="mailto:custommind.softwaresolutions@gmail.com">Enviar briefing por e-mail</a>
+          </div>
+
+          <div class="notice" style="margin-top:12px">
+            <b>Risco comum:</b> pedir “tudo de uma vez”. Melhor caminho: começar pelo gargalo que mais dói e expandir por módulo.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <h2 class="h2">Perguntas frequentes</h2>
+        <p class="p">Respostas rápidas para dúvidas comuns antes de você chamar.</p>
+
+        <details class="faq">
+          <summary>Vocês fazem site/landing page com foco em SEO e conversão?</summary>
+          <p>Sim. A base é performance, hierarquia clara, conteúdo útil e marcações corretas (títulos, descrições, dados estruturados). Também organizamos CTAs e provas (processo, diferenciais, FAQ) para aumentar conversão.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Como vocês definem o escopo de um software sob medida?</summary>
+          <p>Começamos pelo processo real (como o time trabalha hoje), definimos o gargalo principal e estruturamos por fases. Assim você já colhe resultado sem travar o projeto em um escopo gigante.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Integra com WhatsApp/Instagram/pagamentos?</summary>
+          <p>Sim — via integrações e automações (quando aplicável). Em projetos sob medida, mapeamos o melhor caminho e desenhamos o fluxo para manter estabilidade.</p>
+        </details>
+
+        <details class="faq">
+          <summary>O que preciso te mandar para um orçamento rápido?</summary>
+          <p>O ideal: (1) o que você vende, (2) onde perde tempo hoje, (3) como chega lead, (4) como fecha, (5) onde quer chegar. Com isso já dá para sugerir o caminho e a fase 1.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="contato" aria-label="Contato">
+      <div class="container">
+        <h2 class="h2">Contato</h2>
+        <p class="p">Quer orçamento ou demonstração? Chama no WhatsApp ou manda um e-mail.</p>
+
+        <div class="grid2">
+          <div class="card" style="padding:16px">
+            <h3 style="margin:0 0 10px">Chamar no WhatsApp</h3>
+            <p class="p" style="margin-bottom:10px">Clique para abrir uma conversa com mensagem pronta.</p>
+            <a class="cta" id="waLink" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+            <div class="small" style="margin-top:10px">Telefone: <span id="wa2">+55 11 92373-4039</span></div>
+            <div class="small">Horário: seg–sex, 09:00–18:00</div>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <h3 style="margin:0 0 10px">E-mail</h3>
+            <p class="p" style="margin-bottom:10px">Para propostas, parcerias e solicitações.</p>
+            <a class="btn" href="mailto:custommind.softwaresolutions@gmail.com">Enviar e-mail</a>
+            <div class="small" style="margin-top:10px">E-mail: <span id="mail">custommind.softwaresolutions@gmail.com</span></div>
+            <div class="small">Instagram: <a class="link" href="https://instagram.com/custommind.solutions" target="_blank" rel="noopener">@custommind.solutions</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="card footer-card">
+          <div class="brand">
+            <img class="brand-logo" src="assets/img/logo.png" alt="Logo da Custom Mind"/>
+            <div class="t">
+              <strong>Custom Mind</strong>
+              <span>Software Solutions</span>
+            </div>
+          </div>
+
+          <p class="small" style="margin:10px 0 0">
+            Sistemas, automações e IA sob medida — com foco em resultado, velocidade e clareza.
+          </p>
+
+          <div class="footer-links" aria-label="Links rápidos">
+            <a href="#produtos">Produtos</a>
+            <a href="#sob-medida">Sob medida</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#contato">Contato</a>
+          </div>
+
+          <hr class="sep"/>
+          <p class="small" style="margin:0">© <span id="y"></span> Custom Mind. Todos os direitos reservados.</p>
+        </div>
+
+        <div class="card footer-card">
+          <div class="small"><b>Atendimento</b></div>
+          <div class="small" style="margin-top:10px">WhatsApp: <span id="wa">+55 11 92373-4039</span></div>
+          <div class="small">E-mail: <span id="mail2b">custommind.softwaresolutions@gmail.com</span></div>
+          <div class="small">Instagram: @custommind.solutions</div>
+          <hr class="sep"/>
+          <div class="small">Brasil</div>
+          <div class="small" style="margin-top:8px">
+            <a class="cta" id="waFooter" href="#" target="_blank" rel="noreferrer">Chamar agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for in-page anchors
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href^='#']");
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    (function () {
+      function qs(id) { return document.getElementById(id); }
+      function setText(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.textContent = value)); }
+      function setHref(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.href = value)); }
+      function onlyDigits(s) { return String(s || "").replace(/\D/g, ""); }
+
+      function formatBRFromE164(e164) {
+        const d = onlyDigits(e164);
+        if (d.length < 12) return e164;
+        const cc = d.slice(0, 2);
+        const ddd = d.slice(2, 4);
+        const num = d.slice(4);
+        if (num.length === 9) return `+${cc} (${ddd}) ${num.slice(0, 5)}-${num.slice(5)}`;
+        if (num.length === 8) return `+${cc} (${ddd}) ${num.slice(0, 4)}-${num.slice(4)}`;
+        return `+${cc} (${ddd}) ${num}`;
+      }
+
+      function waUrl(phoneE164OrDigits, text) {
+        const phone = onlyDigits(phoneE164OrDigits);
+        return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
+      }
+
+      // ===== Config =====
+      const CONTACT = {
+        whatsapp_e164: "+5511923734039",
+        email: "custommind.softwaresolutions@gmail.com",
+        instagram: "custommind.solutions",
+        msg_default: "Oi! Vim pelo site da Custom Mind e queria falar sobre um projeto/solução.",
+        msg_zuri: "Quero entender a Zuri e ver na minha conta.",
+        msg_violet: "Quero uma Violet atendendo os clientes da minha empresa.",
+        msg_loja: "Quero conhecer a Loja Inteligente e entender um projeto sob medida.",
+        msg_sob_medida: "Tenho um problema específico e quero um software sob medida com a Custom Mind."
+      };
+
+      // Ano
+      const yearEl = qs("y");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Textos
+      const waPretty = formatBRFromE164(CONTACT.whatsapp_e164);
+      setText(["wa", "wa2"], waPretty);
+      setText(["mail", "mail2", "mail2b"], CONTACT.email);
+
+      // WhatsApp links
+      const waDefault = waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default);
+      setHref(["waLink", "waTop", "waTopMobile", "waFooter"], waDefault);
+      setHref(["waZuri"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_zuri));
+      setHref(["waViolet"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_violet));
+      setHref(["waLoja"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_loja));
+      setHref(["waSobMedida"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_sob_medida));
+
+      // Link Email com subject/body
+      const mailLink = qs("mailLink");
+      if (mailLink) {
+        const subject = "Contato — Custom Mind";
+        const body = "Oi! Vim pelo site e queria falar sobre...";
+        mailLink.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+
+      // IG link
+      const igLink = qs("igLink");
+      if (igLink) igLink.href = `https://instagram.com/${CONTACT.instagram}`;
+
+      const mailInline = qs("mailInline");
+      if (mailInline) mailInline.href = `mailto:${CONTACT.email}`;
+
+      // ===== Menu Mobile =====
+      const navRoot = qs("navRoot");
+      const toggle = qs("navToggle");
+      const panel = qs("navPanel");
+
+      if (navRoot && toggle && panel) {
+        function openMenu() {
+          navRoot.classList.add("nav-open");
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Fechar menu");
+        }
+
+        function closeMenu() {
+          navRoot.classList.remove("nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Abrir menu");
+        }
+
+        function isOpen() {
+          return navRoot.classList.contains("nav-open");
+        }
+
+        toggle.addEventListener("click", () => {
+          if (isOpen()) closeMenu();
+          else openMenu();
+        });
+
+        // Fecha ao clicar em um link do painel
+        panel.addEventListener("click", (e) => {
+          const a = e.target.closest("a");
+          if (!a) return;
+          // deixa smooth scroll acontecer, mas fecha o menu
+          closeMenu();
+        });
+
+        // Fecha clicando fora
+        document.addEventListener("click", (e) => {
+          if (!isOpen()) return;
+          const inside = e.target.closest("#navRoot");
+          if (!inside) closeMenu();
+        });
+
+        // Fecha no ESC
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && isOpen()) closeMenu();
+        });
+
+        // Se mudar pra desktop, fecha o menu (evita painel preso aberto)
+        const mq = window.matchMedia("(max-width: 980px)");
+        function handleMq() {
+          if (!mq.matches) closeMenu();
+        }
+        if (mq.addEventListener) mq.addEventListener("change", handleMq);
+        else mq.addListener(handleMq);
+      }
+    })();
+  </script>
+</body>
+</html>

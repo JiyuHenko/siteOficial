@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#07060b"/>
+
+  <title>Loja Inteligente — Sistema modular para gestão e vendas | Custom Mind</title>
+  <meta name="description" content="Loja Inteligente é a plataforma modular da Custom Mind para gestão, vendas e operação: produtos, pedidos, estoque, financeiro, catálogo/site integrado e módulos sob demanda."/>
+  <link rel="canonical" href="https://custommind.solutions/products/loja-inteligente.html"/>
+
+  <meta property="og:title" content="Loja Inteligente — Gestão, vendas e operação | Custom Mind"/>
+  <meta property="og:description" content="Sistema modular para produtos, pedidos, estoque e financeiro — com catálogo/site integrado e módulos sob demanda."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="../assets/img/capa.png"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="Custom Mind | Software Solutions"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Loja Inteligente — Sistema modular | Custom Mind"/>
+  <meta name="twitter:description" content="Gestão e vendas com módulos sob demanda: pedidos, estoque, financeiro e catálogo integrado."/>
+  <meta name="twitter:image" content="../assets/img/capa.png"/>
+
+  <link rel="icon" href="../assets/img/logo.png"/>
+  <link rel="preload" as="image" href="../assets/img/loja.png"/>
+  <link rel="preload" as="image" href="../assets/img/capa.png"/>
+
+  <style>
+    :root{
+      --bg: #07060b;
+      --bg2:#0c0a14;
+      --card:#0f0c1c;
+      --text:#e9e7ff;
+      --muted:#b9b6d9;
+      --line: rgba(255,255,255,.10);
+      --violet:#8b5cf6;
+      --violet2:#a78bfa;
+      --cyan:#22d3ee;
+      --shadow: 0 14px 50px rgba(0,0,0,.55);
+      --radius: 20px;
+      --radius2: 28px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(900px 500px at 45% 80%, rgba(167,139,250,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background: rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .skip:focus{left:10px; z-index:9999; outline:none}
+
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,6,11,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:70px;
+      gap:14px;
+      position:relative;
+    }
+
+    .brand{display:flex; align-items:center; gap:12px; min-width: 220px}
+    .brand img{width:34px; height:34px; border-radius:10px; object-fit:contain; background: rgba(255,255,255,.06); border:1px solid var(--line)}
+    .brand .t{display:flex; flex-direction:column; line-height:1.15}
+    .brand .t strong{font-size:14px; letter-spacing:.2px}
+    .brand .t span{font-size:12px; color:var(--muted)}
+
+    .brand img.brand-logo{
+      width:34px;
+      height:34px;
+      border-radius:0;
+      background: transparent;
+      border:0;
+      object-fit:contain;
+      filter: drop-shadow(0 0 12px rgba(139,92,246,.55));
+    }
+
+    .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .nav-links a{font-size:13px; color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:2px; border-radius:10px}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:40px; padding:0 14px; border-radius:12px;
+      background: linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
+      color:#0b0713;
+      font-weight:750; font-size:13px;
+      box-shadow: 0 10px 30px rgba(139,92,246,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      white-space:nowrap;
+    }
+    .cta:hover{filter:brightness(1.05)}
+    .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:42px; padding:0 16px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650; font-size:13px;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
+    .btn.ghost{background: rgba(0,0,0,.12)}
+
+    .nav-right{display:flex; align-items:center; gap:10px}
+    .nav-toggle{
+      display:none;
+      height:40px;
+      width:44px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+    }
+    .nav-toggle:hover{background: rgba(255,255,255,.06)}
+    .nav-toggle:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
+    .nav-toggle svg{width:18px;height:18px}
+
+    .nav-panel{
+      display:none;
+      position:absolute;
+      left:0; right:0;
+      top:72px;
+      border:1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(10,8,16,.85);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding:12px;
+      overflow:hidden;
+    }
+    .nav-panel .nav-panel-links{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding:6px;
+    }
+    .nav-panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:650;
+      font-size:14px;
+    }
+    .nav-panel a span{color: var(--muted); font-weight:600; font-size:12px}
+    .nav-panel a:hover{border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    .nav-panel .nav-panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:8px 6px 6px;
+    }
+    .nav-open .nav-panel{display:block}
+
+    /* ===== HERO ===== */
+    .hero{padding:56px 0 22px; position:relative}
+    .hero-bg{
+      position:absolute; inset:-120px -120px -60px -120px;
+      background: url("../assets/img/capa.png") center/cover no-repeat;
+      opacity:.09;
+      filter: blur(1px);
+      pointer-events:none;
+    }
+    .hero-grid{position:relative; display:grid; grid-template-columns: 1.1fr .9fr; gap:26px; align-items:stretch}
+
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .badge b{color:var(--text)}
+    .badge-ico{
+      display:inline-grid; place-items:center;
+      width:18px; height:18px; border-radius:6px;
+      background:rgba(139,92,246,.18);
+      border:1px solid var(--line);
+    }
+    .badge svg{width:14px; height:14px}
+
+    .h1{font-size:44px; line-height:1.05; margin:14px 0 12px; letter-spacing:-.7px}
+    .grad{
+      background:linear-gradient(90deg,var(--violet),var(--cyan));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .lead{font-size:16px; color:var(--muted); max-width: 78ch}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:18px}
+    .small{font-size:12px; color:var(--muted)}
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      width: fit-content;
+    }
+
+    .prod-top{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .prod-img{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+    }
+    .prod-img img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .kpi{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px}
+    .kpi .k{padding:12px; border-radius: 16px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
+    .k strong{display:block; font-size:18px}
+    .k span{display:block; font-size:12px; color:var(--muted)}
+
+    .note{
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:12px;
+      margin-top:12px;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section{padding:28px 0}
+    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
+    .h2{font-size:22px; margin:0 0 10px}
+    .p{color:var(--muted); margin:0 0 16px}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+
+    .feature{padding:16px}
+    .icon{
+      width:40px; height:40px; border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      margin-bottom:10px;
+    }
+    .icon svg{width:20px; height:20px}
+    .feature h3{margin:0 0 6px; font-size:15px}
+    .feature p{margin:0; color:var(--muted); font-size:13px}
+
+    .list{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+    .list li{
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .list li b{color:var(--text)}
+
+    /* ===== MODULES GRID ===== */
+    .modules{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .module{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 250px;
+    }
+    .module h3{margin:0; font-size:16px}
+    .module p{margin:0; color:var(--muted); font-size:13px}
+    .module .actions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
+
+    /* ===== STACK / HOW ===== */
+    .timeline{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    .titem{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.12);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .titem .n{
+      width:34px;height:34px;border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(139,92,246,.18);
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:900;
+      flex: 0 0 auto;
+      margin-top:2px;
+    }
+    .titem .tt{font-weight:800}
+    .titem .td{color:var(--muted); font-size:13px; margin-top:6px}
+
+    /* ===== FAQ ===== */
+    details.faq{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: rgba(0,0,0,.12);
+      padding:12px 14px;
+    }
+    details.faq + details.faq{margin-top:10px}
+    details.faq summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:750;
+      color:var(--text);
+      outline:none;
+    }
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq p{margin:10px 0 0; color:var(--muted); font-size:13px}
+
+    /* ===== Footer ===== */
+    .footer{
+      padding:30px 0 44px;
+      border-top:1px solid var(--line);
+      margin-top:20px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    .footer-card{padding:16px}
+    .footer-links{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .footer-links a{
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .footer-links a:hover{color:var(--text); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    hr.sep{border:0; border-top:1px solid var(--line); margin:14px 0}
+
+    /* Acessibilidade */
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .cta, .btn{transition:none}
+    }
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .h1{font-size:38px}
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .modules{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+      .hero-bg{inset:-80px -80px -40px -80px}
+
+      .nav-links{display:none}
+      .nav-toggle{display:inline-flex}
+      .footer-grid{grid-template-columns: 1fr}
+      .footer-links{grid-template-columns: 1fr}
+    }
+    @media (max-width: 520px){
+      .nav-inner{height:auto; padding:10px 0}
+      .cta{height:38px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Loja Inteligente",
+    "brand":{"@type":"Organization","name":"Custom Mind | Software Solutions"},
+    "description":"Plataforma modular para gestão e vendas: produtos, pedidos, estoque, financeiro e catálogo/site integrado, com módulos sob demanda.",
+    "image":"https://custommind.solutions/assets/img/loja.png",
+    "url":"https://custommind.solutions/products/loja-inteligente.html"
+  }
+  </script>
+</head>
+
+<body class="product-page">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav-inner" id="navRoot">
+        <a class="brand" href="../index.html#sobre" aria-label="Voltar para o site da Custom Mind">
+          <img class="brand-logo" src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+          <div class="t">
+            <strong>Custom Mind</strong>
+            <span>Software Solutions</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="../index.html#sobre">Sobre</a>
+          <a href="../index.html#produtos">Produtos</a>
+          <a href="#modulos">Módulos</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#para-quem">Para quem</a>
+          <a href="#faq">FAQ</a>
+          <a href="../index.html#contato">Contato</a>
+        </nav>
+
+        <div class="nav-right">
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+
+          <button class="nav-toggle" id="navToggle"
+                  type="button"
+                  aria-label="Abrir menu"
+                  aria-controls="navPanel"
+                  aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="nav-panel" id="navPanel" role="dialog" aria-label="Menu">
+          <div class="nav-panel-links">
+            <a href="../index.html#produtos">Produtos <span>voltar</span></a>
+            <a href="#modulos">Módulos <span>base</span></a>
+            <a href="#como-funciona">Como funciona <span>etapas</span></a>
+            <a href="#para-quem">Para quem <span>ideal</span></a>
+            <a href="#faq">FAQ <span>dúvidas</span></a>
+          </div>
+          <div class="nav-panel-cta">
+            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+            <a class="btn" href="../configurator/index.html">Personalizar</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-label="Apresentação da Loja Inteligente">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              <span class="badge-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 4c3.5 0 6 2.5 6 6 0 5-5 10-10 10-3.5 0-6-2.5-6-6 0-5 5-10 10-10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M9 15l-4 4 1-5 3 1zm6-6l4-4-1 5-3-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span><b>Loja Inteligente</b> • Gestão & Vendas • Custom Mind</span>
+            </div>
+
+            <h1 class="h1">
+              Organize <span class="grad">vendas</span>, estoque e financeiro
+              sem virar refém de planilhas.
+            </h1>
+
+            <p class="lead">
+              A Loja Inteligente é um sistema modular para controlar operação e vender com clareza.
+              Comece com o essencial (produtos, pedidos, estoque, caixa) e ative módulos conforme sua operação cresce:
+              <b>comandas</b>, <b>agendamento</b>, <b>ordem de serviço</b>, <b>delivery</b>, <b>integrações</b> e <b>dashboards</b>.
+            </p>
+
+            <div class="hero-actions">
+              <a class="cta" href="../configurator/index.html">Personalizar / testar</a>
+              <a class="btn" id="waLoja" href="#" target="_blank" rel="noreferrer">Quero proposta</a>
+              <a class="btn ghost" href="#modulos">Ver módulos</a>
+            </div>
+
+            <p class="small" style="margin-top:10px">
+              Feito para negócios locais, serviços e operações com “jeito próprio”. Se seu fluxo é diferente, a gente adapta.
+            </p>
+          </div>
+
+          <aside class="card hero-card" aria-label="Resumo">
+            <div class="prod-top">
+              <div class="prod-img">
+                <img src="../assets/img/loja.png" alt="Loja Inteligente" loading="lazy"/>
+              </div>
+              <div>
+                <div class="tag">Loja Inteligente • Gestão</div>
+                <h2 class="h2" style="margin:6px 0 0">Resumo rápido</h2>
+              </div>
+            </div>
+
+            <div class="kpi" aria-label="Indicadores">
+              <div class="k"><strong>Pedidos</strong><span>status e histórico</span></div>
+              <div class="k"><strong>Estoque</strong><span>alertas e controle</span></div>
+              <div class="k"><strong>Caixa</strong><span>visão de recebimentos</span></div>
+              <div class="k"><strong>Escala</strong><span>módulos sob demanda</span></div>
+            </div>
+
+            <div class="note">
+              Para montar uma proposta rápida, mande:
+              <b>(1)</b> tipo de negócio,
+              <b>(2)</b> como vende hoje,
+              <b>(3)</b> principal dor (estoque/pedidos/caixa),
+              <b>(4)</b> se tem site/delivery.
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="cta" id="waAside" href="#" target="_blank" rel="noreferrer">Falar com a equipe</a>
+              <a class="btn" href="../index.html#produtos">Voltar aos produtos</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modulos" aria-label="Módulos principais">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Módulos principais</h2>
+            <p class="p">
+              Você começa simples e evolui. Cada módulo resolve uma dor do dia a dia — sem forçar ferramenta genérica.
+            </p>
+          </div>
+          <a class="btn" href="#como-funciona">Ver implantação</a>
+        </div>
+
+        <div class="modules" style="margin-top:14px">
+          <article class="card module">
+            <div class="tag">Base</div>
+            <h3>Produtos & Catálogo</h3>
+            <p>Cadastro de produtos/serviços, categorias, preços, variações e organização para operação e venda.</p>
+            <ul class="list">
+              <li><b>Preço/variação</b> por tamanho, cor, pacote etc.</li>
+              <li><b>Imagem e descrição</b> para catálogo.</li>
+              <li><b>Margem</b> e custo (se fizer sentido no seu caso).</li>
+            </ul>
+          </article>
+
+          <article class="card module">
+            <div class="tag">Base</div>
+            <h3>Vendas & Pedidos</h3>
+            <p>Registro de pedidos, status, histórico do cliente e fluxo de atendimento — online e presencial.</p>
+            <ul class="list">
+              <li><b>Status</b>: novo → em produção → pronto → entregue.</li>
+              <li><b>Cliente</b>: histórico e recorrência.</li>
+              <li><b>Relatórios</b>: o que vende mais e quando.</li>
+            </ul>
+          </article>
+
+          <article class="card module">
+            <div class="tag">Base</div>
+            <h3>Estoque & Insumos</h3>
+            <p>Entrada/saída, alertas, inventário e (se precisar) insumos para restaurantes, produção ou oficina.</p>
+            <ul class="list">
+              <li><b>Alertas</b> de mínimo.</li>
+              <li><b>Movimentação</b> por pedido/venda.</li>
+              <li><b>Insumos</b> por ficha técnica (opcional).</li>
+            </ul>
+          </article>
+
+          <article class="card module">
+            <div class="tag">Base</div>
+            <h3>Financeiro</h3>
+            <p>Recebimentos, formas de pagamento, visão de caixa e relatórios simples e úteis.</p>
+            <ul class="list">
+              <li><b>Pix/cartão/dinheiro</b> e taxas.</li>
+              <li><b>Contas</b> a receber (opcional).</li>
+              <li><b>Resumo</b> diário/semanal/mensal.</li>
+            </ul>
+          </article>
+
+          <article class="card module">
+            <div class="tag">Opcional</div>
+            <h3>Site / Catálogo integrado</h3>
+            <p>Pedidos do site caem direto no sistema, viram pedido interno e seguem o status — menos trabalho manual.</p>
+            <ul class="list">
+              <li><b>Catálogo</b> para WhatsApp/Instagram.</li>
+              <li><b>Checkout</b> (quando fizer sentido).</li>
+              <li><b>Status</b> para o cliente acompanhar.</li>
+            </ul>
+          </article>
+
+          <article class="card module">
+            <div class="tag">Sob demanda</div>
+            <h3>Módulos sob medida</h3>
+            <p>Comandas, agendamento, OS/serviços, delivery, integrações, automações e dashboards — do seu jeito.</p>
+            <ul class="list">
+              <li><b>Comandas</b> e mesas (restaurantes).</li>
+              <li><b>Agendamento</b> e calendário (serviços).</li>
+              <li><b>OS</b> e etapas (oficinas/assistência).</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="hero-actions" style="margin-top:14px">
+          <a class="cta" href="../configurator/index.html">Personalizar / testar</a>
+          <a class="btn" id="waModules" href="#" target="_blank" rel="noreferrer">Quero montar meu pacote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona" aria-label="Como funciona">
+      <div class="container">
+        <h2 class="h2">Como funciona (sem complicação)</h2>
+        <p class="p">
+          Um caminho simples: entender seu fluxo, montar o essencial, entregar com segurança e evoluir com base em dados.
+        </p>
+
+        <div class="card" style="padding:16px">
+          <div class="timeline">
+            <div class="titem">
+              <div class="n">1</div>
+              <div>
+                <div class="tt">Diagnóstico rápido</div>
+                <div class="td">Mapeamos seu processo (vendas, pedidos, estoque, caixa) e definimos o essencial no início.</div>
+              </div>
+            </div>
+            <div class="titem">
+              <div class="n">2</div>
+              <div>
+                <div class="tt">Montagem modular</div>
+                <div class="td">Ativamos módulos base e deixamos pronto para incluir novas peças conforme a operação cresce.</div>
+              </div>
+            </div>
+            <div class="titem">
+              <div class="n">3</div>
+              <div>
+                <div class="tt">Entrega & evolução</div>
+                <div class="td">Você usa no dia a dia e evoluímos com feedback (integrações, relatórios, automações e telas específicas).</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="note" style="margin-top:12px">
+            Objetivo: você ter <b>clareza</b> (o que está acontecendo), <b>controle</b> (estoque e caixa) e <b>ritmo</b> (processo fluindo).
+          </div>
+
+          <div class="hero-actions" style="margin-top:12px">
+            <a class="cta" id="waHow" href="#" target="_blank" rel="noreferrer">Falar do meu fluxo</a>
+            <a class="btn" href="#para-quem">Ver para quem é</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="para-quem" aria-label="Para quem é">
+      <div class="container">
+        <div class="split">
+          <div class="card" style="padding:16px">
+            <h2 class="h2">Para quem é</h2>
+            <p class="p">
+              Serve para quem quer controlar operação e vender com mais clareza — sem “planilha infinita” e sem bagunça.
+            </p>
+            <ul class="list">
+              <li><b>Lojas</b> (físicas e e-commerce local): produtos, pedidos, estoque e caixa.</li>
+              <li><b>Restaurantes</b>: pedidos, comandas, insumos e relatórios.</li>
+              <li><b>Serviços</b>: agendamento, OS, cobrança e histórico do cliente.</li>
+              <li><b>Múltiplas unidades</b>: processos padronizados com módulos por unidade.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <h3 style="margin:0 0 10px">E o melhor: pode ser 100% sob medida</h3>
+            <p class="p" style="margin-bottom:10px">
+              Se você tem um fluxo específico, a Custom Mind personaliza: telas, regras, módulos, relatórios e integrações.
+            </p>
+            <div class="note" style="margin-top:0">
+              Quer algo que não está aqui? Provavelmente dá para fazer — e é exatamente isso que a gente gosta de resolver.
+            </div>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="cta" id="waCustom" href="#" target="_blank" rel="noreferrer">Quero algo sob medida</a>
+              <a class="btn" href="../index.html#sob-medida">Ver sob medida</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <h2 class="h2">Perguntas frequentes</h2>
+        <p class="p">As dúvidas mais comuns antes de começar.</p>
+
+        <details class="faq">
+          <summary>Dá para começar simples e ir evoluindo?</summary>
+          <p>Sim. A Loja Inteligente é modular: você inicia com o essencial e adiciona o resto quando fizer sentido.</p>
+        </details>
+
+        <details class="faq">
+          <summary>O site/catálogo pode entrar integrado?</summary>
+          <p>Pode. Pedidos do site caem direto no sistema, viram pedido interno e seguem com status e histórico.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Vocês personalizam para o meu fluxo?</summary>
+          <p>Sim — essa é uma das forças da Custom Mind: software personalizado para processos reais.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Funciona bem no celular?</summary>
+          <p>Sim. A interface é pensada para uso no mobile, especialmente para operação (pedido/status/consulta rápida).</p>
+        </details>
+
+        <div class="hero-actions" style="margin-top:14px">
+          <a class="cta" id="waFaq" href="#" target="_blank" rel="noreferrer">Falar agora</a>
+          <a class="btn" href="../configurator/index.html">Testar configurador</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Chamada final">
+      <div class="container">
+        <div class="card" style="padding:16px">
+          <h2 class="h2">Vamos organizar sua operação?</h2>
+          <p class="p" style="margin-bottom:10px">
+            A gente adapta o sistema para o seu fluxo — e deixa tudo simples de usar no dia a dia.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" id="waFinal" href="#" target="_blank" rel="noreferrer">Pedir proposta</a>
+            <a class="btn" href="../index.html#contato">Contato</a>
+          </div>
+          <p class="small" style="margin-top:10px">
+            Dica: ao pedir proposta, diga seu segmento e 3 dores principais (ex.: estoque, pedidos, caixa).
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="card footer-card">
+          <div class="brand">
+            <img class="brand-logo" src="../assets/img/logo.png" alt="Logo da Custom Mind"/>
+            <div class="t">
+              <strong>Custom Mind</strong>
+              <span>Software Solutions</span>
+            </div>
+          </div>
+
+          <p class="small" style="margin:10px 0 0">
+            Sistemas, automações e IA sob medida — com foco em resultado, velocidade e clareza.
+          </p>
+
+          <div class="footer-links" aria-label="Links rápidos">
+            <a href="../index.html#produtos">Produtos</a>
+            <a href="#modulos">Módulos</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#faq">FAQ</a>
+          </div>
+
+          <hr class="sep"/>
+          <p class="small" style="margin:0">© <span id="y"></span> Custom Mind. Todos os direitos reservados.</p>
+        </div>
+
+        <div class="card footer-card">
+          <div class="small"><b>Atendimento</b></div>
+          <div class="small" style="margin-top:10px">WhatsApp: <span id="waPretty">+55 11 92373-4039</span></div>
+          <div class="small">E-mail: <span id="mail">custommind.softwaresolutions@gmail.com</span></div>
+          <div class="small">Instagram: @custommind.solutions</div>
+          <hr class="sep"/>
+          <div class="small">Brasil</div>
+
+          <div style="margin-top:10px">
+            <a class="cta" id="waFooter" href="#" target="_blank" rel="noreferrer">Chamar agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for in-page anchors
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href^='#']");
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    (function () {
+      function qs(id) { return document.getElementById(id); }
+      function setText(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.textContent = value)); }
+      function setHref(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.href = value)); }
+      function onlyDigits(s) { return String(s || "").replace(/\D/g, ""); }
+
+      function formatBRFromE164(e164) {
+        const d = onlyDigits(e164);
+        if (d.length < 12) return e164;
+        const cc = d.slice(0, 2);
+        const ddd = d.slice(2, 4);
+        const num = d.slice(4);
+        if (num.length === 9) return `+${cc} (${ddd}) ${num.slice(0, 5)}-${num.slice(5)}`;
+        if (num.length === 8) return `+${cc} (${ddd}) ${num.slice(0, 4)}-${num.slice(4)}`;
+        return `+${cc} (${ddd}) ${num}`;
+      }
+
+      function waUrl(phoneE164OrDigits, text) {
+        const phone = onlyDigits(phoneE164OrDigits);
+        return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
+      }
+
+      const CONTACT = {
+        whatsapp_e164: "+5511923734039",
+        email: "custommind.softwaresolutions@gmail.com",
+        instagram: "custommind.solutions",
+        msg_default: "Oi! Vim pela página da Loja Inteligente e queria entender o melhor pacote para meu negócio. Meu segmento é: ",
+        msg_loja: "Quero uma proposta da Loja Inteligente. Meu segmento é: ",
+        msg_modulos: "Quero montar meu pacote da Loja Inteligente (módulos). Meu segmento é: ",
+        msg_fluxo: "Quero falar do meu fluxo (vendas/pedidos/estoque/caixa) e ver como a Loja Inteligente se encaixa. Meu segmento é: ",
+        msg_custom: "Tenho um fluxo específico e quero algo sob medida com a Loja Inteligente. Meu segmento é: "
+      };
+
+      // Ano
+      const yearEl = qs("y");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Contato
+      setText(["mail"], CONTACT.email);
+      setText(["waPretty"], formatBRFromE164(CONTACT.whatsapp_e164));
+
+      // WhatsApp links
+      const waDefault = waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default);
+      setHref(["waTop","waTopMobile","waFooter"], waDefault);
+
+      setHref(["waLoja","waFinal","waAside"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_loja));
+      setHref(["waModules"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_modulos));
+      setHref(["waHow"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_fluxo));
+      setHref(["waCustom"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_custom));
+      setHref(["waFaq"], waDefault);
+
+      // ===== Menu Mobile =====
+      const navRoot = qs("navRoot");
+      const toggle = qs("navToggle");
+      const panel = qs("navPanel");
+
+      if (navRoot && toggle && panel) {
+        function openMenu() {
+          navRoot.classList.add("nav-open");
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Fechar menu");
+        }
+        function closeMenu() {
+          navRoot.classList.remove("nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Abrir menu");
+        }
+        function isOpen() { return navRoot.classList.contains("nav-open"); }
+
+        toggle.addEventListener("click", () => { isOpen() ? closeMenu() : openMenu(); });
+
+        panel.addEventListener("click", (e) => {
+          const a = e.target.closest("a");
+          if (!a) return;
+          closeMenu();
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!isOpen()) return;
+          const inside = e.target.closest("#navRoot");
+          if (!inside) closeMenu();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && isOpen()) closeMenu();
+        });
+
+        const mq = window.matchMedia("(max-width: 980px)");
+        function handleMq() { if (!mq.matches) closeMenu(); }
+        if (mq.addEventListener) mq.addEventListener("change", handleMq);
+        else mq.addListener(handleMq);
+      }
+    })();
+  </script>
+</body>
+</html>

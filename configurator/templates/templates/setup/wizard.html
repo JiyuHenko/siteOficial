@@ -1,0 +1,422 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" style="max-width:980px;margin:0 auto;">
+  <h1 style="margin-top:0;">Setup Wizard</h1>
+  <p style="opacity:.85;margin-top:-6px;">Configure o sistema (marca, tema, tenants e módulos). Passo {{ step }} de 6.</p>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;">
+    {% for i in range(1,7) %}
+      <a class="chip {{ 'chip-active' if i==step else '' }}" href="{{ url_for('setup.home', step=i) }}">{{ i }}</a>
+    {% endfor %}
+  </div>
+
+  {% if step == 1 %}
+    <h2>1) Identidade</h2>
+    <form method="post" action="{{ url_for('setup.save_identity') }}" enctype="multipart/form-data">
+      <div class="grid-2">
+        <label>Nome da empresa
+          <input name="company_name" value="{{ st.app.company_name if st.app else '' }}" required>
+        </label>
+        <label>Domínio (opcional)
+          <input name="domain" value="{{ st.app.domain if st.app else '' }}" placeholder="ex: minhaempresa.com.br">
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label>Icon (icon.ico)
+          <input type="file" name="icon_ico" accept=".ico">
+        </label>
+        <label>Favicon (png)
+          <input type="file" name="favicon_png" accept="image/png">
+        </label>
+      
+      <div style="margin-top:14px;">
+        <h3 style="margin:10px 0 6px 0;">Preview rápido (Produtos)</h3>
+        <div style="border:1px solid #ffffff22;border-radius:14px;overflow:hidden;background:#0001;">
+          <iframe id="produtosIframe" src="{{ url_for('setup.preview_produtos', tenant=(st.tenants[0].id if st.tenants else 'loja')) }}" style="width:100%;height:220px;border:0;background:transparent;"></iframe>
+        </div>
+        <p style="opacity:.75;font-size:12px;margin:6px 0 0;">O preview é simplificado (só pra visualizar cores e contraste). As cores mudam em tempo real.</p>
+      </div>
+</div>
+
+      <button class="btn" type="submit">Salvar e continuar</button>
+    </form>
+
+  {% elif step == 2 %}
+    <h2>2) Tema</h2>
+    <form method="post" action="{{ url_for('setup.save_theme') }}">
+      <div class="grid-2">
+        <label>Accent
+          <input type="color" name="accent" value="{{ (st.theme.accent if st.theme else '#fbbf24') }}">
+        </label>
+        <label>Accent 2
+          <input type="color" name="accent2" value="{{ (st.theme.accent2 if st.theme else '#60a5fa') }}">
+        </label>
+      </div>
+      <div class="grid-2">
+        <label>Background (opcional)
+          <input type="color" name="bg" value="{{ (st.theme.bg if st.theme else '') }}">
+        </label>
+        <label>Text (opcional)
+          <input type="color" name="text" value="{{ (st.theme.text if st.theme else '') }}">
+        </label>
+      </div>
+
+      <div class="preview-box" id="themePreview">
+        <div class="preview-title">Prévia</div>
+        <div class="preview-row">
+          <span class="badge">Accent</span>
+          <span class="badge badge2">Accent-2</span>
+        </div>
+        <div class="preview-row" style="margin-top:10px;">
+          <button type="button" class="btn">Botão</button>
+          <button type="button" class="btn btn2">Botão 2</button>
+        </div>
+      
+      <div style="margin-top:14px;">
+        <h3 style="margin:10px 0 6px 0;">Preview rápido (Produtos)</h3>
+        <div style="border:1px solid #ffffff22;border-radius:14px;overflow:hidden;background:#0001;">
+          <iframe id="produtosIframe" src="{{ url_for('setup.preview_produtos', tenant=(st.tenants[0].id if st.tenants else 'loja')) }}" style="width:100%;height:220px;border:0;background:transparent;"></iframe>
+        </div>
+        <p style="opacity:.75;font-size:12px;margin:6px 0 0;">O preview é simplificado (só pra visualizar cores e contraste). As cores mudam em tempo real.</p>
+      </div>
+
+      <button class="btn" type="submit">Salvar e continuar</button>
+    </form>
+
+    <script>
+      const accent = document.querySelector('input[name="accent"]');
+      const accent2 = document.querySelector('input[name="accent2"]');
+      const bg = document.querySelector('input[name="bg"]');
+      const text = document.querySelector('input[name="text"]');
+      const box = document.getElementById('themePreview');
+      const iframe = document.getElementById('produtosIframe');
+
+      function apply(){
+        // preview box
+        box.style.setProperty('--accent', accent.value);
+        box.style.setProperty('--accent-2', accent2.value);
+        if(bg.value) box.style.setProperty('--bg', bg.value);
+        if(text.value) box.style.setProperty('--text', text.value);
+
+        // iframe (mesma origem)
+        try{
+          const doc = iframe && iframe.contentWindow && iframe.contentWindow.document;
+          if(doc && doc.documentElement){
+            const r = doc.documentElement;
+            r.style.setProperty('--accent', accent.value);
+            r.style.setProperty('--accent2', accent2.value);
+            if(bg.value) r.style.setProperty('--bg', bg.value);
+            if(text.value) r.style.setProperty('--text', text.value);
+          }
+        }catch(e){}
+      }
+
+      [accent, accent2, bg, text].forEach(i => i.addEventListener('input', apply));
+      if(iframe) iframe.addEventListener('load', apply);
+      apply();
+    </script>
+
+  {% elif step == 3 %}
+    <h2>3) Tenants</h2>
+    <form method="post" action="{{ url_for('setup.save_tenants') }}" enctype="multipart/form-data">
+      <p style="opacity:.85">Dica: você pode ter 1 ou mais tenants (ex: Matriz, Filial 1).</p>
+
+      <div id="tenantList">
+        {% set tenants = st.tenants if st.tenants else [{'id':'loja','name':'Loja', 'theme':{}}] %}
+        {% for t in tenants %}
+          <div class="tenant-card">
+            <div class="grid-2">
+              <label>Nome do tenant
+                <input name="tenant_name" value="{{ t.name }}" required>
+              </label>
+              <label>Slug/ID (opcional)
+                <input name="tenant_id" value="{{ t.id }}" placeholder="ex: matriz">
+              </label>
+            </div>
+            <div class="grid-2">
+              <label>Logo (png/jpg)
+                <input type="file" name="tenant_logo_{{ loop.index0 }}" accept="image/*">
+              </label>
+              <div class="grid-2">
+                <label>Accent (opcional)
+                  <input type="color" name="tenant_accent_{{ loop.index0 }}" value="{{ t.theme.accent if t.theme and t.theme.accent else '' }}">
+                </label>
+                <label>Accent 2 (opcional)
+                  <input type="color" name="tenant_accent2_{{ loop.index0 }}" value="{{ t.theme.accent2 if t.theme and t.theme.accent2 else '' }}">
+                </label>
+              </div>
+              <div class="grid-2">
+                <label>Background (opcional)
+                  <input type="color" name="tenant_bg_{{ loop.index0 }}" value="{{ t.theme.bg if t.theme and t.theme.bg else '' }}">
+                </label>
+                <label>Text (opcional)
+                  <input type="color" name="tenant_text_{{ loop.index0 }}" value="{{ t.theme.text if t.theme and t.theme.text else '' }}">
+                </label>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      
+      <div style="margin-top:14px;">
+        <h3 style="margin:10px 0 6px 0;">Preview por tenant (Produtos)</h3>
+        <div class="grid-2">
+          <label>Escolha o tenant para pré-visualizar
+            <select id="tenantPreviewSelect">
+              {% for t in tenants %}
+                <option value="{{ t.id }}">{{ t.name }} ({{ t.id }})</option>
+              {% endfor %}
+            </select>
+          </label>
+          <div style="opacity:.75;font-size:12px;align-self:end">As cores deste tenant aplicam em tempo real no preview.</div>
+        </div>
+        <div style="border:1px solid #ffffff22;border-radius:14px;overflow:hidden;background:#0001;">
+          <iframe id="tenantPreviewIframe" src="{{ url_for('setup.preview_produtos', tenant=(tenants[0].id if tenants else 'loja')) }}" style="width:100%;height:220px;border:0;background:transparent;"></iframe>
+        </div>
+      </div>
+
+<button class="btn" type="button" onclick="addTenant()">+ Adicionar tenant</button>
+      <button class="btn" type="submit">Salvar e continuar</button>
+    </form>
+
+    <script>
+      const DEFAULT_THEME = {
+        accent: "{{ (st.theme.accent if st.theme else '#fbbf24') }}",
+        accent2: "{{ (st.theme.accent2 if st.theme else '#60a5fa') }}",
+        bg: "{{ (st.theme.bg if st.theme else '') }}",
+        text: "{{ (st.theme.text if st.theme else '') }}",
+      };
+
+      function slugify(s){
+        s = (s||"").toString().trim().toLowerCase();
+        const out = [];
+        for(const ch of s){
+          if(/[a-z0-9]/.test(ch)) out.push(ch);
+          else if(ch===' '||ch==='-'||ch==='_') out.push('-');
+        }
+        return out.join('').split('-').filter(Boolean).join('-').slice(0,32) || 'tenant';
+      }
+
+      function readTenantsFromForm(){
+        const cards = Array.from(document.querySelectorAll('#tenantList .tenant-card'));
+        return cards.map((card, idx) => {
+          const name = (card.querySelector('input[name="tenant_name"]')?.value || '').trim() || `Tenant ${idx+1}`;
+          const rawId = (card.querySelector('input[name="tenant_id"]')?.value || '').trim();
+          const id = slugify(rawId || name);
+          const accent = (card.querySelector(`input[name="tenant_accent_${idx}"]`)?.value || '').trim();
+          const accent2 = (card.querySelector(`input[name="tenant_accent2_${idx}"]`)?.value || '').trim();
+          const bg = (card.querySelector(`input[name="tenant_bg_${idx}"]`)?.value || '').trim();
+          const text = (card.querySelector(`input[name="tenant_text_${idx}"]`)?.value || '').trim();
+          return { idx, name, id, theme: {accent, accent2, bg, text} };
+        });
+      }
+
+      function rebuildTenantSelect(){
+        const sel = document.getElementById('tenantPreviewSelect');
+        if(!sel) return;
+        const prev = sel.value;
+        const tenants = readTenantsFromForm();
+        sel.innerHTML = '';
+        tenants.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t.id;
+          opt.textContent = `${t.name} (${t.id})`;
+          sel.appendChild(opt);
+        });
+        // tenta manter seleção anterior
+        const exists = Array.from(sel.options).some(o => o.value === prev);
+        if(exists) sel.value = prev;
+      }
+
+      function themeForSelectedTenant(){
+        const sel = document.getElementById('tenantPreviewSelect');
+        const chosenId = sel?.value || '';
+        const tenants = readTenantsFromForm();
+        const t = tenants.find(x => x.id === chosenId) || tenants[0];
+        const ttheme = (t && t.theme) || {};
+        return {
+          accent: ttheme.accent || DEFAULT_THEME.accent,
+          accent2: ttheme.accent2 || DEFAULT_THEME.accent2,
+          bg: ttheme.bg || DEFAULT_THEME.bg,
+          text: ttheme.text || DEFAULT_THEME.text,
+          tenant_id: (t && t.id) || chosenId || 'tenant',
+        };
+      }
+
+      function updateTenantPreview(){
+        const iframe = document.getElementById('tenantPreviewIframe');
+        const sel = document.getElementById('tenantPreviewSelect');
+        if(!iframe || !sel) return;
+        const t = themeForSelectedTenant();
+
+        // troca o tenant do preview (para logo/nome corretos)
+        const url = new URL(iframe.src, window.location.origin);
+        url.searchParams.set('tenant', t.tenant_id);
+        url.searchParams.set('_', Date.now().toString());
+        iframe.src = url.toString();
+
+        // aplica tema em tempo real quando o iframe carregar
+        iframe.onload = () => {
+          try{
+            const doc = iframe.contentWindow.document;
+            const r = doc.documentElement;
+            r.style.setProperty('--accent', t.accent);
+            r.style.setProperty('--accent2', t.accent2);
+            r.style.setProperty('--accent-2', t.accent2);
+            if(t.bg) r.style.setProperty('--bg', t.bg);
+            if(t.text) r.style.setProperty('--text', t.text);
+          }catch(e){}
+        };
+      }
+
+      function addTenant(){
+        const list = document.getElementById('tenantList');
+        const idx = list.children.length;
+        const div = document.createElement('div');
+        div.className = 'tenant-card';
+        div.innerHTML = `
+          <div class="grid-2">
+            <label>Nome do tenant
+              <input name="tenant_name" required>
+            </label>
+            <label>Slug/ID (opcional)
+              <input name="tenant_id" placeholder="ex: filial-2">
+            </label>
+          </div>
+          <div class="grid-2">
+            <label>Logo (png/jpg)
+              <input type="file" name="tenant_logo_${idx}" accept="image/*">
+            </label>
+            <div class="grid-2">
+              <label>Accent (opcional)
+                <input type="color" name="tenant_accent_${idx}">
+              </label>
+              <label>Accent 2 (opcional)
+                <input type="color" name="tenant_accent2_${idx}">
+              </label>
+            </div>
+            <div class="grid-2">
+              <label>Background (opcional)
+                <input type="color" name="tenant_bg_${idx}">
+              </label>
+              <label>Text (opcional)
+                <input type="color" name="tenant_text_${idx}">
+              </label>
+            </div>
+          </div>
+        `;
+        list.appendChild(div);
+
+        // Atualiza select e bindings
+        rebuildTenantSelect();
+        bindLivePreview();
+      }
+
+      function bindLivePreview(){
+        const sel = document.getElementById('tenantPreviewSelect');
+        if(sel){
+          sel.onchange = () => updateTenantPreview();
+        }
+
+        // sempre que qualquer input de tenant mudar, atualiza o select e preview
+        const inputs = document.querySelectorAll('#tenantList input');
+        inputs.forEach(i => {
+          i.oninput = () => {
+            rebuildTenantSelect();
+            updateTenantPreview();
+          };
+        });
+      }
+
+      rebuildTenantSelect();
+      bindLivePreview();
+      updateTenantPreview();
+    </script>
+
+  {% elif step == 4 %}
+    <h2>4) Módulos</h2>
+    <p style="opacity:.85">Você pode definir um padrão (default) e sobrescrever por tenant (ligado/desligado/inherit).</p>
+
+    <form method="post" action="{{ url_for('setup.save_modules') }}" enctype="multipart/form-data">
+
+      <h3>Padrão (default)</h3>
+      <div class="grid-3">
+        {% for k, v in st.modules_default.items() %}
+          <label class="check">
+            <input type="checkbox" name="def_{{ k }}" {% if v %}checked{% endif %}>
+            <span>{{ k.replace('_',' ').title() }}</span>
+          </label>
+        {% endfor %}
+      </div>
+
+      <hr style="margin:18px 0;opacity:.25">
+
+      <h3>Por tenant</h3>
+      {% for t in st.tenants %}
+        <div class="tenant-card">
+          <h4 style="margin:0 0 8px 0;">{{ t.name }} <small style="opacity:.7">({{ t.id }})</small></h4>
+          <div class="grid-3">
+            {% for k, v in st.modules_default.items() %}
+              <label>
+                <span style="display:block;font-size:12px;opacity:.8;margin-bottom:6px;">{{ k.replace('_',' ').title() }}</span>
+                <select name="{{ t.id }}_{{ k }}">
+                  <option value="inherit" {% if not st.modules_tenants.get(t.id, {}).get(k) is not none %}{% endif %}>Herdar</option>
+                  <option value="on" {% if st.modules_tenants.get(t.id, {}).get(k) == true %}selected{% endif %}>Ligado</option>
+                  <option value="off" {% if st.modules_tenants.get(t.id, {}).get(k) == false %}selected{% endif %}>Desligado</option>
+                </select>
+              </label>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="tenant-card">
+        <h4 style="margin:0 0 8px 0;">Etiquetas - Modelo (só se módulo estiver ativo em algum tenant)</h4>
+        <label>modelo.png
+          <input type="file" name="modelo_png" accept="image/*">
+        </label>
+      </div>
+
+      <button class="btn" type="submit">Salvar e continuar</button>
+    </form>
+
+  {% elif step == 5 %}
+    <h2>5) Revisão & Teste</h2>
+    <pre class="codebox">{{ st | tojson(indent=2) }}</pre>
+
+    <form method="post" action="{{ url_for('setup.apply_config') }}">
+      <button class="btn" type="submit">Aplicar e testar (ir para login)</button>
+    </form>
+
+  {% elif step == 6 %}
+    <h2>6) Exportar</h2>
+    <p style="opacity:.85">Gera um ZIP do sistema com config e assets, sem banco .db e sem caches.</p>
+    <form method="post" action="{{ url_for('setup.export_zip') }}">
+      <button class="btn" type="submit">Baixar pacote pronto (ZIP)</button>
+    </form>
+  {% endif %}
+</div>
+
+<style>
+  .card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:16px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+  label{display:block}
+  input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.15);color:inherit}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:12px;padding:10px 14px;background:var(--accent);color:#111;font-weight:700;cursor:pointer;margin-top:10px}
+  .btn2{background:var(--accent-2);color:#111}
+  .chip{display:inline-block;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);text-decoration:none;color:inherit;opacity:.85}
+  .chip-active{border-color:var(--accent);opacity:1}
+  .tenant-card{border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px;margin:12px 0;background:rgba(255,255,255,.02)}
+  .preview-box{border:1px dashed rgba(255,255,255,.2);border-radius:14px;padding:14px;margin:14px 0;background:var(--bg, rgba(0,0,0,.25));color:var(--text, inherit)}
+  .preview-title{font-weight:800;margin-bottom:10px}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent);color:#111;font-weight:800}
+  .badge2{background:var(--accent-2)}
+  .codebox{max-height:380px;overflow:auto;padding:12px;border-radius:12px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08)}
+  .check{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid rgba(255,255,255,.10);border-radius:12px;background:rgba(255,255,255,.02)}
+  .check input{width:auto}
+</style>
+{% endblock %}

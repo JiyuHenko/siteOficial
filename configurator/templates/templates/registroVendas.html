@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}Registro de Vendas — {{ tenant|capitalize }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/registroVenda.css') }}">
+
+<div class="rv-page">
+  <div class="rv-scope">
+
+    <!-- Header -->
+    <div class="rv-head">
+      <div class="rv-head-left">
+        <h1 class="rv-title">
+          Registro de Vendas <small>({{ tenant|capitalize }})</small>
+        </h1>
+        <div class="rv-sub">
+          <span class="rv-chip">Mês: <strong>{{ month }}</strong></span>
+          <span class="rv-muted">•</span>
+          <span class="rv-muted">use Ctrl+F e busque pelo nome.</span>
+        </div>
+      </div>
+
+      <div class="rv-head-actions">
+        {% if download_url %}
+          <a class="btn btn-soft" href="{{ download_url }}">Baixar CSV do mês</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <section class="rv-card rv-filters">
+      <form class="rv-filters-form" method="get" action="{{ url_for('registro_vendas.index') }}">
+        <div class="rv-field">
+          <label for="month">Mês</label>
+          <select id="month" name="month">
+            {% for m in months %}
+              <option value="{{ m }}" {{ "selected" if m == month else "" }}>{{ m }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="rv-field grow">
+          <label for="q">Buscar</label>
+          <input
+            type="text"
+            id="q"
+            name="q"
+            placeholder="vendedor, pagamento, itens, observação..."
+            value="{{ q or '' }}">
+        </div>
+
+        <div class="rv-field">
+          <label for="per_page">Por página</label>
+          <select id="per_page" name="per_page">
+            {% for n in [25,50,100,150,200] %}
+              <option value="{{ n }}" {{ "selected" if n == per_page else "" }}>{{ n }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="rv-filter-actions">
+          <button class="btn btn-primary" type="submit">Aplicar</button>
+          <a class="btn btn-ghost" href="{{ url_for('registro_vendas.index', month=month) }}">Limpar</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Resumo -->
+    <section class="rv-cards">
+      <div class="rv-card kpi">
+        <div class="kpi-title">Total de registros</div>
+        <div class="kpi-value">{{ total_rows }}</div>
+      </div>
+
+      <div class="rv-card kpi highlight">
+        <div class="kpi-title">Soma dos totais</div>
+        <div class="kpi-value small">
+          Pode ser encontrado na Aba “Financeiro”
+        </div>
+        <div class="kpi-hint">
+          Inclui vendas parceladas (ex.: “10x10,00” → R$ 100,00)
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabela -->
+    <section class="rv-card rv-table-card">
+      {% if rows and headers %}
+        <div class="rv-table-hint">
+          <span>Mostrando <strong>{{ rows|length }}</strong> de <strong>{{ total_rows }}</strong></span>
+          <span>•</span>
+          <span>Mês: <strong>{{ month }}</strong></span>
+        </div>
+
+        <div class="rv-table-wrap">
+          <table class="rv-table">
+            <thead>
+              <tr>
+                <th class="col-dt">Data/Hora</th>
+                <th class="col-id">#</th>
+                <th class="col-vend">Vendedor</th>
+                <th class="col-pag">Pagamento</th>
+                <th class="col-tab">Tabela</th>
+                <th class="col-parc">Parc.</th>
+                <th class="col-total right">Total</th>
+                <th class="col-obs">Obs</th>
+                <th class="col-itens">Itens</th>
+                <th class="col-act">Ações</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for r in rows %}
+                <tr>
+                  <td>{{ r.get('data_hora_local','') }}</td>
+                  <td>{{ r.get('venda_id','') }}</td>
+                  <td>{{ r.get('vendedor','') }}</td>
+
+                  <td>
+                    <span class="pill">{{ r.get('pagamento','') }}</span>
+                  </td>
+
+                  <td>{{ r.get('tabela_preco','') }}</td>
+
+                  <td>
+                    {% set p = r.get('parcelas','1') %}
+                    {% if (p|int) > 1 %}
+                      <span class="pill warn">{{ p }}x</span>
+                    {% else %}
+                      <span class="pill ok">1x</span>
+                    {% endif %}
+                  </td>
+
+                  <td class="right">
+                    <strong class="money">{{ r.get('_total_fmt','') }}</strong>
+                    {% if r.get('_is_parcel') %}
+                      <div class="sub muted">({{ r.get('total','') }})</div>
+                    {% endif %}
+                  </td>
+
+                  <td class="cell-wrap obs">{{ r.get('observacao','') }}</td>
+                  <td class="cell-wrap itens">{{ r.get('itens','') }}</td>
+
+                  <td class="rv-actions-cell">
+                    {% if r.get('venda_id') %}
+                      <a class="btn btn-soft btn-mini"
+                         href="{{ url_for('vendas.recibo', tenant=tenant, venda_id=r.get('venda_id')) }}">
+                        Recibo
+                      </a>
+
+                      <form method="post"
+                            action="{{ url_for('registro_vendas.cancelar', venda_id=r.get('venda_id')) }}"
+                            class="inline"
+                            onsubmit="return confirm('Tem certeza que deseja cancelar/remover esta venda? Esta ação não pode ser desfeita.');">
+                        <input type="hidden" name="month" value="{{ month }}">
+                        {% if csrf_token is defined %}
+                          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        {% endif %}
+                        <button type="submit" class="btn btn-danger btn-mini">Cancelar</button>
+                      </form>
+                    {% else %}
+                      <span class="muted">—</span>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Paginação -->
+        {% set total_pages = (total_rows // per_page) + (1 if total_rows % per_page else 0) %}
+        {% if total_pages > 1 %}
+          <div class="rv-pagination">
+            {% set base = url_for('registro_vendas.index', month=month, q=q, per_page=per_page) %}
+
+            <a class="pg {{ 'disabled' if page<=1 else '' }}"
+               href="{{ base ~ '&page=' ~ (page-1 if page>1 else 1) }}">Anterior</a>
+
+            <span>Página <strong>{{ page }}</strong> de <strong>{{ total_pages }}</strong></span>
+
+            <a class="pg {{ 'disabled' if page>=total_pages else '' }}"
+               href="{{ base ~ '&page=' ~ (page+1 if page<total_pages else total_pages) }}">Próxima</a>
+          </div>
+        {% endif %}
+
+      {% else %}
+        <div class="rv-empty">
+          Nenhum registro encontrado para este mês.
+        </div>
+      {% endif %}
+    </section>
+
+  </div>
+</div>
+{% endblock %}

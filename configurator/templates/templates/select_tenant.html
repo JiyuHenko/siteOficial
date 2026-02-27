@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha o Tenant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/select_tenant.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='generated/theme.css') }}">
+</head>
+<body>
+  <main class="tenant-shell">
+    <div class="tenant-container">
+      <header class="tenant-header">
+        <h1 class="title">Escolha o Tenant</h1>
+        <p class="subtitle">Selecione o ambiente que você deseja acessar agora.</p>
+      </header>
+
+      <div class="tenants">
+        {% for t in tenants %}
+          <form method="post" action="{{ url_for('select_tenant.choose', tenant=t.id) }}">
+            <button class="tenant-btn" type="submit" aria-label="Entrar em {{ t.name }}">
+              <div class="tenant-card">
+                {% if t.logo %}
+                  <img class="tenant-logo" src="{{ url_for('static', filename=t.logo.replace('static/','')) }}" alt="{{ t.name }}">
+                {% endif %}
+                <div class="tenant-name">{{ t.name }}</div>
+                <div class="tenant-id">{{ t.id }}</div>
+              </div>
+            </button>
+          </form>
+        {% endfor %}
+      </div>
+
+      <footer class="tenant-footer">
+        <small>Configuração por tenant + módulos</small>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

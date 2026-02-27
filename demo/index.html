@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Área de Teste — Loja Inteligente</title>
+  <meta name="description" content="Área de teste (sem backend) para simular Dashboard, Produtos e Vendas com tema e módulos escolhidos."/>
+  <meta name="theme-color" content="#07060b"/>
+  <link rel="icon" href="../assets/img/logo.png"/>
+  <!-- seu theme.css (o mesmo usado no sistema) -->
+  <link rel="stylesheet" href="../configurator/assets/css/theme.css"/>
+  <link rel="stylesheet" href="assets/css/demo.css"/>
+</head>
+<body>
+  <div class="shell">
+    <aside class="side">
+      <a class="brand" href="../configurator/index.html" title="Voltar ao configurador">
+        <img id="logo" src="" alt="Logo"/>
+        <div class="t">
+          <strong id="company">Loja</strong>
+          <span>Área de Teste • sem backend</span>
+        </div>
+      </a>
+
+      <div class="card section">
+        <div class="row" style="justify-content:space-between">
+          <div class="badge">Tenant</div>
+          <select id="tenantSelect"></select>
+        </div>
+        <div class="note" style="margin-top:10px">
+          O tema e módulos vêm do configurador (cache do navegador).
+        </div>
+      </div>
+
+      <div class="card section">
+        <div class="nav" id="nav"></div>
+      </div>
+
+      <div class="card section">
+        <div class="row">
+          <a class="btn" href="../products/loja-inteligente.html">Sobre a Loja Inteligente</a>
+          <a class="cta" href="../index.html#contato">Quero isso pra mim</a>
+        </div>
+      </div>
+
+      <div class="note">
+        Dica: esta é uma simulação estática. Em produção, o JSON gerado configura o sistema real.
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top">
+        <div class="inner">
+          <div class="row">
+            <div class="badge" id="routeBadge">Dashboard</div>
+            <div class="badge" id="modulesBadge">Módulos: —</div>
+          </div>
+          <div class="row">
+            <button class="btn" id="seed">Gerar dados de exemplo</button>
+            <button class="btn" id="resetDemo">Limpar dados do teste</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" id="view"></div>
+    </main>
+  </div>
+
+  <script src="assets/js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+{% extends "base.html" %}
+{% block title %}Financeiro — {{ tenant|capitalize }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/financeiro.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="fin-scope">
+
+  <div class="fin-header">
+    <div class="fin-header-left">
+      <h1 class="fin-title">
+        <span class="fin-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18"></path>
+            <path d="M7 14l4-4 3 3 6-6"></path>
+          </svg>
+        </span>
+        Financeiro <small>({{ tenant|capitalize }})</small>
+      </h1>
+      <small class="fin-subtitle">
+        Acompanhe receitas, custos, comissões e lançamentos no período selecionado.
+      </small>
+    </div>
+  </div>
+
+  {% with msgs = get_flashed_messages(with_categories=true) %}
+    {% if msgs %}
+      <div class="flash-stack">
+        {% for cat, msg in msgs %}
+          <div class="flash {{ cat }}">{{ msg }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- FILTROS + TOGGLE -->
+  <section class="card fin-filters">
+    <form method="get" class="filters">
+      <div class="preset-group">
+        <button name="range" value="hoje" class="btn {{ 'is-active' if preset=='hoje' else '' }}">Hoje</button>
+        <button name="range" value="7d" class="btn {{ 'is-active' if preset=='7d' else '' }}">Últimos 7 dias</button>
+        <button name="range" value="30d" class="btn {{ 'is-active' if preset=='30d' else '' }}">Últimos 30 dias</button>
+        <button name="range" value="mes" class="btn {{ 'is-active' if preset=='mes' else '' }}">Este mês</button>
+        <button name="range" value="ano" class="btn {{ 'is-active' if preset=='ano' else '' }}">Este ano</button>
+        <a href="{{ url_for('financeiro.home') }}" class="btn btn-linkish {{ 'is-active' if preset=='tudo' else '' }}">Tudo</a>
+      </div>
+
+      <div class="custom-range">
+        <div class="field">
+          <label>Início</label>
+          <input type="date" name="inicio" value="{{ inicio_val }}">
+        </div>
+        <div class="field">
+          <label>Fim</label>
+          <input type="date" name="fim" value="{{ fim_val }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Aplicar</button>
+      </div>
+    </form>
+
+    <!-- Toggle "Mostrar detalhes" -->
+    <div class="fin-toggle-row">
+      <label class="fin-toggle">
+        <input id="toggleDetails" type="checkbox">
+        <span class="fin-toggle-ui" aria-hidden="true"></span>
+        <span class="fin-toggle-text">
+          Mostrar detalhes (gráficos, comissões e lançamentos)
+        </span>
+      </label>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section class="kpis">
+    <div class="card kpi">
+      <span class="kpi-label">Receita</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(receita or 0) }}</strong>
+    </div>
+
+    <div class="card kpi">
+      <span class="kpi-label">Gastos (produtos)</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(custo or 0) }}</strong>
+    </div>
+
+    <div class="card kpi">
+      <span class="kpi-label">Comissões</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(total_comissoes or 0) }}</strong>
+    </div>
+
+    <div class="card kpi">
+      <span class="kpi-label">Compras de estoque</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(compras_estoque or 0) }}</strong>
+    </div>
+
+    <div class="card kpi">
+      <span class="kpi-label">Entradas extras</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(entradas or 0) }}</strong>
+    </div>
+
+    <div class="card kpi">
+      <span class="kpi-label">Saídas extras</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(saidas or 0) }}</strong>
+    </div>
+
+    <div class="card kpi kpi-highlight">
+      <span class="kpi-label">Lucro líquido</span>
+      <strong class="kpi-value">R$ {{ "%.2f"|format(lucro or 0) }}</strong>
+      <small class="kpi-hint">Receita − custos − comissões − saídas (+ ajustes).</small>
+    </div>
+  </section>
+
+  <!-- GRID: Comissões + Novo Lançamento -->
+  <section class="fin-grid fin-detail">
+    <div class="card">
+      <div class="card-head">
+        <h3 class="card-title">Comissões por vendedor</h3>
+        <span class="card-badge">{{ comissoes|length }} item{{ '' if comissoes|length==1 else 's' }}</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Vendedor</th>
+              <th style="text-align:right;">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for vendedor, valor in comissoes %}
+              <tr>
+                <td class="cell-strong">{{ vendedor }}</td>
+                <td style="text-align:right;">R$ {{ "%.2f"|format(valor or 0) }}</td>
+              </tr>
+            {% endfor %}
+            {% if not comissoes %}
+              <tr><td colspan="2" class="muted">Sem comissões no período.</td></tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3 class="card-title">Novo lançamento</h3>
+        <span class="card-badge">Manual</span>
+      </div>
+
+      <form method="post" action="{{ url_for('financeiro.criar_lancamento') }}" class="lanc-form">
+        <div class="field">
+          <label>Direção</label>
+          <select name="direcao" required>
+            <option value="ENTRADA">ENTRADA</option>
+            <option value="SAIDA">SAÍDA</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Tipo</label>
+          <input type="text" name="tipo" placeholder="Ex.: COMPRA_ESTOQUE, ALUGUEL, APORTE">
+        </div>
+
+        <div class="field field-wide">
+          <label>Descrição</label>
+          <input type="text" name="descricao" placeholder="Descrição do lançamento">
+        </div>
+
+        <div class="field">
+          <label>Valor</label>
+          <input type="text" name="valor" placeholder="Ex.: 129,90" required>
+        </div>
+
+        <div class="field field-actions">
+          <button type="submit" class="btn btn-primary">Adicionar</button>
+        </div>
+      </form>
+
+      <div class="form-hint">
+        Dica: use tipos padronizados (ex.: <strong>COMPRA_ESTOQUE</strong>, <strong>ALUGUEL</strong>, <strong>APORTE</strong>) para facilitar análises.
+      </div>
+    </div>
+  </section>
+
+  <!-- GRÁFICOS -->
+  <section class="charts fin-detail">
+    <div class="card">
+      <div class="card-head">
+        <h3 class="card-title">Receita x Gastos por dia</h3>
+        <span class="card-badge">Linha</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chartVendas" height="260"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3 class="card-title">Distribuição dos gastos</h3>
+        <span class="card-badge">Pizza</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chartGastos" height="260"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÚLTIMOS LANÇAMENTOS -->
+  <section class="card fin-detail">
+    <div class="card-head">
+      <h3 class="card-title">Últimos lançamentos</h3>
+      <span class="card-badge">{{ lancamentos|length }} item{{ '' if lancamentos|length==1 else 's' }}</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:130px;">Data</th>
+            <th style="width:110px;">Direção</th>
+            <th style="width:170px;">Tipo</th>
+            <th>Descrição</th>
+            <th style="width:140px; text-align:right;">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for l in lancamentos %}
+            <tr>
+              <td class="muted">{{ l.created_fmt }}</td>
+              <td>
+                {% if (l.direcao or '')|upper == 'ENTRADA' %}
+                  <span class="pill pill-in">ENTRADA</span>
+                {% else %}
+                  <span class="pill pill-out">SAÍDA</span>
+                {% endif %}
+              </td>
+              <td class="cell-strong">{{ l.tipo }}</td>
+              <td class="cell-trunc" title="{{ l.descricao }}">{{ l.descricao }}</td>
+              <td style="text-align:right;">R$ {{ "%.2f"|format(l.valor or 0) }}</td>
+            </tr>
+          {% endfor %}
+          {% if not lancamentos %}
+            <tr><td colspan="5" class="muted">Sem lançamentos no período.</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // ====== Toggle detalhes (persistente) ======
+  const KEY = "financeiro_show_details_v1";
+  const toggle = document.getElementById("toggleDetails");
+  const detailBlocks = document.querySelectorAll(".fin-detail");
+
+  function applyDetails(on){
+    detailBlocks.forEach(el => {
+      el.classList.toggle("is-hidden", !on);
+    });
+  }
+
+  // default = true (mostrar)
+  const saved = localStorage.getItem(KEY);
+  const initial = saved === null ? true : (saved === "1");
+  toggle.checked = initial;
+  applyDetails(initial);
+
+  toggle.addEventListener("change", () => {
+    const on = toggle.checked;
+    localStorage.setItem(KEY, on ? "1" : "0");
+    applyDetails(on);
+  });
+
+  // ====== Charts ======
+  const styles = getComputedStyle(document.body);
+  const accent = styles.getPropertyValue('--accent').trim();
+  const accent2 = styles.getPropertyValue('--accent-2').trim();
+  const muted = styles.getPropertyValue('--muted').trim();
+
+  const gridColor = "rgba(16,24,40,.10)";
+  const tickColor = muted || "#667085";
+
+  // Linha: Receita x Gastos
+  new Chart(document.getElementById('chartVendas').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: {{ datas|tojson }},
+      datasets: [
+        {
+          label: 'Receita',
+          data: {{ receita_dia|tojson }},
+          borderColor: accent,
+          backgroundColor: "rgba(0,0,0,0)",
+          fill: false,
+          tension: .22,
+          pointRadius: 2,
+          pointHoverRadius: 4
+        },
+        {
+          label: 'Gastos (produtos)',
+          data: {{ custo_dia|tojson }},
+          borderColor: "rgba(220,38,38,.80)",
+          backgroundColor: "rgba(0,0,0,0)",
+          fill: false,
+          tension: .22,
+          pointRadius: 2,
+          pointHoverRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins:{
+        legend:{ labels:{ color: tickColor } },
+        tooltip:{ enabled: true }
+      },
+      scales:{
+        x:{ ticks:{ color: tickColor }, grid:{ color: gridColor } },
+        y:{ beginAtZero:true, ticks:{ color: tickColor }, grid:{ color: gridColor } }
+      }
+    }
+  });
+
+  // Pizza
+  new Chart(document.getElementById('chartGastos').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: {{ pizza_labels|tojson }},
+      datasets: [{
+        data: {{ pizza_vals|tojson }},
+        backgroundColor: [
+          accent,
+          "rgba(59,130,246,.75)",
+          "rgba(220,38,38,.75)",
+          "rgba(168,85,247,.65)"
+        ],
+        borderColor: "rgba(255,255,255,.65)",
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins:{ legend:{ labels:{ color: tickColor } } }
+    }
+  });
+</script>
+{% endblock %}
