@@ -3,12 +3,6 @@
   <img src="assets/img/perfil-insta.png" alt="Custom Mind Banner" width="30%" />
 </p>
 
-<p align="center">
-  <a href="https://custommind.com.br"><b>custommind.com.br</b></a> •
-  <a href="https://instagram.com/custommind.solutions"><b>@custommind.solutions</b></a> •
-  <a href="mailto:custommind.softwaresolutions@gmail.com"><b>custommind.softwaresolutions@gmail.com</b></a>
-</p>
-
 <div align="center">
 
 <h1>Custom Mind</h1>
@@ -23,6 +17,12 @@
 <img src="https://img.shields.io/badge/HTTPS-Secured-22c55e?style=for-the-badge" />
 <img src="https://img.shields.io/badge/SEO-Optimized-3b82f6?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Architecture-Scalable-7c3aed?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <a href="https://custommind.com.br"><b>custommind.com.br</b></a> •
+  <a href="https://instagram.com/custommind.solutions"><b>@custommind.solutions</b></a> •
+  <a href="mailto:custommind.softwaresolutions@gmail.com"><b>custommind.softwaresolutions@gmail.com</b></a>
 </p>
 
 </div>
