@@ -1,10 +1,8 @@
-<!-- Custom Mind — README Premium -->
+<!-- Custom Mind — README -->
+<div align="center">
 <p align="center">
   <img src="assets/img/perfil-insta.png" alt="Custom Mind Banner" width="30%" />
 </p>
-
-<div align="center">
-
 <h1>Custom Mind</h1>
 <h3>Engineering scalable digital infrastructure for modern businesses</h3>
  
