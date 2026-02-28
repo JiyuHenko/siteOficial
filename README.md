@@ -13,7 +13,7 @@
 
 <h1>Custom Mind</h1>
 <h3>Engineering scalable digital infrastructure for modern businesses</h3>
-
+ 
 <p>
 <a href="https://custommind.com.br">custommind.com.br</a> • Brazil • SaaS • Automation • Multi‑Tenant Systems
 </p>
