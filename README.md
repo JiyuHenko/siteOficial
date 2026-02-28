@@ -1,149 +1,170 @@
-
-<div align="center">
-
-<img src="assets/img/perfil-insta.png" alt="Custom Mind Banner" width="30%" />
-
-<h1>Custom Mind</h1>
-<h3>Engineering scalable digital infrastructure for modern businesses</h3>
-
-<p>
-<a href="https://custommind.com.br">custommind.com.br</a> • Brazil • SaaS • Automation • Multi‑Tenant Systems
+<!-- Custom Mind — README Premium -->
+<p align="center">
+  <img src="assets/img/custommind-banner.svg" alt="Custom Mind | Software Solutions" width="100%" />
 </p>
 
-<p>
-<img src="https://img.shields.io/badge/Status-Active-16a34a?style=for-the-badge" />
-<img src="https://img.shields.io/badge/HTTPS-Secured-22c55e?style=for-the-badge" />
-<img src="https://img.shields.io/badge/SEO-Optimized-3b82f6?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Architecture-Scalable-7c3aed?style=for-the-badge" />
+<p align="center">
+  <a href="https://custommind.com.br"><b>custommind.com.br</b></a> •
+  <a href="https://instagram.com/custommind.solutions"><b>@custommind.solutions</b></a> •
+  <a href="mailto:custommind.softwaresolutions@gmail.com"><b>custommind.softwaresolutions@gmail.com</b></a>
 </p>
 
-</div>
+<p align="center">
+  <img src="assets/img/site-preview.gif" alt="Preview do site" width="92%" />
+</p>
 
 ---
 
-## Vision
+## O que é este repositório
 
-Custom Mind builds scalable SaaS platforms and automation systems designed to transform operations into structured digital ecosystems.
+Site oficial da **Custom Mind | Software Solutions** — um hub simples, rápido e direto para apresentar:
 
-We do not create websites.  
-We engineer operational engines.
+- **Produtos**: Zuri, Violet e Loja Inteligente  
+- **Serviços sob medida**: sistemas internos, automação e integrações  
+- **Checkout (Pix)**: fluxo de pagamento com instruções e CTA para enviar comprovante
 
----
-
-## Platform Preview
-
-<div align="center">
-<img src="assets/img/loja.png" width="65%" />
-<br/>
-<sub>Loja Inteligente – Multi‑tenant management platform</sub>
-</div>
+> Objetivo do site: **clareza + confiança + conversão**, com visual premium (dark-first) e performance real no mobile.
 
 ---
 
-## Core Products
+## Destaques (startup-style)
 
-### Loja Inteligente
-Complete business management system.
-
-- Multi‑tenant architecture  
-- Dynamic theme engine  
-- Modular activation  
-- Real‑time configurator preview  
-- Checkout integration  
-- Scalable structure  
-
-### Zuri
-Instagram organic growth automation.
-
-### Violet
-AI‑driven DM engagement automation.
-
----
-
-## Technical Architecture
-
-Frontend:
-- HTML5
-- CSS3 (custom design system)
-- Modular JavaScript
-- Multi‑tenant ready structure
-
-Deployment:
-- GitHub Pages
-- Custom domain (Registro.br)
-- Automatic HTTPS (SSL)
-- SEO structured implementation
+<table>
+<tr>
+<td width="50%">
+  <img src="assets/img/icon-bolt.svg" width="18" /> <b>Performance-first</b><br/>
+  HTML/CSS/JS sem peso, carregamento rápido e UX limpa.
+</td>
+<td width="50%">
+  <img src="assets/img/icon-shield.svg" width="18" /> <b>Confiabilidade</b><br/>
+  Estrutura simples, previsível e fácil de manter.
+</td>
+</tr>
+<tr>
+<td width="50%">
+  <img src="assets/img/icon-rocket.svg" width="18" /> <b>Conversão</b><br/>
+  CTAs claros (WhatsApp), prova de valor e funil por seção.
+</td>
+<td width="50%">
+  <img src="assets/img/icon-chart.svg" width="18" /> <b>SEO técnico</b><br/>
+  Meta tags, OG/Twitter, canônicos e sitemap/robots.
+</td>
+</tr>
+</table>
 
 ---
 
-## SEO Infrastructure
+## Métricas (modelo de “valuation vibe”)
 
-- Sitemap.xml
-- Robots.txt
-- Canonical URLs
-- Structured Data (Schema.org)
-- OpenGraph metadata
-- Google Search Console configured
-- Clean URL strategy
+> Os números abaixo são **alvos operacionais** (KPIs) para acompanhar evolução do site e do funil.
 
----
+| Pilar | KPI | Meta Inicial | Meta 90 dias |
+|------|-----|--------------|--------------|
+| Aquisição | Visitas orgânicas/mês | 300–800 | 2k–6k |
+| Conversão | CTR p/ WhatsApp | 2%–5% | 6%–12% |
+| Conversão | Leads qualificados/mês | 8–20 | 30–80 |
+| Performance | LCP (mobile) | < 2.5s | < 1.8s |
+| SEO | Páginas indexadas | 5–12 | 20–40 |
 
-## Public Roadmap
+### Projeção de crescimento (simples, prática)
+- Se o site gerar **1 lead qualificado/dia**, com **20%** de fechamento, vira **~6 fechamentos/mês**.
+- Melhorias de UX + copy + SEO aumentam CTR e intenção (não só tráfego).
 
-### Phase 1 – Foundation (Completed)
-- Institutional website
-- Multi‑tenant configurator
-- Checkout integration
-- SEO infrastructure
-- Custom domain + HTTPS
-
-### Phase 2 – Expansion (In Progress)
-- Blog section for authority building
-- Case studies
-- Performance optimization
-- Advanced analytics integration
-
-### Phase 3 – Scale
-- SaaS dashboard deployment
-- Client authentication layer
-- API infrastructure
-- Modular subscription model
+> **Risco comum**: tráfego subir e conversão não. Por isso, o foco do repositório é manter o site leve e extremamente “CTA-driven”.
 
 ---
 
-## Market Positioning
+## Estrutura do projeto
 
-Target:
-- Local businesses
-- Emerging digital operations
-- Entrepreneurs scaling infrastructure
-
-Differential:
-- Automation‑first engineering
-- Modular SaaS architecture
-- Premium UI/UX
-- Growth‑oriented mindset
+- `index.html` — home (sobre, produtos, processo, sob medida, FAQ, contato)
+- `products/` — páginas de produto (Zuri / Violet / Loja Inteligente)
+- `configurator/` — páginas de personalização / fluxo da Loja Inteligente
+- `checkout.html` — checkout Pix (copy + QR Code + botão enviar comprovante)
+- `assets/` — imagens, ícones e recursos
 
 ---
 
-## Founder
+## Rodando localmente
 
-Built and engineered by  
-Mateus Lemos Figueiredo  
-Software Developer & Systems Architect
+### Opção 1 — Python (mais fácil)
+```bash
+cd siteOficial
+python -m http.server 5500
+```
+Abra: `http://localhost:5500`
+
+### Opção 2 — Node
+```bash
+npx serve .
+```
 
 ---
 
-## Contact
+## SEO técnico (o que este repo já prepara)
 
-Website: https://custommind.com.br  
-WhatsApp: +55 11 92373-4039  
-Email: contato@custommind.com.br  
+- `canonical` por página (evita duplicação)
+- Meta tags (description, OG, Twitter)
+- `sitemap.xml` e `robots.txt`
+- URLs limpas e conteúdo estruturado (H1/H2)
+
+### Checklist rápido de indexação
+- Adicionar domínio no **Google Search Console**
+- Enviar `sitemap.xml`
+- Validar `robots.txt`
+- Usar **HTTPS** (com domínio correto)
+- Solicitar indexação das páginas principais
 
 ---
 
-<div align="center">
+## Roadmap público
 
-Software engineered for growth.
+**Fase 1 — Base (done)**
+- [x] Layout premium dark-first
+- [x] Header/rodapé padronizados
+- [x] CTAs WhatsApp com mensagens prontas
+- [x] Checkout Pix com copiar código + QR
 
-</div>
+**Fase 2 — Conversão (next)**
+- [ ] Landing dedicada por produto (copy + casos + prova)
+- [ ] Micro-estudos de caso (Passos/MG + clientes)
+- [ ] Eventos (GA4 / conversão WhatsApp) com UTMs
+
+**Fase 3 — SEO & conteúdo (next)**
+- [ ] Páginas de conteúdo “evergreen” (SEO real, não “fantasma”)
+- [ ] FAQ expandido por produto (schema FAQ)
+- [ ] Blog leve (static) com artigos técnicos e cases
+
+**Fase 4 — Growth**
+- [ ] Parcerias / backlinks locais (MG) + catálogo de serviços
+- [ ] Página “/press” e “/about” bem completa
+- [ ] Página “/careers” e “/opensource”
+
+---
+
+## Assets usados no README
+
+Imagens já no repositório (ou adicionadas nesta entrega):
+- `assets/img/perfil-insta.png`
+- `assets/img/capa.png`
+- `assets/img/logo.png`
+- `assets/img/zuri.png`
+- `assets/img/violet.png`
+- `assets/img/loja.png`
+- `assets/img/qrcode.png`
+- `assets/img/custommind-banner.svg` *(novo)*
+- `assets/img/custommind-logo-animated.svg` *(novo)*
+- `assets/img/site-preview.gif` *(novo)*
+
+---
+
+## Contato
+
+- WhatsApp: **+55 11 92373-4039**
+- Instagram: **@custommind.solutions**
+- E-mail: **custommind.softwaresolutions@gmail.com**
+
+---
+
+<p align="center">
+  <img src="assets/img/custommind-logo-animated.svg" alt="Custom Mind" width="160" />
+</p>
