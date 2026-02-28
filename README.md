@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<img src="assets/img/perfil-insta.png" alt="Custom Mind Banner" width="100%" />
+<img src="assets/img/perfil-insta.png" alt="Custom Mind Banner" width="10%" />
 
 <h1>Custom Mind</h1>
 <h3>Engineering scalable digital infrastructure for modern businesses</h3>
