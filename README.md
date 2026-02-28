@@ -11,8 +11,6 @@
 
 <div align="center">
 
-<img src="assets/img/capa.png" alt="Custom Mind Banner" width="100%" />
-
 <h1>Custom Mind</h1>
 <h3>Engineering scalable digital infrastructure for modern businesses</h3>
 
