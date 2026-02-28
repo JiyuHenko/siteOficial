@@ -1,6 +1,6 @@
 <!-- Custom Mind — README Premium -->
 <p align="center">
-  <img src="assets/img/custommind-banner.svg" alt="Custom Mind | Software Solutions" width="100%" />
+  <img src="assets/img/perfil-insta.png" alt="Custom Mind Banner" width="30%" />
 </p>
 
 <p align="center">
