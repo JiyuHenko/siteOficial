@@ -9,9 +9,25 @@
   <a href="mailto:custommind.softwaresolutions@gmail.com"><b>custommind.softwaresolutions@gmail.com</b></a>
 </p>
 
-<p align="center">
-  <img src="assets/img/site-preview.gif" alt="Preview do site" width="92%" />
+<div align="center">
+
+<img src="assets/img/capa.png" alt="Custom Mind Banner" width="100%" />
+
+<h1>Custom Mind</h1>
+<h3>Engineering scalable digital infrastructure for modern businesses</h3>
+
+<p>
+<a href="https://custommind.com.br">custommind.com.br</a> • Brazil • SaaS • Automation • Multi‑Tenant Systems
 </p>
+
+<p>
+<img src="https://img.shields.io/badge/Status-Active-16a34a?style=for-the-badge" />
+<img src="https://img.shields.io/badge/HTTPS-Secured-22c55e?style=for-the-badge" />
+<img src="https://img.shields.io/badge/SEO-Optimized-3b82f6?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Architecture-Scalable-7c3aed?style=for-the-badge" />
+</p>
+
+</div>
 
 ---
 
