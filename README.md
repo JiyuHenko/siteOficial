@@ -1,262 +1,178 @@
 <div align="center">
 
+<img src="assets/img/capa.png" alt="Custom Mind Banner" width="100%" />
+
 # 🧠 CUSTOM MIND
 
-### Engineering scalable software for modern businesses.
+### Engineering scalable digital infrastructure for modern businesses
 
 🌐 https://custommind.com.br  
 🇧🇷 Brazil  
-⚙️ SaaS • Automation • Multi-Tenant Platforms  
+⚙️ SaaS • Automation • Multi-Tenant Systems  
 
-[![Status](https://img.shields.io/badge/status-active-success)]()
-[![SEO](https://img.shields.io/badge/SEO-optimized-blue)]()
-[![HTTPS](https://img.shields.io/badge/HTTPS-enabled-green)]()
-[![License](https://img.shields.io/badge/license-proprietary-black)]()
+<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+<img src="https://img.shields.io/badge/HTTPS-Secured-green?style=for-the-badge" />
+<img src="https://img.shields.io/badge/SEO-Optimized-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Architecture-Scalable-purple?style=for-the-badge" />
 
 </div>
 
 ---
 
-## 🚀 About
+## 🚀 The Vision
 
-**Custom Mind** is a software engineering studio focused on building scalable SaaS platforms and automation systems for growing businesses.
+Custom Mind builds scalable SaaS platforms and automation systems designed to transform operations into structured digital ecosystems.
 
-We design and develop digital infrastructure that transforms operations into structured, optimized and automated systems.
+We don’t create websites.
 
-We don’t build “websites”.
-
-We build operational engines.
+We engineer operational engines.
 
 ---
 
-## 🏗 Core Philosophy
+## 🎥 Platform Preview
 
-Technology is not an expense.  
-It is a revenue multiplier.
-
-Every system we create is designed to:
-
-- Reduce operational friction  
-- Automate repetitive processes  
-- Increase margin  
-- Improve scalability  
-- Professionalize business structure  
-
----
-
-## 🔥 Products
-
-### 🛍 Loja Inteligente
-Full management platform for commerce operations.
-
-**Features:**
-- Multi-tenant architecture  
-- Dynamic theme system  
-- Real-time configuration preview  
-- Modular activation (finance, sales, inventory, etc.)  
-- Designed for scalability  
-
-Built to transform small operations into structured businesses.
-
----
-
-### 📈 Zuri
-Instagram organic growth automation tool.
-
-- Strategic engagement
-- Audience segmentation
-- Automation with behavioral logic
-
----
-
-### 🤖 Violet
-AI-powered DM engagement system.
-
-- Intelligent responses
-- Automated lead interaction
-- Strategic engagement flows
-
----
-
-## 🧠 Technical Architecture
-
-This repository contains the official institutional website.
-
-### Stack
-
-- HTML5
-- CSS3 (custom design system)
-- Vanilla JavaScript (modular structure)
-- Multi-tenant ready architecture
-- GitHub Pages deployment
-- Custom domain (Registro.br DNS)
-- Automatic HTTPS
-- Full SEO technical structure
-
----
-
-## 📊 SEO Infrastructure
-
-- Sitemap.xml
-- Robots.txt
-- Canonical URLs
-- Structured Data (Schema.org)
-- OpenGraph & Twitter Cards
-- Google Search Console configured
-- HTTPS enforced
-- Clean URL strategy
-
----
-
-## 🗂 Repository Structure
 <div align="center">
 
-# 🧠 CUSTOM MIND
-
-### Engineering scalable software for modern businesses.
-
-🌐 https://custommind.com.br  
-🇧🇷 Brazil  
-⚙️ SaaS • Automation • Multi-Tenant Platforms  
-
-[![Status](https://img.shields.io/badge/status-active-success)]()
-[![SEO](https://img.shields.io/badge/SEO-optimized-blue)]()
-[![HTTPS](https://img.shields.io/badge/HTTPS-enabled-green)]()
-[![License](https://img.shields.io/badge/license-proprietary-black)]()
+<img src="assets/img/loja.png" width="65%" />
+<br>
+<sub>Loja Inteligente – Multi-tenant management platform</sub>
 
 </div>
-
----
-
-## 🚀 About
-
-**Custom Mind** is a software engineering studio focused on building scalable SaaS platforms and automation systems for growing businesses.
-
-We design and develop digital infrastructure that transforms operations into structured, optimized and automated systems.
-
-We don’t build “websites”.
-
-We build operational engines.
-
----
-
-## 🏗 Core Philosophy
-
-Technology is not an expense.  
-It is a revenue multiplier.
-
-Every system we create is designed to:
-
-- Reduce operational friction  
-- Automate repetitive processes  
-- Increase margin  
-- Improve scalability  
-- Professionalize business structure  
 
 ---
 
 ## 🔥 Products
 
 ### 🛍 Loja Inteligente
-Full management platform for commerce operations.
+Full business management system.
 
-**Features:**
 - Multi-tenant architecture  
-- Dynamic theme system  
-- Real-time configuration preview  
-- Modular activation (finance, sales, inventory, etc.)  
-- Designed for scalability  
-
-Built to transform small operations into structured businesses.
+- Theme engine  
+- Modular activation  
+- Configurator with real-time preview  
+- Checkout integration  
+- Scalable structure  
 
 ---
+
+<div align="center">
+<img src="assets/img/zuri.png" width="160"/>
+<img src="assets/img/violet.png" width="160"/>
+</div>
 
 ### 📈 Zuri
-Instagram organic growth automation tool.
-
-- Strategic engagement
-- Audience segmentation
-- Automation with behavioral logic
-
----
+Strategic Instagram growth automation.
 
 ### 🤖 Violet
-AI-powered DM engagement system.
-
-- Intelligent responses
-- Automated lead interaction
-- Strategic engagement flows
+AI-driven DM engagement system.
 
 ---
 
-## 🧠 Technical Architecture
+## 🧠 Architecture Overview
 
-This repository contains the official institutional website.
-
-### Stack
-
-- HTML5
-- CSS3 (custom design system)
-- Vanilla JavaScript (modular structure)
-- Multi-tenant ready architecture
-- GitHub Pages deployment
-- Custom domain (Registro.br DNS)
-- Automatic HTTPS
-- Full SEO technical structure
+---
+/
+Frontend (Static SaaS Interface)
+│
+├── Institutional Pages
+├── Product Pages
+├── Multi-tenant Configurator
+│ ├── Theme Engine
+│ ├── JSON Generator
+│ └── Live Preview
+│
+└── Checkout Flow (Pix Integration)
+/
+---
+Deployment:
+- GitHub Pages
+- Custom Domain (Registro.br)
+- HTTPS Auto SSL
+- SEO structured
 
 ---
 
 ## 📊 SEO Infrastructure
 
-- Sitemap.xml
-- Robots.txt
-- Canonical URLs
-- Structured Data (Schema.org)
-- OpenGraph & Twitter Cards
-- Google Search Console configured
-- HTTPS enforced
-- Clean URL strategy
+- Sitemap.xml  
+- Robots.txt  
+- Canonical URLs  
+- Structured Data (Schema.org)  
+- OpenGraph & Social Metadata  
+- Google Search Console  
+- Clean URL Strategy  
 
 ---
 
-## 🗂 Repository Structure
+## 🗺 Public Roadmap
 
-├── index.html
-├── products/
-│ ├── zuri.html
-│ ├── violet.html
-│ └── loja-inteligente.html
-├── configurator/
-│ ├── index.html
-│ └── checkout.html
-├── assets/
-│ ├── img/
-│ └── css/
-├── sitemap.xml
-└── robots.txt
+### Phase 1 – Foundation (Completed)
+- Institutional website
+- Multi-tenant configurator
+- Checkout system
+- SEO infrastructure
+- Custom domain + HTTPS
 
+### Phase 2 – Expansion (In Progress)
+- Blog section (SEO authority)
+- Case studies
+- Performance optimization
+- Advanced analytics
+
+### Phase 3 – Scale
+- SaaS dashboard deployment
+- Client authentication system
+- API layer
+- Infrastructure scaling
 
 ---
 
-## 🌍 Vision
+## 📈 Market Positioning
 
-To become a reference in intelligent automation and scalable SaaS solutions for emerging businesses.
+Target:
+- Local businesses
+- Emerging digital operations
+- Entrepreneurs scaling structure
 
-We believe local businesses deserve enterprise-grade software.
+Differential:
+- Automation-first mindset
+- Modular system architecture
+- Performance-driven engineering
+- Clean and premium UI
+
+---
+
+## 💰 Startup Potential
+
+Custom Mind is positioned as:
+
+- SaaS infrastructure provider
+- Automation technology studio
+- Multi-tenant platform builder
+
+Scalable model:
+- License-based systems
+- Modular add-ons
+- Automation subscriptions
+- White-label potential
 
 ---
 
 ## 👤 Founder
 
-Built and engineered by **Mateus Lemos Figueiredo**  
-Software developer & systems architect.
+Engineered and built by:
+
+**Mateus Lemos Figueiredo**  
+Software Developer & Systems Architect  
+
+Focused on scalable digital systems and automation infrastructure.
 
 ---
 
-## 📬 Contact
+## 📫 Contact
 
 🌐 https://custommind.com.br  
-📱 WhatsApp: +55 11 92373-4039  
+📱 +55 11 92373-4039  
 📧 contato@custommind.com.br  
 
 ---
