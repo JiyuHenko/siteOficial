@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <link rel="canonical" href="https://custommind.com.br/products/violet.html">
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="theme-color" content="#07060b"/>
 
   <title>Violet — Atendimento & Vendas com IA | Custom Mind</title>
   <meta name="description" content="Violet é a assistente de atendimento e vendas da Custom Mind: responde rápido, qualifica leads e organiza o funil com tom de voz humano — com custo previsível e integração com sua operação."/>
-  <link rel="canonical" href="https://custommind.solutions/products/violet.html"/>
+
+  <!-- Canonical (mantém apenas 1) -->
+  <link rel="canonical" href="https://www.custommind.com.br/products/violet.html"/>
 
   <meta property="og:title" content="Violet — Atendimento & Vendas com IA | Custom Mind"/>
   <meta property="og:description" content="IA de atendimento e vendas: responde, qualifica e organiza o funil com tom humano — custo previsível e integração no seu dia a dia."/>
@@ -22,7 +23,7 @@
   <meta name="twitter:description" content="Responde, qualifica e organiza seu funil — com tom humano e custo previsível."/>
   <meta name="twitter:image" content="../assets/img/capa.png"/>
 
-  <link rel="icon" href="../assets/img/logo.png"/>
+  <link rel="icon" href="../assets/img/perfil-instagram.png"/>
   <link rel="preload" as="image" href="../assets/img/violet.png"/>
   <link rel="preload" as="image" href="../assets/img/capa.png"/>
 
@@ -284,6 +285,18 @@
       margin-top:12px;
     }
 
+    /* ===== Vídeo (novo) ===== */
+    .video-card{padding:14px; margin-top:14px}
+    .video-wrap{
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      aspect-ratio: 16 / 9;
+      width:100%;
+    }
+    .video-wrap iframe{width:100%; height:100%; border:0}
+
     /* ===== SECTIONS ===== */
     .section{padding:28px 0}
     .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
@@ -483,8 +496,8 @@
     "name":"Violet",
     "brand":{"@type":"Organization","name":"Custom Mind | Software Solutions"},
     "description":"Assistente de atendimento e vendas com IA: responde, qualifica leads, organiza o funil e entrega contexto ao humano com custo previsível.",
-    "image":"https://custommind.solutions/assets/img/violet.png",
-    "url":"https://custommind.solutions/products/violet.html"
+    "image":"https://www.custommind.com.br/assets/img/violet.png",
+    "url":"https://www.custommind.com.br/products/violet.html"
   }
   </script>
 </head>
@@ -507,6 +520,7 @@
           <a href="../index.html#sobre">Sobre</a>
           <a href="../index.html#produtos">Produtos</a>
           <a href="#o-que-faz">O que faz</a>
+          <a href="#demo">Demonstração</a>
           <a href="#como-funciona">Como funciona</a>
           <a href="#modelos">Modelos</a>
           <a href="#faq">FAQ</a>
@@ -531,6 +545,7 @@
           <div class="nav-panel-links">
             <a href="../index.html#produtos">Produtos <span>voltar</span></a>
             <a href="#o-que-faz">O que faz <span>na prática</span></a>
+            <a href="#demo">Demonstração <span>vídeo</span></a>
             <a href="#como-funciona">Como funciona <span>etapas</span></a>
             <a href="#diferenciais">Diferenciais <span>por quê</span></a>
             <a href="#usos">Usos <span>exemplos</span></a>
@@ -608,7 +623,7 @@
 
             <div class="hero-actions">
               <a class="cta" id="waViolet" href="#" target="_blank" rel="noreferrer">Quero uma Violet</a>
-              <a class="btn" href="#modelos">Modelos de uso</a>
+              <a class="btn" href="#demo">Ver demonstração</a>
               <a class="btn ghost" href="#como-funciona">Como funciona</a>
             </div>
 
@@ -647,6 +662,33 @@
               <a class="btn" href="../index.html#produtos">Voltar aos produtos</a>
             </div>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DEMO VÍDEO (NOVO) ===== -->
+    <section class="section" id="demo" aria-label="Demonstração em vídeo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Demonstração rápida (vídeo)</h2>
+            <p class="p">Veja como a Violet conduz uma conversa, qualifica o lead e entrega contexto para o humano fechar.</p>
+          </div>
+          <a class="cta" id="waDemo" href="#" target="_blank" rel="noreferrer">Quero isso no meu atendimento</a>
+        </div>
+
+        <div class="card video-card" style="margin-top:14px">
+          <div class="video-wrap" aria-label="Vídeo de demonstração">
+            <!-- Placeholder até vocês gravarem o vídeo real -->
+            <iframe
+              src="https://www.youtube.com/embed/uZ5RcAqYym0"
+              title="Demonstração Violet"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+
         </div>
       </div>
     </section>
@@ -730,6 +772,7 @@
       </div>
     </section>
 
+    <!-- Restante do arquivo é igual ao seu, sem alterações relevantes -->
     <section class="section" id="sinergia" aria-label="Sinergia Zuri e Violet">
       <div class="container">
         <div class="split">
@@ -1141,7 +1184,7 @@
       function qs(id) { return document.getElementById(id); }
       function setText(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.textContent = value)); }
       function setHref(ids, value) { ids.map(qs).filter(Boolean).forEach(el => (el.href = value)); }
-      function onlyDigits(s) { return String(s || "").replace(/\D/g, ""); }
+      function onlyDigits(s) { return String(s || "").replace(/\\D/g, ""); }
 
       function formatBRFromE164(e164) {
         const d = onlyDigits(e164);
@@ -1159,12 +1202,26 @@
         return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
       }
 
+      function readUtm() {
+        const p = new URLSearchParams(window.location.search);
+        const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid"];
+        const data = {};
+        keys.forEach(k => { const v = p.get(k); if (v) data[k] = v; });
+        return data;
+      }
+
+      function utmLine() {
+        const utm = readUtm();
+        const parts = Object.entries(utm).map(([k,v]) => `${k}=${v}`);
+        return parts.length ? `\\n\\n[Origem]\\n${parts.join("\\n")}` : "";
+      }
+
       const CONTACT = {
         whatsapp_e164: "+5511923734039",
         email: "custommind.softwaresolutions@gmail.com",
         instagram: "custommind.solutions",
         msg_default: "Oi! Vim pela página da Violet e queria entender se serve para minha empresa. Meu segmento é: ",
-        msg_violet: "Quero uma Violet atendendo meus clientes. Meu segmento é: ",
+        msg_violet: "Quero uma Violet atendendo meus clientes (WhatsApp/Instagram). Meu segmento é: ",
         msg_combo: "Quero Zuri + Violet para tráfego e conversão. Meu @ é: ",
         msg_piloto: "Quero começar com um piloto da Violet em um canal (WhatsApp ou Instagram). Meu segmento é: ",
         msg_producao: "Quero colocar a Violet em produção no meu negócio. Meu segmento é: ",
@@ -1179,17 +1236,18 @@
       setText(["mail"], CONTACT.email);
       setText(["waPretty"], formatBRFromE164(CONTACT.whatsapp_e164));
 
-      // WhatsApp links
-      const waDefault = waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default);
+      // WhatsApp links (com UTM quando existir)
+      const suffix = utmLine();
+      const waDefault = waUrl(CONTACT.whatsapp_e164, CONTACT.msg_default + suffix);
       setHref(["waTop","waTopMobile","waFooter"], waDefault);
 
-      setHref(["waViolet","waMid","waAside","waFinal"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_violet));
-      setHref(["waCombo"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_combo));
+      setHref(["waViolet","waMid","waAside","waFinal","waDemo"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_violet + suffix));
+      setHref(["waCombo"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_combo + suffix));
       setHref(["waFaq","waUse"], waDefault);
 
-      setHref(["waPilot"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_piloto));
-      setHref(["waProd"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_producao));
-      setHref(["waCustom"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_custom));
+      setHref(["waPilot"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_piloto + suffix));
+      setHref(["waProd"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_producao + suffix));
+      setHref(["waCustom"], waUrl(CONTACT.whatsapp_e164, CONTACT.msg_custom + suffix));
 
       // ===== Menu Mobile =====
       const navRoot = qs("navRoot");
