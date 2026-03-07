@@ -23,10 +23,21 @@
   <meta name="twitter:title" content="Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind"/>
   <meta name="twitter:description" content="Atendimento e vendas no WhatsApp com IA: responde rápido, qualifica leads e encaminha para o humano na hora certa."/>
   <meta name="twitter:image" content="https://www.custommind.com.br/assets/img/capa.png"/>
-
+  
   <link rel="icon" href="/assets/img/perfil-insta.png"/>
   <link rel="preload" as="image" href="/assets/img/capa.png"/>
   <link rel="preload" as="image" href="/assets/img/violet.png"/>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17945612305"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'AW-17945612305');
+  </script>
+  
 
   <script type="application/ld+json">
   {
@@ -862,6 +873,17 @@
         else mq.addListener(handleMq);
       }
     })();
+  </script>
+
+
+  <script>
+  document.querySelectorAll('[id^="wa"]').forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      gtag('event','conversion',{
+        'send_to':'AW-17945612305/r57ECOnT-4McEJGgke1C'
+      });
+    });
+  });
   </script>
 </body>
 </html>
