@@ -7,12 +7,12 @@
   <meta name="robots" content="index,follow"/>
 
   <title>Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind</title>
-  <meta name="description" content="Atendimento e vendas no WhatsApp com IA: responde rápido, qualifica leads e encaminha para o humano na hora certa."/>
+  <meta name="description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, qualifique leads e organize seu funil sem sobrecarregar a equipe."/>
 
   <link rel="canonical" href="https://www.custommind.com.br/products/violet-whatsapp.html"/>
 
   <meta property="og:title" content="Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind"/>
-  <meta property="og:description" content="Atendimento e vendas no WhatsApp com IA: responde rápido, qualifica leads e encaminha para o humano na hora certa."/>
+  <meta property="og:description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, qualifique leads e organize seu funil sem sobrecarregar a equipe."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.custommind.com.br/products/violet-whatsapp.html"/>
   <meta property="og:image" content="https://www.custommind.com.br/assets/img/capa.png"/>
@@ -21,9 +21,9 @@
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind"/>
-  <meta name="twitter:description" content="Atendimento e vendas no WhatsApp com IA: responde rápido, qualifica leads e encaminha para o humano na hora certa."/>
+  <meta name="twitter:description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, qualifique leads e organize seu funil sem sobrecarregar a equipe."/>
   <meta name="twitter:image" content="https://www.custommind.com.br/assets/img/capa.png"/>
-  
+
   <link rel="icon" href="/assets/img/perfil-insta.png"/>
   <link rel="preload" as="image" href="/assets/img/capa.png"/>
   <link rel="preload" as="image" href="/assets/img/violet.png"/>
@@ -31,13 +31,11 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17945612305"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  
-  gtag('config', 'AW-17945612305');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17945612305');
   </script>
-  
 
   <script type="application/ld+json">
   {
@@ -75,20 +73,23 @@
 
   <style>
     :root{
-      --bg: #07060b;
+      --bg:#07060b;
       --bg2:#0c0a14;
       --card:#0f0c1c;
+      --card2:rgba(255,255,255,.04);
       --text:#e9e7ff;
       --muted:#b9b6d9;
-      --line: rgba(255,255,255,.10);
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.16);
       --violet:#8b5cf6;
       --violet2:#a78bfa;
       --cyan:#22d3ee;
-      --shadow: 0 14px 50px rgba(0,0,0,.55);
-      --radius: 20px;
-      --radius2: 28px;
-      --max: 1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --green:#34d399;
+      --shadow:0 14px 50px rgba(0,0,0,.55);
+      --radius:20px;
+      --radius2:28px;
+      --max:1120px;
+      --font:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
 
     *{box-sizing:border-box}
@@ -113,21 +114,18 @@
 
     .skip{
       position:absolute; left:-999px; top:10px;
-      background: rgba(255,255,255,.08);
+      background:rgba(255,255,255,.08);
       border:1px solid var(--line);
       padding:10px 12px;
       border-radius:12px;
     }
     .skip:focus{left:10px; z-index:9999; outline:none}
 
-    .link{color:var(--text); border-bottom:1px solid rgba(255,255,255,.18)}
-    .link:hover{border-bottom-color: rgba(255,255,255,.35)}
-
     .nav{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(7,6,11,.55);
-      border-bottom: 1px solid var(--line);
+      backdrop-filter:blur(12px);
+      background:rgba(7,6,11,.60);
+      border-bottom:1px solid var(--line);
     }
     .nav-inner{
       display:flex;
@@ -138,8 +136,8 @@
       position:relative;
     }
 
-    .brand{display:flex; align-items:center; gap:12px; min-width: 220px}
-    .brand img{width:34px; height:34px; border-radius:10px; object-fit:contain; background: rgba(255,255,255,.06); border:1px solid var(--line)}
+    .brand{display:flex; align-items:center; gap:12px; min-width:220px}
+    .brand img{width:34px; height:34px; border-radius:0; object-fit:contain; background:transparent; border:0; filter:drop-shadow(0 0 12px rgba(139,92,246,.55))}
     .brand .t{display:flex; flex-direction:column; line-height:1.15}
     .brand .t strong{font-size:14px; letter-spacing:.2px}
     .brand .t span{font-size:12px; color:var(--muted)}
@@ -147,61 +145,56 @@
     .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
     .nav-links a{font-size:13px; color:var(--muted)}
     .nav-links a:hover{color:var(--text)}
-    .nav-links a:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:2px; border-radius:10px}
 
-    .cta{
+    .cta, .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      height:40px; padding:0 14px; border-radius:12px;
-      background: linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
-      color:#0b0713;
-      font-weight:750; font-size:13px;
-      box-shadow: 0 10px 30px rgba(139,92,246,.18);
-      border: 1px solid rgba(255,255,255,.10);
       white-space:nowrap;
+      cursor:pointer;
+    }
+    .cta{
+      height:42px; padding:0 16px; border-radius:14px;
+      background:linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
+      color:#0b0713;
+      font-weight:800; font-size:13px;
+      box-shadow:0 10px 30px rgba(139,92,246,.18);
+      border:1px solid rgba(255,255,255,.10);
     }
     .cta:hover{filter:brightness(1.05)}
     .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
       height:42px; padding:0 16px; border-radius:14px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background:rgba(255,255,255,.04);
       color:var(--text);
       font-weight:650; font-size:13px;
-      white-space:nowrap;
     }
-    .btn:hover{background: rgba(255,255,255,.06)}
-    .btn:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
-    .btn.ghost{background: rgba(0,0,0,.12)}
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .btn.ghost{background:rgba(0,0,0,.12)}
 
     .nav-right{display:flex; align-items:center; gap:10px}
     .nav-toggle{
       display:none;
-      height:40px;
-      width:44px;
+      height:40px; width:44px;
       border-radius:12px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
       cursor:pointer;
       align-items:center;
       justify-content:center;
     }
-    .nav-toggle:hover{background: rgba(255,255,255,.06)}
-    .nav-toggle:focus-visible{outline:2px solid rgba(139,92,246,.6); outline-offset:3px}
     .nav-toggle svg{width:18px;height:18px}
 
     .nav-panel{
       display:none;
       position:absolute;
-      left:0; right:0;
-      top:72px;
+      left:0; right:0; top:72px;
       border:1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(10,8,16,.95);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
+      border-radius:18px;
+      background:rgba(10,8,16,.95);
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow);
       padding:12px;
       overflow:hidden;
     }
@@ -218,13 +211,12 @@
       padding:10px 10px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
       font-weight:650;
       font-size:14px;
     }
-    .nav-panel a span{color: var(--muted); font-weight:600; font-size:12px}
-    .nav-panel a:hover{border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    .nav-panel a span{color:var(--muted); font-weight:600; font-size:12px}
     .nav-panel .nav-panel-cta{
       display:flex;
       gap:10px;
@@ -233,23 +225,29 @@
     }
     .nav-open .nav-panel{display:block}
 
-    .hero{padding:56px 0 22px; position:relative}
+    .hero{padding:54px 0 18px; position:relative}
     .hero-bg{
       position:absolute; inset:-120px -120px -60px -120px;
-      background: url("/assets/img/capa.png") center/cover no-repeat;
+      background:url("/assets/img/capa.png") center/cover no-repeat;
       opacity:.09;
-      filter: blur(1px);
+      filter:blur(1px);
       pointer-events:none;
     }
 
-    .hero-grid{position:relative; display:grid; grid-template-columns: 1.15fr .85fr; gap:26px; align-items:stretch}
+    .hero-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:26px;
+      align-items:stretch;
+    }
 
     .badge{
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background:rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
     }
@@ -262,13 +260,36 @@
     }
     .badge svg{width:14px; height:14px}
 
-    .h1{font-size:44px; line-height:1.05; margin:14px 0 14px; letter-spacing:-.7px}
+    .h1{font-size:46px; line-height:1.04; margin:14px 0 14px; letter-spacing:-.8px}
+    .h2{font-size:24px; margin:0 0 10px}
+    .h3{font-size:18px; margin:0 0 8px}
     .grad{
       background:linear-gradient(90deg,var(--violet),var(--cyan));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
-    .lead{font-size:16px; color:var(--muted); max-width: 66ch}
+
+    .lead{font-size:17px; color:var(--muted); max-width:68ch}
     .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .micro-proof{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .micro-proof .ok{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+    }
+    .dot{opacity:.5}
 
     .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
     .pill{
@@ -276,7 +297,7 @@
       padding:8px 10px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      background:rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
     }
@@ -284,41 +305,129 @@
 
     .card{
       border:1px solid var(--line);
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.03);
-      box-shadow: var(--shadow);
+      border-radius:var(--radius2);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow);
     }
     .hero-card{padding:18px}
     .small{font-size:12px; color:var(--muted)}
-    .kpi{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px}
-    .kpi .k{padding:12px; border-radius: 16px; border:1px solid var(--line); background: rgba(0,0,0,.18)}
+
+    .kpi{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .kpi .k{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+    }
     .k strong{display:block; font-size:18px}
     .k span{display:block; font-size:12px; color:var(--muted)}
 
+    .notice{
+      padding:14px;
+      border-radius:18px;
+      border:1px dashed rgba(255,255,255,.18);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .quick-box{
+      margin-top:16px;
+      padding:14px;
+      border-radius:20px;
+      border:1px solid rgba(52,211,153,.18);
+      background:rgba(52,211,153,.08);
+    }
+    .quick-box b{color:#fff}
+    .quick-list{
+      margin:8px 0 0;
+      padding-left:18px;
+      color:rgba(233,231,255,.88);
+      font-size:13px;
+    }
+
     .section{padding:28px 0}
-    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap}
-    .h2{font-size:22px; margin:0 0 10px}
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
     .p{color:var(--muted); margin:0 0 16px}
 
-    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:14px}
 
     .feature{padding:16px}
     .icon{
       width:40px; height:40px; border-radius:14px;
       display:grid; place-items:center;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background:rgba(255,255,255,.04);
       margin-bottom:10px;
     }
     .icon svg{width:20px; height:20px}
     .feature h3{margin:0 0 6px; font-size:15px}
     .feature p{margin:0; color:var(--muted); font-size:13px}
 
+    .list{
+      margin:0; padding:0;
+      list-style:none;
+      display:flex; flex-direction:column;
+      gap:10px;
+    }
+    .list li{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.15);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .list li b{color:var(--text)}
+
+    .fit-card{padding:16px}
+    .fit-card .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      width:fit-content;
+      margin-bottom:10px;
+    }
+
+    .video{
+      position:relative;
+      width:100%;
+      aspect-ratio:16 / 9;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.25);
+      box-shadow:var(--shadow);
+    }
+    .video iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
+
     details.faq{
       border:1px solid var(--line);
       border-radius:18px;
-      background: rgba(0,0,0,.12);
+      background:rgba(0,0,0,.12);
       padding:12px 14px;
     }
     details.faq + details.faq{margin-top:10px}
@@ -332,46 +441,21 @@
     details.faq summary::-webkit-details-marker{display:none}
     details.faq p{margin:10px 0 0; color:var(--muted); font-size:13px}
 
-    .notice{
-      padding:14px 14px;
-      border-radius: 18px;
-      border:1px dashed rgba(255,255,255,.18);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size:12px;
-    }
-
-    .video{
-      position:relative;
-      width:100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.25);
-      box-shadow: var(--shadow);
-    }
-    .video iframe{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-      border:0;
-    }
-
     .footer{
-      padding:30px 0 44px;
+      padding:30px 0 90px;
       border-top:1px solid var(--line);
       margin-top:20px;
     }
     .footer-grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns:1.2fr .8fr;
       gap:14px;
       align-items:start;
     }
     .footer-card{padding:16px}
     .footer-links{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:10px;
       margin-top:12px;
     }
@@ -379,42 +463,63 @@
       padding:10px 10px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
       font-size:13px;
     }
-    .footer-links a:hover{color:var(--text); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.05)}
+    .footer-links a:hover{color:var(--text); border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.05)}
     hr.sep{border:0; border-top:1px solid var(--line); margin:14px 0}
 
-    .brand img.brand-logo{
-      width:34px;
-      height:34px;
-      border-radius:0;
-      background: transparent;
-      border:0;
-      object-fit:contain;
-      filter: drop-shadow(0 0 12px rgba(139,92,246,.55));
+    .sticky-cta{
+      position:fixed;
+      left:14px;
+      right:14px;
+      bottom:14px;
+      z-index:70;
+      display:none;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 12px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(10,8,16,.92);
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow);
     }
+    .sticky-cta .txt{
+      min-width:0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+    .sticky-cta .txt b{display:block; color:var(--text); font-size:13px}
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
-      .cta, .btn{transition:none}
+      .cta,.btn{transition:none}
     }
 
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr}
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
       .h1{font-size:38px}
-      .grid3{grid-template-columns: 1fr}
-      .split{grid-template-columns: 1fr}
+      .grid3,.grid2,.split{grid-template-columns:1fr}
       .nav-links{display:none}
       .nav-toggle{display:inline-flex}
       .hero-bg{inset:-80px -80px -40px -80px}
-      .footer-grid{grid-template-columns: 1fr}
-      .footer-links{grid-template-columns: 1fr}
+      .footer-grid,.footer-links{grid-template-columns:1fr}
     }
-    @media (max-width: 520px){
+
+    @media (max-width:760px){
+      .sticky-cta{display:flex}
+    }
+
+    @media (max-width:520px){
       .nav-inner{height:auto; padding:10px 0}
-      .cta{height:38px}
+      .cta,.btn{height:40px}
+      .hero{padding-top:40px}
+      .h1{font-size:34px}
+      .lead{font-size:15px}
     }
   </style>
 </head>
@@ -426,7 +531,7 @@
     <div class="container">
       <div class="nav-inner" id="navRoot">
         <a class="brand" href="/#produtos" aria-label="Voltar para o site da Custom Mind">
-          <img class="brand-logo" src="/assets/img/logo.png" alt="Logo da Custom Mind"/>
+          <img src="/assets/img/logo.png" alt="Logo da Custom Mind"/>
           <div class="t">
             <strong>Custom Mind</strong>
             <span>Software Solutions</span>
@@ -434,16 +539,13 @@
         </a>
 
         <nav class="nav-links" aria-label="Navegação principal">
-          <a href="/#sobre">Sobre</a>
-          <a href="/#produtos">Produtos</a>
-          <a href="#demos">Demonstração</a>
           <a href="#como-funciona">Como funciona</a>
+          <a href="#serve">Serve para meu caso?</a>
           <a href="#faq">FAQ</a>
-          <a href="/products/violet.html">Página completa</a>
         </nav>
 
         <div class="nav-right">
-          <a class="cta" id="waTop" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
 
           <button class="nav-toggle" id="navToggle"
                   type="button"
@@ -458,15 +560,13 @@
 
         <div class="nav-panel" id="navPanel" role="dialog" aria-label="Menu">
           <div class="nav-panel-links">
-            <a href="#demos">Demonstração <span>vídeo real</span></a>
             <a href="#como-funciona">Como funciona <span>etapas</span></a>
-            <a href="#diferenciais">Diferenciais <span>por quê</span></a>
+            <a href="#serve">Serve para meu caso? <span>fit rápido</span></a>
+            <a href="#demos">Demonstração <span>vídeo</span></a>
             <a href="#faq">FAQ <span>dúvidas</span></a>
-            <a href="/products/violet.html">Página completa <span>detalhes</span></a>
           </div>
           <div class="nav-panel-cta">
-            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-            <a class="btn" href="/products/violet.html">Página completa</a>
+            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
           </div>
         </div>
       </div>
@@ -490,9 +590,14 @@
               <span><b>Violet • WhatsApp • Atendimento & Vendas</b></span>
             </div>
 
-            <h1 class="h1">Atendimento no <span class="grad">WhatsApp</span> que converte sem sobrecarregar o time.</h1>
+            <h1 class="h1">
+              Atendimento no <span class="grad">WhatsApp</span> que responde mais rápido,
+              organiza o lead e tira pressão da sua equipe.
+            </h1>
 
-            <p class="lead">Violet atende mensagens no WhatsApp com linguagem natural, faz as perguntas certas, organiza o lead e chama um humano quando é hora de fechar. Resultado: menos demora, menos retrabalho e mais conversão.</p>
+            <p class="lead">
+              A Violet entra no seu WhatsApp para fazer o primeiro atendimento, qualificar melhor as conversas e encaminhar o caso para o humano com mais contexto. O objetivo é simples: <b>menos atraso, menos bagunça e mais conversão</b>.
+            </p>
 
             <div class="pillrow" aria-label="Benefícios rápidos">
               <span class="pill">
@@ -500,44 +605,56 @@
                   <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z" stroke="currentColor" stroke-width="1.6"/>
                   <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                 </svg>
-                Resposta imediata
+                Resposta mais rápida
               </span>
               <span class="pill">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.6"/>
                   <path d="M7 10h6M7 13h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                 </svg>
-                Lead qualificado
+                Lead mais organizado
               </span>
               <span class="pill">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6 18V6h12v12H6Z" stroke="currentColor" stroke-width="1.6"/>
                   <path d="M8 14l2-2 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Funil organizado
+                Handoff com contexto
               </span>
               <span class="pill">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
                 </svg>
-                Custo previsível
+                Sem custo surpresa
               </span>
             </div>
 
             <div class="hero-actions">
-              <a class="cta" id="waHero" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-              <a class="btn" href="#demos">Ver demonstração</a>
-              <a class="btn ghost" href="/products/violet.html">Ver tudo</a>
+              <a class="cta" id="waHero" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
+              <a class="btn" href="#serve">Serve para meu caso?</a>
             </div>
 
-            <p class="small" style="margin-top:10px">
-              Se você perde oportunidade por demora, mensagem bagunçada ou equipe sobrecarregada, essa página existe para resolver isso rápido.
-            </p>
+            <div class="micro-proof" aria-label="Micro provas e segurança">
+              <span class="ok">Sem compromisso</span>
+              <span class="dot">•</span>
+              <span class="ok">Análise rápida no WhatsApp</span>
+              <span class="dot">•</span>
+              <span class="ok">Você explica seu cenário e eu te digo se faz sentido</span>
+            </div>
+
+            <div class="quick-box">
+              <b>Para agilizar sua resposta no WhatsApp:</b>
+              <ul class="quick-list">
+                <li>me diga o que você vende</li>
+                <li>qual seu principal canal hoje</li>
+                <li>onde o atendimento mais trava</li>
+              </ul>
+            </div>
           </div>
 
           <aside class="card hero-card" aria-label="Resumo">
             <div style="display:flex; gap:12px; align-items:center">
-              <div style="width:54px;height:54px;border-radius:16px;border:1px solid rgba(255,255,255,.16);overflow:hidden;background: rgba(255,255,255,.03)">
+              <div style="width:54px;height:54px;border-radius:16px;border:1px solid rgba(255,255,255,.16);overflow:hidden;background:rgba(255,255,255,.03)">
                 <img src="/assets/img/violet.png" alt="Violet" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"/>
               </div>
               <div>
@@ -547,53 +664,94 @@
             </div>
 
             <div class="kpi" aria-label="Indicadores">
-              <div class="k"><strong>Tempo</strong><span>resposta mais rápida</span></div>
-              <div class="k"><strong>Lead</strong><span>qualificação & dados</span></div>
-              <div class="k"><strong>Funil</strong><span>organização & etapa</span></div>
-              <div class="k"><strong>Equipe</strong><span>menos sobrecarga</span></div>
+              <div class="k"><strong>Tempo</strong><span>menos demora para responder</span></div>
+              <div class="k"><strong>Lead</strong><span>mais contexto e triagem</span></div>
+              <div class="k"><strong>Funil</strong><span>menos bagunça no atendimento</span></div>
+              <div class="k"><strong>Equipe</strong><span>menos peso no repetitivo</span></div>
             </div>
 
             <div class="notice" style="margin-top:12px">
-              Para análise rápida, envie:
-              <b>(1)</b> o que você vende, <b>(2)</b> canal principal, <b>(3)</b> dúvidas recorrentes e <b>(4)</b> como fecha hoje.
+              <b>O melhor cenário para falar agora:</b><br/>
+              você já recebe mensagens no WhatsApp, mas perde tempo com demora, repetição, triagem fraca ou atendimento inconsistente.
             </div>
 
             <div class="hero-actions" style="margin-top:12px">
-              <a class="cta" id="waAside" href="#" target="_blank" rel="noreferrer">Quero uma análise</a>
-              <a class="btn" href="#faq">Dúvidas</a>
+              <a class="cta" id="waAside" href="#" target="_blank" rel="noreferrer">Quero uma análise rápida</a>
             </div>
+
+            <p class="small" style="margin-top:10px">
+              Sem formulário. Sem enrolação. Você chama e a gente vê rapidamente se a Violet faz sentido para sua operação.
+            </p>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="demos" aria-label="Demonstração em vídeo">
+    <section class="section" id="serve" aria-label="Serve para meu caso">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2 class="h2">Demonstração em vídeo</h2>
-            <p class="p">Veja a Violet em funcionamento no atendimento e entenda como ela filtra, qualifica e organiza o próximo passo.</p>
+            <h2 class="h2">Serve para meu caso?</h2>
+            <p class="p">A Violet costuma funcionar melhor quando o problema já existe no dia a dia e o WhatsApp virou gargalo de atendimento ou vendas.</p>
           </div>
-          <a class="btn" href="#como-funciona">Como funciona</a>
+          <a class="cta" id="waServe" href="#" target="_blank" rel="noreferrer">Quero validar meu cenário</a>
         </div>
 
-        <p class="p" style="margin-bottom:12px">
-          O vídeo abaixo é apoio de decisão: ele mostra a lógica do atendimento, o momento de qualificação e como o humano entra com mais contexto para fechar.
-        </p>
+        <div class="grid2" style="margin-top:14px">
+          <div class="card fit-card">
+            <div class="tag">Geralmente faz sentido</div>
+            <ul class="list">
+              <li><b>Vocês demoram para responder</b> e perdem timing da conversa.</li>
+              <li><b>Chegam muitas mensagens repetidas</b> e o time fica preso no operacional.</li>
+              <li><b>O lead vem bagunçado</b> e ninguém sabe priorizar direito.</li>
+              <li><b>O comercial entra tarde</b> ou sem contexto suficiente.</li>
+              <li><b>Você quer escala</b> sem crescer equipe na mesma proporção.</li>
+            </ul>
+          </div>
 
-        <div class="video" aria-label="Vídeo de demonstração">
-          <iframe
-            src="https://www.youtube.com/embed/C7_Gm2P09co?rel=0&modestbranding=1"
-            title="Demonstração Violet"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+          <div class="card fit-card">
+            <div class="tag">Talvez não seja prioridade ainda</div>
+            <ul class="list">
+              <li><b>Você quase não recebe mensagens</b> no WhatsApp hoje.</li>
+              <li><b>O problema principal é tráfego</b>, não atendimento.</li>
+              <li><b>O processo comercial ainda está muito indefinido</b> e não existe um fluxo claro.</li>
+              <li><b>Você quer algo 100% automático sem supervisão</b> em casos sensíveis.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona" aria-label="Como funciona">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Como funciona na prática</h2>
+            <p class="p">A Violet não entra para “substituir tudo”. Ela assume a camada repetitiva, organiza a conversa e aciona o humano melhor preparado para fechar.</p>
+          </div>
+          <a class="btn" href="#demos">Ver demonstração</a>
         </div>
 
-        <div class="hero-actions" style="margin-top:14px">
-          <a class="cta" id="waVideo" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-          <a class="btn" href="/products/violet.html">Página completa</a>
+        <div class="split" style="margin-top:14px">
+          <div class="card" style="padding:16px">
+            <h3 class="h3">Fluxo típico</h3>
+            <ul class="list">
+              <li><b>1) Responde em segundos</b> e mantém a conversa viva.</li>
+              <li><b>2) Entende o contexto</b> e faz as perguntas mais úteis.</li>
+              <li><b>3) Qualifica o lead</b> e separa curiosidade de intenção real.</li>
+              <li><b>4) Encaminha com contexto</b> para o humano entrar melhor.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <h3 class="h3">Implantação</h3>
+            <div class="notice">
+              Você manda o básico: o que vende, como atende hoje, dúvidas mais comuns e como costuma fechar. A partir disso a Custom Mind configura a base e ajusta com conversa real.
+            </div>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="cta" id="waMid" href="#" target="_blank" rel="noreferrer">Quero ver isso no meu caso</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -601,7 +759,7 @@
     <section class="section" id="diferenciais" aria-label="Diferenciais">
       <div class="container">
         <h2 class="h2">O que faz essa implementação dar certo</h2>
-        <p class="p">A diferença está no fluxo: atendimento real, qualificação, regras e handoff bem definido. Não é só responder mensagens.</p>
+        <p class="p">A diferença não está só em responder mais rápido. Está em responder melhor, organizar a conversa e criar um handoff que ajuda o comercial em vez de atrapalhar.</p>
 
         <div class="grid3" style="margin-top:14px">
           <div class="card feature">
@@ -611,8 +769,8 @@
                 <path d="M7 10h10M7 13h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3>Atende sem travar sua operação</h3>
-            <p>Respostas rápidas, consistentes e no tom da marca — mesmo em horário de pico.</p>
+            <h3>Atendimento consistente</h3>
+            <p>Respostas mais rápidas e com padrão, sem depender só de quem está online no momento.</p>
           </div>
 
           <div class="card feature">
@@ -622,7 +780,7 @@
               </svg>
             </div>
             <h3>Handoff inteligente</h3>
-            <p>Quando vira venda de verdade, ela chama o humano já com contexto organizado.</p>
+            <p>Quando é hora do humano entrar, ele já recebe contexto melhor para continuar a conversa.</p>
           </div>
 
           <div class="card feature">
@@ -632,37 +790,31 @@
                 <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3>Base pronta para evoluir</h3>
-            <p>Começa simples, mede gargalos e vai refinando com conversas reais.</p>
+            <h3>Base que evolui</h3>
+            <p>Começa com o essencial, mede gargalos e melhora conforme surgem conversas reais.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="como-funciona" aria-label="Como funciona">
+    <section class="section" id="demos" aria-label="Demonstração em vídeo">
       <div class="container">
-        <h2 class="h2">Como funciona na prática</h2>
-        <p class="p">Você ganha agilidade sem perder o lado humano. A Violet resolve o repetitivo e o time entra no decisivo.</p>
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Demonstração em vídeo</h2>
+            <p class="p">Esse vídeo ajuda a visualizar a lógica do atendimento e o momento em que o humano assume com mais contexto.</p>
+          </div>
+          <a class="cta" id="waVideo" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
+        </div>
 
-        <div class="split" style="margin-top:14px">
-          <div class="card" style="padding:16px">
-            <h3 style="margin:0 0 10px">Fluxo típico</h3>
-            <ul class="p" style="margin:0; padding-left:18px">
-              <li>1) Responde em segundos e entende intenção</li>
-              <li>2) Faz perguntas para qualificar: necessidade, urgência, perfil e próximo passo</li>
-              <li>3) Encaminha para humano com contexto e continuidade</li>
-            </ul>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin:0 0 10px">Implantação</h3>
-            <div class="notice">
-              Você envia o básico: serviço ou produto, dúvidas, regras e tom de voz. A Custom Mind configura e ajusta com base em conversas reais.
-            </div>
-            <div class="hero-actions" style="margin-top:12px">
-              <a class="cta" id="waMid" href="#" target="_blank" rel="noreferrer">Quero ver no meu caso</a>
-              <a class="btn" href="/products/violet.html">Ver detalhes</a>
-            </div>
-          </div>
+        <div class="video" aria-label="Vídeo de demonstração" style="margin-top:12px">
+          <iframe
+            src="https://www.youtube.com/embed/C7_Gm2P09co?rel=0&modestbranding=1"
+            title="Demonstração Violet"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -674,27 +826,26 @@
 
         <details class="faq">
           <summary>Ela substitui totalmente o humano?</summary>
-          <p>Não. A ideia é proteger o time do repetitivo e chamar um humano na hora certa, com contexto organizado.</p>
+          <p>Não. A ideia é tirar o peso do repetitivo, organizar a triagem e chamar o humano com mais contexto quando fizer sentido.</p>
         </details>
 
         <details class="faq">
-          <summary>Preciso mudar meu processo?</summary>
-          <p>Não necessariamente. A implementação começa em cima do seu processo atual e vai refinando com dados reais.</p>
+          <summary>Preciso mudar meu processo inteiro?</summary>
+          <p>Não necessariamente. O melhor caminho costuma ser começar em cima do seu processo atual, identificar gargalos reais e evoluir a partir disso.</p>
         </details>
 
         <details class="faq">
           <summary>Como funciona o custo?</summary>
-          <p>Modelo de valor fixo mensal definido pela complexidade, canais, cenários e regras. Sem susto por token ou mensagem.</p>
+          <p>Trabalhamos com valor fixo definido pela complexidade do caso, canais atendidos e cenários necessários. A proposta é manter previsibilidade.</p>
         </details>
 
         <details class="faq">
-          <summary>O que vocês precisam para uma proposta rápida?</summary>
-          <p>Segmento, canal principal, dúvidas frequentes e como vocês fecham hoje. Em uma conversa já dá para mapear o melhor modelo.</p>
+          <summary>O que vocês precisam para me responder rápido?</summary>
+          <p>Seu segmento, o canal principal, onde o atendimento mais trava e como vocês fecham hoje. Com isso já dá para dizer se faz sentido e qual seria o próximo passo.</p>
         </details>
 
         <div class="hero-actions" style="margin-top:14px">
-          <a class="cta" id="waFaq" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-          <a class="btn" href="/products/violet.html">Ver detalhes</a>
+          <a class="cta" id="waFaq" href="#" target="_blank" rel="noreferrer">Quero tirar uma dúvida</a>
         </div>
       </div>
     </section>
@@ -702,16 +853,15 @@
     <section class="section" aria-label="Chamada final">
       <div class="container">
         <div class="card" style="padding:16px">
-          <h2 class="h2">Quer ver como ficaria no seu negócio?</h2>
+          <h2 class="h2">Quer ver se isso faz sentido para o seu negócio?</h2>
           <p class="p" style="margin-bottom:10px">
-            Me diga seu segmento e seu canal principal. Eu te respondo com o melhor modelo e os próximos passos para colocar a Violet operando no WhatsApp.
+            Me diga seu segmento, seu canal principal e onde o atendimento mais trava hoje. Eu te respondo no WhatsApp com uma leitura rápida do cenário.
           </p>
           <div class="hero-actions">
-            <a class="cta" id="waFinal" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-            <a class="btn" href="/#contato">Contato</a>
+            <a class="cta" id="waFinal" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
           </div>
           <p class="small" style="margin-top:10px">
-            Dica: quanto mais claro o que você vende e as dúvidas recorrentes, mais rápido a configuração fica natural.
+            Sem compromisso. Sem formulário. Você explica seu caso e a gente vê rapidamente se a Violet faz sentido.
           </p>
         </div>
       </div>
@@ -723,7 +873,7 @@
       <div class="footer-grid">
         <div class="card footer-card">
           <div class="brand">
-            <img class="brand-logo" src="/assets/img/logo.png" alt="Logo da Custom Mind"/>
+            <img src="/assets/img/logo.png" alt="Logo da Custom Mind"/>
             <div class="t">
               <strong>Custom Mind</strong>
               <span>Software Solutions</span>
@@ -735,7 +885,7 @@
           </p>
 
           <div class="footer-links" aria-label="Links rápidos">
-            <a href="#demos">Demonstração</a>
+            <a href="#serve">Serve para meu caso?</a>
             <a href="#como-funciona">Como funciona</a>
             <a href="#faq">FAQ</a>
             <a href="/products/violet.html">Violet (completa)</a>
@@ -753,12 +903,20 @@
           <hr class="sep"/>
           <div class="small">Brasil</div>
           <div style="margin-top:10px">
-            <a class="cta" id="waFooter" href="#" target="_blank" rel="noreferrer">Chamar agora</a>
+            <a class="cta" id="waFooter" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
           </div>
         </div>
       </div>
     </div>
   </footer>
+
+  <div class="sticky-cta" aria-label="Ação rápida">
+    <div class="txt">
+      <b>Quer validar rápido?</b>
+      Me diga seu segmento e onde o WhatsApp mais trava.
+    </div>
+    <a class="cta" id="waSticky" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+  </div>
 
   <script>
     document.addEventListener("click", (e) => {
@@ -788,6 +946,22 @@
         return `+${cc} (${ddd}) ${num}`;
       }
 
+      function pickParams(sp, keys) {
+        const out = {};
+        keys.forEach(k => {
+          const v = sp.get(k);
+          if (v) out[k] = v;
+        });
+        return out;
+      }
+
+      function compactRef(obj) {
+        const entries = Object.entries(obj);
+        if (!entries.length) return "";
+        const parts = entries.slice(0, 8).map(([k,v]) => `${k}=${v}`);
+        return "\n\nRef: " + parts.join(" | ");
+      }
+
       function waUrl(phoneE164OrDigits, text) {
         const phone = onlyDigits(phoneE164OrDigits);
         return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
@@ -796,9 +970,7 @@
       const CONTACT = {
         whatsapp_e164: "+5511923734039",
         email: "custommind.softwaresolutions@gmail.com",
-        instagram: "custommind.solutions",
-        msg_primary: "Quero implementar a Violet no WhatsApp. Meu segmento é: ",
-        msg_default: "Oi! Vim pela página da Violet e queria entender se serve para minha empresa. Meu segmento é: "
+        instagram: "custommind.solutions"
       };
 
       const yearEl = qs("y");
@@ -807,10 +979,28 @@
       setText(["mail"], CONTACT.email);
       setText(["waPretty"], formatBRFromE164(CONTACT.whatsapp_e164));
 
-      const msg = "Quero implementar a Violet no WhatsApp";
-      const wa = waUrl(CONTACT.whatsapp_e164, msg);
+      const sp = new URLSearchParams(window.location.search);
+      const ref = pickParams(sp, ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","gbraid","wbraid","fbclid","msclkid"]);
+      const refText = compactRef(ref);
 
-      setHref(["waTop","waTopMobile","waHero","waAside","waVideo","waMid","waFaq","waFinal","waFooter"], wa);
+      const msgPrimary =
+        "Oi! Vim pela página da Violet no WhatsApp e queria entender se faz sentido para minha empresa.\n\n" +
+        "Meu segmento é: \n" +
+        "Meu canal principal é: \n" +
+        "Hoje o atendimento mais trava em: " + refText;
+
+      const msgFaq =
+        "Oi! Vim pela página da Violet no WhatsApp e queria tirar uma dúvida rápida antes de avançar." + refText;
+
+      const msgVideo =
+        "Oi! Vi a demonstração da Violet no WhatsApp e queria entender como isso funcionaria no meu caso." + refText;
+
+      setHref(
+        ["waTop","waTopMobile","waHero","waAside","waMid","waFinal","waFooter","waServe","waSticky"],
+        waUrl(CONTACT.whatsapp_e164, msgPrimary)
+      );
+      setHref(["waVideo"], waUrl(CONTACT.whatsapp_e164, msgVideo));
+      setHref(["waFaq"], waUrl(CONTACT.whatsapp_e164, msgFaq));
 
       const navRoot = qs("navRoot");
       const toggle = qs("navToggle");
@@ -855,15 +1045,14 @@
     })();
   </script>
 
-
   <script>
-  document.querySelectorAll('[id^="wa"]').forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      gtag('event','conversion',{
-        'send_to':'AW-17945612305/r57ECOnT-4McEJGgke1C'
+    document.querySelectorAll('[id^="wa"]').forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        gtag('event','conversion',{
+          'send_to':'AW-17945612305/r57ECOnT-4McEJGgke1C'
+        });
       });
     });
-  });
   </script>
 </body>
 </html>
