@@ -788,22 +788,6 @@
         return `+${cc} (${ddd}) ${num}`;
       }
 
-      function pickParams(sp, keys) {
-        const out = {};
-        keys.forEach(k => {
-          const v = sp.get(k);
-          if (v) out[k] = v;
-        });
-        return out;
-      }
-
-      function compactRef(obj) {
-        const entries = Object.entries(obj);
-        if (!entries.length) return "";
-        const parts = entries.slice(0, 6).map(([k,v]) => `${k}=${v}`);
-        return "\n\nRef: " + parts.join(" | ");
-      }
-
       function waUrl(phoneE164OrDigits, text) {
         const phone = onlyDigits(phoneE164OrDigits);
         return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
@@ -823,11 +807,7 @@
       setText(["mail"], CONTACT.email);
       setText(["waPretty"], formatBRFromE164(CONTACT.whatsapp_e164));
 
-      const sp = new URLSearchParams(window.location.search);
-      const ref = pickParams(sp, ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","gbraid","wbraid","fbclid","msclkid"]);
-      const refText = compactRef(ref);
-
-      const msg = (CONTACT.msg_primary || CONTACT.msg_default) + refText;
+      const msg = "Quero implementar a Violet no WhatsApp";
       const wa = waUrl(CONTACT.whatsapp_e164, msg);
 
       setHref(["waTop","waTopMobile","waHero","waAside","waVideo","waMid","waFaq","waFinal","waFooter"], wa);
