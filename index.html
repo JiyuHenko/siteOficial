@@ -35,6 +35,16 @@
     <meta name="twitter:title" content="Custom Mind | Software Solutions"/>
     <meta name="twitter:description" content="Sistemas, automações e IA sob medida. Produtos: Zuri, Violet e Loja Inteligente."/>
     <meta name="twitter:image" content="https://custommind.com.br/assets/img/capa.png"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17945612305"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'AW-17945612305');
+    </script>
   
     <!-- Structured Data: apenas UM bloco -->
     <script type="application/ld+json">
@@ -1221,5 +1231,14 @@
       }
     })();
   </script>
+    <script>
+    document.querySelectorAll('[id^="wa"]').forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        gtag('event','conversion',{
+          'send_to':'AW-17945612305/r57ECOnT-4McEJGgke1C'
+        });
+      });
+    });
+    </script>
 </body>
 </html>
