@@ -727,7 +727,7 @@
         <div class="section-head">
           <div>
             <h2 class="h2">Como funciona na prática</h2>
-            <p class="p">A Violet não entra para “substituir tudo”. Ela assume a camada repetitiva, organiza a conversa e aciona o humano melhor preparado para fechar.</p>
+            <p class="p">A Violet não entra para substituir tudo. Ela assume a camada repetitiva, organiza a conversa e aciona o humano melhor preparado para fechar.</p>
           </div>
           <a class="btn" href="#demos">Ver demonstração</a>
         </div>
@@ -915,7 +915,7 @@
       <b>Quer validar rápido?</b>
       Me diga seu segmento e onde o WhatsApp mais trava.
     </div>
-    <a class="cta" id="waSticky" href="#" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+    <a class="cta" id="waSticky" href="#" target="_blank" rel="noreferrer">Começar análise</a>
   </div>
 
   <script>
@@ -946,22 +946,6 @@
         return `+${cc} (${ddd}) ${num}`;
       }
 
-      function pickParams(sp, keys) {
-        const out = {};
-        keys.forEach(k => {
-          const v = sp.get(k);
-          if (v) out[k] = v;
-        });
-        return out;
-      }
-
-      function compactRef(obj) {
-        const entries = Object.entries(obj);
-        if (!entries.length) return "";
-        const parts = entries.slice(0, 8).map(([k,v]) => `${k}=${v}`);
-        return "\n\nRef: " + parts.join(" | ");
-      }
-
       function waUrl(phoneE164OrDigits, text) {
         const phone = onlyDigits(phoneE164OrDigits);
         return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
@@ -979,21 +963,18 @@
       setText(["mail"], CONTACT.email);
       setText(["waPretty"], formatBRFromE164(CONTACT.whatsapp_e164));
 
-      const sp = new URLSearchParams(window.location.search);
-      const ref = pickParams(sp, ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","gbraid","wbraid","fbclid","msclkid"]);
-      const refText = compactRef(ref);
-
       const msgPrimary =
-        "Oi! Vim pela página da Violet no WhatsApp e queria entender se faz sentido para minha empresa.\n\n" +
-        "Meu segmento é: \n" +
-        "Meu canal principal é: \n" +
-        "Hoje o atendimento mais trava em: " + refText;
+        "Oi! Vim pela página da Violet no WhatsApp.\n\n" +
+        "Quero entender como isso poderia funcionar na minha empresa.\n\n" +
+        "Meu segmento é:\n" +
+        "Meu canal principal hoje é:\n" +
+        "Hoje o atendimento mais trava em:";
 
       const msgFaq =
-        "Oi! Vim pela página da Violet no WhatsApp e queria tirar uma dúvida rápida antes de avançar." + refText;
+        "Oi! Vim pela página da Violet no WhatsApp e queria tirar uma dúvida rápida antes de avançar.";
 
       const msgVideo =
-        "Oi! Vi a demonstração da Violet no WhatsApp e queria entender como isso funcionaria no meu caso." + refText;
+        "Oi! Vi a demonstração da Violet no WhatsApp e queria entender como isso funcionaria no meu caso.";
 
       setHref(
         ["waTop","waTopMobile","waHero","waAside","waMid","waFinal","waFooter","waServe","waSticky"],
