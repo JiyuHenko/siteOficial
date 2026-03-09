@@ -874,6 +874,60 @@
         height:30px;
       }
     }
+
+
+
+
+    html, body{
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    *,
+    *::before,
+    *::after{
+      box-sizing:border-box;
+    }
+    
+    body,
+    main,
+    section,
+    .container,
+    .hero,
+    .hero-grid,
+    .logos,
+    .logos-slider,
+    .logos-wrap,
+    .footer,
+    .footer-grid{
+      max-width:100%;
+    }
+
+
+    @media (max-width:640px){
+      .container{
+        width:100%;
+        max-width:100%;
+        padding-left:14px;
+        padding-right:14px;
+      }
+    
+      .hero-bg{
+        left:0;
+        right:0;
+        inset:auto;
+        top:-60px;
+        bottom:-20px;
+        width:100%;
+      }
+    
+      .hero,
+      .logos,
+      .section,
+      .footer{
+        overflow-x:hidden;
+      }
+    }
   </style>
 </head>
 
@@ -919,7 +973,7 @@
             <a href="#faq">FAQ <span>dúvidas</span></a>
           </div>
           <div class="nav-panel-cta">
-            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Quero entender no meu caso</a>
+            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noreferrer">Conversar no WhatsApp</a>
           </div>
         </div>
       </div>
@@ -1025,7 +1079,6 @@
       <div class="container">
         <div class="logos-head">
           <p class="logos-title">Empresas e negócios que já entraram em contato com a Custom Mind</p>
-          <p class="logos-subtitle">Contatos comerciais, diagnósticos técnicos ou projetos avaliados.</p>
         </div>
 
         <div class="logos-slider">
