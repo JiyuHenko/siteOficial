@@ -7,12 +7,12 @@
   <meta name="robots" content="index,follow"/>
 
   <title>Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind</title>
-  <meta name="description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, qualifique leads e organize seu funil sem sobrecarregar a equipe."/>
+  <meta name="description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, organize leads, reduza repetição e entregue mais contexto para o comercial entrar melhor."/>
 
   <link rel="canonical" href="https://www.custommind.com.br/products/violet-whatsapp.html"/>
 
   <meta property="og:title" content="Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind"/>
-  <meta property="og:description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, qualifique leads e organize seu funil sem sobrecarregar a equipe."/>
+  <meta property="og:description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, organize leads, reduza repetição e entregue mais contexto para o comercial entrar melhor."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.custommind.com.br/products/violet-whatsapp.html"/>
   <meta property="og:image" content="https://www.custommind.com.br/assets/img/capa.png"/>
@@ -21,7 +21,7 @@
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Violet no WhatsApp — Atendimento & Vendas com IA | Custom Mind"/>
-  <meta name="twitter:description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, qualifique leads e organize seu funil sem sobrecarregar a equipe."/>
+  <meta name="twitter:description" content="Atendimento e vendas no WhatsApp com IA: responda mais rápido, organize leads, reduza repetição e entregue mais contexto para o comercial entrar melhor."/>
   <meta name="twitter:image" content="https://www.custommind.com.br/assets/img/capa.png"/>
 
   <link rel="icon" href="/assets/img/perfil-insta.png"/>
@@ -75,20 +75,22 @@
     :root{
       --bg:#07060b;
       --bg2:#0c0a14;
-      --text:#e9e7ff;
-      --muted:#b9b6d9;
+      --text:#ece9ff;
+      --muted:#b8b4d7;
+      --muted-2:#9994bc;
       --line:rgba(255,255,255,.10);
-      --line2:rgba(255,255,255,.16);
+      --line-2:rgba(255,255,255,.16);
       --surface:rgba(255,255,255,.035);
       --surface-2:rgba(255,255,255,.05);
       --violet:#8b5cf6;
       --violet2:#a78bfa;
       --cyan:#22d3ee;
       --green:#34d399;
-      --shadow:0 14px 50px rgba(0,0,0,.55);
+      --red:#fb7185;
+      --shadow:0 16px 50px rgba(0,0,0,.48);
       --radius:20px;
-      --radius2:28px;
-      --max:1120px;
+      --radius-lg:28px;
+      --max:1140px;
       --font:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
 
@@ -100,9 +102,9 @@
       font-family:var(--font);
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 15% 10%, rgba(139,92,246,.18), transparent 60%),
-        radial-gradient(900px 500px at 85% 20%, rgba(34,211,238,.10), transparent 60%),
-        radial-gradient(900px 500px at 45% 80%, rgba(167,139,250,.10), transparent 60%),
+        radial-gradient(860px 460px at 14% 8%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(920px 520px at 86% 18%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(800px 480px at 46% 84%, rgba(167,139,250,.10), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       line-height:1.6;
       overflow-x:hidden;
@@ -165,10 +167,7 @@
     .brand img{
       width:34px;
       height:34px;
-      border-radius:0;
       object-fit:contain;
-      background:transparent;
-      border:0;
       filter:drop-shadow(0 0 12px rgba(139,92,246,.55));
       flex:0 0 auto;
     }
@@ -223,53 +222,66 @@
       transform:scaleX(1);
     }
 
-    .cta, .btn{
+    .cta,.btn,.ghost{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       white-space:nowrap;
       cursor:pointer;
-      transition:transform .18s ease, filter .2s ease, background .2s ease, border-color .2s ease;
       text-align:center;
+      transition:transform .18s ease, filter .2s ease, background .2s ease, border-color .2s ease;
     }
-    .cta:hover, .btn:hover{
+    .cta:hover,.btn:hover,.ghost:hover{
       transform:translateY(-1px);
     }
 
     .cta{
-      height:44px;
-      padding:0 16px;
+      height:46px;
+      padding:0 18px;
       border-radius:14px;
       background:linear-gradient(90deg, rgba(139,92,246,.96), rgba(34,211,238,.78));
       color:#0b0713;
       font-weight:800;
       font-size:13px;
-      box-shadow:0 10px 30px rgba(139,92,246,.18);
+      box-shadow:0 10px 28px rgba(139,92,246,.18);
       border:1px solid rgba(255,255,255,.10);
     }
     .cta:hover{filter:brightness(1.05)}
-    .cta:focus-visible,
-    .btn:focus-visible,
-    .nav-toggle:focus-visible,
-    .nav-links a:focus-visible,
-    .nav-panel a:focus-visible{
-      outline:2px solid rgba(34,211,238,.75);
-      outline-offset:3px;
-    }
 
     .btn{
-      height:44px;
-      padding:0 16px;
+      height:46px;
+      padding:0 18px;
       border-radius:14px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
       color:var(--text);
-      font-weight:650;
+      font-weight:700;
       font-size:13px;
     }
     .btn:hover{
       background:rgba(255,255,255,.06);
       border-color:rgba(255,255,255,.18);
+    }
+
+    .ghost{
+      height:38px;
+      padding:0 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .cta:focus-visible,
+    .btn:focus-visible,
+    .ghost:focus-visible,
+    .nav-toggle:focus-visible,
+    .nav-links a:focus-visible,
+    .nav-panel a:focus-visible{
+      outline:2px solid rgba(34,211,238,.75);
+      outline-offset:3px;
     }
 
     .nav-right{
@@ -339,8 +351,8 @@
     .nav-open .nav-panel{display:block}
 
     .hero{
-      padding:68px 0 28px;
       position:relative;
+      padding:68px 0 28px;
       isolation:isolate;
     }
     .hero-bg{
@@ -354,7 +366,6 @@
     }
 
     .hero-grid{
-      position:relative;
       display:grid;
       grid-template-columns:minmax(0, 1.12fr) minmax(320px, .88fr);
       gap:28px;
@@ -371,7 +382,7 @@
       background:rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
-      margin-bottom:14px;
+      margin-bottom:16px;
       max-width:100%;
     }
     .badge b{color:var(--text)}
@@ -387,22 +398,29 @@
     }
     .badge svg{width:14px; height:14px}
 
+    .eyebrow-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+
     .h1{
-      font-size:clamp(2.2rem, 4.4vw, 3.35rem);
-      line-height:1.04;
+      font-size:clamp(2.25rem, 4.5vw, 3.45rem);
+      line-height:1.02;
+      letter-spacing:-1px;
       margin:0 0 16px;
-      letter-spacing:-.9px;
-      max-width:17ch;
+      max-width:15ch;
     }
     .h2{
-      font-size:clamp(1.45rem, 2.2vw, 1.65rem);
-      margin:0 0 10px;
+      font-size:clamp(1.45rem, 2.2vw, 1.7rem);
       line-height:1.15;
+      margin:0 0 10px;
     }
     .h3{
       font-size:18px;
-      margin:0 0 8px;
       line-height:1.2;
+      margin:0 0 8px;
     }
 
     .grad{
@@ -415,7 +433,7 @@
     .lead{
       font-size:17px;
       color:var(--muted);
-      max-width:62ch;
+      max-width:64ch;
       margin:0;
     }
 
@@ -426,8 +444,8 @@
       margin-top:20px;
     }
     .hero-point{
-      padding:14px 14px;
-      border-radius:16px;
+      padding:14px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.03);
       color:var(--muted);
@@ -446,7 +464,7 @@
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:20px;
+      margin-top:22px;
     }
 
     .hero-support{
@@ -466,18 +484,18 @@
       width:7px;
       height:7px;
       border-radius:999px;
-      background:rgba(52,211,153,.9);
+      background:rgba(52,211,153,.95);
       display:inline-block;
       flex:0 0 auto;
     }
 
     .quick-box{
       margin-top:18px;
-      padding:16px 16px;
+      padding:16px;
       border-radius:20px;
       border:1px solid rgba(52,211,153,.18);
       background:rgba(52,211,153,.08);
-      max-width:620px;
+      max-width:640px;
     }
     .quick-box b{
       color:#fff;
@@ -487,20 +505,33 @@
     .quick-list{
       margin:0;
       padding-left:18px;
-      color:rgba(233,231,255,.88);
+      color:rgba(233,231,255,.9);
       font-size:13px;
     }
 
     .card{
       border:1px solid var(--line);
-      border-radius:var(--radius2);
+      border-radius:var(--radius-lg);
       background:var(--surface);
-      box-shadow:var(--shadow);
       backdrop-filter:blur(8px);
+      box-shadow:var(--shadow);
     }
+
     .hero-card{
       padding:18px;
+      position:relative;
+      overflow:hidden;
     }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -20% 70% auto;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(139,92,246,.18), transparent 68%);
+      pointer-events:none;
+    }
+
     .small{
       font-size:12px;
       color:var(--muted);
@@ -520,19 +551,21 @@
     }
     .k strong{
       display:block;
-      font-size:18px;
+      font-size:17px;
       color:var(--text);
+      margin-bottom:2px;
     }
     .k span{
       display:block;
       font-size:12px;
       color:var(--muted);
+      line-height:1.4;
     }
 
     .notice{
       padding:14px;
       border-radius:18px;
-      border:1px dashed rgba(255,255,255,.18);
+      border:1px dashed rgba(255,255,255,.16);
       background:rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
@@ -547,8 +580,9 @@
     }
 
     .section{
-      padding:34px 0;
+      padding:36px 0;
     }
+
     .section-head{
       display:flex;
       align-items:flex-end;
@@ -559,9 +593,14 @@
     .p{
       color:var(--muted);
       margin:0 0 16px;
-      max-width:70ch;
+      max-width:72ch;
     }
 
+    .grid4{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
     .grid3{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -578,10 +617,15 @@
       gap:14px;
     }
 
-    .feature{
+    .feature,
+    .pain-card,
+    .gain-card,
+    .step-card,
+    .scenario-card{
       padding:18px;
       min-height:100%;
     }
+
     .icon{
       width:40px;
       height:40px;
@@ -593,11 +637,20 @@
       margin-bottom:10px;
     }
     .icon svg{width:20px; height:20px}
-    .feature h3{
+
+    .feature h3,
+    .pain-card h3,
+    .gain-card h3,
+    .step-card h3,
+    .scenario-card h3{
       margin:0 0 6px;
       font-size:15px;
     }
-    .feature p{
+    .feature p,
+    .pain-card p,
+    .gain-card p,
+    .step-card p,
+    .scenario-card p{
       margin:0;
       color:var(--muted);
       font-size:13px;
@@ -636,11 +689,80 @@
       margin-bottom:10px;
     }
 
+    .pain-card{
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:24px;
+    }
+    .pain-label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:fit-content;
+      margin-bottom:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(251,113,133,.08);
+      border:1px solid rgba(251,113,133,.18);
+      color:#ffd2db;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .gain-card{
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:24px;
+    }
+    .gain-card .mini{
+      font-size:12px;
+      color:var(--muted-2);
+      margin-top:8px;
+    }
+
+    .step-card{
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      position:relative;
+      overflow:hidden;
+    }
+    .step-no{
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(139,92,246,.14);
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .scenario-card{
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+    }
+    .scenario-tag{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
     .video{
       position:relative;
       width:100%;
       aspect-ratio:16 / 9;
-      border-radius:18px;
+      border-radius:20px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.25);
@@ -701,11 +823,6 @@
       color:var(--text);
       margin:0 0 6px;
       font-weight:700;
-    }
-    .logos-subtitle{
-      color:var(--muted);
-      font-size:12px;
-      margin:0;
     }
 
     .logos-slider{
@@ -769,7 +886,6 @@
       width:100%;
       height:42px;
       object-fit:contain;
-      opacity:1;
       filter:none;
     }
 
@@ -785,7 +901,7 @@
     }
     .footer-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);
+      grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
       gap:14px;
       align-items:start;
     }
@@ -853,7 +969,7 @@
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
-      .cta,.btn,.nav-links a::after{transition:none}
+      .cta,.btn,.ghost,.nav-links a::after{transition:none}
       .logos-track{animation:none}
     }
 
@@ -862,20 +978,21 @@
         grid-template-columns:minmax(0,1fr) minmax(300px, .86fr);
         gap:22px;
       }
-      .h1{
-        max-width:18ch;
+      .grid4{
+        grid-template-columns:repeat(2,minmax(0,1fr));
       }
     }
 
     @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr}
       .h1{max-width:none}
-      .grid3,.grid2,.split{grid-template-columns:1fr}
+      .grid4,.grid3,.grid2,.split,.footer-grid,.footer-links{
+        grid-template-columns:1fr;
+      }
       .hero-points{grid-template-columns:1fr}
       .nav-links{display:none}
       .nav-toggle{display:inline-flex}
       .hero-bg{inset:-80px -80px -40px -80px}
-      .footer-grid,.footer-links{grid-template-columns:1fr}
     }
 
     @media (max-width:760px){
@@ -884,9 +1001,7 @@
     }
 
     @media (max-width:640px){
-      .container{
-        padding:0 16px;
-      }
+      .container{padding:0 16px}
 
       .nav-inner{
         height:auto;
@@ -903,16 +1018,10 @@
         width:30px;
         height:30px;
       }
-      .brand .t strong{
-        font-size:13px;
-      }
-      .brand .t span{
-        font-size:11px;
-      }
+      .brand .t strong{font-size:13px}
+      .brand .t span{font-size:11px}
 
-      .nav-right{
-        gap:8px;
-      }
+      .nav-right{gap:8px}
       .nav-right .cta{
         height:38px;
         padding:0 12px;
@@ -932,30 +1041,15 @@
       .hero-bg{
         inset:-40px -10px -10px -10px;
       }
-      .badge{
-        margin-bottom:12px;
-      }
+
       .h1{
         font-size:34px;
         line-height:1.06;
         margin-bottom:14px;
       }
-      .lead{
-        font-size:15px;
-      }
+      .lead{font-size:15px}
 
-      .hero-points{
-        gap:9px;
-        margin-top:16px;
-      }
-      .hero-point{
-        padding:12px;
-        font-size:12.5px;
-      }
-
-      .hero-actions{
-        gap:10px;
-      }
+      .hero-point{padding:12px}
       .hero-actions .cta,
       .hero-actions .btn{
         width:100%;
@@ -990,16 +1084,12 @@
         left:10px;
         right:10px;
         bottom:10px;
-        padding:10px 10px;
+        padding:10px;
         border-radius:16px;
         gap:10px;
       }
-      .sticky-cta .txt{
-        font-size:11px;
-      }
-      .sticky-cta .txt b{
-        font-size:12px;
-      }
+      .sticky-cta .txt{font-size:11px}
+      .sticky-cta .txt b{font-size:12px}
       .sticky-cta .cta{
         min-width:132px;
         height:40px;
@@ -1013,15 +1103,9 @@
         padding:0 10px;
         font-size:11.5px;
       }
-      .h1{
-        font-size:31px;
-      }
-      .sticky-cta{
-        align-items:stretch;
-      }
-      .sticky-cta .txt{
-        flex:1 1 auto;
-      }
+      .h1{font-size:31px}
+      .sticky-cta{align-items:stretch}
+      .sticky-cta .txt{flex:1 1 auto}
       .sticky-cta .cta{
         min-width:120px;
         padding:0 10px;
@@ -1053,12 +1137,13 @@
 
         <nav class="nav-links" aria-label="Navegação principal">
           <a href="#como-funciona">Como funciona</a>
-          <a href="#serve">Serve para meu caso?</a>
+          <a href="#ganhos">Ganhos</a>
+          <a href="#serve">Fit</a>
           <a href="#faq">FAQ</a>
         </nav>
 
         <div class="nav-right">
-          <a class="cta" id="waTop" href="#" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noopener noreferrer">Quero avaliar meu caso</a>
 
           <button class="nav-toggle" id="navToggle"
                   type="button"
@@ -1074,12 +1159,13 @@
         <div class="nav-panel" id="navPanel" role="dialog" aria-label="Menu">
           <div class="nav-panel-links">
             <a href="#como-funciona">Como funciona <span>etapas</span></a>
-            <a href="#serve">Serve para meu caso? <span>fit rápido</span></a>
+            <a href="#ganhos">Ganhos <span>operação</span></a>
+            <a href="#serve">Serve para meu caso? <span>fit</span></a>
             <a href="#demos">Demonstração <span>vídeo</span></a>
             <a href="#faq">FAQ <span>dúvidas</span></a>
           </div>
           <div class="nav-panel-cta">
-            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
+            <a class="cta" id="waTopMobile" href="#" target="_blank" rel="noopener noreferrer">Quero avaliar meu caso</a>
           </div>
         </div>
       </div>
@@ -1100,80 +1186,86 @@
                   <path d="M9 15l-4 4 1-5 3 1zm6-6l4-4-1 5-3-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
                 </svg>
               </span>
-              <span><b>Violet • WhatsApp • Atendimento & Vendas</b></span>
+              <span><b>Violet • WhatsApp • Atendimento & Pré-vendas com IA</b></span>
             </div>
 
             <h1 class="h1">
-              Atendimento no <span class="grad">WhatsApp</span> que responde mais rápido e organiza melhor suas conversas.
+              Seu <span class="grad">WhatsApp</span> responde rápido, organiza o lead e entrega mais contexto para vender melhor.
             </h1>
 
             <p class="lead">
-              A Violet faz o primeiro atendimento, qualifica melhor o lead e entrega mais contexto para o humano entrar na hora certa. Na prática, isso reduz demora, repetição e bagunça no atendimento.
+              A Violet assume o primeiro atendimento, reduz repetição, qualifica melhor a conversa e chama o humano na hora certa. O resultado é menos atraso, menos bagunça e um comercial entrando mais preparado.
             </p>
+
+            <div class="eyebrow-row" aria-label="Pontos rápidos">
+              <span class="ghost">Sem formulário</span>
+              <span class="ghost">Análise rápida no WhatsApp</span>
+              <span class="ghost">Implantação guiada</span>
+            </div>
 
             <div class="hero-points" aria-label="Benefícios principais">
               <div class="hero-point">
-                <b>Resposta mais rápida</b>
-                Menos tempo perdido para atender e menos lead esfriando no WhatsApp.
+                <b>Menos lead esfriando</b>
+                Resposta inicial rápida para manter a conversa viva logo no primeiro contato.
               </div>
               <div class="hero-point">
-                <b>Lead mais organizado</b>
-                A conversa chega com mais contexto, triagem e próxima ação mais clara.
+                <b>Triagem melhor</b>
+                O lead chega mais organizado, com contexto e próxima ação mais clara.
               </div>
               <div class="hero-point">
-                <b>Menos peso no time</b>
-                O humano foca no decisivo em vez de ficar preso no repetitivo.
+                <b>Time mais leve</b>
+                O humano sai do repetitivo e foca no que realmente precisa de decisão.
               </div>
             </div>
 
             <div class="hero-actions">
               <a class="cta" id="waHero" href="#" target="_blank" rel="noopener noreferrer">Quero entender no meu caso</a>
-              <a class="btn" href="#serve">Serve para meu caso?</a>
+              <a class="btn" href="#como-funciona">Ver como funciona</a>
             </div>
 
-            <div class="hero-support" aria-label="Segurança e contexto">
+            <div class="hero-support" aria-label="Contexto da análise">
+              <span><i></i>Você explica seu cenário</span>
+              <span><i></i>A gente diz se faz sentido</span>
               <span><i></i>Sem compromisso</span>
-              <span><i></i>Análise rápida no WhatsApp</span>
-              <span><i></i>Você explica seu cenário e eu digo se faz sentido</span>
             </div>
 
             <div class="quick-box">
-              <b>Para agilizar sua resposta no WhatsApp:</b>
+              <b>Para acelerar sua resposta no WhatsApp:</b>
               <ul class="quick-list">
-                <li>me diga o que você vende</li>
+                <li>o que você vende</li>
                 <li>qual seu principal canal hoje</li>
                 <li>onde o atendimento mais trava</li>
               </ul>
             </div>
           </div>
 
-          <aside class="card hero-card" aria-label="Resumo">
+          <aside class="card hero-card" aria-label="Resumo e encaixe">
             <div style="display:flex; gap:12px; align-items:center">
-              <div style="width:54px;height:54px;border-radius:16px;border:1px solid rgba(255,255,255,.16);overflow:hidden;background:rgba(255,255,255,.03)">
-                <img src="/assets/img/violet.png" alt="Violet" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"/>
+              <div style="width:56px;height:56px;border-radius:16px;border:1px solid rgba(255,255,255,.16);overflow:hidden;background:rgba(255,255,255,.03)">
+                <img src="/assets/img/violet.png" alt="Violet" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
               </div>
               <div>
                 <div class="small">Resumo rápido</div>
-                <h2 class="h2" style="margin:6px 0 0">O que você ganha</h2>
+                <h2 class="h2" style="margin:6px 0 0">Quando a Violet tende a encaixar melhor</h2>
               </div>
             </div>
 
-            <div class="kpi" aria-label="Indicadores">
-              <div class="k"><strong>Tempo</strong><span>menos demora para responder</span></div>
-              <div class="k"><strong>Lead</strong><span>mais contexto e triagem</span></div>
-              <div class="k"><strong>Funil</strong><span>menos bagunça no atendimento</span></div>
-              <div class="k"><strong>Equipe</strong><span>menos peso no repetitivo</span></div>
+            <div class="kpi" aria-label="Situações de encaixe">
+              <div class="k"><strong>Demora</strong><span>quando o tempo de resposta atrapalha o atendimento</span></div>
+              <div class="k"><strong>Volume</strong><span>quando chegam muitas mensagens repetidas</span></div>
+              <div class="k"><strong>Triagem</strong><span>quando o lead chega sem contexto suficiente</span></div>
+              <div class="k"><strong>Comercial</strong><span>quando o humano entra tarde ou mal informado</span></div>
             </div>
 
             <div class="notice">
-              <b>O melhor cenário para falar agora:</b><br/>
-              você já recebe mensagens no WhatsApp, mas perde tempo com demora, repetição, triagem fraca ou atendimento inconsistente.
+              <b>O cenário ideal:</b><br/>
+              você já recebe demanda pelo WhatsApp, mas a operação perde qualidade em velocidade, organização ou continuidade da conversa.
             </div>
 
             <div class="card-cta">
-              <a class="cta" id="waAside" href="#" target="_blank" rel="noopener noreferrer">Quero uma análise rápida</a>
+              <a class="cta" id="waAside" href="#" target="_blank" rel="noopener noreferrer">Quero uma leitura rápida</a>
               <p class="small" style="margin:0">
-                Sem formulário. Você chama e a gente vê rapidamente se a Violet faz sentido para sua operação.
+                Você chama no WhatsApp, explica o cenário e a gente responde se faz sentido começar agora ou não.
               </p>
             </div>
           </aside>
@@ -1190,7 +1282,6 @@
         <div class="logos-slider">
           <div class="logos-wrap">
             <div class="logos-track">
-
               <div class="logo-card"><img src="/assets/img/empresas/empresa1.png" alt="Empresa 1"/></div>
               <div class="logo-card"><img src="/assets/img/empresas/empresa2.png" alt="Empresa 2"/></div>
               <div class="logo-card"><img src="/assets/img/empresas/empresa3.png" alt="Empresa 3"/></div>
@@ -1210,43 +1301,39 @@
               <div class="logo-card"><img src="/assets/img/empresas/empresa7.png" alt="Empresa 7"/></div>
               <div class="logo-card"><img src="/assets/img/empresas/empresa8.png" alt="Empresa 8"/></div>
               <div class="logo-card"><img src="/assets/img/empresas/empresa9.png" alt="Empresa 9"/></div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="serve" aria-label="Serve para meu caso">
+    <section class="section" aria-label="Problemas comuns">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2 class="h2">Serve para meu caso?</h2>
-            <p class="p">A Violet costuma funcionar melhor quando o problema já existe no dia a dia e o WhatsApp virou gargalo de atendimento ou vendas.</p>
+            <h2 class="h2">Onde normalmente o WhatsApp começa a travar</h2>
+            <p class="p">Essa página converte melhor quando o visitante se reconhece no problema antes de ver a solução. Então aqui a ideia é mostrar o custo da bagunça operacional sem exagero.</p>
           </div>
-          <a class="cta" id="waServe" href="#" target="_blank" rel="noopener noreferrer">Quero validar meu cenário</a>
+          <a class="cta" id="waPain" href="#" target="_blank" rel="noopener noreferrer">Quero ver se isso se aplica</a>
         </div>
 
-        <div class="grid2" style="margin-top:14px">
-          <div class="card fit-card">
-            <div class="tag">Geralmente faz sentido</div>
-            <ul class="list">
-              <li><b>Vocês demoram para responder</b> e perdem timing da conversa.</li>
-              <li><b>Chegam muitas mensagens repetidas</b> e o time fica preso no operacional.</li>
-              <li><b>O lead vem bagunçado</b> e ninguém sabe priorizar direito.</li>
-              <li><b>O comercial entra tarde</b> ou sem contexto suficiente.</li>
-              <li><b>Você quer escala</b> sem crescer equipe na mesma proporção.</li>
-            </ul>
+        <div class="grid3" style="margin-top:14px">
+          <div class="pain-card">
+            <div class="pain-label">Sinal de gargalo</div>
+            <h3>Demora para responder</h3>
+            <p>Quando a equipe demora, a conversa perde ritmo, o lead esfria e a percepção de atenção cai logo no começo.</p>
           </div>
 
-          <div class="card fit-card">
-            <div class="tag">Talvez não seja prioridade ainda</div>
-            <ul class="list">
-              <li><b>Você quase não recebe mensagens</b> no WhatsApp hoje.</li>
-              <li><b>O problema principal é tráfego</b>, não atendimento.</li>
-              <li><b>O processo comercial ainda está muito indefinido</b> e não existe um fluxo claro.</li>
-              <li><b>Você quer algo 100% automático sem supervisão</b> em casos sensíveis.</li>
-            </ul>
+          <div class="pain-card">
+            <div class="pain-label">Sinal de gargalo</div>
+            <h3>Mensagens repetidas demais</h3>
+            <p>O time fica preso em perguntas operacionais e sobra menos energia para negociar, orientar e fechar.</p>
+          </div>
+
+          <div class="pain-card">
+            <div class="pain-label">Sinal de gargalo</div>
+            <h3>Handoff ruim para o comercial</h3>
+            <p>O humano entra sem contexto, repete perguntas e transforma uma conversa promissora em fricção.</p>
           </div>
         </div>
       </div>
@@ -1257,71 +1344,165 @@
         <div class="section-head">
           <div>
             <h2 class="h2">Como funciona na prática</h2>
-            <p class="p">A Violet não entra para substituir tudo. Ela assume a camada repetitiva, organiza a conversa e aciona o humano melhor preparado para fechar.</p>
+            <p class="p">A Violet não entra para “substituir tudo”. Ela assume o que é repetitivo, organiza melhor a conversa e prepara a passagem para o humano continuar com mais clareza.</p>
           </div>
           <a class="btn" href="#demos">Ver demonstração</a>
         </div>
 
+        <div class="grid3" style="margin-top:14px">
+          <div class="step-card">
+            <div class="step-no">1</div>
+            <h3>Responde rápido e mantém a conversa ativa</h3>
+            <p>O atendimento não começa do zero toda vez. A entrada fica mais consistente e menos dependente de disponibilidade imediata da equipe.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-no">2</div>
+            <h3>Entende contexto e separa intenção real</h3>
+            <p>A conversa pode seguir um fluxo mais organizado para captar o que importa antes de envolver o humano.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-no">3</div>
+            <h3>Entrega contexto para alguém assumir melhor</h3>
+            <p>Quando faz sentido escalar, o comercial entra com mais informação e menos retrabalho.</p>
+          </div>
+        </div>
+
         <div class="split" style="margin-top:14px">
           <div class="card" style="padding:16px">
-            <h3 class="h3">Fluxo típico</h3>
-            <ul class="list">
-              <li><b>1) Responde em segundos</b> e mantém a conversa viva.</li>
-              <li><b>2) Entende o contexto</b> e faz as perguntas mais úteis.</li>
-              <li><b>3) Qualifica o lead</b> e separa curiosidade de intenção real.</li>
-              <li><b>4) Encaminha com contexto</b> para o humano entrar melhor.</li>
-            </ul>
+            <h3 class="h3">Implantação</h3>
+            <p class="p" style="margin-bottom:0">
+              Você manda o básico: o que vende, como atende hoje, dúvidas comuns, como qualifica e como costuma fechar. A partir disso a Custom Mind configura uma base inicial e ajusta conforme surgem conversas reais.
+            </p>
           </div>
 
           <div class="card" style="padding:16px">
-            <h3 class="h3">Implantação</h3>
-            <div class="notice" style="margin-top:0">
-              Você manda o básico: o que vende, como atende hoje, dúvidas mais comuns e como costuma fechar. A partir disso a Custom Mind configura a base e ajusta com conversa real.
-            </div>
-            <div class="hero-actions" style="margin-top:12px">
-              <a class="cta" id="waMid" href="#" target="_blank" rel="noopener noreferrer">Quero ver isso no meu caso</a>
+            <h3 class="h3">Abordagem recomendada</h3>
+            <p class="p" style="margin-bottom:0">
+              O melhor caminho costuma ser começar pelo ponto onde hoje há mais atraso, repetição ou perda de contexto. Isso reduz risco e mostra valor mais cedo.
+            </p>
+            <div class="hero-actions" style="margin-top:14px">
+              <a class="cta" id="waMid" href="#" target="_blank" rel="noopener noreferrer">Quero mapear meu fluxo</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="diferenciais" aria-label="Diferenciais">
+    <section class="section" id="ganhos" aria-label="Ganhos na operação">
       <div class="container">
-        <h2 class="h2">O que faz essa implementação dar certo</h2>
-        <p class="p">A diferença não está só em responder mais rápido. Está em responder melhor, organizar a conversa e criar um handoff que ajuda o comercial em vez de atrapalhar.</p>
+        <h2 class="h2">O que tende a melhorar na operação</h2>
+        <p class="p">Em vez de prometer números genéricos, essa seção deixa claro onde o ganho costuma aparecer primeiro no dia a dia.</p>
 
-        <div class="grid3" style="margin-top:14px">
-          <div class="card feature">
+        <div class="grid4" style="margin-top:14px">
+          <div class="gain-card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <h3>Velocidade de resposta</h3>
+            <p>A primeira interação deixa de depender só de alguém livre naquele momento.</p>
+            <div class="mini">bom para cenários com fila, pico ou horário sensível</div>
+          </div>
+
+          <div class="gain-card">
             <div class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M7 10h10M7 13h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7 10h10M7 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3>Atendimento consistente</h3>
-            <p>Respostas mais rápidas e com padrão, sem depender só de quem está online no momento.</p>
+            <h3>Padronização</h3>
+            <p>As respostas ficam mais consistentes e menos sujeitas a variação entre pessoas e turnos.</p>
+            <div class="mini">bom quando o atendimento depende demais de quem respondeu</div>
           </div>
 
-          <div class="card feature">
+          <div class="gain-card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 4h10v16l-5-3-5 3V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Organização do lead</h3>
+            <p>A conversa chega menos solta e com mais clareza sobre intenção, necessidade e próximo passo.</p>
+            <div class="mini">bom quando ninguém consegue priorizar direito</div>
+          </div>
+
+          <div class="gain-card">
             <div class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3>Handoff inteligente</h3>
-            <p>Quando é hora do humano entrar, ele já recebe contexto melhor para continuar a conversa.</p>
+            <h3>Handoff melhor</h3>
+            <p>O comercial entra mais preparado, com menos repetição e mais chance de conduzir bem a próxima etapa.</p>
+            <div class="mini">bom quando o lead “passa de mão” e se perde no caminho</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="serve" aria-label="Serve para meu caso">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="h2">Serve para meu caso?</h2>
+            <p class="p">Aqui vale ser honesto. Essa página fica mais forte quando também deixa claro quando ainda não é prioridade.</p>
+          </div>
+          <a class="cta" id="waServe" href="#" target="_blank" rel="noopener noreferrer">Quero validar meu cenário</a>
+        </div>
+
+        <div class="grid2" style="margin-top:14px">
+          <div class="card fit-card">
+            <div class="tag">Geralmente faz sentido</div>
+            <ul class="list">
+              <li><b>Vocês já recebem volume</b> de mensagens no WhatsApp e a operação começou a ficar pesada.</li>
+              <li><b>O time perde tempo no repetitivo</b> e sobra menos atenção para conduzir melhor a venda.</li>
+              <li><b>O lead chega bagunçado</b> e ninguém sabe muito bem como priorizar, filtrar ou encaminhar.</li>
+              <li><b>O comercial entra sem contexto</b> e a experiência fica quebrada no meio da conversa.</li>
+              <li><b>Você quer ganhar escala</b> sem crescer equipe na mesma proporção.</li>
+            </ul>
           </div>
 
-          <div class="card feature">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 18V6h12v12H6Z" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Base que evolui</h3>
-            <p>Começa com o essencial, mede gargalos e melhora conforme surgem conversas reais.</p>
+          <div class="card fit-card">
+            <div class="tag">Talvez não seja prioridade agora</div>
+            <ul class="list">
+              <li><b>Quase não chegam mensagens</b> pelo WhatsApp hoje.</li>
+              <li><b>Seu principal gargalo é tráfego</b>, não atendimento.</li>
+              <li><b>O processo comercial ainda está muito indefinido</b> e não existe critério claro de atendimento.</li>
+              <li><b>Você quer automação total sem supervisão</b> em cenários delicados.</li>
+              <li><b>O time ainda nem validou o fluxo básico</b> de atendimento e fechamento.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Cenários comuns">
+      <div class="container">
+        <h2 class="h2">Cenários em que essa estrutura costuma encaixar bem</h2>
+        <p class="p">Sem prometer mágica. A ideia aqui é ajudar o visitante a se reconhecer em situações comuns de operação.</p>
+
+        <div class="grid3" style="margin-top:14px">
+          <div class="scenario-card">
+            <div class="scenario-tag">Atendimento</div>
+            <h3>Quando o WhatsApp virou canal principal</h3>
+            <p>Negócios que dependem muito de conversa para orientar, explicar, tirar dúvida ou encaminhar para a próxima etapa.</p>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-tag">Pré-vendas</div>
+            <h3>Quando o lead precisa ser organizado antes</h3>
+            <p>Casos em que o contato chega cru e alguém precisa entender contexto antes de passar para venda ou especialista.</p>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-tag">Escala</div>
+            <h3>Quando a equipe já sente peso operacional</h3>
+            <p>Times que já atendem, mas perderam consistência, velocidade ou clareza por causa do volume e da repetição.</p>
           </div>
         </div>
       </div>
@@ -1332,7 +1513,7 @@
         <div class="section-head">
           <div>
             <h2 class="h2">Demonstração em vídeo</h2>
-            <p class="p">Esse vídeo ajuda a visualizar a lógica do atendimento e o momento em que o humano assume com mais contexto.</p>
+            <p class="p">Depois de entender a lógica, o vídeo ajuda a visualizar melhor a experiência e o momento em que o humano assume com mais contexto.</p>
           </div>
           <a class="cta" id="waVideo" href="#" target="_blank" rel="noopener noreferrer">Quero entender no meu caso</a>
         </div>
@@ -1352,26 +1533,31 @@
     <section class="section" id="faq" aria-label="Perguntas frequentes">
       <div class="container">
         <h2 class="h2">Perguntas frequentes</h2>
-        <p class="p">Dúvidas comuns antes de colocar uma assistente IA na operação.</p>
+        <p class="p">As objeções principais precisam estar respondidas antes do clique, porque muita gente decide aqui se chama ou sai.</p>
 
         <details class="faq">
           <summary>Ela substitui totalmente o humano?</summary>
-          <p>Não. A ideia é tirar o peso do repetitivo, organizar a triagem e chamar o humano com mais contexto quando fizer sentido.</p>
+          <p>Não. A proposta mais segura costuma ser tirar o peso do repetitivo, organizar triagem e chamar o humano quando isso melhora a condução da conversa.</p>
         </details>
 
         <details class="faq">
           <summary>Preciso mudar meu processo inteiro?</summary>
-          <p>Não necessariamente. O melhor caminho costuma ser começar em cima do seu processo atual, identificar gargalos reais e evoluir a partir disso.</p>
+          <p>Não necessariamente. O caminho mais eficiente costuma ser começar com o processo atual, identificar gargalos reais e evoluir em cima do que acontece na operação.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Serve para qualquer tipo de negócio?</summary>
+          <p>Não. Ela tende a funcionar melhor quando já existe demanda no WhatsApp e quando o problema está em atendimento, triagem, continuidade da conversa ou entrada no comercial.</p>
         </details>
 
         <details class="faq">
           <summary>Como funciona o custo?</summary>
-          <p>Trabalhamos com valor fixo definido pela complexidade do caso, canais atendidos e cenários necessários. A proposta é manter previsibilidade.</p>
+          <p>O valor depende da complexidade do caso, dos cenários atendidos e do nível de estrutura necessário. A ideia é manter previsibilidade e escopo claro.</p>
         </details>
 
         <details class="faq">
-          <summary>O que vocês precisam para me responder rápido?</summary>
-          <p>Seu segmento, o canal principal, onde o atendimento mais trava e como vocês fecham hoje. Com isso já dá para dizer se faz sentido e qual seria o próximo passo.</p>
+          <summary>O que vocês precisam para responder rápido?</summary>
+          <p>Seu segmento, canal principal, onde o atendimento trava mais e como vocês fecham hoje. Com isso já dá para dizer se faz sentido e qual seria o próximo passo.</p>
         </details>
 
         <div class="hero-actions" style="margin-top:14px">
@@ -1382,16 +1568,17 @@
 
     <section class="section" aria-label="Chamada final">
       <div class="container">
-        <div class="card" style="padding:16px">
+        <div class="card" style="padding:18px">
           <h2 class="h2">Quer ver se isso faz sentido para o seu negócio?</h2>
           <p class="p" style="margin-bottom:10px">
-            Me diga seu segmento, seu canal principal e onde o atendimento mais trava hoje. Eu te respondo no WhatsApp com uma leitura rápida do cenário.
+            Me diga seu segmento, seu canal principal e onde o WhatsApp mais trava hoje. A gente te responde com uma leitura rápida e direta sobre encaixe, risco e próximo passo.
           </p>
           <div class="hero-actions">
-            <a class="cta" id="waFinal" href="#" target="_blank" rel="noopener noreferrer">Quero entender no meu caso</a>
+            <a class="cta" id="waFinal" href="#" target="_blank" rel="noopener noreferrer">Quero uma análise rápida</a>
+            <a class="btn" href="#serve">Ver fit antes</a>
           </div>
           <p class="small" style="margin-top:10px">
-            Sem compromisso. Sem formulário. Você explica seu caso e a gente vê rapidamente se a Violet faz sentido.
+            Sem compromisso. Sem formulário. Você explica seu caso e a gente diz se vale avançar agora.
           </p>
         </div>
       </div>
@@ -1415,10 +1602,10 @@
           </p>
 
           <div class="footer-links" aria-label="Links rápidos">
-            <a href="#serve">Serve para meu caso?</a>
             <a href="#como-funciona">Como funciona</a>
+            <a href="#ganhos">Ganhos</a>
+            <a href="#serve">Serve para meu caso?</a>
             <a href="#faq">FAQ</a>
-            <a href="/products/violet.html">Violet (completa)</a>
           </div>
 
           <hr class="sep"/>
@@ -1510,7 +1697,7 @@
         "Oi! Vi a demonstração da Violet no WhatsApp e queria entender como isso funcionaria no meu caso.";
 
       setHref(
-        ["waTop","waTopMobile","waHero","waAside","waMid","waFinal","waFooter","waServe","waSticky"],
+        ["waTop","waTopMobile","waHero","waAside","waMid","waFinal","waFooter","waServe","waSticky","waPain"],
         waUrl(CONTACT.whatsapp_e164, msgPrimary)
       );
       setHref(["waVideo"], waUrl(CONTACT.whatsapp_e164, msgVideo));
