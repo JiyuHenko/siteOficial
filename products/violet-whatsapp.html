@@ -582,6 +582,51 @@
       .h1{font-size:34px}
       .lead{font-size:15px}
     }
+
+    .logos{
+      padding:34px 0 10px;
+      border-top:1px solid var(--line);
+    }
+    
+    .logos-title{
+      text-align:center;
+      font-size:15px;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+    
+    .logos-wrap{
+      overflow:hidden;
+      position:relative;
+    }
+    
+    .logos-track{
+      display:flex;
+      gap:42px;
+      align-items:center;
+      width:max-content;
+      animation:logosScroll 28s linear infinite;
+    }
+    
+    .logos-track img{
+      height:46px;
+      width:auto;
+      opacity:.75;
+      filter:grayscale(100%) brightness(1.2);
+      transition:opacity .25s ease;
+    }
+    
+    .logos-track img:hover{
+      opacity:1;
+      filter:none;
+    }
+    
+    @keyframes logosScroll{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-50%); }
+    }
+
+    
   </style>
 </head>
 
@@ -726,6 +771,43 @@
             </div>
           </aside>
         </div>
+      </div>
+    </section>
+
+    <section class="logos">
+      <div class="container">
+    
+        <div class="logos-title">
+          Empresas e negócios que já entraram em contato com a Custom Mind
+        </div>
+    
+        <div class="logos-wrap">
+          <div class="logos-track">
+    
+            <img src="/assets/img/empresas/empresa1.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa2.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa3.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa4.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa5.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa6.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa7.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa8.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa9.png" alt="Empresa"/>
+    
+            <!-- duplicado para loop infinito -->
+            <img src="/assets/img/empresas/empresa1.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa2.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa3.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa4.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa5.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa6.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa7.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa8.png" alt="Empresa"/>
+            <img src="/assets/img/empresas/empresa9.png" alt="Empresa"/>
+    
+          </div>
+        </div>
+    
       </div>
     </section>
 
