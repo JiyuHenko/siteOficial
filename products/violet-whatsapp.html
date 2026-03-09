@@ -75,8 +75,6 @@
     :root{
       --bg:#07060b;
       --bg2:#0c0a14;
-      --card:#0f0c1c;
-      --card2:rgba(255,255,255,.04);
       --text:#e9e7ff;
       --muted:#b9b6d9;
       --line:rgba(255,255,255,.10);
@@ -137,7 +135,11 @@
     }
 
     .brand{display:flex; align-items:center; gap:12px; min-width:220px}
-    .brand img{width:34px; height:34px; border-radius:0; object-fit:contain; background:transparent; border:0; filter:drop-shadow(0 0 12px rgba(139,92,246,.55))}
+    .brand img{
+      width:34px; height:34px; border-radius:0; object-fit:contain;
+      background:transparent; border:0;
+      filter:drop-shadow(0 0 12px rgba(139,92,246,.55));
+    }
     .brand .t{display:flex; flex-direction:column; line-height:1.15}
     .brand .t strong{font-size:14px; letter-spacing:.2px}
     .brand .t span{font-size:12px; color:var(--muted)}
@@ -148,8 +150,7 @@
 
     .cta, .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      white-space:nowrap;
-      cursor:pointer;
+      white-space:nowrap; cursor:pointer;
     }
     .cta{
       height:42px; padding:0 16px; border-radius:14px;
@@ -170,7 +171,6 @@
       font-weight:650; font-size:13px;
     }
     .btn:hover{background:rgba(255,255,255,.06)}
-    .btn.ghost{background:rgba(0,0,0,.12)}
 
     .nav-right{display:flex; align-items:center; gap:10px}
     .nav-toggle{
@@ -225,11 +225,14 @@
     }
     .nav-open .nav-panel{display:block}
 
-    .hero{padding:54px 0 18px; position:relative}
+    .hero{
+      padding:56px 0 22px;
+      position:relative;
+    }
     .hero-bg{
       position:absolute; inset:-120px -120px -60px -120px;
       background:url("/assets/img/capa.png") center/cover no-repeat;
-      opacity:.09;
+      opacity:.08;
       filter:blur(1px);
       pointer-events:none;
     }
@@ -238,8 +241,8 @@
       position:relative;
       display:grid;
       grid-template-columns:1.15fr .85fr;
-      gap:26px;
-      align-items:stretch;
+      gap:24px;
+      align-items:start;
     }
 
     .badge{
@@ -250,6 +253,7 @@
       background:rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
+      margin-bottom:14px;
     }
     .badge b{color:var(--text)}
     .badge-ico{
@@ -260,9 +264,16 @@
     }
     .badge svg{width:14px; height:14px}
 
-    .h1{font-size:46px; line-height:1.04; margin:14px 0 14px; letter-spacing:-.8px}
+    .h1{
+      font-size:46px;
+      line-height:1.04;
+      margin:0 0 16px;
+      letter-spacing:-.8px;
+      max-width:12ch;
+    }
     .h2{font-size:24px; margin:0 0 10px}
     .h3{font-size:18px; margin:0 0 8px}
+
     .grad{
       background:linear-gradient(90deg,var(--violet),var(--cyan));
       -webkit-background-clip:text;
@@ -270,38 +281,82 @@
       color:transparent;
     }
 
-    .lead{font-size:17px; color:var(--muted); max-width:68ch}
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .lead{
+      font-size:17px;
+      color:var(--muted);
+      max-width:64ch;
+      margin:0;
+    }
 
-    .micro-proof{
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+    }
+    .hero-point{
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.45;
+    }
+    .hero-point b{
+      display:block;
+      color:var(--text);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .hero-support{
       margin-top:14px;
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap:10px 14px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .hero-support span{
+      display:inline-flex;
       align-items:center;
-      color:var(--muted);
-      font-size:12px;
+      gap:8px;
     }
-    .micro-proof .ok{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
+    .hero-support i{
+      width:7px;
+      height:7px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
+      background:rgba(52,211,153,.9);
+      display:inline-block;
+      flex:0 0 auto;
     }
-    .dot{opacity:.5}
 
-    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:12px;
+    .quick-box{
+      margin-top:18px;
+      padding:16px 16px;
+      border-radius:20px;
+      border:1px solid rgba(52,211,153,.18);
+      background:rgba(52,211,153,.08);
     }
-    .pill svg{width:14px;height:14px; opacity:.9}
+    .quick-box b{
+      color:#fff;
+      display:block;
+      margin-bottom:8px;
+    }
+    .quick-list{
+      margin:0;
+      padding-left:18px;
+      color:rgba(233,231,255,.88);
+      font-size:13px;
+    }
 
     .card{
       border:1px solid var(--line);
@@ -324,8 +379,16 @@
       border:1px solid var(--line);
       background:rgba(0,0,0,.18);
     }
-    .k strong{display:block; font-size:18px}
-    .k span{display:block; font-size:12px; color:var(--muted)}
+    .k strong{
+      display:block;
+      font-size:18px;
+      color:var(--text);
+    }
+    .k span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+    }
 
     .notice{
       padding:14px;
@@ -334,21 +397,14 @@
       background:rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
+      margin-top:12px;
     }
 
-    .quick-box{
-      margin-top:16px;
-      padding:14px;
-      border-radius:20px;
-      border:1px solid rgba(52,211,153,.18);
-      background:rgba(52,211,153,.08);
-    }
-    .quick-box b{color:#fff}
-    .quick-list{
-      margin:8px 0 0;
-      padding-left:18px;
-      color:rgba(233,231,255,.88);
-      font-size:13px;
+    .card-cta{
+      margin-top:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
 
     .section{padding:28px 0}
@@ -493,7 +549,11 @@
       font-size:12px;
       line-height:1.35;
     }
-    .sticky-cta .txt b{display:block; color:var(--text); font-size:13px}
+    .sticky-cta .txt b{
+      display:block;
+      color:var(--text);
+      font-size:13px;
+    }
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
@@ -502,8 +562,9 @@
 
     @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr}
-      .h1{font-size:38px}
+      .h1{font-size:38px; max-width:none}
       .grid3,.grid2,.split{grid-template-columns:1fr}
+      .hero-points{grid-template-columns:1fr}
       .nav-links{display:none}
       .nav-toggle{display:inline-flex}
       .hero-bg{inset:-80px -80px -40px -80px}
@@ -591,42 +652,26 @@
             </div>
 
             <h1 class="h1">
-              Atendimento no <span class="grad">WhatsApp</span> que responde mais rápido,
-              organiza o lead e tira pressão da sua equipe.
+              Atendimento no <span class="grad">WhatsApp</span> que responde mais rápido e organiza melhor suas conversas.
             </h1>
 
             <p class="lead">
-              A Violet entra no seu WhatsApp para fazer o primeiro atendimento, qualificar melhor as conversas e encaminhar o caso para o humano com mais contexto. O objetivo é simples: <b>menos atraso, menos bagunça e mais conversão</b>.
+              A Violet faz o primeiro atendimento, qualifica melhor o lead e entrega mais contexto para o humano entrar na hora certa. Na prática, isso reduz demora, repetição e bagunça no atendimento.
             </p>
 
-            <div class="pillrow" aria-label="Benefícios rápidos">
-              <span class="pill">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-                Resposta mais rápida
-              </span>
-              <span class="pill">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M7 10h6M7 13h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-                Lead mais organizado
-              </span>
-              <span class="pill">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 18V6h12v12H6Z" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M8 14l2-2 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Handoff com contexto
-              </span>
-              <span class="pill">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-                Sem custo surpresa
-              </span>
+            <div class="hero-points" aria-label="Benefícios principais">
+              <div class="hero-point">
+                <b>Resposta mais rápida</b>
+                Menos tempo perdido para atender e menos lead esfriando no WhatsApp.
+              </div>
+              <div class="hero-point">
+                <b>Lead mais organizado</b>
+                A conversa chega com mais contexto, triagem e próxima ação mais clara.
+              </div>
+              <div class="hero-point">
+                <b>Menos peso no time</b>
+                O humano foca no decisivo em vez de ficar preso no repetitivo.
+              </div>
             </div>
 
             <div class="hero-actions">
@@ -634,12 +679,10 @@
               <a class="btn" href="#serve">Serve para meu caso?</a>
             </div>
 
-            <div class="micro-proof" aria-label="Micro provas e segurança">
-              <span class="ok">Sem compromisso</span>
-              <span class="dot">•</span>
-              <span class="ok">Análise rápida no WhatsApp</span>
-              <span class="dot">•</span>
-              <span class="ok">Você explica seu cenário e eu te digo se faz sentido</span>
+            <div class="hero-support" aria-label="Segurança e contexto">
+              <span><i></i>Sem compromisso</span>
+              <span><i></i>Análise rápida no WhatsApp</span>
+              <span><i></i>Você explica seu cenário e eu digo se faz sentido</span>
             </div>
 
             <div class="quick-box">
@@ -670,18 +713,17 @@
               <div class="k"><strong>Equipe</strong><span>menos peso no repetitivo</span></div>
             </div>
 
-            <div class="notice" style="margin-top:12px">
+            <div class="notice">
               <b>O melhor cenário para falar agora:</b><br/>
               você já recebe mensagens no WhatsApp, mas perde tempo com demora, repetição, triagem fraca ou atendimento inconsistente.
             </div>
 
-            <div class="hero-actions" style="margin-top:12px">
+            <div class="card-cta">
               <a class="cta" id="waAside" href="#" target="_blank" rel="noreferrer">Quero uma análise rápida</a>
+              <p class="small" style="margin:0">
+                Sem formulário. Você chama e a gente vê rapidamente se a Violet faz sentido para sua operação.
+              </p>
             </div>
-
-            <p class="small" style="margin-top:10px">
-              Sem formulário. Sem enrolação. Você chama e a gente vê rapidamente se a Violet faz sentido para sua operação.
-            </p>
           </aside>
         </div>
       </div>
@@ -745,7 +787,7 @@
 
           <div class="card" style="padding:16px">
             <h3 class="h3">Implantação</h3>
-            <div class="notice">
+            <div class="notice" style="margin-top:0">
               Você manda o básico: o que vende, como atende hoje, dúvidas mais comuns e como costuma fechar. A partir disso a Custom Mind configura a base e ajusta com conversa real.
             </div>
             <div class="hero-actions" style="margin-top:12px">
