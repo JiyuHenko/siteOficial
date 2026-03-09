@@ -120,7 +120,7 @@
     .skip:focus{left:10px; z-index:9999; outline:none}
 
     .nav{
-      position:sticky; top:0; z-index:50;
+      position:sticky; top:0; z-index:60;
       backdrop-filter:blur(12px);
       background:rgba(7,6,11,.60);
       border-bottom:1px solid var(--line);
@@ -134,29 +134,60 @@
       position:relative;
     }
 
-    .brand{display:flex; align-items:center; gap:12px; min-width:220px}
-    .brand img{
-      width:34px; height:34px; border-radius:0; object-fit:contain;
-      background:transparent; border:0;
-      filter:drop-shadow(0 0 12px rgba(139,92,246,.55));
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:220px;
+      min-height:44px;
     }
-    .brand .t{display:flex; flex-direction:column; line-height:1.15}
-    .brand .t strong{font-size:14px; letter-spacing:.2px}
-    .brand .t span{font-size:12px; color:var(--muted)}
+    .brand img{
+      width:34px;
+      height:34px;
+      border-radius:0;
+      object-fit:contain;
+      background:transparent;
+      border:0;
+      filter:drop-shadow(0 0 12px rgba(139,92,246,.55));
+      flex:0 0 auto;
+    }
+    .brand .t{
+      display:flex;
+      flex-direction:column;
+      line-height:1.15;
+      min-width:0;
+    }
+    .brand .t strong{
+      font-size:14px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .brand .t span{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
 
     .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
     .nav-links a{font-size:13px; color:var(--muted)}
     .nav-links a:hover{color:var(--text)}
 
     .cta, .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      white-space:nowrap; cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+      cursor:pointer;
+      transition:filter .2s ease, background .2s ease, border-color .2s ease;
     }
     .cta{
-      height:42px; padding:0 16px; border-radius:14px;
+      height:42px;
+      padding:0 16px;
+      border-radius:14px;
       background:linear-gradient(90deg, rgba(139,92,246,.95), rgba(34,211,238,.75));
       color:#0b0713;
-      font-weight:800; font-size:13px;
+      font-weight:800;
+      font-size:13px;
       box-shadow:0 10px 30px rgba(139,92,246,.18);
       border:1px solid rgba(255,255,255,.10);
     }
@@ -164,18 +195,27 @@
     .cta:focus-visible{outline:2px solid rgba(34,211,238,.75); outline-offset:3px}
 
     .btn{
-      height:42px; padding:0 16px; border-radius:14px;
+      height:42px;
+      padding:0 16px;
+      border-radius:14px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
       color:var(--text);
-      font-weight:650; font-size:13px;
+      font-weight:650;
+      font-size:13px;
     }
     .btn:hover{background:rgba(255,255,255,.06)}
 
-    .nav-right{display:flex; align-items:center; gap:10px}
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:0 0 auto;
+    }
     .nav-toggle{
       display:none;
-      height:40px; width:44px;
+      height:40px;
+      width:44px;
       border-radius:12px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
@@ -183,6 +223,7 @@
       cursor:pointer;
       align-items:center;
       justify-content:center;
+      flex:0 0 auto;
     }
     .nav-toggle svg{width:18px;height:18px}
 
@@ -230,7 +271,8 @@
       position:relative;
     }
     .hero-bg{
-      position:absolute; inset:-120px -120px -60px -120px;
+      position:absolute;
+      inset:-120px -120px -60px -120px;
       background:url("/assets/img/capa.png") center/cover no-repeat;
       opacity:.08;
       filter:blur(1px);
@@ -246,7 +288,9 @@
     }
 
     .badge{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding:8px 12px;
       border-radius:999px;
       border:1px solid var(--line);
@@ -257,8 +301,11 @@
     }
     .badge b{color:var(--text)}
     .badge-ico{
-      display:inline-grid; place-items:center;
-      width:18px; height:18px; border-radius:6px;
+      display:inline-grid;
+      place-items:center;
+      width:18px;
+      height:18px;
+      border-radius:6px;
       background:rgba(139,92,246,.18);
       border:1px solid var(--line);
     }
@@ -423,8 +470,11 @@
 
     .feature{padding:16px}
     .icon{
-      width:40px; height:40px; border-radius:14px;
-      display:grid; place-items:center;
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
       margin-bottom:10px;
@@ -434,9 +484,11 @@
     .feature p{margin:0; color:var(--muted); font-size:13px}
 
     .list{
-      margin:0; padding:0;
+      margin:0;
+      padding:0;
       list-style:none;
-      display:flex; flex-direction:column;
+      display:flex;
+      flex-direction:column;
       gap:10px;
     }
     .list li{
@@ -475,8 +527,10 @@
       box-shadow:var(--shadow);
     }
     .video iframe{
-      position:absolute; inset:0;
-      width:100%; height:100%;
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
       border:0;
     }
 
@@ -496,6 +550,97 @@
     }
     details.faq summary::-webkit-details-marker{display:none}
     details.faq p{margin:10px 0 0; color:var(--muted); font-size:13px}
+
+    .logos{
+      padding:34px 0 8px;
+      border-top:1px solid var(--line);
+    }
+    .logos-head{
+      text-align:center;
+      margin-bottom:18px;
+    }
+    .logos-title{
+      font-size:15px;
+      color:var(--text);
+      margin:0 0 6px;
+      font-weight:700;
+    }
+    .logos-subtitle{
+      color:var(--muted);
+      font-size:12px;
+      margin:0;
+    }
+
+    .logos-slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      padding:16px 0;
+      isolation:isolate;
+    }
+    .logos-slider::before,
+    .logos-slider::after{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:90px;
+      z-index:2;
+      pointer-events:none;
+    }
+    .logos-slider::before{
+      left:0;
+      background:linear-gradient(90deg, rgba(7,6,11,1), rgba(7,6,11,0));
+    }
+    .logos-slider::after{
+      right:0;
+      background:linear-gradient(270deg, rgba(7,6,11,1), rgba(7,6,11,0));
+    }
+
+    .logos-wrap{
+      overflow:hidden;
+      position:relative;
+    }
+    .logos-track{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      width:max-content;
+      animation:logosScroll 34s linear infinite;
+      will-change:transform;
+    }
+    .logos-slider:hover .logos-track{
+      animation-play-state:paused;
+    }
+
+    .logo-card{
+      width:170px;
+      height:78px;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    .logo-card img{
+      width:100%;
+      height:42px;
+      object-fit:contain;
+      display:block;
+      opacity:1;
+      filter:none;
+    }
+
+    @keyframes logosScroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
 
     .footer{
       padding:30px 0 90px;
@@ -533,13 +678,13 @@
       bottom:14px;
       z-index:70;
       display:none;
-      gap:10px;
+      gap:12px;
       align-items:center;
       justify-content:space-between;
-      padding:12px 12px;
+      padding:12px;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(10,8,16,.92);
+      background:rgba(10,8,16,.94);
       backdrop-filter:blur(12px);
       box-shadow:var(--shadow);
     }
@@ -553,11 +698,18 @@
       display:block;
       color:var(--text);
       font-size:13px;
+      margin-bottom:2px;
+    }
+    .sticky-cta .cta{
+      flex:0 0 auto;
+      min-width:150px;
+      padding:0 14px;
     }
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
       .cta,.btn{transition:none}
+      .logos-track{animation:none}
     }
 
     @media (max-width:980px){
@@ -573,60 +725,155 @@
 
     @media (max-width:760px){
       .sticky-cta{display:flex}
+      .logos-track{animation-duration:24s}
     }
 
-    @media (max-width:520px){
-      .nav-inner{height:auto; padding:10px 0}
-      .cta,.btn{height:40px}
-      .hero{padding-top:40px}
-      .h1{font-size:34px}
-      .lead{font-size:15px}
+    @media (max-width:640px){
+      .container{padding:0 16px}
+
+      .nav-inner{
+        height:auto;
+        min-height:70px;
+        padding:10px 0;
+        gap:10px;
+      }
+      .brand{
+        min-width:0;
+        gap:10px;
+        flex:1 1 auto;
+      }
+      .brand img{
+        width:30px;
+        height:30px;
+      }
+      .brand .t strong{
+        font-size:13px;
+      }
+      .brand .t span{
+        font-size:11px;
+      }
+
+      .nav-right{
+        gap:8px;
+      }
+      .nav-right .cta{
+        height:38px;
+        padding:0 12px;
+        font-size:12px;
+        max-width:170px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .nav-toggle{
+        height:38px;
+        width:42px;
+      }
+
+      .hero{
+        padding:34px 0 18px;
+      }
+      .badge{
+        margin-bottom:12px;
+      }
+      .h1{
+        font-size:34px;
+        line-height:1.06;
+        margin-bottom:14px;
+      }
+      .lead{
+        font-size:15px;
+      }
+
+      .hero-points{
+        gap:9px;
+        margin-top:16px;
+      }
+      .hero-point{
+        padding:12px;
+        font-size:12.5px;
+      }
+
+      .hero-actions{
+        gap:10px;
+      }
+      .hero-actions .cta,
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .hero-card{
+        padding:16px;
+      }
+
+      .logos{
+        padding:26px 0 4px;
+      }
+      .logos-slider{
+        padding:12px 0;
+        border-radius:18px;
+      }
+      .logos-slider::before,
+      .logos-slider::after{
+        width:38px;
+      }
+      .logo-card{
+        width:136px;
+        height:66px;
+        padding:10px 12px;
+        border-radius:15px;
+      }
+      .logo-card img{
+        height:34px;
+      }
+
+      .sticky-cta{
+        left:10px;
+        right:10px;
+        bottom:10px;
+        padding:10px 10px;
+        border-radius:16px;
+        gap:10px;
+      }
+      .sticky-cta .txt{
+        font-size:11px;
+      }
+      .sticky-cta .txt b{
+        font-size:12px;
+      }
+      .sticky-cta .cta{
+        min-width:132px;
+        height:40px;
+        font-size:12px;
+      }
     }
 
-    .logos{
-      padding:34px 0 10px;
-      border-top:1px solid var(--line);
+    @media (max-width:420px){
+      .nav-right .cta{
+        max-width:150px;
+        padding:0 10px;
+        font-size:11.5px;
+      }
+      .h1{
+        font-size:31px;
+      }
+      .sticky-cta{
+        align-items:stretch;
+      }
+      .sticky-cta .txt{
+        flex:1 1 auto;
+      }
+      .sticky-cta .cta{
+        min-width:120px;
+        padding:0 10px;
+      }
+      .logo-card{
+        width:124px;
+        height:62px;
+      }
+      .logo-card img{
+        height:30px;
+      }
     }
-    
-    .logos-title{
-      text-align:center;
-      font-size:15px;
-      color:var(--muted);
-      margin-bottom:18px;
-    }
-    
-    .logos-wrap{
-      overflow:hidden;
-      position:relative;
-    }
-    
-    .logos-track{
-      display:flex;
-      gap:42px;
-      align-items:center;
-      width:max-content;
-      animation:logosScroll 28s linear infinite;
-    }
-    
-    .logos-track img{
-      height:46px;
-      width:auto;
-      opacity:.75;
-      filter:grayscale(100%) brightness(1.2);
-      transition:opacity .25s ease;
-    }
-    
-    .logos-track img:hover{
-      opacity:1;
-      filter:none;
-    }
-    
-    @keyframes logosScroll{
-      from{ transform:translateX(0); }
-      to{ transform:translateX(-50%); }
-    }
-
-    
   </style>
 </head>
 
@@ -774,40 +1021,40 @@
       </div>
     </section>
 
-    <section class="logos">
+    <section class="logos" aria-label="Empresas e negócios que já entraram em contato com a Custom Mind">
       <div class="container">
-    
-        <div class="logos-title">
-          Empresas e negócios que já entraram em contato com a Custom Mind
+        <div class="logos-head">
+          <p class="logos-title">Empresas e negócios que já entraram em contato com a Custom Mind</p>
+          <p class="logos-subtitle">Contatos comerciais, diagnósticos técnicos ou projetos avaliados.</p>
         </div>
-    
-        <div class="logos-wrap">
-          <div class="logos-track">
-    
-            <img src="/assets/img/empresas/empresa1.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa2.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa3.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa4.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa5.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa6.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa7.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa8.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa9.png" alt="Empresa"/>
-    
-            <!-- duplicado para loop infinito -->
-            <img src="/assets/img/empresas/empresa1.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa2.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa3.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa4.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa5.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa6.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa7.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa8.png" alt="Empresa"/>
-            <img src="/assets/img/empresas/empresa9.png" alt="Empresa"/>
-    
+
+        <div class="logos-slider">
+          <div class="logos-wrap">
+            <div class="logos-track">
+
+              <div class="logo-card"><img src="/assets/img/empresas/empresa1.png" alt="Empresa 1"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa2.png" alt="Empresa 2"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa3.png" alt="Empresa 3"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa4.png" alt="Empresa 4"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa5.png" alt="Empresa 5"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa6.png" alt="Empresa 6"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa7.png" alt="Empresa 7"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa8.png" alt="Empresa 8"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa9.png" alt="Empresa 9"/></div>
+
+              <div class="logo-card"><img src="/assets/img/empresas/empresa1.png" alt="Empresa 1"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa2.png" alt="Empresa 2"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa3.png" alt="Empresa 3"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa4.png" alt="Empresa 4"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa5.png" alt="Empresa 5"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa6.png" alt="Empresa 6"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa7.png" alt="Empresa 7"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa8.png" alt="Empresa 8"/></div>
+              <div class="logo-card"><img src="/assets/img/empresas/empresa9.png" alt="Empresa 9"/></div>
+
+            </div>
           </div>
         </div>
-    
       </div>
     </section>
 
