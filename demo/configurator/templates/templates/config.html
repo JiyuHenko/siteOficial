@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configurações — {{ tenant_name or app_company_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/config.css') }}">
+</head>
+<body class="tenant-{{ current_tenant or 'default' }}">
+  <header class="topbar">
+    <div class="brand">
+      {% if tenant_logo %}
+        <img src="{{ url_for('static', filename=tenant_logo.replace('static/','')) }}" alt="{{ tenant_name }}">
+      {% endif %}
+      <span>{{ tenant_name or app_company_name }}</span>
+    </div>
+    <nav>
+      {% if enabled_modules.dashboard %}<a href="{{ url_for('dashboard.home') }}">Dashboard</a>{% endif %}
+      {% if enabled_modules.produtos %}<a href="{{ url_for('produtos.lista') }}">Produtos</a>{% endif %}
+      {% if enabled_modules.vendas %}<a href="{{ url_for('vendas.vendas') }}">Vender</a>{% endif %}
+      {% if enabled_modules.financeiro %}<a href="{{ url_for('financeiro.home') }}">Financeiro</a>{% endif %}
+      {% if enabled_modules.etiquetas %}<a href="{{ url_for('etiquetas.home') }}">Etiquetas</a>{% endif %}
+      {% if enabled_modules.config and session.get('usuario') == 'Gizele' %}
+        <a href="{{ url_for('config.index') }}" class="active">Configurações</a>
+      {% endif %}
+      <a href="{{ url_for('select_tenant.select') }}">Selecionar</a>
+      <a href="{{ url_for('auth.logout') }}">Sair</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Configurações <small>({{ tenant|capitalize }})</small></h1>
+
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+      {% if msgs %}
+        <div class="flash-stack">
+          {% for cat, msg in msgs %}
+            <div class="flash {{ cat }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <section class="card">
+      <form method="post" action="{{ url_for('config.index') }}" class="form-vertical">
+        <div class="row2">
+          <div>
+            <label for="comissao_percent">Comissão (%)</label>
+            <input id="comissao_percent" type="number" step="0.01" min="0" name="comissao_percent"
+                   value="{{ cfg.comissao_percent }}">
+            <p class="muted">Percentual aplicado ao total da venda para cálculo de comissão.</p>
+          </div>
+          <div>
+            <label for="low_stock_threshold">Estoque mínimo</label>
+            <input id="low_stock_threshold" type="number" min="0" name="low_stock_threshold"
+                   value="{{ cfg.low_stock_threshold }}">
+            <p class="muted">Produtos iguais ou abaixo deste valor aparecem em “Baixo estoque”.</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Salvar</button>
+          <a class="btn" href="{{ url_for('dashboard.home') }}">Voltar</a>
+        </div>
+      </form>
+
+      <form method="post" action="{{ url_for('config.reset') }}" class="mt-10">
+        <button class="btn btn-danger" type="submit">Resetar para padrão</button>
+      </form>
+    </section>
+
+    <section class="card mt-16">
+      <h3>Notas</h3>
+      <ul class="notes">
+        <li><strong>Comissão:</strong> o percentual é aplicado nas <em>vendas novas</em>. Vendas antigas não são recalculadas.</li>
+        <li><strong>Estoque mínimo:</strong> usado na tela de produtos para o relatório de baixo estoque.</li>
+        <li>As configurações ficam salvas por tenant no diretório <code>instance/</code> (arquivo <code>config_{{ tenant }}.json</code>).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 - Sistema Custom Mind</small>
+  </footer>
+</body>
+</html>

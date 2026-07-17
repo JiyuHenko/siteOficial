@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% block title %}Etiquetas — {{ tenant|capitalize }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/etiquetas.css') }}">
+
+<div class="etq-scope">
+
+  <div class="etq-header">
+    <div class="etq-header-left">
+      <h1 class="etq-title">
+        <span class="etq-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.59 13.41 11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82Z"></path>
+            <path d="M7 7h.01"></path>
+          </svg>
+        </span>
+        Impressão de Etiquetas <small>({{ tenant|capitalize }})</small>
+      </h1>
+      <small class="etq-subtitle">
+        Configure modelos, pré-visualize e gere páginas A4 prontas para impressão.
+      </small>
+    </div>
+  </div>
+
+  {% with msgs = get_flashed_messages(with_categories=true) %}
+    {% if msgs %}
+      <div class="flash-stack">
+        {% for cat, msg in msgs %}
+          <div class="flash {{ cat }}">{{ msg }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <div class="grid">
+    <!-- Esquerda: formulário -->
+    <section class="card">
+      <form id="frm" method="post" class="etq-form">
+        <input type="hidden" name="token" value="{{ token }}">
+        <input type="hidden" name="action" id="action">
+        <input type="hidden" name="modelos_json" id="modelos_json">
+
+        <div class="card-head">
+          <h3 class="card-title">Opções da folha</h3>
+        </div>
+
+        <div class="row-opts">
+          <div>
+            <label>Margem por etiqueta (px)</label>
+            <input type="number" name="margem_tile" min="0" value="{{ params.margem_tile if params else 2 }}">
+          </div>
+
+          <div>
+            <label>Alinhamento</label>
+            <select name="alinhar">
+              <option value="center"  {% if not params or params.alinhar=='center' %}selected{% endif %}>Centralizado</option>
+              <option value="topleft" {% if params and params.alinhar=='topleft' %}selected{% endif %}>Canto superior</option>
+            </select>
+          </div>
+
+          <label class="chk">
+            <input type="checkbox" name="guia_corte" {% if params and params.guia %}checked{% endif %}>
+            <span>Guias de corte</span>
+          </label>
+
+          <label class="chk">
+            <input type="checkbox" name="imprimir" {% if params and params.imprimir %}checked{% endif %}>
+            <span>Imprimir (Windows)</span>
+          </label>
+        </div>
+
+        <div class="models-head">
+          <h3 class="card-title">Modelos</h3>
+          <button type="button" id="btnAdd" class="btn">+ Adicionar modelo</button>
+        </div>
+
+        <div id="modelsWrap" class="models"></div>
+
+        <div class="actions">
+          <button type="button" class="btn" id="btnPreview">Pré-visualizar</button>
+          <button type="button" class="btn btn-primary" id="btnGerar">Gerar páginas A4</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Direita: previews -->
+    <section class="card">
+      <div class="card-head">
+        <h3 class="card-title">Pré-visualizações</h3>
+      </div>
+
+      {% if previews %}
+        <div class="tiles">
+          {% for t in previews %}
+            <figure class="tile">
+              <img src="{{ t.path }}" alt="Preview {{ t.idx }}">
+              <figcaption>
+                <strong>{{ t.produto }}</strong>
+                <span>Qtd: {{ t.qtd }}</span>
+                <span>Preço: R$ {{ t.preco }}</span>
+              </figcaption>
+            </figure>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty">Adicione modelos e clique em “Pré-visualizar”.</div>
+      {% endif %}
+
+      {% if pages %}
+        <hr class="sep">
+        <div class="card-head">
+          <h3 class="card-title">Páginas A4 geradas</h3>
+        </div>
+
+        <div class="pages">
+          {% for p in pages %}
+            <figure class="page">
+              <img src="{{ p.url }}" alt="Página {{ p.idx }}">
+              <figcaption>Folha {{ p.idx }}</figcaption>
+              <a class="btn small" href="{{ p.url }}" download="{{ p.name }}">Baixar PNG</a>
+            </figure>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+
+<!-- template de um card de modelo -->
+<template id="tpl-model">
+  <fieldset class="model">
+    <legend>Modelo</legend>
+
+    <div class="row">
+      <div>
+        <label>Produto</label>
+        <input type="text" data-k="produto" placeholder="Ex.: Essencial Classic">
+      </div>
+      <div>
+        <label>Volume</label>
+        <input type="text" data-k="volume" placeholder="Ex.: 100 ml">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Tipo</label>
+        <input type="text" data-k="tipo" placeholder="Ex.: Perfume">
+      </div>
+      <div>
+        <label>Referência</label>
+        <input type="text" data-k="referencia" placeholder="Ex.: 0123">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Preço</label>
+        <input type="text" data-k="preco" placeholder="Ex.: 149,90">
+      </div>
+      <div>
+        <label>Quantidade</label>
+        <input type="number" min="0" value="0" data-k="qtd">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Arte base (em static/imagens)</label>
+        <input type="text" data-k="base" value="modelo.png">
+        <small class="muted">Padrão: modelo.png (225x151)</small>
+      </div>
+    </div>
+
+    <div class="row end">
+      <button type="button" class="btn danger btnDel">Remover modelo</button>
+    </div>
+  </fieldset>
+</template>
+
+<script>
+  const modelsWrap = document.getElementById('modelsWrap');
+  const tpl = document.getElementById('tpl-model').content;
+  const modelosServer = {{ (modelos or [])|tojson }};
+
+  function renum(){
+    [...modelsWrap.querySelectorAll('.model')].forEach((m, i) => {
+      m.querySelector('legend').textContent = `Modelo ${i+1}`;
+    });
+  }
+
+  function addModel(prefill={}){
+    const node = document.importNode(tpl, true);
+    const el = node.querySelector('.model');
+    el.querySelector('.btnDel').addEventListener('click', () => { el.remove(); renum(); });
+    modelsWrap.appendChild(node);
+    const last = modelsWrap.lastElementChild;
+    for (const [k,v] of Object.entries(prefill)){
+      const inp = last.querySelector(`[data-k="${k}"]`);
+      if (inp) inp.value = v ?? '';
+    }
+    renum();
+  }
+
+  function collect(){
+    const arr = [];
+    [...modelsWrap.querySelectorAll('.model')].forEach(m => {
+      const get = k => (m.querySelector(`[data-k="${k}"]`)?.value || '').trim();
+      arr.push({
+        produto: get('produto'),
+        volume: get('volume'),
+        tipo: get('tipo'),
+        referencia: get('referencia'),
+        preco: get('preco'),
+        qtd: parseInt(get('qtd') || '0', 10) || 0,
+        base: get('base') || 'modelo.png',
+      });
+    });
+    return arr;
+  }
+
+  function submitWith(action){
+    const modelos = collect();
+    if (!modelos.length){
+      alert('Adicione pelo menos 1 modelo.');
+      return;
+    }
+    document.getElementById('modelos_json').value = JSON.stringify(modelos);
+    document.getElementById('action').value = action;
+    document.getElementById('frm').submit();
+  }
+
+  document.getElementById('btnAdd').addEventListener('click', () => addModel());
+  document.getElementById('btnPreview').addEventListener('click', () => submitWith('preview'));
+  document.getElementById('btnGerar').addEventListener('click', () => submitWith('gerar'));
+
+  if (modelosServer.length){
+    modelosServer.forEach(m => addModel(m));
+  }
+</script>
+{% endblock %}
