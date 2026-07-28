@@ -1,50 +1,29 @@
-# Custom Mind | Software Solutions
+# Custom Mind — site oficial
 
-Site oficial da Custom Mind, desenvolvido como projeto estático em HTML, CSS e JavaScript, com foco em performance, acessibilidade, conversão e manutenção simples.
+Reconstrução estática, pronta para GitHub Pages em `www.custommind.com.br`.
 
-## Páginas principais
+## Estrutura principal
+- `index.html` — página inicial
+- `solucoes.html` — serviços e processo
+- `products/jade.html` — Jade
+- `products/zuri.html` — Zuri
+- `products/loja-inteligente.html` — Loja Inteligente
+- `clientes/` — índice e páginas individuais
+- `sitemap.xml`, `robots.txt`, dados estruturados e Open Graph
 
-- `/` — apresentação da empresa, soluções, processo e case;
-- `/products/zuri.html` — crescimento orgânico para Instagram;
-- `/products/violet.html` — visão geral da assistente de atendimento e vendas;
-- `/products/violet-whatsapp.html` — landing específica para WhatsApp;
-- `/products/violet-instagram.html` — landing específica para Instagram;
-- `/products/violet-formulario.html` — qualificação rápida;
-- `/products/loja-inteligente.html` — sistema modular de gestão;
-- `/configurator/` — configurador da Loja Inteligente;
-- `/configurator/checkout.html` — checkout do serviço de configuração.
+## Integrações preservadas
+- Google Tag Manager: `GTM-MF32WD9H`
+- Verificação do Search Console: preservada no HTML
+- Domínio: `www.custommind.com.br`
 
-## Rodar localmente
+O Google Ads e o GA4 devem ser configurados dentro do GTM para evitar medição duplicada.
 
-```bash
-python -m http.server 5500
-```
+## Adicionar um cliente
+1. Crie `clientes/slug-do-cliente.html` usando uma página existente como base.
+2. Adicione imagens em `assets/img/clients/`.
+3. Crie título, descrição, canonical, Open Graph e JSON-LD exclusivos.
+4. Adicione o card em `clientes/index.html` e, se for destaque, em `index.html`.
+5. Inclua a URL em `sitemap.xml` com `lastmod` real.
+6. Atualize `data/clientes.json` como registro de referência.
 
-Abra `http://localhost:5500`.
-
-Não existe etapa de build ou dependência obrigatória.
-
-## Estrutura visual
-
-A identidade principal está em:
-
-- `assets/css/modern.css`
-- `assets/js/modern.js`
-- `assets/img/*.webp`
-
-O site usa HTML semântico, componentes visuais próprios, animações leves em CSS e JavaScript sem frameworks.
-
-## SEO e rastreamento
-
-- canonicals padronizados em `custommind.com.br`;
-- sitemap e robots atualizados;
-- Open Graph e Twitter Cards;
-- JSON-LD para Organization, WebSite, SoftwareApplication, BreadcrumbList e FAQPage;
-- Google Tag Manager e Google Ads preservados;
-- páginas internas de checkout, demonstração e formulário marcadas como `noindex`.
-
-Veja `SEO_RECOMMENDATIONS.md` antes da publicação.
-
-## Publicação
-
-O projeto pode continuar sendo hospedado como site estático. Faça commit dos arquivos e publique no serviço já utilizado pelo domínio.
+Não crie páginas escondidas de tags nem cópias do site do cliente. Cada página deve ser útil e editorial.

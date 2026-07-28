@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /demo/
 
-Sitemap: https://custommind.com.br/sitemap.xml
+Sitemap: https://www.custommind.com.br/sitemap.xml
