@@ -1,29 +1,26 @@
 # Custom Mind — site oficial
 
-Reconstrução estática, pronta para GitHub Pages em `www.custommind.com.br`.
+Site estático preparado para GitHub Pages.
 
-## Estrutura principal
-- `index.html` — página inicial
-- `solucoes.html` — serviços e processo
-- `products/jade.html` — Jade
-- `products/zuri.html` — Zuri
-- `products/loja-inteligente.html` — Loja Inteligente
-- `clientes/` — índice e páginas individuais
-- `sitemap.xml`, `robots.txt`, dados estruturados e Open Graph
+## Páginas principais
 
-## Integrações preservadas
-- Google Tag Manager: `GTM-MF32WD9H`
-- Verificação do Search Console: preservada no HTML
-- Domínio: `www.custommind.com.br`
-
-O Google Ads e o GA4 devem ser configurados dentro do GTM para evitar medição duplicada.
+- `/` — página inicial
+- `/solucoes.html` — produtos e serviços
+- `/products/jade.html`
+- `/products/zuri.html`
+- `/products/loja-inteligente.html`
+- `/clientes/`
+- `/clientes/auto-eletrica-avelar.html`
+- `/clientes/lb-fit.html`
 
 ## Adicionar um cliente
-1. Crie `clientes/slug-do-cliente.html` usando uma página existente como base.
-2. Adicione imagens em `assets/img/clients/`.
-3. Crie título, descrição, canonical, Open Graph e JSON-LD exclusivos.
-4. Adicione o card em `clientes/index.html` e, se for destaque, em `index.html`.
-5. Inclua a URL em `sitemap.xml` com `lastmod` real.
-6. Atualize `data/clientes.json` como registro de referência.
 
-Não crie páginas escondidas de tags nem cópias do site do cliente. Cada página deve ser útil e editorial.
+1. Copie uma página existente dentro de `clientes/`.
+2. Troque conteúdo, imagens, title, description, canonical e JSON-LD.
+3. Adicione o card em `clientes/index.html`.
+4. Adicione o link em `sitemap.xml` com uma data `lastmod` real.
+5. Teste no celular, no Rich Results Test e no Search Console.
+
+## Publicação
+
+Envie os arquivos para a raiz da branch usada pelo GitHub Pages. O arquivo `CNAME` já aponta para `www.custommind.com.br`.

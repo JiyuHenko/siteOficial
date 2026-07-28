@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /demo/
+Disallow: /configurator/
 
 Sitemap: https://www.custommind.com.br/sitemap.xml

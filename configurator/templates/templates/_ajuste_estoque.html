@@ -1,0 +1,40 @@
+{# app/templates/_ajuste_estoque.html #}
+<details>
+  <summary>Ajustar estoque</summary>
+  <div class="ajuste">
+    <form method="post" action="{{ url_for('produtos.ajuste_entrada', pid=p.id) }}">
+      <h4>Entrada</h4>
+      <label>Quantidade</label>
+      <input type="number" name="qtd_entrada" min="1" required>
+      <label>Custo</label>
+      <div class="row">
+        <select name="custo_tipo">
+          <option value="unit">por unidade</option>
+          <option value="total">custo total do lote</option>
+        </select>
+        <input type="text" name="custo_val" placeholder="Ex.: 12,90">
+      </div>
+      <label>Observação</label>
+      <input type="text" name="obs" placeholder="Fornecedor, nota, etc.">
+      <button type="submit">Registrar entrada</button>
+    </form>
+
+    <form method="post" action="{{ url_for('produtos.ajuste_saida', pid=p.id) }}">
+      <h4>Saída</h4>
+      <label>Quantidade</label>
+      <input type="number" name="qtd_saida" min="1" required>
+      <label>Motivo</label>
+      <input type="text" name="motivo" placeholder="Ajuste, perda, troca...">
+      <button type="submit" class="danger">Registrar saída</button>
+    </form>
+  </div>
+</details>
+
+<style>
+  details summary { cursor:pointer; margin-top:6px; }
+  .ajuste { display:grid; grid-template-columns: 1fr 1fr; gap:16px; padding:10px; border:1px dashed #ccc; border-radius:10px; margin-top:6px; }
+  .ajuste form { display:flex; flex-direction:column; gap:6px; }
+  .ajuste .row { display:flex; gap:8px; }
+  .ajuste input, .ajuste select, .ajuste button { padding:8px; }
+  .ajuste h4 { margin:4px 0; }
+</style>

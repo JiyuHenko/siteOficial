@@ -1,0 +1,538 @@
+{% extends "base.html" %}
+{% block title %}Produtos — {{ tenant|capitalize }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css') }}">
+
+{# helpers p/ resumo do filtro #}
+{% set cat_nome = None %}
+{% if cat_id %}
+  {% for c in categorias %}
+    {% if (cat_id|int) == c.id %}
+      {% set cat_nome = c.nome %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="prod-page">
+  <div class="prod-scope">
+
+    <!-- Header -->
+    <div class="prod-head">
+      <div class="prod-head-left">
+        <h1 class="prod-title">
+          <span class="prod-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+              <path d="M3.3 7l8.7 5 8.7-5"></path>
+              <path d="M12 22V12"></path>
+            </svg>
+          </span>
+          Produtos <small>({{ tenant|capitalize }})</small>
+        </h1>
+
+        <div class="prod-sub">
+          <span class="prod-count">{{ total }}</span>
+          <span class="prod-muted">cadastros no total</span>
+          {% if q %}<span class="prod-chip">Busca: “{{ q }}”</span>{% endif %}
+          {% if cat_nome %}<span class="prod-chip">Categoria: {{ cat_nome }}</span>{% endif %}
+        </div>
+      </div>
+
+      <div class="prod-head-actions">
+        <a class="btn btn-soft" href="{{ url_for('produtos.lista') }}">Atualizar</a>
+
+        {% if threshold is defined %}
+          <a class="btn btn-soft" href="{{ url_for('produtos.low_stock') }}">
+            Baixo estoque
+            {% if low_total is defined %}
+              <span class="btn-badge">{{ low_total }}</span>
+            {% endif %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <section class="prod-card prod-filters">
+      <form method="get" class="prod-filters-form">
+        <div class="prod-filter-group grow">
+          <label for="q">Buscar</label>
+          <input id="q" type="text" name="q" placeholder="Buscar por nome ou código de barras..." value="{{ q or '' }}">
+        </div>
+
+        <div class="prod-filter-group">
+          <label for="cat">Categoria</label>
+          <select id="cat" name="cat">
+            <option value="">Todas</option>
+            {% for c in categorias %}
+              <option value="{{ c.id }}" {% if cat_id and (cat_id|int) == c.id %}selected{% endif %}>{{ c.nome }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="prod-filter-actions">
+          <button type="submit" class="btn btn-primary">Filtrar</button>
+          <a class="btn btn-ghost" href="{{ url_for('produtos.lista') }}">Limpar</a>
+        </div>
+      </form>
+    </section>
+
+    <div class="prod-grid">
+      <!-- Lateral -->
+      <aside class="prod-side">
+
+        <!-- Novo produto -->
+        <section class="prod-card">
+          <div class="prod-card-head">
+            <h2>Novo produto</h2>
+            <span class="prod-tag">Cadastro</span>
+          </div>
+
+          <form method="post" action="{{ url_for('produtos.novo') }}" class="prod-form" autocomplete="off">
+            <div class="prod-field">
+              <label>Nome *</label>
+              <input name="nome" placeholder="Nome do produto" required>
+            </div>
+
+            <div class="prod-field">
+              <label>Código de barras</label>
+              <input name="codigo_barras" placeholder="Opcional">
+            </div>
+
+            <div class="prod-row-3">
+              <div class="prod-field">
+                <label>Preço ㅤ(prazo) *</label>
+                <input name="preco" placeholder="Ex.: 49,90" required data-money>
+                <div class="prod-hint">Preço padrão no prazo.</div>
+              </div>
+
+              <div class="prod-field">
+                <label>Preço à vista</label>
+                <input name="preco_avista" placeholder="Opcional" data-money>
+                <div class="prod-hint">Se vazio, usa o preço a prazo.</div>
+              </div>
+
+              <div class="prod-field">
+                <label>Preço de custo *</label>
+                <input name="preco_custo" placeholder="Ex.: 25,00" required data-money>
+                <div class="prod-hint">Usado em margem e financeiro.</div>
+              </div>
+            </div>
+
+            <div class="prod-row-2">
+              <div class="prod-field">
+                <label>Quantidade *</label>
+                <input name="quantidade" type="number" placeholder="0" required min="0" step="1">
+              </div>
+
+              
+            </div>
+
+            <div class="prod-field">
+              <label>Categorias</label>
+              <div class="prod-chips">
+                {% for c in categorias %}
+                  <label class="prod-chipbox">
+                    <input type="checkbox" name="categorias" value="{{ c.id }}"> {{ c.nome }}
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary full">Salvar</button>
+          </form>
+        </section>
+
+        <!-- Categorias -->
+        <section class="prod-card">
+          <div class="prod-card-head">
+            <h2>Categorias</h2>
+            <span class="prod-tag">{{ categorias|length }}</span>
+          </div>
+
+          <form method="post" action="{{ url_for('produtos.nova_categoria') }}" class="prod-inline" autocomplete="off">
+            <input type="text" name="nome" placeholder="Nova categoria" required>
+            <button type="submit" class="btn btn-soft">Criar</button>
+          </form>
+
+          <ul class="prod-cats">
+            {% for c in categorias %}
+              <li>
+                <a class="prod-catlink" href="?cat={{ c.id }}">{{ c.nome }}</a>
+
+                <form method="post"
+                      action="{{ url_for('produtos.deletar_categoria', cid=c.id) }}"
+                      onsubmit="return confirm('Excluir a categoria {{ c.nome }}? Os produtos vinculados apenas perderão essa categoria.');">
+                  <button type="submit" class="btn btn-danger btn-mini">Excluir</button>
+                </form>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+      </aside>
+
+      <!-- Conteúdo principal -->
+      <section class="prod-main">
+        <section class="prod-card">
+          <div class="prod-card-head prod-card-head-row">
+            <div>
+              <h2>Lista de produtos</h2>
+              <div class="prod-meta">
+                Exibindo <strong>{{ produtos|length }}</strong> de <strong>{{ total }}</strong>.
+              </div>
+            </div>
+
+            <div class="prod-tools">
+              <span class="prod-muted">Dica:</span>
+              <span class="prod-muted">use Ctrl+F e busque pelo nome.</span>
+            </div>
+          </div>
+
+          <div class="prod-table-wrap">
+            <table class="prod-table">
+              <thead>
+                <tr>
+                  <th class="col-nome">Nome</th>
+
+                  <th class="right">Prazo</th>
+                  <th class="right">À vista</th>
+                  <th class="right">Custo</th>
+                  <th class="center">Qtd</th>
+                  <th>Categorias</th>
+                  <th>ㅤㅤㅤㅤㅤAções</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for p in produtos %}
+                  <tr id="p-{{ p.id }}">
+                    <td class="prod-name" title="{{ p.nome }}">
+                      <div class="prod-name-main">{{ p.nome }}</div>
+                      <div class="prod-name-sub">ID {{ p.id }}</div>
+                    </td>
+
+
+                    <td class="right"><span class="money">R$ {{ p.preco }}</span></td>
+
+                    <td class="right">
+                      {% if p.preco_avista is not none %}
+                        <span class="money">R$ {{ p.preco_avista }}</span>
+                      {% else %}
+                        <span class="money muted">R$ {{ p.preco }} <span class="mini">(usa prazo)</span></span>
+                      {% endif %}
+                    </td>
+
+                    <td class="right"><span class="money">R$ {{ p.preco_custo }}</span></td>
+
+                    <td class="center">
+                      {% set qtt = (p.quantidade or 0) %}
+                      <span class="qty {{ 'danger' if qtt == 0 else 'warn' if (threshold is defined and qtt <= threshold) else '' }}">
+                        {{ qtt }}
+                      </span>
+                    </td>
+
+                    <td>
+                      <div class="cat-flow">
+                        {% for c in p.categorias %}
+                          <span class="tag">{{ c.nome }}</span>
+                        {% endfor %}
+                        {% if not p.categorias %}
+                          <span class="muted mini">Sem categoria</span>
+                        {% endif %}
+                      </div>
+                    </td>
+
+                    <!-- ✅ AÇÕES agora viram botões que abrem MODAL -->
+                    <td>
+                      <div class="act-stack">
+                        <button
+                          type="button"
+                          class="btn btn-soft"
+                          data-open-modal="1"
+                          data-title="Editar produto"
+                          data-tpl="#tpl-edit-{{ p.id }}">
+                          Editar
+                        </button>
+
+                        <button
+                          type="button"
+                          class="btn btn-soft"
+                          data-open-modal="1"
+                          data-title="Ajustes de estoque"
+                          data-tpl="#tpl-stock-{{ p.id }}">
+                          Estoque
+                        </button>
+
+                        <form method="post"
+                              action="{{ url_for('produtos.deletar', pid=p.id) }}"
+                              onsubmit="return confirm('Excluir {{ p.nome }}?')"
+                              class="inline-del">
+                          <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                      </div>
+
+                      <!-- ✅ Templates do modal (um por produto) -->
+                      <template id="tpl-edit-{{ p.id }}">
+                        <div class="modal-section">
+                          <form method="post"
+                                action="{{ url_for('produtos.editar', pid=p.id) }}"
+                                class="modal-form"
+                                autocomplete="off">
+
+                            <div class="row2">
+                              <div class="prod-field">
+                                <label>Nome</label>
+                                <input name="nome" value="{{ p.nome }}">
+                              </div>
+                              <div class="prod-field">
+                                <label>Código</label>
+                                <input name="codigo_barras" value="{{ p.codigo_barras or '' }}">
+                              </div>
+                            </div>
+
+                            <div class="row4">
+                              <div class="prod-field">
+                                <label>Prazo</label>
+                                <input name="preco" value="{{ p.preco }}" data-money>
+                              </div>
+                              <div class="prod-field">
+                                <label>À vista</label>
+                                <input name="preco_avista" value="{{ p.preco_avista if p.preco_avista is not none else '' }}" data-money>
+                              </div>
+                              <div class="prod-field">
+                                <label>Custo</label>
+                                <input name="preco_custo" value="{{ p.preco_custo }}" data-money>
+                              </div>
+                              <div class="prod-field">
+                                <label>Qtd</label>
+                                <input name="quantidade" type="number" value="{{ p.quantidade }}" min="0" step="1">
+                              </div>
+                            </div>
+
+                            <div class="prod-field">
+                              <label>Categorias</label>
+                              <div class="prod-chips">
+                                {% for c in categorias %}
+                                  <label class="prod-chipbox">
+                                    <input type="checkbox" name="categorias" value="{{ c.id }}" {% if c in p.categorias %}checked{% endif %}>
+                                    {{ c.nome }}
+                                  </label>
+                                {% endfor %}
+                              </div>
+                            </div>
+
+                            <div class="modal-actions">
+                              <button type="button" class="btn btn-ghost" data-close-modal="1">Cancelar</button>
+                              <button type="submit" class="btn btn-primary">Atualizar</button>
+                            </div>
+                          </form>
+                        </div>
+                      </template>
+
+                      <template id="tpl-stock-{{ p.id }}">
+                        <div class="modal-section">
+                          <div class="modal-grid">
+                            <div class="modal-box">
+                              <div class="modal-box-head">
+                                <strong>Adicionar estoque</strong>
+                                <span class="muted mini">Entrada</span>
+                              </div>
+
+                              <form method="post"
+                                    action="{{ url_for('produtos.ajuste_entrada', pid=p.id) }}"
+                                    class="modal-form">
+
+                                <div class="row2 main-split">
+                                  <div class="prod-field">
+                                    <label>Quantidade</label>
+                                    <input type="number" name="qtd_entrada" min="1" required>
+                                  </div>
+
+                                  <div class="prod-field">
+                                    <label>Custo</label>
+                                    <div class="row2 tight">
+                                      <select name="custo_tipo">
+                                        <option value="unit">por unidade</option>
+                                        <option value="total">custo total do lote</option>
+                                      </select>
+                                      <input type="text" name="custo_val" placeholder="Ex.: 12,90" data-money>
+                                    </div>
+                                    <div class="prod-hint">Se “total”, o sistema divide pelo número de unidades.</div>
+                                  </div>
+                                </div>
+
+                                <div class="prod-field">
+                                  <label>Observação</label>
+                                  <input type="text" name="obs" placeholder="Fornecedor, nota, etc.">
+                                </div>
+
+                                <div class="modal-actions">
+                                  <button type="submit" class="btn btn-primary">Registrar entrada</button>
+                                </div>
+                              </form>
+                            </div>
+
+                            <div class="modal-box">
+                              <div class="modal-box-head">
+                                <strong>Remover do estoque</strong>
+                                <span class="muted mini">Saída</span>
+                              </div>
+
+                              <form method="post"
+                                    action="{{ url_for('produtos.ajuste_saida', pid=p.id) }}"
+                                    class="modal-form">
+
+                                <div class="row2">
+                                  <div class="prod-field">
+                                    <label>Quantidade</label>
+                                    <input type="number" name="qtd_saida" min="1" required>
+                                  </div>
+                                  <div class="prod-field">
+                                    <label>Motivo</label>
+                                    <input type="text" name="motivo" placeholder="Ajuste, perda, troca...">
+                                  </div>
+                                </div>
+
+                                <div class="modal-actions">
+                                  <button type="submit" class="btn btn-danger">Registrar saída</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+
+                          <div class="modal-actions modal-actions-bottom">
+                            <button type="button" class="btn btn-ghost" data-close-modal="1">Fechar</button>
+                          </div>
+                        </div>
+                      </template>
+
+                    </td>
+                  </tr>
+                {% endfor %}
+
+                {% if not produtos %}
+                  <tr>
+                    <td colspan="8" class="empty">Nenhum produto encontrado com esses filtros.</td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </div>
+
+  </div>
+</div>
+
+<!-- ✅ MODAL ROOT (único) -->
+<div class="modal-overlay" id="appModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
+    <div class="modal-head">
+      <div class="modal-title" id="appModalTitle">Modal</div>
+      <button type="button" class="modal-x" data-close-modal="1" aria-label="Fechar">×</button>
+    </div>
+    <div class="modal-body" id="appModalBody"></div>
+  </div>
+</div>
+
+<!-- Máscara simples de moeda (PT-BR) + Modal -->
+<script>
+  (function() {
+    function toNumber(v) {
+      v = (v || '').toString().replace(/[^\d.,]/g, '');
+      const parts = v.split(',');
+      if (parts.length > 2) {
+        const decimals = parts.pop();
+        v = parts.join('') + ',' + decimals;
+      }
+      v = v.replace(/\.(?=\d{3}(\D|$))/g, '');
+      v = v.replace(',', '.');
+      const n = Number(v);
+      return isNaN(n) ? null : n;
+    }
+
+    function formatBRL(n) {
+      try {
+        return n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      } catch (e) { return n; }
+    }
+
+    function applyMoneyMask(root) {
+      (root || document).querySelectorAll('input[data-money]').forEach(inp => {
+        inp.addEventListener('blur', (e) => {
+          const n = toNumber(e.target.value);
+          if (n === null) { e.target.value = ''; return; }
+          e.target.value = formatBRL(n);
+        });
+        inp.addEventListener('focus', (e) => {
+          if (e.target.select) e.target.select();
+        });
+      });
+    }
+
+    // aplica no cadastro lateral também
+    applyMoneyMask(document);
+
+    // ===== Modal =====
+    const overlay = document.getElementById('appModal');
+    const body = document.getElementById('appModalBody');
+    const titleEl = document.getElementById('appModalTitle');
+
+    function openModal(title, tplSelector){
+      const tpl = document.querySelector(tplSelector);
+      if (!tpl) return;
+
+      titleEl.textContent = title || 'Detalhes';
+      body.innerHTML = '';
+      body.appendChild(tpl.content.cloneNode(true));
+
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.documentElement.classList.add('modal-lock');
+
+      // máscara dentro do modal
+      applyMoneyMask(body);
+
+      // foca primeiro input do modal
+      const firstInput = body.querySelector('input, select, button');
+      if (firstInput) firstInput.focus();
+    }
+
+    function closeModal(){
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.remove('modal-lock');
+      body.innerHTML = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-open-modal="1"]');
+      if (btn){
+        e.preventDefault();
+        openModal(btn.getAttribute('data-title'), btn.getAttribute('data-tpl'));
+        return;
+      }
+
+      if (e.target.closest('[data-close-modal="1"]')){
+        e.preventDefault();
+        closeModal();
+        return;
+      }
+
+      // clique fora fecha
+      if (e.target === overlay){
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')){
+        closeModal();
+      }
+    });
+  })();
+</script>
+{% endblock %}

@@ -1,0 +1,620 @@
+{% extends "base.html" %}
+{% block title %}Vendas — {{ tenant|capitalize }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vendas.css') }}">
+
+<div class="vds-page">
+  <div class="vds-scope">
+
+    <!-- Header -->
+    <div class="vds-head">
+      <div class="vds-head-left">
+        <h1 class="vds-title">
+          <span class="vds-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7h-7V4a1 1 0 0 0-1-1H6a2 2 0 0 0-2 2v2"></path>
+              <path d="M4 7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z"></path>
+              <path d="M16 11a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2"></path>
+            </svg>
+          </span>
+          Vendas <small>({{ tenant|capitalize }})</small>
+        </h1>
+
+        <div class="vds-sub">
+          <span class="vds-chip">
+            Vendedor: <strong>{{ usuario }}</strong>
+          </span>
+          <span class="vds-muted">Atalho do leitor: <kbd>F9</kbd> ou <kbd>/</kbd></span>
+        </div>
+      </div>
+
+      <div class="vds-head-actions">
+        <a class="vds-btn vds-btn-soft" href="{{ url_for('vendas.vendas') }}">Atualizar</a>
+      </div>
+    </div>
+
+    <!-- Flashes -->
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+      {% if msgs %}
+        <div class="vds-flash-stack">
+          {% for cat, msg in msgs %}
+            <div class="vds-flash {{ cat }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% if recibo_url %}
+      <div class="vds-flash info vds-flash-inline">
+        <div class="vds-flash-inline-text">
+          Recibo gerado (sem valor fiscal).
+        </div>
+        <a class="vds-btn vds-btn-primary vds-btn-mini" href="{{ recibo_url }}">Baixar PDF</a>
+      </div>
+    {% endif %}
+
+    <div class="vds-grid">
+
+      <!-- Catálogo -->
+      <section class="vds-card vds-catalogo">
+        <div class="vds-card-head">
+          <h2>Catálogo</h2>
+          <span class="vds-tag">Busca</span>
+        </div>
+
+        <form class="vds-searchbar" onsubmit="return false;">
+          <div class="vds-search-input">
+            <label for="q">Buscar</label>
+            <input type="text" id="q" placeholder="Buscar por nome ou código..." autocomplete="off">
+          </div>
+
+          <div class="vds-search-select">
+            <label for="cat">Categoria</label>
+            <select id="cat">
+              <option value="">Todas as categorias</option>
+              {% for c in categorias %}
+                <option value="{{ c.id }}">{{ c.nome }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="vds-search-actions">
+            <button type="button" id="btnBuscar" class="vds-btn vds-btn-primary">Buscar</button>
+            <button type="button" id="btnLimpar" class="vds-btn vds-btn-ghost">Limpar</button>
+          </div>
+        </form>
+
+        <div class="vds-list-wrap">
+          <div id="lista-produtos" class="vds-lista-produtos"></div>
+        </div>
+      </section>
+
+      <!-- Comanda -->
+      <section class="vds-comanda">
+        <form id="formVenda" method="post" class="vds-card vds-comanda-card">
+
+          <!-- Modo de preço -->
+          <div class="vds-price-mode" aria-label="Modo de preço">
+            <span class="vds-muted">Preço:</span>
+
+            <div class="vds-toggle" role="tablist" aria-label="Escolher preço">
+              <button type="button" id="btnAvista" class="active" role="tab" aria-selected="true">À vista</button>
+              <button type="button" id="btnPrazo" role="tab" aria-selected="false">A prazo</button>
+            </div>
+
+            <span id="modeHint" class="vds-pill"></span>
+          </div>
+
+          <!-- Carrinho -->
+          <div class="vds-cart" id="cartBox">
+            <div class="vds-cart-head">
+              <div>Item</div>
+              <div>Qtd</div>
+              <div>Preço</div>
+              <div>Subtotal</div>
+              <div></div>
+            </div>
+
+            <div id="cartBody" class="vds-cart-body"></div>
+
+            <div class="vds-cart-foot">
+              <div class="vds-totals">
+                <span>Itens: <strong id="itens-count">0</strong></span>
+                <span>Total: <strong id="total-estimado">R$ 0,00</strong></span>
+              </div>
+              <button type="submit" class="vds-btn vds-btn-primary">Registrar venda</button>
+            </div>
+          </div>
+
+          <!-- DOCK do leitor -->
+          <div class="vds-scanner-dock">
+            <div class="vds-dock-head">
+              <strong>Leitor de código de barras</strong>
+              <span class="vds-muted">Foque e leia — Enter adiciona</span>
+            </div>
+
+            <div class="vds-scanner-bar">
+              <input type="text" id="barcode" placeholder="Leia o código e pressione Enter" autocomplete="off" inputmode="numeric">
+              <input type="number" id="qtyScan" min="1" value="1" title="Quantidade">
+              <button type="button" id="btnScanAdd" class="vds-btn vds-btn-primary">Adicionar</button>
+            </div>
+
+            <div id="scanMsg" class="vds-scan-msg" aria-live="polite"></div>
+          </div>
+
+        </form>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL de confirmação -->
+<div id="confirmModal" class="vds-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="vds-modal-card">
+    <h3 id="mTitle">Confirmar venda</h3>
+
+    <div class="vds-sum-wrap">
+      <table class="vds-sum-table" id="sumTable">
+        <thead>
+          <tr><th>Item</th><th>Qtd</th><th>Unit</th><th>Subtotal</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="vds-sum-foot">
+      <span>Total: <span id="mTotal">R$ 0,00</span></span>
+
+      <div class="vds-parcelas">
+        <label for="installments">Dividir em:</label>
+        <select id="installments">
+          <option value="1">1x</option>
+          <option value="2">2x</option>
+          <option value="3">3x</option>
+          <option value="4">4x</option>
+          <option value="5">5x</option>
+          <option value="6">6x</option>
+          <option value="7">7x</option>
+          <option value="8">8x</option>
+          <option value="9">9x</option>
+          <option value="10">10x</option>
+          <option value="11">11x</option>
+          <option value="12">12x</option>
+        </select>
+        <span class="vds-hint" id="perInstallment">1x</span>
+      </div>
+    </div>
+
+    <div class="vds-m-row">
+      <div>
+        <label>Forma de pagamento</label>
+        <select id="payMethod">
+          <option>DINHEIRO</option>
+          <option>PIX</option>
+          <option>CRÉDITO</option>
+          <option>DÉBITO</option>
+          <option>OUTRO</option>
+        </select>
+      </div>
+      <div>
+        <label>Observação</label>
+        <input type="text" id="obs" placeholder="Opcional (ex.: troco, ref. do PIX...)">
+      </div>
+    </div>
+
+    <div class="vds-m-actions">
+      <button type="button" class="vds-btn vds-btn-ghost" id="btnCancel">Cancelar</button>
+      <button type="button" class="vds-btn vds-btn-primary" id="btnConfirm">Confirmar e registrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Seu JS original (mantido) ===== -->
+<script>
+  // ===== Estado =====
+  // priceMode: 'avista' | 'prazo'
+  let priceMode = 'avista';
+
+  const cart = new Map(); // id -> {id,nome,preco,preco_avista,estoque,qtd,...}
+  const fmt = v => (v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+
+  function currentUnit(it){
+    const av = (typeof it.preco_avista === 'number') ? it.preco_avista : it.preco;
+    return priceMode === 'avista' ? (av || it.preco || 0) : (it.preco || av || 0);
+  }
+
+  function unitWithCustom(it){
+    const base = currentUnit(it);
+    const key = `preco_custom_${it.id}`;
+    const custom = it[key];
+    if (priceMode === 'avista' && typeof custom === 'number' && custom > 0){
+      return custom;
+    }
+    return base;
+  }
+
+  function renderCart() {
+    const body = document.getElementById('cartBody');
+    body.innerHTML = '';
+    let itens = 0, total = 0;
+
+    for (const [id, it] of cart.entries()) {
+      const unit = unitWithCustom(it);
+      const subtotal = (it.qtd * unit);
+
+      itens += it.qtd;
+      total += subtotal;
+
+      const row = document.createElement('div');
+      row.className = 'vds-cart-row';
+
+      row.innerHTML = `
+        <div class="vds-c-item">
+          <div class="vds-name">${it.nome}</div>
+          <div class="vds-stock">Estoque: ${it.estoque}</div>
+        </div>
+        <div class="vds-c-qtd">
+          <input type="number" min="0" value="${it.qtd}" data-id="${id}" class="qtdInput">
+        </div>
+        <div class="vds-c-preco">
+          ${
+            priceMode === 'avista'
+            ? `<input type="text" class="customPrice" data-id="${id}" value="${unit.toFixed(2)}">`
+            : fmt(unit)
+          }
+        </div>
+        <div class="vds-c-sub">${fmt(subtotal)}</div>
+        <div class="vds-c-del"><button type="button" class="delBtn" data-id="${id}" aria-label="Remover">×</button></div>
+      `;
+      body.appendChild(row);
+    }
+
+    document.getElementById('itens-count').textContent = itens;
+    document.getElementById('total-estimado').textContent = fmt(total);
+  }
+
+  function recalcTotalsFromCart(){
+    let itens = 0, total = 0;
+    for (const [, it] of cart.entries()){
+      itens += it.qtd;
+      total += it.qtd * unitWithCustom(it);
+    }
+    document.getElementById('itens-count').textContent = itens;
+    document.getElementById('total-estimado').textContent = fmt(total);
+  }
+
+  function pulseCart(){
+    const el = document.getElementById('cartBox');
+    el.classList.add('pulse');
+    setTimeout(()=>el.classList.remove('pulse'), 320);
+  }
+
+  function addToCart(prod, qtdAdd=1) {
+    const base = {
+      id: prod.id,
+      nome: prod.nome,
+      preco: Number(prod.preco||0),
+      preco_avista: Number(prod.preco_avista||prod.preco||0),
+      estoque: Number(prod.estoque||0),
+    };
+    const cur = cart.get(prod.id) || { ...base, qtd: 0 };
+    const nova = cur.qtd + qtdAdd;
+    if (nova > base.estoque) {
+      showScanMsg(`Estoque insuficiente: ${base.nome} (disp.: ${base.estoque})`, true);
+      return;
+    }
+    cur.qtd = nova;
+    cur.preco = base.preco;
+    cur.preco_avista = base.preco_avista;
+    cur.estoque = base.estoque;
+
+    cart.set(prod.id, cur);
+    renderCart();
+    pulseCart();
+    showScanMsg(`Adicionado: ${base.nome} (x${qtdAdd})`, false);
+  }
+
+  function setQty(id, qtd) {
+    const it = cart.get(id);
+    if (!it) return;
+    if (qtd <= 0) { cart.delete(id); renderCart(); return; }
+    if (qtd > it.estoque) { alert(`Estoque insuficiente (disp.: ${it.estoque})`); return; }
+    it.qtd = qtd; cart.set(id, it); renderCart();
+  }
+
+  // ===== Buscar produtos (AJAX) =====
+  async function buscar() {
+    const q = document.getElementById('q').value.trim();
+    const cat = document.getElementById('cat').value;
+    const p = new URLSearchParams();
+    if (q) p.set('q', q);
+    if (cat) p.set('cat', cat);
+    const url = "{{ url_for('vendas.buscar') }}" + (p.toString() ? `?${p}` : "");
+    const res = await fetch(url);
+    const data = await res.json();
+    renderProdutos(data);
+  }
+
+  function renderProdutos(lista) {
+    const wrap = document.getElementById('lista-produtos');
+    wrap.innerHTML = '';
+    if (!lista.length) {
+      wrap.innerHTML = '<div class="vds-empty">Nenhum produto encontrado.</div>';
+      return;
+    }
+    for (const p of lista) {
+      const prazo = Number(p.preco||0);
+      const avist = Number(p.preco_avista||p.preco||0);
+      const card = document.createElement('div');
+      card.className = 'vds-prod-card';
+      card.innerHTML = `
+        <div class="vds-p-title" title="${p.nome}">${p.nome}</div>
+        <div class="vds-p-meta">
+          <span class="vds-meta-item code" title="${p.codigo_barras || ''}">${p.codigo_barras || '-'}</span>
+          <span class="vds-meta-item">Estoque: <strong>${p.estoque}</strong></span>
+          <span class="vds-meta-item">Prazo: <strong>${fmt(prazo)}</strong></span>
+          <span class="vds-meta-pill">À vista: <strong>${fmt(avist)}</strong></span>
+        </div>
+        <div class="vds-p-actions">
+          <input type="number" min="1" value="1" class="addQtd" aria-label="Quantidade">
+          <button type="button" class="addBtn vds-btn vds-btn-primary">Adicionar</button>
+        </div>
+      `;
+      card.querySelector('.addBtn').addEventListener('click', () => {
+        const qtd = parseInt(card.querySelector('.addQtd').value || '1', 10);
+        addToCart(p, isNaN(qtd) || qtd < 1 ? 1 : qtd);
+      });
+      wrap.appendChild(card);
+    }
+  }
+
+  // ===== Leitor de código de barras =====
+  const barcodeInput = document.getElementById('barcode');
+  const qtyScan = document.getElementById('qtyScan');
+  const btnScanAdd = document.getElementById('btnScanAdd');
+  const scanMsg = document.getElementById('scanMsg');
+
+  function showScanMsg(text, isError){
+    scanMsg.textContent = text || '';
+    scanMsg.className = 'vds-scan-msg ' + (isError ? 'err' : 'ok');
+    if (barcodeInput === document.activeElement){
+      requestAnimationFrame(()=> barcodeInput.select());
+    }
+  }
+
+  async function addByBarcode(code, qty=1){
+    if(!code) return;
+    const p = new URLSearchParams(); p.set('q', code);
+    const url = "{{ url_for('vendas.buscar') }}" + `?${p.toString()}`;
+    try{
+      const res = await fetch(url);
+      const data = await res.json();
+
+      let match = data.find(it => String(it.codigo_barras||'') === String(code));
+      if(!match && data.length === 1) match = data[0];
+
+      if(match){
+        addToCart(match, qty);
+        barcodeInput.value = '';
+        requestAnimationFrame(()=> barcodeInput.select());
+      }else{
+        showScanMsg(`Código ${code} não encontrado.`, true);
+        requestAnimationFrame(()=> barcodeInput.select());
+      }
+    }catch(e){
+      console.error(e);
+      showScanMsg('Falha ao buscar produto pelo código.', true);
+      requestAnimationFrame(()=> barcodeInput.select());
+    }
+  }
+
+  window.addEventListener('load', () => {
+    barcodeInput.focus();
+    barcodeInput.select();
+    buscar();
+
+    // Fade-out dos flashs
+    const flashes = document.querySelectorAll('.vds-flash');
+    flashes.forEach(f => {
+      setTimeout(() => {
+        f.style.transition = 'opacity 0.8s ease';
+        f.style.opacity = '0';
+        setTimeout(() => f.remove(), 800);
+      }, 5000);
+    });
+
+    setPriceMode('avista');
+  });
+
+  barcodeInput.addEventListener('focus', () => {
+    requestAnimationFrame(()=> barcodeInput.select());
+  });
+
+  barcodeInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter'){
+      e.preventDefault();
+      const code = barcodeInput.value.trim();
+      let qty = parseInt(qtyScan.value || '1', 10);
+      if (isNaN(qty) || qty < 1) qty = 1;
+      addByBarcode(code, qty);
+    }
+  });
+  btnScanAdd.addEventListener('click', () => {
+    const code = barcodeInput.value.trim();
+    let qty = parseInt(qtyScan.value || '1', 10);
+    if (isNaN(qty) || qty < 1) qty = 1;
+    addByBarcode(code, qty);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'F9' || e.key === '/'){
+      e.preventDefault();
+      barcodeInput.focus();
+      barcodeInput.select();
+    }
+  });
+
+  document.getElementById('btnBuscar').addEventListener('click', buscar);
+  document.getElementById('btnLimpar').addEventListener('click', () => {
+    document.getElementById('q').value = ''; document.getElementById('cat').value = '';
+    buscar();
+  });
+
+  // Carrinho: change qty / remove / custom price
+  document.getElementById('cartBody').addEventListener('input', (e) => {
+    if (e.target.classList.contains('qtdInput')) {
+      const id = parseInt(e.target.dataset.id, 10);
+      const qtd = parseInt(e.target.value || '0', 10);
+      setQty(id, isNaN(qtd) ? 0 : qtd);
+    } else if (e.target.classList.contains('customPrice')) {
+      const input = e.target;
+      const id = Number(input.dataset.id);
+      let val = (input.value || '').replace(',', '.');
+      const num = parseFloat(val);
+      const it = cart.get(id);
+      if (!it) return;
+
+      if (!isNaN(num) && num > 0) {
+        it[`preco_custom_${id}`] = num;
+      } else {
+        delete it[`preco_custom_${id}`];
+      }
+      cart.set(id, it);
+
+      const row = input.closest('.vds-cart-row');
+      if (row) {
+        const subCell = row.querySelector('.vds-c-sub');
+        if (subCell) {
+          const unit = unitWithCustom(it);
+          const subtotal = it.qtd * unit;
+          subCell.textContent = fmt(subtotal);
+        }
+      }
+      recalcTotalsFromCart();
+    }
+  });
+
+  document.getElementById('cartBody').addEventListener('click', (e) => {
+    if (e.target.classList.contains('delBtn')) {
+      const id = parseInt(e.target.dataset.id, 10);
+      cart.delete(id); renderCart();
+    }
+  });
+
+  // ===== Toggle de modo de preço (UI da comanda) =====
+  const btnAvista = document.getElementById('btnAvista');
+  const btnPrazo = document.getElementById('btnPrazo');
+  function setPriceMode(mode){
+    priceMode = mode;
+    btnAvista.classList.toggle('active', mode==='avista');
+    btnPrazo.classList.toggle('active', mode==='prazo');
+    document.getElementById('modeHint').textContent = mode==='avista'
+      ? 'Usando valores de À vista (pode editar preço unitário).'
+      : 'Usando valores de A prazo.';
+
+    for (const [id, it] of cart.entries()) {
+      delete it[`preco_custom_${id}`];
+      cart.set(id, it);
+    }
+    renderCart();
+  }
+  btnAvista.addEventListener('click', ()=> setPriceMode('avista'));
+  btnPrazo.addEventListener('click', ()=> setPriceMode('prazo'));
+
+  // ===== Confirmação (modal) =====
+  const form = document.getElementById('formVenda');
+  const modal = document.getElementById('confirmModal');
+  const sumBody = document.querySelector('#sumTable tbody');
+  const mTotal = document.getElementById('mTotal');
+  const btnCancel = document.getElementById('btnCancel');
+  const btnConfirm = document.getElementById('btnConfirm');
+  const paySel = document.getElementById('payMethod');
+  const instSel = document.getElementById('installments');
+  const perInstallment = document.getElementById('perInstallment');
+
+  function buildModalSummary(){
+    sumBody.innerHTML = '';
+    let total = 0;
+    for (const [, it] of cart.entries()) {
+      const unit = unitWithCustom(it);
+      const sub = it.qtd * unit;
+      total += sub;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${it.nome}</td><td>${it.qtd}</td><td>${fmt(unit)}</td><td>${fmt(sub)}</td>`;
+      sumBody.appendChild(tr);
+    }
+    mTotal.textContent = fmt(total);
+    const n = parseInt(instSel.value || '1', 10);
+    const per = total / Math.max(1, n);
+    perInstallment.textContent = n > 1 ? `${n}x de ${fmt(per)}` : '1x';
+  }
+
+  instSel.addEventListener('change', buildModalSummary);
+
+  form.addEventListener('submit', (e) => {
+    if (cart.size === 0) {
+      e.preventDefault();
+      alert('Adicione pelo menos 1 item à comanda.');
+      barcodeInput.focus(); barcodeInput.select();
+      return false;
+    }
+    buildModalSummary();
+    modal.classList.add('show');
+    e.preventDefault();
+  });
+
+  btnCancel.addEventListener('click', () => {
+    modal.classList.remove('show');
+  });
+
+  btnConfirm.addEventListener('click', () => {
+    const pay = paySel.value.trim();
+    const obs = document.getElementById('obs').value.trim();
+    const n = parseInt(instSel.value || '1', 10);
+
+    document.querySelectorAll('.dynHidden').forEach(n => n.remove());
+
+    const i1 = document.createElement('input');
+    i1.type = 'hidden'; i1.name = 'pay_method'; i1.value = pay; i1.className = 'dynHidden';
+    const i2 = document.createElement('input');
+    i2.type = 'hidden'; i2.name = 'obs'; i2.value = obs; i2.className = 'dynHidden';
+    const i3 = document.createElement('input');
+    i3.type = 'hidden'; i3.name = 'price_mode'; i3.value = priceMode; i3.className = 'dynHidden';
+    const i4 = document.createElement('input');
+    i4.type = 'hidden'; i4.name = 'installments'; i4.value = String(Math.max(1,n)); i4.className = 'dynHidden';
+
+    form.appendChild(i1); form.appendChild(i2); form.appendChild(i3); form.appendChild(i4);
+
+    for (const [id, it] of cart.entries()) {
+      const inp = document.createElement('input');
+      inp.type = 'hidden'; inp.name = `prod_${id}`; inp.value = String(it.qtd); inp.className = 'dynHidden';
+      form.appendChild(inp);
+    }
+
+    for (const [id, it] of cart.entries()) {
+      const key = `preco_custom_${id}`;
+      if (typeof it[key] === 'number' && it[key] > 0) {
+        const inp2 = document.createElement('input');
+        inp2.type = 'hidden'; inp2.name = key; inp2.value = String(it[key]);
+        inp2.className = 'dynHidden';
+        form.appendChild(inp2);
+      }
+    }
+
+    modal.classList.remove('show');
+    form.submit();
+  });
+
+  // Fecha modal clicando fora + ESC
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('show');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      modal.classList.remove('show');
+    }
+  });
+</script>
+{% endblock %}
