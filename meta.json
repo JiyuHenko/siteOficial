@@ -1,0 +1,140 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Custom Mind",
+  "alternateName": "Custom Mind Software Solutions",
+  "url": "https://www.custommind.com.br/",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-08-07",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Custom Mind",
+    "url": "https://www.custommind.com.br/",
+    "logo": "https://www.custommind.com.br/assets/img/favicon-512.png",
+    "email": "custommind.softwaresolutions@gmail.com",
+    "telephone": "+5511923734039",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Passos",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brasil"
+    },
+    "sameAs": [
+      "https://www.instagram.com/custommind.solutions/"
+    ],
+    "knowsAbout": [
+      "Desenvolvimento de software sob medida",
+      "Automação de processos",
+      "Inteligência artificial aplicada a negócios",
+      "Desenvolvimento de sites",
+      "SEO técnico",
+      "Sistemas web",
+      "Integrações de sistemas e APIs"
+    ]
+  },
+  "products": [
+    {
+      "name": "Jade",
+      "url": "https://www.custommind.com.br/products/jade.html",
+      "category": "Assistente virtual para atendimento e qualificação"
+    },
+    {
+      "name": "Zuri",
+      "url": "https://www.custommind.com.br/products/zuri.html",
+      "category": "Automação para descoberta e crescimento orgânico no Instagram"
+    },
+    {
+      "name": "Loja Inteligente",
+      "url": "https://www.custommind.com.br/products/loja-inteligente.html",
+      "category": "Sistema modular para gestão, vendas e operação"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/clientes/auto-eletrica-avelar.html",
+      "url": "https://www.custommind.com.br/clientes/auto-eletrica-avelar.html",
+      "title": "Auto Elétrica Avelar em Passos MG | Cliente Custom Mind",
+      "description": "Conheça a Auto Elétrica Avelar: auto elétrica, injeção, ar-condicionado, reparo de módulos e remap em Passos–MG.",
+      "primaryHeading": "Auto Elétrica Avelar"
+    },
+    {
+      "path": "/clientes/",
+      "url": "https://www.custommind.com.br/clientes/",
+      "title": "Clientes e projetos | Custom Mind",
+      "description": "Conheça empresas e projetos atendidos pela Custom Mind, incluindo Auto Elétrica Avelar e LB Fit.",
+      "primaryHeading": "Empresas reais, desafios diferentes e soluções construídas para cada contexto."
+    },
+    {
+      "path": "/clientes/lb-fit.html",
+      "url": "https://www.custommind.com.br/clientes/lb-fit.html",
+      "title": "LB Fit | Moda fitness e loja online",
+      "description": "Conheça a LB Fit, loja online de conjuntos, jaquetas, cropped e moda fitness.",
+      "primaryHeading": "LB Fit"
+    },
+    {
+      "path": "/contato.html",
+      "url": "https://www.custommind.com.br/contato.html",
+      "title": "Contato | Custom Mind",
+      "description": "Fale com a Custom Mind sobre sites, sistemas, automações e inteligência artificial para sua empresa.",
+      "primaryHeading": "Conte o que está travando sua operação."
+    },
+    {
+      "path": "/",
+      "url": "https://www.custommind.com.br/",
+      "title": "Custom Mind | Software, automação e IA sob medida",
+      "description": "Sites, sistemas, automações e inteligência artificial sob medida para atendimento, vendas e operação. Conheça as soluções da Custom Mind em Passos–MG.",
+      "primaryHeading": "Seu negócio tem um jeito próprio. O software também deveria."
+    },
+    {
+      "path": "/politica-de-privacidade.html",
+      "url": "https://www.custommind.com.br/politica-de-privacidade.html",
+      "title": "Política de privacidade | Custom Mind",
+      "description": "Política de privacidade do site da Custom Mind.",
+      "primaryHeading": "Política de privacidade."
+    },
+    {
+      "path": "/products/jade.html",
+      "url": "https://www.custommind.com.br/products/jade.html",
+      "title": "Jade | Assistente virtual para WhatsApp com IA",
+      "description": "Jade é a assistente virtual da Custom Mind para atendimento no WhatsApp: responde, qualifica, organiza contexto e transfere conversas para o time.",
+      "primaryHeading": "Atendimento rápido sem perder o jeito da sua empresa."
+    },
+    {
+      "path": "/products/loja-inteligente.html",
+      "url": "https://www.custommind.com.br/products/loja-inteligente.html",
+      "title": "Loja Inteligente | Sistema modular para gestão e vendas",
+      "description": "Organize vendas, estoque, financeiro, pedidos e clientes em um sistema modular adaptado à sua operação. Conheça a Loja Inteligente.",
+      "primaryHeading": "Sua operação organizada, sem planilha infinita."
+    },
+    {
+      "path": "/products/zuri.html",
+      "url": "https://www.custommind.com.br/products/zuri.html",
+      "title": "Zuri | Crescimento orgânico inteligente para Instagram",
+      "description": "Cresça no Instagram com público mais alinhado, visitas orgânicas e constância. Conheça a Zuri, automação inteligente da Custom Mind.",
+      "primaryHeading": "Crescimento orgânico com direção."
+    },
+    {
+      "path": "/sobre.html",
+      "url": "https://www.custommind.com.br/sobre.html",
+      "title": "Sobre a Custom Mind | Software, automação e IA",
+      "description": "Conheça a Custom Mind, empresa de Passos–MG que desenvolve sites, sistemas, automações e inteligência artificial.",
+      "primaryHeading": "Tecnologia construída perto do problema."
+    },
+    {
+      "path": "/solucoes.html",
+      "url": "https://www.custommind.com.br/solucoes.html",
+      "title": "Soluções de software, automação e IA | Custom Mind",
+      "description": "Conheça Jade, Zuri, Loja Inteligente, sites, SEO, sistemas internos e automações desenvolvidos pela Custom Mind.",
+      "primaryHeading": "Tecnologia que resolve uma etapa real do negócio."
+    }
+  ],
+  "machineReadable": {
+    "llms": "https://www.custommind.com.br/llms.txt",
+    "sitemap": "https://www.custommind.com.br/sitemap.xml",
+    "robots": "https://www.custommind.com.br/robots.txt"
+  }
+}
