@@ -1,0 +1,68 @@
+name: Apply validated public copy cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cm-copy-cleanup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Apply exact copy replacements
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          changes = {
+            'index.html': [
+              ('<h2>Interfaces que explicam a solução antes da primeira reunião.</h2></div><p>O visual não é decoração: ele mostra como cada produto organiza a informação, reduz atrito e dá clareza para quem usa.</p>', '<h2>Veja cada solução por dentro.</h2></div><p>Atendimento, descoberta e operação ganham interfaces próprias para deixar informações e próximos passos mais claros.</p>'),
+              ('<p>O portfólio não precisa parecer uma coleção de templates. Cada página abaixo parte da identidade, do público e da história do próprio cliente.</p>', '<p>Conheça empresas e profissionais de segmentos diferentes, cada um com sua própria identidade, público e forma de trabalhar.</p>'),
+            ],
+            'clientes/index.html': [
+              ('<h1>Negócios diferentes merecem páginas diferentes.</h1><p class="lead">Aqui o foco é cada cliente: sua identidade, seu trabalho e os canais oficiais onde ele acontece.</p>', '<h1>Clientes de segmentos diferentes, com histórias próprias.</h1><p class="lead">Conheça melhor cada marca, profissional e operação, seus serviços e os canais oficiais para acompanhar o trabalho.</p>'),
+            ],
+            'clientes/auto-eletrica-avelar.html': [
+              ('Auto Elétrica Avelar em Passos MG | Cliente Custom Mind', 'Auto Elétrica Avelar | Diagnóstico e eletrônica em Passos–MG'),
+              ('<span>Página no portfólio Custom Mind</span>', '<span>Site oficial</span>'),
+            ],
+            'clientes/lb-fit.html': [
+              ('<span>Página no portfólio Custom Mind</span>', '<span>Loja oficial</span>'),
+            ],
+            'clientes/patricia-biagioni.html': [
+              ('<span>Página no portfólio Custom Mind</span>', '<span>Consultoria oficial</span>'),
+            ],
+            'clientes/lara-biagioni.html': [
+              ('A página oficial organiza os principais caminhos sem transformar a experiência em uma lista genérica de links.', 'No site oficial, Lara reúne redes sociais, cupons, marcas parceiras e novidades em um só lugar.'),
+              ('<span>Página no portfólio Custom Mind</span>', '<span>Canais oficiais</span>'),
+            ],
+          }
+
+          for filename, replacements in changes.items():
+              path = Path(filename)
+              text = path.read_text(encoding='utf-8')
+              for old, new in replacements:
+                  count = text.count(old)
+                  if count == 0:
+                      raise SystemExit(f'Expected text not found in {filename}: {old[:90]}')
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove temporary workflow and commit
+        shell: bash
+        run: |
+          rm -f .github/workflows/cm-copy-cleanup.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html clientes/ .github/workflows/cm-copy-cleanup.yml
+          git diff --cached --check
+          git commit -m "fix: polish public copy and client pages"
+          git push origin HEAD:main
