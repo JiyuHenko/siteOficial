@@ -1,0 +1,56 @@
+name: Clarify public project selection
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cm-project-selection-copy.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Apply project-selection copy
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+            'index.html': [
+              ('<span class="eyebrow">Clientes</span><h2>Cada negócio com a própria voz.</h2></div><p>Conheça empresas e profissionais de segmentos diferentes, cada um com sua própria identidade, público e forma de trabalhar.</p>', '<span class="eyebrow">Projetos em destaque</span><h2>Alguns sites e páginas que colocamos no ar.</h2></div><p>Uma seleção de projetos públicos desenvolvidos para clientes de segmentos diferentes, cada um com sua própria identidade, público e objetivo.</p>'),
+              ('Ver clientes e projetos →', 'Ver projetos em destaque →'),
+            ],
+            'clientes/index.html': [
+              ('Clientes e projetos | Custom Mind', 'Projetos de sites e páginas | Custom Mind'),
+              ('Conheça Auto Elétrica Avelar, LB Fit, Patrícia Biagioni e Lara Biagioni — clientes e projetos publicados pela Custom Mind.', 'Veja uma seleção de sites, landing pages e experiências digitais desenvolvidas pela Custom Mind para clientes de diferentes segmentos.'),
+              ('Clientes e projetos Custom Mind', 'Projetos de sites e páginas Custom Mind'),
+              ('<span class="eyebrow">Clientes</span><h1>Clientes de segmentos diferentes, com histórias próprias.</h1><p class="lead">Conheça melhor cada marca, profissional e operação, seus serviços e os canais oficiais para acompanhar o trabalho.</p>', '<span class="eyebrow">Projetos de clientes</span><h1>Uma seleção de sites e páginas desenvolvidos para clientes.</h1><p class="lead">Estes são alguns projetos públicos da Custom Mind em diferentes segmentos — uma amostra do nosso trabalho, não uma lista completa de clientes atendidos.</p>'),
+            ],
+          }
+
+          for filename, pairs in replacements.items():
+              path = Path(filename)
+              text = path.read_text(encoding='utf-8')
+              for old, new in pairs:
+                  if old not in text:
+                      raise SystemExit(f'Expected text not found in {filename}: {old[:100]}')
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove temporary workflow and commit
+        shell: bash
+        run: |
+          rm -f .github/workflows/cm-project-selection-copy.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html clientes/index.html .github/workflows/cm-project-selection-copy.yml
+          git diff --cached --check
+          git commit -m "fix: clarify showcased client projects"
+          git push origin HEAD:main
