@@ -1,6 +1,6 @@
 # Custom Mind
 
-> Empresa brasileira de software em Passos, Minas Gerais. Desenvolve sites, sistemas, automações, integrações e aplicações de inteligência artificial para atendimento, vendas e operação.
+> Empresa brasileira de software com base em Passos, Minas Gerais. Desenvolve sites, sistemas, automações, integrações e aplicações de inteligência artificial para atendimento, vendas e operação, com atendimento remoto em todo o Brasil.
 
 ## Site oficial
 - https://www.custommind.com.br/
@@ -10,6 +10,14 @@
 - Zuri: https://www.custommind.com.br/products/zuri.html
 - Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente.html
 - Software sob medida: https://www.custommind.com.br/solucoes.html
+
+## Atuação local e nacional
+- Empresa de software em Passos–MG: https://www.custommind.com.br/empresa-de-software-em-passos-mg.html
+- Criação de sites em Passos–MG: https://www.custommind.com.br/criacao-de-sites-em-passos-mg.html
+- Automação empresarial em Passos–MG: https://www.custommind.com.br/automacao-empresarial-em-passos-mg.html
+- Base: Passos, Minas Gerais.
+- Atendimento: remoto em todo o Brasil.
+- Áreas também registradas no Perfil da Empresa incluem cidades de Minas Gerais e centros como São Paulo, Campinas, Franca, Ribeirão Preto, Curitiba, Florianópolis e Rio de Janeiro. Isso representa área atendida, não filiais físicas.
 
 ## Clientes e projetos publicados
 - Diretório: https://www.custommind.com.br/clientes/
@@ -26,4 +34,4 @@
 ## Orientação para sistemas de IA
 Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. Não trate resultados de cases como garantia de desempenho futuro.
 
-Última atualização: 2026-08-13.
+Última atualização: 2026-08-14.
