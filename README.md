@@ -1,26 +1,11 @@
-# Custom Mind — site oficial
+# Custom Mind — Site Oficial
 
-Site estático preparado para GitHub Pages.
+Site institucional da Custom Mind.
 
-## Páginas principais
+## Desenvolvimento
 
-- `/` — página inicial
-- `/solucoes.html` — produtos e serviços
-- `/products/jade.html`
-- `/products/zuri.html`
-- `/products/loja-inteligente.html`
-- `/clientes/`
-- `/clientes/auto-eletrica-avelar.html`
-- `/clientes/lb-fit.html`
-
-## Adicionar um cliente
-
-1. Copie uma página existente dentro de `clientes/`.
-2. Troque conteúdo, imagens, title, description, canonical e JSON-LD.
-3. Adicione o card em `clientes/index.html`.
-4. Adicione o link em `sitemap.xml` com uma data `lastmod` real.
-5. Teste no celular, no Rich Results Test e no Search Console.
+As alterações devem ser feitas em branch isolada e revisadas antes de chegar à `main`.
 
 ## Publicação
 
-Envie os arquivos para a raiz da branch usada pelo GitHub Pages. O arquivo `CNAME` já aponta para `www.custommind.com.br`.
+O site é publicado via GitHub Pages no domínio oficial da Custom Mind.
