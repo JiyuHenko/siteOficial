@@ -6,26 +6,39 @@
 .product-page.theme-zuri .product-demo{height:auto!important;aspect-ratio:1/1;max-width:500px;width:100%;justify-self:end;padding:0!important}
 .product-page.theme-zuri .product-demo>img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:26px!important;padding:0!important}
 
-/* Home product cards: Jade and Zuri benefit from a close crop; Loja Inteligente must remain fully visible. */
+/* Home product cards: keep Jade/Zuri close; show Loja Inteligente fully without awkward cropping. */
 .visual-product-card .visual-product-media img[src*="jade-inicio"],
 .visual-product-card .visual-product-media img[src*="zuri-inicio"]{object-fit:cover!important;object-position:center top!important;padding:0!important;background:#090a10!important}
-.visual-product-card .visual-product-media img[src*="loja.webp"]{object-fit:contain!important;object-position:center!important;padding:12px!important;background:#090a10!important}
+.visual-product-card.store-card{grid-template-columns:minmax(0,1.18fr) minmax(210px,.82fr)}
+.visual-product-card.store-card .visual-product-media{display:grid;place-items:center;min-height:0;background:#090a10}
+.visual-product-card.store-card .visual-product-media img[src*="loja.webp"]{width:94%!important;height:auto!important;max-height:210px!important;object-fit:contain!important;object-position:center!important;padding:0!important;margin:auto!important;background:#090a10!important}
 
-/* Experience section: preserve the actual screens instead of zooming/cropping them. */
-.experience-mosaic article{min-height:220px}
-.experience-mosaic .experience-main{min-height:460px}
-.experience-mosaic .experience-main img{object-fit:contain!important;object-position:center top!important;padding:0!important;background:#090a10!important}
+/* Experience section: center Jade, shorten the store card and remove unnecessary letterboxing. */
+.experience-mosaic{grid-template-rows:minmax(315px,auto) 205px;align-items:stretch}
+.experience-mosaic article{min-height:0}
+.experience-mosaic .experience-main{min-height:0;display:grid;place-items:center;padding:24px 18px 86px}
+.experience-mosaic .experience-main img{width:92%!important;height:auto!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;padding:0!important;margin:auto!important;background:#090a10!important}
 .experience-mosaic article img[src*="zuri-chat"]{object-fit:contain!important;object-position:center top!important;padding:0!important;background:#090a10!important}
-.experience-mosaic article img[src*="loja.webp"]{object-fit:contain!important;object-position:center!important;padding:12px!important;background:#090a10!important}
+.experience-mosaic article:has(img[src*="loja.webp"]){min-height:205px}
+.experience-mosaic article img[src*="loja.webp"]{width:calc(100% - 24px)!important;height:auto!important;max-height:132px!important;object-fit:contain!important;object-position:center top!important;padding:0!important;margin:12px auto 58px!important;background:#090a10!important}
 
 @media(max-width:980px){
   .product-page.theme-zuri .product-demo{justify-self:start;max-width:560px}
-  .experience-mosaic .experience-main{min-height:390px}
+  .visual-product-card.store-card{grid-template-columns:minmax(0,1.08fr) minmax(200px,.92fr)}
+  .experience-mosaic{grid-template-rows:auto}
+  .experience-mosaic .experience-main{min-height:360px;padding:22px 16px 82px}
+  .experience-mosaic article:has(img[src*="loja.webp"]){min-height:190px}
+  .experience-mosaic article img[src*="loja.webp"]{max-height:124px!important;margin-bottom:54px!important}
 }
 @media(max-width:720px){
   .product-page.theme-zuri .product-hero h1{font-size:clamp(42px,11.5vw,58px);max-width:none}
   .product-page.theme-zuri .product-demo{max-width:none}
-  .experience-mosaic .experience-main{min-height:300px}
+  .visual-product-card.store-card{grid-template-columns:1fr}
+  .visual-product-card.store-card .visual-product-media img[src*="loja.webp"]{width:min(92%,520px)!important;max-height:none!important}
+  .experience-mosaic .experience-main{min-height:300px;padding:18px 12px 78px}
+  .experience-mosaic .experience-main img{width:96%!important}
+  .experience-mosaic article:has(img[src*="loja.webp"]){min-height:180px}
+  .experience-mosaic article img[src*="loja.webp"]{max-height:116px!important;margin:10px auto 52px!important}
 }
 `;
   document.head.appendChild(visualFixes);
