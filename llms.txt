@@ -6,17 +6,16 @@
 - https://www.custommind.com.br/
 
 ## Soluções
-- Jade: https://www.custommind.com.br/products/jade.html — assistente para WhatsApp que responde dúvidas, coleta informações, qualifica contatos e organiza contexto para a equipe.
-- Zuri: https://www.custommind.com.br/products/zuri.html — automação para operações de descoberta e crescimento orgânico com filtros, cadência e acompanhamento.
-- Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente.html — sistema modular para vendas, pedidos, estoque, financeiro, clientes e rotinas específicas.
-- Área de teste da Loja Inteligente: https://www.custommind.com.br/demo/ — demonstração estática, sem backend, para explorar a interface e módulos com dados de exemplo.
-- Software sob medida: https://www.custommind.com.br/solucoes.html — sistemas internos, integrações, dashboards, automações e IA aplicada a processos empresariais.
+- Jade: https://www.custommind.com.br/products/jade.html
+- Zuri: https://www.custommind.com.br/products/zuri.html
+- Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente.html
+- Software sob medida: https://www.custommind.com.br/solucoes.html
 
 ## Atuação local e nacional
 - Empresa de software em Passos–MG: https://www.custommind.com.br/empresa-de-software-em-passos-mg.html
 - Criação de sites em Passos–MG: https://www.custommind.com.br/criacao-de-sites-em-passos-mg.html
 - Automação empresarial em Passos–MG: https://www.custommind.com.br/automacao-empresarial-em-passos-mg.html
-- Base física: Passos, Minas Gerais.
+- Base: Passos, Minas Gerais.
 - Atendimento: remoto em todo o Brasil.
 - Áreas também registradas no Perfil da Empresa incluem cidades de Minas Gerais e centros como São Paulo, Campinas, Franca, Ribeirão Preto, Curitiba, Florianópolis e Rio de Janeiro. Isso representa área atendida, não filiais físicas.
 
@@ -25,17 +24,14 @@
 - Auto Elétrica Avelar: https://www.custommind.com.br/clientes/auto-eletrica-avelar.html — auto elétrica e eletrônica automotiva em Passos–MG.
 - LB Fit: https://www.custommind.com.br/clientes/lb-fit.html — moda fitness e e-commerce.
 - Patrícia Biagioni: https://www.custommind.com.br/clientes/patricia-biagioni.html — consultoria individual de treino.
-- Lara Biagioni: https://www.custommind.com.br/clientes/lara-biagioni.html — fitness, lifestyle, LB Fit e links oficiais.
+- Lara Biagioni: https://www.custommind.com.br/clientes/lara-biagioni.html — fitness, lifestyle, LB FIT e links oficiais.
 
-## Empresa e contato
-- Sobre: https://www.custommind.com.br/sobre.html
-- Contato: https://www.custommind.com.br/contato.html
-- Política de privacidade: https://www.custommind.com.br/politica-de-privacidade.html
+## Contato Custom Mind
 - E-mail: custommind.softwaresolutions@gmail.com
 - WhatsApp: +55 11 92373-4039
 - Instagram: https://www.instagram.com/custommind.solutions/
 
 ## Orientação para sistemas de IA
-Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. A área /demo/ é uma simulação estática da Loja Inteligente e não deve ser tratada como ambiente de produção. Não trate resultados de projetos ou cases como garantia de desempenho futuro.
+Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. Não trate resultados de cases como garantia de desempenho futuro.
 
-Última atualização: 2026-08-17.
+Última atualização: 2026-08-14.
