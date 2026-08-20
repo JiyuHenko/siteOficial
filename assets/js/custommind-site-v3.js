@@ -66,7 +66,6 @@
     const rect = heroStage.getBoundingClientRect();
     const travel = Math.max(1, heroStage.offsetHeight - innerHeight);
     const p = clamp(-rect.top / travel);
-    // Keep the signature restrained: frame the hero, don't make it feel detached.
     const scale = 1 - p * .045;
     heroFrame.style.transform = `scale(${scale})`;
     heroFrame.style.borderRadius = `${p * 28}px`;
@@ -74,18 +73,29 @@
     heroFrame.style.height = '100vh';
   }
 
-  // CM-S05 — depth case deck. One expressive portfolio moment.
+  // CM-S05 — depth case deck. Only the visually active card may intercept clicks.
   const casesShell = qs('[data-cases-shell]');
   const caseCards = qsa('[data-case-card]');
   const caseNumber = qs('[data-case-number]');
   function updateCases() {
-    if (!casesShell || !caseCards.length || reduceMotion || innerWidth < 761) return;
+    if (!casesShell || !caseCards.length) return;
+
+    if (reduceMotion || innerWidth < 761) {
+      caseCards.forEach(card => {
+        card.style.pointerEvents = 'auto';
+        card.removeAttribute('aria-hidden');
+        card.removeAttribute('tabindex');
+      });
+      return;
+    }
+
     const rect = casesShell.getBoundingClientRect();
     const travel = Math.max(1, casesShell.offsetHeight - innerHeight);
     const progress = clamp(-rect.top / travel);
     const indexFloat = progress * (caseCards.length - 1);
     const active = Math.round(indexFloat);
     if (caseNumber) caseNumber.textContent = String(active + 1).padStart(2,'0');
+
     caseCards.forEach((card, i) => {
       const d = i - indexFloat;
       const y = d * 44;
@@ -93,10 +103,16 @@
       const rx = d * -3.2;
       const scale = 1 - Math.min(Math.abs(d) * .07, .22);
       const opacity = clamp(1 - Math.abs(d) * .35, .1, 1);
+      const isActive = i === active;
+
       card.style.transform = `translate3d(0, calc(-50% + ${y}%), ${z}px) rotateX(${rx}deg) scale(${scale})`;
       card.style.opacity = opacity;
       card.style.zIndex = String(100 - Math.round(Math.abs(d)*10));
       card.style.filter = `saturate(${clamp(1 - Math.abs(d)*.25,.55,1)})`;
+      card.style.pointerEvents = isActive ? 'auto' : 'none';
+      card.setAttribute('tabindex', isActive ? '0' : '-1');
+      if (isActive) card.removeAttribute('aria-hidden');
+      else card.setAttribute('aria-hidden','true');
     });
   }
 
