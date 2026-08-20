@@ -1,11 +1,32 @@
-/* Real-asset preservation layer — real product/client media stays visible inside the new art direction. */
-.product-real-shot{position:relative;z-index:2;width:100%;height:290px;object-fit:contain;object-position:center;border-radius:20px;margin:34px 0 24px;background:#090a10;padding:10px;border:1px solid rgba(9,9,13,.09);box-shadow:0 18px 48px rgba(9,9,13,.12)}
-.product-card.jade .product-real-shot,.product-card.zuri .product-real-shot{object-fit:cover;object-position:center top;padding:0}
-.product-card.store .product-real-shot{height:250px;object-fit:contain;padding:12px}
-.case-photo{position:absolute;right:24px;top:24px;width:46%;height:54%;border-radius:22px;overflow:hidden;border:1px solid rgba(0,0,0,.14);box-shadow:0 18px 42px rgba(0,0,0,.16);z-index:1;background:#111}
-.case-real-shot{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.02)}
-.case-a .case-photo::after,.case-b .case-photo::after,.case-c .case-photo::after,.case-d .case-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.2))}
-.case-card-inner>div:not(.case-photo){position:relative;z-index:2;max-width:52%}
+/* Real assets, preserved inside the approved visual grammar. */
+
+/* Official brand mark replaces the temporary illustrated SVG at rendered brand points. */
+.brand-pill img{display:none!important}
+.brand-pill::before{content:"";flex:0 0 34px;width:34px;height:34px;border-radius:10px;background:url("../../img/custommind-symbol.png") center/contain no-repeat}
+.footer-brand img{display:none!important}
+.footer-brand::before{content:"";flex:0 0 38px;width:38px;height:38px;border-radius:11px;background:url("../../img/custommind-symbol.png") center/contain no-repeat}
+.core{background:#0b0b10 url("../../img/custommind-symbol.png") center/74px 74px no-repeat!important}
+.core img{visibility:hidden!important}
+
+/* Product screenshots live in the same window component as the approved mockups. */
+.product-real-ui{display:flex;flex-direction:column;padding:0!important;background:#101016!important}
+.product-real-viewport{position:relative;flex:1;min-height:0;overflow:hidden;background:#0b0b10}
+.product-real-viewport::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.025)}
+.product-real-viewport img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top;transform:scale(1.005)}
+.product-card.store .product-real-viewport{padding:12px;background:#0d0d13}
+.product-card.store .product-real-viewport img{object-fit:contain;object-position:center;transform:none;border-radius:11px}
+
+/* Real client imagery keeps the compact panel size/position from the approved deck. */
+.case-asset-panel{position:absolute;right:30px;top:30px;width:38%;max-width:360px;height:48%;border:1px solid rgba(0,0,0,.14);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.22);isolation:isolate}
+.case-asset-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:.42;filter:saturate(.8) contrast(.96);mix-blend-mode:multiply}
+.case-asset-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.24),rgba(255,255,255,.08));pointer-events:none}
+.case-asset-code{position:relative;z-index:2;padding:16px;font:600 9px/1.6 var(--mono);opacity:.84}
+.case-asset-code span{display:block}.case-asset-code span:nth-child(2){margin-left:22px}.case-asset-code span:nth-child(3){margin-left:42px}.case-asset-code span:nth-child(4){margin-left:18px}
+
+/* Keep restored media from changing typography/card geometry. */
+.case-card-inner>div:not(.case-asset-panel){max-width:62%}
+
+/* Product and client detail pages keep their real-media treatment. */
 .product-page-real{width:100%;height:100%;min-height:470px;display:block;object-fit:contain;object-position:center;background:#090a10;padding:16px}
 .product-page.jade-theme .product-page-real,.product-page.zuri-theme .product-page-real{object-fit:cover;object-position:center top;padding:0}
 .product-secondary-real{margin-bottom:52px;padding-top:20px}
@@ -18,5 +39,18 @@
 .client-index-shade{position:absolute!important;inset:0;z-index:1!important;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72))}
 .client-board:has(.client-index-shot){color:#fff;background:#111!important}
 .client-board:has(.client-index-shot)>span:not(.client-index-shade),.client-board:has(.client-index-shot)>strong{z-index:2;text-shadow:0 1px 16px rgba(0,0,0,.35)}
-@media(max-width:900px){.product-real-shot{height:260px}.case-photo{width:48%;height:40%}.case-card-inner>div:not(.case-photo){max-width:100%}.product-page-real{min-height:360px}.client-board-overlay{min-height:350px}}
-@media(max-width:640px){.product-real-shot{height:230px;margin-top:24px}.case-photo{position:absolute;left:18px;right:18px;top:18px;width:auto;height:42%}.case-card-inner{padding-top:250px!important}.case-card h3{font-size:46px!important}.product-secondary-shot{border-radius:20px;padding:7px}.product-page-real{min-height:330px;padding:8px}.client-board-overlay{padding:22px}}
+
+@media(max-width:900px){
+  .product-real-ui{min-height:270px}
+  .case-asset-panel{width:48%;height:34%}
+  .case-card-inner>div:not(.case-asset-panel){max-width:100%}
+  .product-page-real{min-height:360px}.client-board-overlay{min-height:350px}
+}
+@media(max-width:640px){
+  .brand-pill::before{width:32px;height:32px;flex-basis:32px}
+  .product-real-ui{min-height:270px}
+  .case-asset-panel{right:18px;top:18px;width:54%;height:30%;border-radius:16px}
+  .case-asset-code{padding:12px;font-size:7px}
+  .case-card-inner>div:not(.case-asset-panel){max-width:100%}
+  .product-secondary-shot{border-radius:20px;padding:7px}.product-page-real{min-height:330px;padding:8px}.client-board-overlay{padding:22px}
+}
