@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "brand": "Custom Mind — Software Solutions",
+  "pageGoal": "Explicar com clareza o que a Custom Mind constrói, provar qualidade por produtos e projetos e levar o visitante a uma conversa de diagnóstico.",
+  "primaryCta": "iniciar uma conversa de diagnóstico pelo WhatsApp",
+  "audience": [
+    "empresas com processos manuais ou fragmentados",
+    "negócios que precisam de site, sistema, automação ou IA sob medida",
+    "clientes locais em Passos-MG e projetos remotos no Brasil"
+  ],
+  "visualThesis": "Laboratório digital preciso com energia criativa controlada — tecnologia que parece desenhada para o problema, não saída de um template.",
+  "signature": {
+    "patternId": "CM-S01",
+    "name": "Hero Shrink Frame",
+    "reason": "A home precisa criar uma primeira impressão memorável sem contaminar o restante da narrativa com efeitos concorrentes."
+  },
+  "supportingPatterns": [
+    {
+      "patternId": "CM-S05",
+      "name": "Depth Case Deck",
+      "reason": "Projetos são a principal prova visual da Custom Mind e merecem uma apresentação própria."
+    },
+    {
+      "patternId": "CM-S09",
+      "name": "Contextual Spotlight",
+      "reason": "Usado somente nos cards de produto para reforçar interação sem virar efeito global."
+    }
+  ],
+  "motion": {
+    "budget": {"signatureCount": 1, "supportingCount": 2, "maxSupporting": 3},
+    "reducedMotion": "Todas as transformações de scroll e reveals tornam-se estáticas; o conteúdo permanece visível e navegável.",
+    "mobileFallback": "O hero não encolhe e a galeria de cases vira uma lista vertical sem perspectiva."
+  },
+  "brandConstraints": [
+    "preservar o símbolo oficial da Custom Mind",
+    "manter roxo como acento, não como gradiente decorativo dominante",
+    "não inventar métricas, clientes ou alcance",
+    "preservar URLs públicas, SEO e dados factuais existentes"
+  ]
+}

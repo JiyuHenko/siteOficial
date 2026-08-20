@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "brand": "Example Brand",
+  "pageGoal": "Book a consultation",
+  "primaryCta": "Book now",
+  "visualThesis": "Editorial confidence with tactile warmth; motion supports product discovery instead of advertising technology.",
+  "attributes": ["editorial", "warm", "confident", "local"],
+  "visualWorld": {
+    "materials": ["paper", "fabric", "soft daylight"],
+    "typography": "expressive display + highly readable body",
+    "colorStrategy": "quiet neutral base with one rare accent"
+  },
+  "signature": {
+    "patternId": "CM-S05",
+    "reason": "The catalog/discovery behavior is central to the brand experience",
+    "locations": ["#collections"]
+  },
+  "supportingPatterns": ["CM-S01", "CM-S09"],
+  "forbiddenByDefault": ["generic-purple-glow", "unrelated-saas-metrics", "global-scroll-reveal"],
+  "motion": {
+    "reducedMotion": "replace transforms with static final states and simple opacity where useful",
+    "mobileFallback": "replace cylinder interaction with snap carousel",
+    "performanceFallback": "disable ambient GPU-heavy layers on constrained devices"
+  }
+}

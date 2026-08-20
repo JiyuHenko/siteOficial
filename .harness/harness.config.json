@@ -1,0 +1,20 @@
+{
+  "version": "1.5.0-site-experiment",
+  "profile": "site",
+  "publicDir": ".",
+  "canonicalDomain": "https://www.custommind.com.br",
+  "design": {
+    "requireManifest": true,
+    "manifest": ".harness/site/SITE_DESIGN.json",
+    "maxSupportingMotionPatterns": 3,
+    "requireReducedMotionStrategy": true
+  },
+  "quality": {
+    "requireDescription": true,
+    "requireCanonical": true,
+    "requireSingleH1": true,
+    "requireLang": true,
+    "requireViewport": true
+  },
+  "ignore": [".git", ".harness/reports", "node_modules"]
+}
