@@ -1,0 +1,7 @@
+/* Hero core artwork — use the current Custom Mind face asset as the neural nucleus. */
+.neural-brain > img{opacity:0!important;width:0!important;height:0!important}
+.neural-brain::after{content:"";position:absolute;left:50%;top:50%;width:119px;height:119px;transform:translate(-50%,-50%);background:url("../../img/Facecustommind.png") center/contain no-repeat;filter:drop-shadow(0 0 16px rgba(178,105,255,.72));z-index:2;pointer-events:none}
+
+@media(max-width:1120px){.neural-brain::after{width:103px;height:103px}}
+@media(max-width:760px){.neural-brain::after{width:81px;height:81px}}
+@media(max-width:480px){.neural-brain::after{width:72px;height:72px}}
