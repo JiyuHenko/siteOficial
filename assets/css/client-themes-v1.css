@@ -1,0 +1,142 @@
+/* Client project pages — client identity first, Custom Mind as framing. */
+.client-theme-page{background:#fff;color:#17171b}
+.client-theme-page .site-header{z-index:120}
+.client-theme-page main{overflow:hidden}
+.client-theme-page .client-shell{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.client-theme-page .client-kicker{display:inline-flex;align-items:center;gap:9px;font:800 10px/1.2 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.client-theme-page .client-kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.client-theme-page .client-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.client-theme-page .client-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;border-radius:999px;border:1px solid currentColor;font-weight:800;transition:transform .2s ease,background .2s ease}
+.client-theme-page .client-btn:hover{transform:translateY(-2px)}
+.client-theme-page .client-btn.solid{color:#fff}
+.client-theme-page .client-section{padding:100px 0}
+.client-theme-page .client-section-head{max-width:800px;margin-bottom:42px}
+.client-theme-page .client-section-head h2{font:700 clamp(44px,6vw,82px)/.93 var(--display);letter-spacing:-.045em;margin:12px 0 14px}
+.client-theme-page .client-section-head p{font-size:18px;line-height:1.55;max-width:680px;margin:0}
+.client-theme-page .client-credit-band{padding:28px 0;background:#0d0d12;color:#fff}
+.client-theme-page .client-credit-band .client-shell{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.client-theme-page .client-credit-band small{font:800 9px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#817e89}
+.client-theme-page .client-credit-band p{margin:0;color:#b8b5bf}
+.client-theme-page .client-credit-band a{font-weight:800}
+
+/* Avelar */
+.theme-avelar-page{background:#f8f1d9;color:#12356f}
+.client-avelar-hero{padding:138px 0 82px;background:linear-gradient(145deg,#f7ca21 0%,#ffd834 55%,#fff1a8 100%);border-bottom:10px solid #173f83}
+.client-avelar-hero .avelar-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:58px;align-items:center}
+.client-avelar-hero h1{font:800 clamp(58px,7vw,98px)/.88 var(--display);letter-spacing:-.055em;margin:16px 0 20px;color:#153e7f}
+.client-avelar-hero h1 span{display:block;color:#c91d2b}
+.client-avelar-hero p{font-size:20px;line-height:1.5;max-width:620px;color:#214b82}
+.client-avelar-hero .client-btn.solid{background:#153e7f;border-color:#153e7f}
+.client-avelar-hero .client-btn.ghost{color:#153e7f;background:rgba(255,255,255,.42)}
+.avelar-photo-frame{position:relative;border:4px solid #153e7f;border-radius:30px;overflow:hidden;background:#153e7f;box-shadow:20px 20px 0 rgba(21,62,127,.16)}
+.avelar-photo-frame>img{width:100%;height:500px;object-fit:cover;object-position:center 47%}
+.avelar-logo-chip{position:absolute;left:18px;bottom:18px;padding:10px 14px;border-radius:16px;background:#fff4aa;border:2px solid #153e7f}
+.avelar-logo-chip img{width:150px;max-height:56px;object-fit:contain}
+.avelar-workshop{background:#f8f1df}
+.avelar-proof-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.avelar-proof-photo{min-height:440px;border-radius:28px;overflow:hidden;border:2px solid #173f83;background:#173f83}
+.avelar-proof-photo img{width:100%;height:100%;object-fit:cover;object-position:center 52%;transform:scale(1.045)}
+.avelar-proof-copy{display:grid;gap:12px}
+.avelar-proof-copy article{padding:24px;border:2px solid #173f83;border-radius:20px;background:#fff6cf}
+.avelar-proof-copy span{font:800 9px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#c91d2b}
+.avelar-proof-copy h3{font:800 30px/1 var(--display);margin:12px 0 8px;color:#153e7f}
+.avelar-proof-copy p{margin:0;color:#45658f}
+.avelar-service-band{background:#123b78;color:#fff}
+.avelar-service-band .client-section-head p{color:#c7d4e7}
+.avelar-service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.avelar-service-grid span{padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.045);font-weight:800}
+.avelar-service-grid span:nth-child(3n){border-color:#ef4b50}
+
+/* LB Fit */
+.theme-lbfit-page{background:#fff7fa;color:#2b1822}
+.client-lbfit-hero{padding:132px 0 86px;background:radial-gradient(circle at 88% 12%,#f6c3da 0,transparent 34%),linear-gradient(150deg,#fffafd,#fff0f6)}
+.lbfit-hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.client-lbfit-hero h1{font:700 clamp(56px,6vw,84px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:16px 0 18px}
+.client-lbfit-hero p{font-size:20px;line-height:1.55;max-width:570px;color:#755767}
+.client-lbfit-hero .client-btn.solid{background:#e95b9b;border-color:#e95b9b}
+.client-lbfit-hero .client-btn.ghost{color:#542b40;background:#fff;border-color:#e5b9cd}
+.lbfit-editorial-frame{position:relative;border-radius:36px;overflow:hidden;border:1px solid #ecbed1;box-shadow:0 32px 90px rgba(128,45,82,.17);background:#f3d8e4}
+.lbfit-editorial-frame img{width:100%;height:510px;object-fit:cover;object-position:center 34%}
+.lbfit-editorial-frame::after{content:"LB FIT • COLLECTION";position:absolute;right:18px;bottom:18px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.88);font:800 9px/1 var(--mono);letter-spacing:.13em;color:#8c5870}
+.lbfit-category-section{background:#fff}
+.lbfit-category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.lbfit-category-grid article{min-height:230px;padding:24px;border-radius:24px;border:1px solid #efd5e1;background:linear-gradient(160deg,#fff,#fff5f9);display:flex;flex-direction:column}
+.lbfit-category-grid b{font:800 34px/1 var(--display);color:#e34f91}
+.lbfit-category-grid small{margin-top:6px;font:700 9px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#a8738a}
+.lbfit-category-grid p{margin:auto 0 0;color:#745c68}
+.lbfit-night{background:#24151e;color:#fff3f8}
+.lbfit-night-grid{display:grid;grid-template-columns:1fr .7fr;gap:70px;align-items:center}
+.lbfit-night h2{font:700 clamp(46px,5vw,76px)/.95 Georgia,"Times New Roman",serif;margin:12px 0 16px}
+.lbfit-night p{color:#dfbdcc;font-size:18px}
+.lbfit-monogram{min-height:360px;border-radius:30px;border:1px solid #8c4263;background:radial-gradient(circle,#5a2840,#1a1016 68%);display:grid;place-items:center;font:800 clamp(70px,10vw,140px)/1 var(--display);letter-spacing:-.08em;color:#ff7fb8}
+
+/* Patricia */
+.theme-patricia-page{background:#f1ebe4;color:#261915}
+.client-patricia-hero{padding:132px 0 88px;background:#eee6dd}
+.patricia-hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.client-patricia-hero h1{font:700 clamp(62px,6.7vw,96px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:16px 0 4px}
+.patricia-quote{font:700 clamp(28px,3vw,42px)/1.1 Georgia,"Times New Roman",serif;color:#7b2035;margin:0 0 22px}
+.client-patricia-hero .client-copy{font-size:19px;line-height:1.55;color:#705e57;max-width:620px}
+.client-patricia-hero .client-btn.solid{background:#7b2035;border-color:#7b2035}
+.client-patricia-hero .client-btn.ghost{color:#4a3029;background:#f9f3ec;border-color:#bda69d}
+.patricia-portrait{position:relative;height:570px;border-radius:34px;overflow:hidden;background:#7b2035;box-shadow:0 30px 75px rgba(78,25,35,.14)}
+.patricia-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.patricia-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 58%,rgba(74,14,28,.58))}
+.patricia-portrait span{position:absolute;z-index:2;left:22px;bottom:20px;color:#fff6ef;font:800 10px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase}
+.patricia-plan{background:#f8f2eb}
+.patricia-benefits{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #cbbdb5;border-left:1px solid #cbbdb5}
+.patricia-benefits article{padding:26px;border-right:1px solid #cbbdb5;border-bottom:1px solid #cbbdb5;min-height:220px}
+.patricia-benefits h3{font:700 28px/1.05 Georgia,"Times New Roman",serif;margin:10px 0 12px}
+.patricia-benefits p{color:#735f57;margin:0}
+.patricia-wine{background:#742034;color:#fff5ef}
+.patricia-wine-grid{display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:center}
+.patricia-wine h2{font:700 clamp(48px,5.3vw,78px)/.95 Georgia,"Times New Roman",serif;margin:12px 0}
+.patricia-wine p{font-size:20px;color:#edd5cb}
+
+/* Lara */
+.theme-lara-page{background:#fff8fb;color:#281920}
+.client-lara-hero{position:relative;padding:130px 0 88px;background:linear-gradient(155deg,#fffafd,#fff1f6 55%,#f4eeff);overflow:hidden}
+.client-lara-hero::before,.client-lara-hero::after{content:"";position:absolute;border-radius:50%;filter:blur(3px);opacity:.7}
+.client-lara-hero::before{width:360px;height:360px;background:#ffd5e5;right:-110px;top:10px}
+.client-lara-hero::after{width:300px;height:300px;background:#e8dcff;left:-120px;bottom:-110px}
+.lara-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:.82fr 1.18fr;gap:68px;align-items:center}
+.lara-profile-chip{width:138px;height:138px;border-radius:50%;padding:7px;background:conic-gradient(#fff,#efbad0,#e7d8ff,#fff);box-shadow:0 18px 54px rgba(115,55,82,.14);margin-bottom:24px}
+.lara-profile-chip img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid #fff}
+.client-lara-hero h1{font:700 clamp(58px,6.5vw,90px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:10px 0 18px}
+.client-lara-hero p{font-size:19px;line-height:1.55;color:#77606b;max-width:560px}
+.client-lara-hero .client-btn.solid{background:#dd7aa1;border-color:#dd7aa1}
+.client-lara-hero .client-btn.ghost{color:#4a303c;background:#fff;border-color:#e4c6d4}
+.lara-photo-frame{height:565px;border-radius:36px;overflow:hidden;border:1px solid #edc9d8;box-shadow:0 32px 90px rgba(110,50,78,.15);position:relative;background:#eed3df}
+.lara-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.lara-photo-frame::after{content:"LINKS • FITNESS • LIFESTYLE";position:absolute;left:18px;bottom:18px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.88);font:800 9px/1 var(--mono);letter-spacing:.13em;color:#9b6079}
+.lara-universe{background:#fff}
+.lara-card-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px}
+.lara-card-grid article{min-height:260px;padding:28px;border-radius:26px;border:1px solid #eed6df;background:#fff9fc;box-shadow:0 16px 48px rgba(83,35,57,.055)}
+.lara-card-grid article:first-child{background:linear-gradient(145deg,#24161e,#432237);color:#fff}
+.lara-card-grid small{font:800 9px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#c57999}
+.lara-card-grid h3{font:700 30px/1 Georgia,"Times New Roman",serif;margin:18px 0 12px}
+.lara-card-grid p{color:#7c6671}
+.lara-card-grid article:first-child p{color:#dec6d1}
+.lara-blush{background:linear-gradient(145deg,#f8c8da,#eee0ff);color:#342029}
+.lara-blush-grid{display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:center}
+.lara-blush h2{font:700 clamp(46px,5.4vw,78px)/.96 Georgia,"Times New Roman",serif;margin:12px 0 18px}
+.lara-social-pills{display:grid;gap:10px}
+.lara-social-pills a{padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.68);border:1px solid #dbaec2;font-weight:800}
+
+@media(max-width:980px){
+  .client-avelar-hero .avelar-grid,.lbfit-hero-grid,.patricia-hero-grid,.lara-hero-grid,.avelar-proof-grid,.lbfit-night-grid,.patricia-wine-grid,.lara-blush-grid{grid-template-columns:1fr}
+  .avelar-service-grid,.lbfit-category-grid,.patricia-benefits{grid-template-columns:repeat(2,1fr)}
+  .lara-card-grid{grid-template-columns:1fr 1fr}.lara-card-grid article:first-child{grid-column:1/-1}
+  .avelar-photo-frame>img,.lbfit-editorial-frame img,.patricia-portrait,.lara-photo-frame{height:460px}
+}
+@media(max-width:760px){
+  .client-theme-page .client-shell{width:min(100% - 26px,1180px)}
+  .client-theme-page .client-section{padding:70px 0}
+  .client-theme-page .client-credit-band .client-shell{grid-template-columns:1fr;gap:10px}
+  .client-avelar-hero,.client-lbfit-hero,.client-patricia-hero,.client-lara-hero{padding:110px 0 60px}
+  .avelar-photo-frame>img,.lbfit-editorial-frame img,.patricia-portrait,.lara-photo-frame{height:390px}
+  .avelar-service-grid,.lbfit-category-grid,.patricia-benefits,.lara-card-grid{grid-template-columns:1fr}
+  .lara-card-grid article:first-child{grid-column:auto}
+  .patricia-benefits{border-left:0}.patricia-benefits article{border-left:1px solid #cbbdb5}
+  .avelar-proof-photo{min-height:320px}
+}
