@@ -27,7 +27,11 @@
     }
   ],
   "motion": {
-    "budget": {"signatureCount": 1, "supportingCount": 2, "maxSupporting": 3},
+    "budget": {
+      "signatureCount": 1,
+      "supportingCount": 2,
+      "maxSupporting": 3
+    },
     "reducedMotion": "Todas as transformações de scroll e reveals tornam-se estáticas; o conteúdo permanece visível e navegável.",
     "mobileFallback": "O hero não encolhe e a galeria de cases vira uma lista vertical sem perspectiva."
   },
@@ -36,5 +40,17 @@
     "manter roxo como acento, não como gradiente decorativo dominante",
     "não inventar métricas, clientes ou alcance",
     "preservar URLs públicas, SEO e dados factuais existentes"
-  ]
+  ],
+  "assetPreservation": {
+    "policy": "Assets reais existentes são fonte de verdade visual. Mockups genéricos só podem complementar, nunca substituir produto/case real sem justificativa.",
+    "requiredReferences": [
+      "assets/img/jade-inicio.png",
+      "assets/img/zuri-inicio.png",
+      "assets/img/loja.webp",
+      "assets/img/clients/avelar-fachada.webp",
+      "assets/img/clients/lbfit-banner.webp",
+      "assets/img/clients/patricia-hero.webp",
+      "assets/img/clients/lara-og.jpg"
+    ]
+  }
 }
