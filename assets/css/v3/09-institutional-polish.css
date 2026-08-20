@@ -1,0 +1,35 @@
+/* Final institutional polish: lighter hero framing, reliable case interaction, quieter CTA. */
+
+/* Hero framing should feel like a finishing gesture, not a second scroll scene. */
+.home-page .hero-stage{height:122vh}
+
+/* Desktop click proxy follows the visually active 3D project card. */
+.case-stage{isolation:isolate}
+.case-click-proxy{position:absolute;left:5%;right:9%;top:50%;height:min(62vh,590px);z-index:999;border-radius:32px;background:transparent;cursor:pointer;outline:none;transform-origin:center center}
+.case-click-proxy:focus-visible{box-shadow:inset 0 0 0 2px rgba(255,255,255,.82),0 0 0 4px rgba(163,92,255,.32)}
+
+/* Institutional contact band: present, but intentionally not sales-heavy. */
+.final-cta{padding:72px 20px 24px;background:var(--paper)}
+.final-cta-card{min-height:0;border-radius:30px;background:radial-gradient(circle at 88% 18%,rgba(163,92,255,.16),transparent 32%),#17151c;color:#fff;padding:42px 46px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);gap:50px;align-items:end;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.final-cta-card::before{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(163,92,255,.16);border-radius:50%;right:-92px;bottom:-150px;box-shadow:0 0 0 52px rgba(163,92,255,.025);pointer-events:none}
+.final-cta-card>.eyebrow{align-self:start;color:#aaa5b1}
+.final-cta h2{position:relative;z-index:2;font:700 clamp(42px,5.1vw,70px)/.91 var(--display);letter-spacing:-.048em;margin:16px 0 0;max-width:760px}
+.final-cta h2 br{display:none}
+.final-cta-bottom{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:18px}
+.final-cta p{max-width:460px;margin:0;font-size:16px;line-height:1.55;color:#aaa6b1}
+.final-cta .btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.25);min-height:46px;padding-inline:18px}
+.final-cta .btn:hover{background:#fff;color:#15101b;border-color:#fff}
+
+@media(max-width:900px){
+  .final-cta-card{grid-template-columns:1fr;gap:28px;padding:38px 34px}
+  .final-cta h2{max-width:680px}
+}
+
+@media(max-width:760px){
+  .home-page .hero-stage{height:auto}
+  .case-click-proxy{display:none}
+  .final-cta{padding:46px 12px 14px}
+  .final-cta-card{min-height:0!important;padding:30px 24px!important;border-radius:26px;gap:24px}
+  .final-cta h2{font-size:clamp(40px,12vw,58px)}
+  .final-cta-bottom{align-items:flex-start!important}
+}
