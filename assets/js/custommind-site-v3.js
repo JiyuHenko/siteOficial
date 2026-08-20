@@ -145,7 +145,7 @@
     reveals.forEach(el => el.classList.add('is-visible'));
   }
 
-  // CM-S01 — the single primary motion signature.
+  // CM-S01 — restrained framing: shorter travel, smaller scale delta.
   const heroStage = qs('[data-hero-stage]');
   const heroFrame = qs('[data-hero-frame]');
   function updateHero() {
@@ -160,17 +160,28 @@
     const rect = heroStage.getBoundingClientRect();
     const travel = Math.max(1, heroStage.offsetHeight - innerHeight);
     const p = clamp(-rect.top / travel);
-    const scale = 1 - p * .045;
+    const scale = 1 - p * .028;
     heroFrame.style.transform = `scale(${scale})`;
-    heroFrame.style.borderRadius = `${p * 28}px`;
+    heroFrame.style.borderRadius = `${p * 18}px`;
     heroFrame.style.width = '100vw';
     heroFrame.style.height = '100vh';
   }
 
-  // CM-S05 — depth case deck. Only the visually active card may intercept clicks.
+  // CM-S05 — depth deck. A transparent proxy handles clicking because
+  // browser hit-testing on stacked translate3d anchors is inconsistent.
   const casesShell = qs('[data-cases-shell]');
+  const caseStage = qs('.case-stage');
   const caseCards = qsa('[data-case-card]');
   const caseNumber = qs('[data-case-number]');
+  let caseClickProxy = null;
+
+  if (caseStage && caseCards.length) {
+    caseClickProxy = document.createElement('a');
+    caseClickProxy.className = 'case-click-proxy';
+    caseClickProxy.setAttribute('aria-label', 'Abrir projeto em destaque');
+    caseStage.appendChild(caseClickProxy);
+  }
+
   function updateCases() {
     if (!casesShell || !caseCards.length) return;
 
@@ -180,6 +191,10 @@
         card.removeAttribute('aria-hidden');
         card.removeAttribute('tabindex');
       });
+      if (caseClickProxy) {
+        caseClickProxy.removeAttribute('href');
+        caseClickProxy.setAttribute('tabindex','-1');
+      }
       return;
     }
 
@@ -188,6 +203,11 @@
     const progress = clamp(-rect.top / travel);
     const indexFloat = progress * (caseCards.length - 1);
     const active = Math.round(indexFloat);
+    const activeCard = caseCards[active];
+    const activeD = active - indexFloat;
+    const activeY = activeD * 44;
+    const activeScale = 1 - Math.min(Math.abs(activeD) * .07, .22);
+
     if (caseNumber) caseNumber.textContent = String(active + 1).padStart(2,'0');
 
     caseCards.forEach((card, i) => {
@@ -203,11 +223,18 @@
       card.style.opacity = opacity;
       card.style.zIndex = String(100 - Math.round(Math.abs(d)*10));
       card.style.filter = `saturate(${clamp(1 - Math.abs(d)*.25,.55,1)})`;
-      card.style.pointerEvents = isActive ? 'auto' : 'none';
-      card.setAttribute('tabindex', isActive ? '0' : '-1');
+      card.style.pointerEvents = 'none';
+      card.setAttribute('tabindex','-1');
       if (isActive) card.removeAttribute('aria-hidden');
       else card.setAttribute('aria-hidden','true');
     });
+
+    if (caseClickProxy && activeCard) {
+      caseClickProxy.href = activeCard.getAttribute('href') || '#';
+      caseClickProxy.setAttribute('aria-label', `Abrir ${qs('h3', activeCard)?.textContent?.trim() || 'projeto em destaque'}`);
+      caseClickProxy.setAttribute('tabindex','0');
+      caseClickProxy.style.transform = `translateY(calc(-50% + ${activeY}%)) scale(${activeScale})`;
+    }
   }
 
   let ticking = false;
