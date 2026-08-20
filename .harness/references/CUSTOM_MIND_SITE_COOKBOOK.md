@@ -260,3 +260,29 @@ A new cookbook entry must answer:
 5. What happens under reduced motion?
 6. What is its performance risk?
 7. Can it remain a reusable pattern without becoming a visual preset?
+
+---
+
+# Regra de preservação de assets reais
+
+Assets reais já existentes no projeto — screenshots de produto, fotografias de clientes, logos, fachadas, imagens editoriais, QR codes e materiais de marca — são **fonte de verdade visual**.
+
+Um redesign não pode removê-los da experiência apenas porque um mockup em CSS, gradiente ou composição abstrata parece mais coerente com a nova direção de arte.
+
+## Ordem de preferência
+
+1. asset real existente e relevante;
+2. asset real reenquadrado dentro da nova composição;
+3. representação abstrata complementar;
+4. mockup sintético somente quando não existe asset real adequado.
+
+## Gate de controle
+
+Antes de concluir um redesign, comparar a lista de assets relevantes antes/depois e responder:
+
+- algum screenshot real de produto deixou de aparecer?
+- alguma foto real de cliente/case foi substituída por bloco genérico?
+- algum logo ou material original foi redesenhado sem necessidade?
+- o novo visual ainda prova que o produto/case existe, ou apenas sugere isso?
+
+Se um asset real importante sumiu sem justificativa explícita, o redesign está bloqueado.
