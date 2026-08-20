@@ -1,0 +1,22 @@
+/* Real-asset preservation layer — real product/client media stays visible inside the new art direction. */
+.product-real-shot{position:relative;z-index:2;width:100%;height:290px;object-fit:contain;object-position:center;border-radius:20px;margin:34px 0 24px;background:#090a10;padding:10px;border:1px solid rgba(9,9,13,.09);box-shadow:0 18px 48px rgba(9,9,13,.12)}
+.product-card.jade .product-real-shot,.product-card.zuri .product-real-shot{object-fit:cover;object-position:center top;padding:0}
+.product-card.store .product-real-shot{height:250px;object-fit:contain;padding:12px}
+.case-photo{position:absolute;right:24px;top:24px;width:46%;height:54%;border-radius:22px;overflow:hidden;border:1px solid rgba(0,0,0,.14);box-shadow:0 18px 42px rgba(0,0,0,.16);z-index:1;background:#111}
+.case-real-shot{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.02)}
+.case-a .case-photo::after,.case-b .case-photo::after,.case-c .case-photo::after,.case-d .case-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.2))}
+.case-card-inner>div:not(.case-photo){position:relative;z-index:2;max-width:52%}
+.product-page-real{width:100%;height:100%;min-height:470px;display:block;object-fit:contain;object-position:center;background:#090a10;padding:16px}
+.product-page.jade-theme .product-page-real,.product-page.zuri-theme .product-page-real{object-fit:cover;object-position:center top;padding:0}
+.product-secondary-real{margin-bottom:52px;padding-top:20px}
+.product-secondary-shot{display:block;width:min(100%,980px);max-height:680px;object-fit:contain;object-position:center;border-radius:28px;margin:0 auto;background:#090a10;padding:14px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.client-board-real{padding:0;background:#111!important;isolation:isolate}
+.client-board-real::before{z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
+.client-real-shot,.client-index-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+.client-board-overlay{position:relative;z-index:3;min-height:470px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;text-shadow:0 1px 18px rgba(0,0,0,.28)}
+.client-board-overlay span,.client-board-overlay strong{position:relative;z-index:3}
+.client-index-shade{position:absolute!important;inset:0;z-index:1!important;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72))}
+.client-board:has(.client-index-shot){color:#fff;background:#111!important}
+.client-board:has(.client-index-shot)>span:not(.client-index-shade),.client-board:has(.client-index-shot)>strong{z-index:2;text-shadow:0 1px 16px rgba(0,0,0,.35)}
+@media(max-width:900px){.product-real-shot{height:260px}.case-photo{width:48%;height:40%}.case-card-inner>div:not(.case-photo){max-width:100%}.product-page-real{min-height:360px}.client-board-overlay{min-height:350px}}
+@media(max-width:640px){.product-real-shot{height:230px;margin-top:24px}.case-photo{position:absolute;left:18px;right:18px;top:18px;width:auto;height:42%}.case-card-inner{padding-top:250px!important}.case-card h3{font-size:46px!important}.product-secondary-shot{border-radius:20px;padding:7px}.product-page-real{min-height:330px;padding:8px}.client-board-overlay{padding:22px}}
