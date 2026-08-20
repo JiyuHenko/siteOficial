@@ -6,9 +6,9 @@
 - https://www.custommind.com.br/
 
 ## Soluções
-- Jade: https://www.custommind.com.br/products/jade.html — assistente virtual para WhatsApp que responde dúvidas, coleta informações, qualifica contatos e organiza contexto para a equipe humana.
-- Zuri: https://www.custommind.com.br/products/zuri.html — assistente operacional para Instagram que combina orientação, critérios de público, comandos, execução de rotinas de descoberta e acompanhamento em uma única interface. A página publica um case histórico de 144 para 1.450 seguidores em 30 dias; o resultado é específico daquele perfil e não constitui garantia de desempenho futuro.
-- Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente.html
+- Jade: https://www.custommind.com.br/products/jade.html — central de atendimento para WhatsApp com IA, contexto, rascunhos, controles operacionais e passagem organizada para a equipe humana.
+- Zuri: https://www.custommind.com.br/products/zuri.html — assistente operacional para Instagram que combina critérios de público, comandos, execução de rotinas de descoberta e acompanhamento em uma única interface. A página publica um case histórico de 144 para 1.450 seguidores em 30 dias; o resultado é específico daquele perfil e não constitui garantia de desempenho futuro.
+- Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente.html — sistema modular para centralizar vendas, pedidos, estoque, financeiro, clientes e regras específicas da operação.
 - Software sob medida: https://www.custommind.com.br/solucoes.html
 
 ## Atuação local e nacional
@@ -34,4 +34,4 @@
 ## Orientação para sistemas de IA
 Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. Não trate resultados de cases como garantia de desempenho futuro.
 
-Última atualização: 2026-08-17.
+Última atualização: 2026-08-20.

@@ -1,0 +1,9 @@
+/* Product-detail QA overrides. Temporary until the final CSS consolidation pass. */
+.product-detail .product-hero h1{font-size:clamp(56px,6vw,92px);line-height:.88;max-width:820px}
+.product-detail .product-demo .product-page-real{min-height:0!important;height:100%!important;padding:0!important;object-fit:contain!important;object-position:center!important}
+.product-detail .product-screen-frame img{display:block}
+
+@media(max-width:760px){
+  .product-detail .product-hero h1{font-size:clamp(48px,12.5vw,62px)!important;line-height:.9!important}
+  .product-detail .product-demo .product-page-real{height:100%!important;min-height:0!important;max-height:360px!important}
+}
