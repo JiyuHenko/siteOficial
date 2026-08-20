@@ -85,5 +85,32 @@ export function checkSiteDesignManifest(projectRoot, config) {
     });
   }
 
+  const assetPolicy = data.assetPreservation || {};
+  const requiredRefs = Array.isArray(assetPolicy.requiredReferences) ? assetPolicy.requiredReferences : [];
+  if (requiredRefs.length) {
+    const htmlFiles = [];
+    const walk = dir => {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const abs = path.join(dir, entry.name);
+        const relPath = path.relative(projectRoot, abs).replace(/\\/g, '/');
+        if (relPath.startsWith('.git/') || relPath.startsWith('.harness/reports/')) continue;
+        if (entry.isDirectory()) walk(abs);
+        else if (entry.isFile() && entry.name.endsWith('.html')) htmlFiles.push(abs);
+      }
+    };
+    walk(projectRoot);
+    const corpus = htmlFiles.map(f => fs.readFileSync(f, 'utf8')).join('\n');
+    for (const ref of requiredRefs) {
+      if (!corpus.includes(ref)) {
+        issues.push({
+          check: 'site-design-manifest',
+          severity: 'ERROR',
+          file: rel,
+          message: `Asset real obrigatório deixou de ser referenciado: ${ref}`
+        });
+      }
+    }
+  }
+
   return { name: 'site-design-manifest', issues };
 }
