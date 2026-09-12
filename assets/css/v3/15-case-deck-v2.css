@@ -1,0 +1,109 @@
+/* Projects deck v2 — local wheel interaction on desktop, native snap carousel on touch. */
+
+.case-e{background:#0d0c0a;color:#f4efe6;border-color:rgba(226,201,133,.28)}
+.case-e .case-card-inner>small,.case-e .case-link,.case-e .case-card-foot{color:#e2c985}
+.case-e .case-asset-panel{width:43%;height:54%;right:27px;top:28px;border-color:rgba(226,201,133,.26);background:#050505;--panel-rotate:.25deg}
+.case-e .case-asset-panel img{object-position:center 44%;filter:saturate(.78) contrast(1.04) brightness(.88)}
+.case-e .case-asset-panel::after{box-shadow:inset 0 0 0 1px rgba(226,201,133,.16)}
+
+.client-board.theme-caligulas{background:#0b0a08!important;color:#f4efe6}
+.client-board.theme-caligulas .client-index-shade{background:linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.88))}
+
+@media(min-width:761px){
+  .cases-shell{min-height:0!important;position:relative}
+  .cases-pin{
+    position:relative!important;
+    top:auto!important;
+    height:auto!important;
+    min-height:760px;
+    padding:96px 0;
+    overflow:hidden;
+  }
+  .case-stage{
+    height:min(76vh,700px);
+    min-height:610px;
+    outline:none;
+  }
+  .case-stage:focus-visible{outline:1px solid rgba(255,255,255,.2);outline-offset:8px;border-radius:32px}
+  .case-card{
+    transition:transform .48s cubic-bezier(.2,.75,.2,1),opacity .34s ease,filter .34s ease,box-shadow .28s ease!important;
+  }
+  .case-stage.is-wheel-deck::after{
+    content:"role sobre os cards";
+    position:absolute;
+    right:9%;
+    bottom:7px;
+    z-index:160;
+    font:700 8px/1 var(--mono);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#66616d;
+    pointer-events:none;
+  }
+  .case-click-proxy{
+    position:absolute;
+    left:5%;
+    right:9%;
+    top:50%;
+    height:min(62vh,590px);
+    z-index:180;
+    border-radius:32px;
+    cursor:pointer;
+    outline:none;
+  }
+  .case-click-proxy:focus-visible{outline:2px solid #a35cff;outline-offset:5px}
+}
+
+@media(max-width:760px){
+  .cases-pin{padding:76px 12px 82px!important}
+  .cases-copy{padding-bottom:28px!important}
+  .case-stage{
+    display:flex!important;
+    grid-template-columns:none!important;
+    gap:12px!important;
+    width:calc(100% + 24px)!important;
+    height:auto!important;
+    margin-inline:-12px!important;
+    padding:2px 12px 15px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:12px;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .case-stage::-webkit-scrollbar{display:none}
+  .case-card,
+  .case-card.case-a,
+  .case-card.case-b,
+  .case-card.case-c,
+  .case-card.case-d,
+  .case-card.case-e{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    flex:0 0 min(86vw,380px)!important;
+    width:auto!important;
+    min-width:0!important;
+    min-height:485px!important;
+    transform:none!important;
+    opacity:1!important;
+    filter:none!important;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .case-card:last-child{margin-right:4px}
+  .case-click-proxy{display:none!important}
+  .case-counter{display:none!important}
+  .case-e .case-asset-panel{width:100%!important;height:auto!important;aspect-ratio:16/9!important;right:auto!important;top:auto!important}
+  .case-e .case-asset-panel img{object-position:center 44%!important}
+}
+
+@media(prefers-reduced-motion:reduce) and (min-width:761px){
+  .cases-pin{min-height:0!important;padding:90px 0!important}
+  .case-stage{height:auto!important;min-height:0!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px!important;perspective:none!important}
+  .case-card{position:relative!important;left:auto!important;right:auto!important;top:auto!important;height:auto!important;min-height:470px!important;transform:none!important;opacity:1!important;filter:none!important;pointer-events:auto!important}
+  .case-click-proxy,.case-stage.is-wheel-deck::after{display:none!important}
+}
