@@ -41,6 +41,7 @@
     pointer-events:none;
   }
   .case-click-proxy{
+    display:block;
     position:absolute;
     left:5%;
     right:9%;
