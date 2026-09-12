@@ -1,0 +1,131 @@
+/* Mobile footer polish — compact hierarchy without changing the desktop composition. */
+@media(max-width:760px){
+  .site-footer{
+    padding:54px 0 calc(24px + env(safe-area-inset-bottom))!important;
+  }
+
+  .site-footer .container{
+    width:calc(100% - 28px)!important;
+  }
+
+  .footer-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:22px!important;
+    row-gap:0!important;
+  }
+
+  .footer-grid>div:first-child{
+    grid-column:1/-1;
+    padding:0 0 28px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .footer-brand{
+    gap:10px;
+    width:max-content;
+    max-width:100%;
+  }
+
+  .footer-brand img{
+    width:40px;
+    height:40px;
+    flex:0 0 40px;
+  }
+
+  .footer-brand strong{
+    font-size:18px;
+    letter-spacing:-.02em;
+  }
+
+  .footer-brand small{
+    font-size:7.5px;
+    margin-top:4px;
+    letter-spacing:.11em;
+  }
+
+  .footer-copy{
+    max-width:31rem;
+    margin:16px 0 0;
+    font-size:14px;
+    line-height:1.58;
+  }
+
+  .footer-col{
+    min-width:0;
+    padding:26px 0 8px;
+  }
+
+  .footer-col h4{
+    margin:0 0 14px;
+    font-size:8px;
+    letter-spacing:.15em;
+    color:#77747c;
+  }
+
+  .footer-col a{
+    margin:0;
+    padding:7px 0;
+    font-size:14px;
+    line-height:1.25;
+    color:#39363e;
+  }
+
+  .footer-col a:active{
+    opacity:.58;
+  }
+
+  .footer-col:last-child{
+    grid-column:1/-1;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:22px;
+    margin-top:18px;
+    padding:24px 0 0;
+    border-top:1px solid var(--line);
+  }
+
+  .footer-col:last-child h4{
+    grid-column:1/-1;
+  }
+
+  .footer-col:last-child .kicker{
+    grid-column:1/-1;
+    display:block;
+    margin-top:13px;
+    padding-top:15px;
+    border-top:1px dashed rgba(18,17,22,.1);
+    font-size:8px;
+    letter-spacing:.13em;
+    color:#8b8790;
+  }
+
+  .footer-bottom{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:5px!important;
+    margin-top:30px!important;
+    padding-top:18px!important;
+    font-size:10px!important;
+    line-height:1.45;
+    color:#8b8790;
+  }
+
+  .footer-bottom span:last-child{
+    color:#a09ca4;
+  }
+}
+
+@media(max-width:380px){
+  .footer-grid{
+    column-gap:16px!important;
+  }
+
+  .footer-col a{
+    font-size:13.5px;
+  }
+
+  .footer-col:last-child{
+    column-gap:16px;
+  }
+}
