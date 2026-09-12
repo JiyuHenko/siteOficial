@@ -5,6 +5,26 @@
   const qsa = (s, r=document) => [...r.querySelectorAll(s)];
   const clamp = (n,min=0,max=1) => Math.min(max,Math.max(min,n));
 
+  // Keep published project surfaces synchronized without duplicating page markup.
+  function initPublishedProjects() {
+    const caseStage = qs('.case-stage');
+    if (caseStage && !qs('.case-e', caseStage)) {
+      caseStage.insertAdjacentHTML('beforeend', `
+        <a class="case-card case-e" data-case-card href="clientes/caligulas-poker-live.html"><div class="case-card-inner"><small>Poker live • Passos–MG</small><div><h3>Caligulas Poker Live</h3><p>Atmosfera de clube, programação, ranking e comunidade reunidos em uma presença digital própria.</p><span class="case-link">Ver projeto →</span></div><div class="case-asset-panel"><img src="https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"></div><span class="case-card-foot">CM / WORK 05</span></div></a>
+      `);
+      const counter = qs('.case-counter');
+      if (counter) counter.innerHTML = '<strong data-case-number>01</strong> / 05 • role sobre os cards';
+    }
+
+    const clientGrid = qs('.page-main .content-section .product-grid');
+    if (clientGrid && qs('.client-board', clientGrid) && !qs('.theme-caligulas', clientGrid)) {
+      clientGrid.insertAdjacentHTML('beforeend', `
+        <a class="client-board theme-caligulas" href="caligulas-poker-live.html"><img class="client-index-shot" src="https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"><span class="client-index-shade"></span><span>POKER LIVE • PASSOS–MG</span><strong>Caligulas Poker Live</strong><span>Programação, ranking, galeria, eventos e comunidade em uma experiência própria. →</span></a>
+      `);
+    }
+  }
+  initPublishedProjects();
+
   // Build the neural ecosystem from the existing semantic product links.
   function initNeuralHero() {
     const map = qs('.architecture-map');
@@ -167,62 +187,68 @@
     heroFrame.style.height = '100vh';
   }
 
-  // CM-S05 — depth deck. A transparent proxy handles clicking because
-  // browser hit-testing on stacked translate3d anchors is inconsistent.
-  const casesShell = qs('[data-cases-shell]');
+  // CM-S05 v2 — the page no longer has to traverse every project.
+  // Wheel is captured only while the pointer is over the project stage.
   const caseStage = qs('.case-stage');
   const caseCards = qsa('[data-case-card]');
   const caseNumber = qs('[data-case-number]');
   let caseClickProxy = null;
+  let caseIndex = 0;
+  let caseWheel = 0;
+  let lastCaseMove = 0;
 
   if (caseStage && caseCards.length) {
     caseClickProxy = document.createElement('a');
     caseClickProxy.className = 'case-click-proxy';
     caseClickProxy.setAttribute('aria-label', 'Abrir projeto em destaque');
     caseStage.appendChild(caseClickProxy);
+    caseStage.classList.add('is-wheel-deck');
+    caseStage.setAttribute('tabindex','0');
+    caseStage.setAttribute('aria-label','Projetos em destaque. Use a roda do mouse ou as setas para navegar pelos projetos.');
+  }
+
+  function resetCaseFlow() {
+    caseCards.forEach(card => {
+      card.style.removeProperty('transform');
+      card.style.removeProperty('opacity');
+      card.style.removeProperty('z-index');
+      card.style.removeProperty('filter');
+      card.style.pointerEvents = 'auto';
+      card.removeAttribute('aria-hidden');
+      card.removeAttribute('tabindex');
+    });
+    if (caseClickProxy) {
+      caseClickProxy.removeAttribute('href');
+      caseClickProxy.setAttribute('tabindex','-1');
+      caseClickProxy.style.removeProperty('transform');
+    }
   }
 
   function updateCases() {
-    if (!casesShell || !caseCards.length) return;
+    if (!caseStage || !caseCards.length) return;
 
     if (reduceMotion || innerWidth < 761) {
-      caseCards.forEach(card => {
-        card.style.pointerEvents = 'auto';
-        card.removeAttribute('aria-hidden');
-        card.removeAttribute('tabindex');
-      });
-      if (caseClickProxy) {
-        caseClickProxy.removeAttribute('href');
-        caseClickProxy.setAttribute('tabindex','-1');
-      }
+      resetCaseFlow();
       return;
     }
 
-    const rect = casesShell.getBoundingClientRect();
-    const travel = Math.max(1, casesShell.offsetHeight - innerHeight);
-    const progress = clamp(-rect.top / travel);
-    const indexFloat = progress * (caseCards.length - 1);
-    const active = Math.round(indexFloat);
-    const activeCard = caseCards[active];
-    const activeD = active - indexFloat;
-    const activeY = activeD * 44;
-    const activeScale = 1 - Math.min(Math.abs(activeD) * .07, .22);
-
-    if (caseNumber) caseNumber.textContent = String(active + 1).padStart(2,'0');
+    caseIndex = Math.round(clamp(caseIndex, 0, caseCards.length - 1));
+    const activeCard = caseCards[caseIndex];
+    if (caseNumber) caseNumber.textContent = String(caseIndex + 1).padStart(2,'0');
 
     caseCards.forEach((card, i) => {
-      const d = i - indexFloat;
-      const y = d * 44;
-      const z = -Math.abs(d) * 170;
-      const rx = d * -3.2;
-      const scale = 1 - Math.min(Math.abs(d) * .07, .22);
-      const opacity = clamp(1 - Math.abs(d) * .35, .1, 1);
-      const isActive = i === active;
+      const d = i - caseIndex;
+      const y = d * 38;
+      const z = -Math.abs(d) * 155;
+      const rx = d * -2.8;
+      const scale = 1 - Math.min(Math.abs(d) * .065, .22);
+      const opacity = clamp(1 - Math.abs(d) * .34, .1, 1);
+      const isActive = i === caseIndex;
 
       card.style.transform = `translate3d(0, calc(-50% + ${y}%), ${z}px) rotateX(${rx}deg) scale(${scale})`;
       card.style.opacity = opacity;
-      card.style.zIndex = String(100 - Math.round(Math.abs(d)*10));
-      card.style.filter = `saturate(${clamp(1 - Math.abs(d)*.25,.55,1)})`;
+      card.style.zIndex = String(100 - Math.round(Math.abs(d) * 10));
+      card.style.filter = `saturate(${clamp(1 - Math.abs(d) * .23,.55,1)})`;
       card.style.pointerEvents = 'none';
       card.setAttribute('tabindex','-1');
       if (isActive) card.removeAttribute('aria-hidden');
@@ -233,8 +259,48 @@
       caseClickProxy.href = activeCard.getAttribute('href') || '#';
       caseClickProxy.setAttribute('aria-label', `Abrir ${qs('h3', activeCard)?.textContent?.trim() || 'projeto em destaque'}`);
       caseClickProxy.setAttribute('tabindex','0');
-      caseClickProxy.style.transform = `translateY(calc(-50% + ${activeY}%)) scale(${activeScale})`;
+      caseClickProxy.style.transform = 'translateY(-50%)';
     }
+  }
+
+  function moveCase(direction) {
+    const next = clamp(caseIndex + direction, 0, caseCards.length - 1);
+    if (next === caseIndex) return false;
+    caseIndex = next;
+    updateCases();
+    return true;
+  }
+
+  if (caseStage && caseCards.length) {
+    caseStage.addEventListener('wheel', e => {
+      if (reduceMotion || innerWidth < 761) return;
+      const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (!delta) return;
+      const direction = delta > 0 ? 1 : -1;
+      const atBoundary = (direction > 0 && caseIndex >= caseCards.length - 1) || (direction < 0 && caseIndex <= 0);
+      if (atBoundary) {
+        caseWheel = 0;
+        return;
+      }
+
+      e.preventDefault();
+      caseWheel += delta;
+      const now = performance.now();
+      if (Math.abs(caseWheel) < 28 || now - lastCaseMove < 220) return;
+
+      const step = caseWheel > 0 ? 1 : -1;
+      caseWheel = 0;
+      if (moveCase(step)) lastCaseMove = now;
+    }, { passive:false });
+
+    caseStage.addEventListener('pointerleave', () => { caseWheel = 0; });
+    caseStage.addEventListener('keydown', e => {
+      if (reduceMotion || innerWidth < 761) return;
+      const forward = e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown';
+      const backward = e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp';
+      if (!forward && !backward) return;
+      if (moveCase(forward ? 1 : -1)) e.preventDefault();
+    });
   }
 
   let ticking = false;
