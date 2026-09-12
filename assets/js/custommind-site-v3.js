@@ -187,8 +187,7 @@
     heroFrame.style.height = '100vh';
   }
 
-  // CM-S05 v2 — the page no longer has to traverse every project.
-  // Wheel is captured only while the pointer is over the project stage.
+  // CM-S05 v2 — page flow stays natural; the active card owns wheel only under the pointer.
   const caseStage = qs('.case-stage');
   const caseCards = qsa('[data-case-card]');
   const caseNumber = qs('[data-case-number]');
@@ -204,7 +203,7 @@
     caseStage.appendChild(caseClickProxy);
     caseStage.classList.add('is-wheel-deck');
     caseStage.setAttribute('tabindex','0');
-    caseStage.setAttribute('aria-label','Projetos em destaque. Use a roda do mouse ou as setas para navegar pelos projetos.');
+    caseStage.setAttribute('aria-label','Projetos em destaque. Use a roda do mouse sobre o card ou as setas para navegar pelos projetos.');
   }
 
   function resetCaseFlow() {
@@ -273,7 +272,15 @@
 
   if (caseStage && caseCards.length) {
     caseStage.addEventListener('wheel', e => {
-      if (reduceMotion || innerWidth < 761) return;
+      if (reduceMotion || innerWidth < 761 || !caseClickProxy) return;
+
+      const cardRect = caseClickProxy.getBoundingClientRect();
+      const pointerOverCard = e.clientX >= cardRect.left && e.clientX <= cardRect.right && e.clientY >= cardRect.top && e.clientY <= cardRect.bottom;
+      if (!pointerOverCard) {
+        caseWheel = 0;
+        return;
+      }
+
       const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
       if (!delta) return;
       const direction = delta > 0 ? 1 : -1;
