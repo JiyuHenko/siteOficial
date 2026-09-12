@@ -18,7 +18,7 @@
     {
       "patternId": "CM-S05",
       "name": "Depth Case Deck",
-      "reason": "Projetos são a principal prova visual da Custom Mind e merecem uma apresentação própria."
+      "reason": "Projetos são a principal prova visual da Custom Mind e merecem uma apresentação própria. No desktop, o wheel navega o deck somente quando o ponteiro está sobre os cards; fora deles a página continua em fluxo normal."
     },
     {
       "patternId": "CM-S09",
@@ -33,7 +33,7 @@
       "maxSupporting": 3
     },
     "reducedMotion": "Todas as transformações de scroll e reveals tornam-se estáticas; o conteúdo permanece visível e navegável.",
-    "mobileFallback": "O hero não encolhe e a galeria de cases vira uma lista vertical sem perspectiva."
+    "mobileFallback": "O hero não encolhe e a galeria de cases usa carrossel horizontal nativo com scroll-snap, sem perspectiva."
   },
   "brandConstraints": [
     "preservar o símbolo oficial da Custom Mind",
@@ -50,7 +50,8 @@
       "assets/img/clients/avelar-fachada.webp",
       "assets/img/clients/lbfit-banner.webp",
       "assets/img/clients/patricia-hero.webp",
-      "assets/img/clients/lara-og.jpg"
+      "assets/img/clients/lara-og.jpg",
+      "https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp"
     ]
   }
 }
