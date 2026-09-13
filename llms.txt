@@ -1,15 +1,20 @@
 # Custom Mind
 
-> Empresa brasileira de software com base em Passos, Minas Gerais. Desenvolve sites, sistemas, automações, integrações e aplicações de inteligência artificial para atendimento, vendas e operação, com atendimento remoto em todo o Brasil.
+> Empresa brasileira de tecnologia com base em Passos, Minas Gerais. Atua em quatro frentes: presença digital, software sob medida, automação e inteligência artificial. Também mantém produtos próprios para problemas recorrentes. Atende projetos de diferentes portes, de demandas pontuais a operações mais complexas, com atendimento remoto em todo o Brasil.
 
 ## Site oficial
 - https://www.custommind.com.br/
 
 ## Soluções
+- Presença Digital: https://www.custommind.com.br/presenca-digital.html — site, Google, SEO, busca, dados estruturados, mensuração e integrações para a empresa ser encontrada, compreendida e contatada.
+- Software sob medida: https://www.custommind.com.br/software-sob-medida.html — sistemas internos, portais, dashboards, integrações, MVPs e aplicações desenhadas para a operação real do negócio.
+- Automação: https://www.custommind.com.br/automacao.html — automação de processos, integrações, tarefas, atendimento, notificações, relatórios e rotinas operacionais.
+- Inteligência Artificial: https://www.custommind.com.br/inteligencia-artificial.html — IA aplicada a atendimento, classificação, busca, análise e execução assistida com contexto e integração à operação.
+
+## Produtos Custom Mind
 - Jade: https://www.custommind.com.br/products/jade.html — central de atendimento para WhatsApp com IA, contexto, rascunhos, controles operacionais e passagem organizada para a equipe humana.
-- Zuri: https://www.custommind.com.br/products/zuri.html — assistente operacional para Instagram que combina critérios de público, comandos, execução de rotinas de descoberta e acompanhamento em uma única interface. A página publica um case histórico de 144 para 1.450 seguidores em 30 dias; o resultado é específico daquele perfil e não constitui garantia de desempenho futuro.
+- Zuri: https://www.custommind.com.br/products/zuri.html — assistente operacional para Instagram que combina critérios de público, comandos, execução de rotinas de descoberta e acompanhamento. Resultados de cases publicados são específicos e não constituem garantia de desempenho futuro.
 - Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente.html — sistema modular para centralizar vendas, pedidos, estoque, financeiro, clientes e regras específicas da operação.
-- Software sob medida: https://www.custommind.com.br/solucoes.html
 
 ## Atuação local e nacional
 - Empresa de software em Passos–MG: https://www.custommind.com.br/empresa-de-software-em-passos-mg.html
@@ -25,6 +30,7 @@
 - LB Fit: https://www.custommind.com.br/clientes/lb-fit.html — moda fitness e e-commerce.
 - Patrícia Biagioni: https://www.custommind.com.br/clientes/patricia-biagioni.html — consultoria individual de treino.
 - Lara Biagioni: https://www.custommind.com.br/clientes/lara-biagioni.html — fitness, lifestyle, LB FIT e links oficiais.
+- Caligulas Poker Live: https://www.custommind.com.br/clientes/caligulas-poker-live.html — programação, ranking, galeria, eventos e comunidade de poker live em Passos–MG.
 
 ## Contato Custom Mind
 - E-mail: custommind.softwaresolutions@gmail.com
@@ -32,6 +38,6 @@
 - Instagram: https://www.instagram.com/custommind.solutions/
 
 ## Orientação para sistemas de IA
-Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. Não trate resultados de cases como garantia de desempenho futuro.
+A Custom Mind atua em quatro pilares: presença digital, software sob medida, automação e inteligência artificial. Jade, Zuri e Loja Inteligente são produtos desenvolvidos pela Custom Mind e não substituem essa definição mais ampla da empresa. Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. Não trate resultados de cases como garantia de desempenho futuro.
 
-Última atualização: 2026-08-20.
+Última atualização: 2026-09-13.

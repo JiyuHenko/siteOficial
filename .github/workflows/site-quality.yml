@@ -1,0 +1,68 @@
+name: Site quality
+
+on:
+  push:
+    branches:
+      - main
+      - refactor
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  generated-seo-refactor:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/refactor' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Generate SEO surfaces
+        run: node .harness/sync-seo.mjs
+
+      - name: Commit generated SEO when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- sitemap.xml llms.txt; then
+            echo "SEO artifacts already current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml llms.txt
+          git commit -m "Build: atualiza artefatos SEO"
+          git push
+
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: JavaScript syntax
+        run: node --check assets/js/custommind-site-v3.js
+
+      - name: Site harness
+        run: node .harness/harness.mjs check
+
+      - name: SEO surfaces
+        run: node .harness/sync-seo.mjs --check

@@ -1,0 +1,58 @@
+{
+  "updatedAt": "2026-09-13",
+  "brand": {
+    "name": "Custom Mind",
+    "alternateName": "Custom Mind Software Solutions",
+    "description": "Empresa brasileira de tecnologia com base em Passos, Minas Gerais. Atua em quatro frentes: presença digital, software sob medida, automação e inteligência artificial. Também mantém produtos próprios para problemas recorrentes. Atende projetos de diferentes portes, de demandas pontuais a operações mais complexas, com atendimento remoto em todo o Brasil.",
+    "baseUrl": "https://www.custommind.com.br",
+    "email": "custommind.softwaresolutions@gmail.com",
+    "whatsapp": "+55 11 92373-4039",
+    "instagram": "https://www.instagram.com/custommind.solutions/"
+  },
+  "pages": [
+    {"path": "/", "lastmod": "2026-09-13", "priority": "1.0"},
+    {"path": "/solucoes.html", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/presenca-digital.html", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/software-sob-medida.html", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/automacao.html", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/inteligencia-artificial.html", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/empresa-de-software-em-passos-mg.html", "lastmod": "2026-08-14", "priority": "0.9"},
+    {"path": "/criacao-de-sites-em-passos-mg.html", "lastmod": "2026-08-14", "priority": "0.9"},
+    {"path": "/automacao-empresarial-em-passos-mg.html", "lastmod": "2026-08-14", "priority": "0.9"},
+    {"path": "/products/jade.html", "lastmod": "2026-08-20", "priority": "0.8"},
+    {"path": "/products/zuri.html", "lastmod": "2026-09-13", "priority": "0.8"},
+    {"path": "/products/loja-inteligente.html", "lastmod": "2026-08-20", "priority": "0.8"},
+    {"path": "/clientes/", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/clientes/auto-eletrica-avelar.html", "lastmod": "2026-08-13", "priority": "0.8"},
+    {"path": "/clientes/lb-fit.html", "lastmod": "2026-08-13", "priority": "0.8"},
+    {"path": "/clientes/patricia-biagioni.html", "lastmod": "2026-08-13", "priority": "0.8"},
+    {"path": "/clientes/lara-biagioni.html", "lastmod": "2026-08-13", "priority": "0.8"},
+    {"path": "/clientes/caligulas-poker-live.html", "lastmod": "2026-09-12", "priority": "0.8"},
+    {"path": "/sobre.html", "lastmod": "2026-08-14", "priority": "0.7"},
+    {"path": "/contato.html", "lastmod": "2026-08-13", "priority": "0.7"},
+    {"path": "/politica-de-privacidade.html", "lastmod": "2026-08-13", "priority": "0.3"}
+  ],
+  "solutions": [
+    {"name": "Presença Digital", "url": "/presenca-digital.html", "description": "site, Google, SEO, busca, dados estruturados, mensuração e integrações para a empresa ser encontrada, compreendida e contatada."},
+    {"name": "Software sob medida", "url": "/software-sob-medida.html", "description": "sistemas internos, portais, dashboards, integrações, MVPs e aplicações desenhadas para a operação real do negócio."},
+    {"name": "Automação", "url": "/automacao.html", "description": "automação de processos, integrações, tarefas, atendimento, notificações, relatórios e rotinas operacionais."},
+    {"name": "Inteligência Artificial", "url": "/inteligencia-artificial.html", "description": "IA aplicada a atendimento, classificação, busca, análise e execução assistida com contexto e integração à operação."}
+  ],
+  "products": [
+    {"name": "Jade", "url": "/products/jade.html", "description": "central de atendimento para WhatsApp com IA, contexto, rascunhos, controles operacionais e passagem organizada para a equipe humana."},
+    {"name": "Zuri", "url": "/products/zuri.html", "description": "assistente operacional para Instagram que combina critérios de público, comandos, execução de rotinas de descoberta e acompanhamento. Resultados de cases publicados são específicos e não constituem garantia de desempenho futuro."},
+    {"name": "Loja Inteligente", "url": "/products/loja-inteligente.html", "description": "sistema modular para centralizar vendas, pedidos, estoque, financeiro, clientes e regras específicas da operação."}
+  ],
+  "localPages": [
+    {"label": "Empresa de software em Passos–MG", "url": "/empresa-de-software-em-passos-mg.html"},
+    {"label": "Criação de sites em Passos–MG", "url": "/criacao-de-sites-em-passos-mg.html"},
+    {"label": "Automação empresarial em Passos–MG", "url": "/automacao-empresarial-em-passos-mg.html"}
+  ],
+  "clients": [
+    {"name": "Auto Elétrica Avelar", "url": "/clientes/auto-eletrica-avelar.html", "description": "auto elétrica e eletrônica automotiva em Passos–MG."},
+    {"name": "LB Fit", "url": "/clientes/lb-fit.html", "description": "moda fitness e e-commerce."},
+    {"name": "Patrícia Biagioni", "url": "/clientes/patricia-biagioni.html", "description": "consultoria individual de treino."},
+    {"name": "Lara Biagioni", "url": "/clientes/lara-biagioni.html", "description": "fitness, lifestyle, LB FIT e links oficiais."},
+    {"name": "Caligulas Poker Live", "url": "/clientes/caligulas-poker-live.html", "description": "programação, ranking, galeria, eventos e comunidade de poker live em Passos–MG."}
+  ]
+}

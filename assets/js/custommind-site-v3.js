@@ -38,10 +38,10 @@
     }));
 
     const fallback = [
-      { href:'products/jade.html', title:'Jade', subtitle:'atendimento + contexto' },
-      { href:'products/zuri.html', title:'Zuri', subtitle:'descoberta + cadência' },
-      { href:'products/loja-inteligente.html', title:'Loja Inteligente', subtitle:'vendas + operação' },
-      { href:'solucoes.html', title:'Sob medida', subtitle:'sistemas + integrações' }
+      { href:'presenca-digital.html', title:'Presença Digital', subtitle:'busca + posicionamento' },
+      { href:'inteligencia-artificial.html', title:'Inteligência Artificial', subtitle:'agentes + IA aplicada' },
+      { href:'automacao.html', title:'Automação', subtitle:'processos + operação' },
+      { href:'software-sob-medida.html', title:'Software sob medida', subtitle:'sistemas + integrações' }
     ];
     const items = existing.length === 4 ? existing : fallback;
     const keys = ['jade','zuri','store','custom'];
@@ -195,6 +195,7 @@
   let caseIndex = 0;
   let caseWheel = 0;
   let lastCaseMove = 0;
+  const wrapCaseIndex = value => ((value % caseCards.length) + caseCards.length) % caseCards.length;
 
   if (caseStage && caseCards.length) {
     caseClickProxy = document.createElement('a');
@@ -223,20 +224,89 @@
     }
   }
 
+  let mobileCaseLoop = false, mobileCaseTimer, mobileCaseJumping = false;
+  function setupMobileCaseLoop() {
+    if (mobileCaseLoop || !caseStage || caseCards.length < 2 || innerWidth >= 761) return;
+
+    const beforeCaseClones = caseCards.map(card => card.cloneNode(true));
+    const afterCaseClones = caseCards.map(card => card.cloneNode(true));
+    const prepareClone = (clone, cycle, index) => {
+      clone.removeAttribute('data-case-card');
+      clone.dataset.caseClone = `${cycle}-${index}`;
+      clone.setAttribute('aria-hidden','true');
+      clone.setAttribute('tabindex','-1');
+    };
+    beforeCaseClones.forEach((clone, index) => prepareClone(clone, 'before', index));
+    afterCaseClones.forEach((clone, index) => prepareClone(clone, 'after', index));
+
+    const beforeFragment = document.createDocumentFragment();
+    beforeCaseClones.forEach(clone => beforeFragment.appendChild(clone));
+    caseStage.insertBefore(beforeFragment, caseCards[0]);
+
+    const afterFragment = document.createDocumentFragment();
+    afterCaseClones.forEach(clone => afterFragment.appendChild(clone));
+    caseStage.insertBefore(afterFragment, caseClickProxy);
+
+    const inset = () => parseFloat(getComputedStyle(caseStage).paddingLeft) || 0;
+    const centerStart = () => caseCards[0].offsetLeft - inset();
+    const nextCycleStart = () => afterCaseClones[0].offsetLeft - inset();
+    const cycleWidth = () => nextCycleStart() - centerStart();
+
+    const shiftCycle = delta => {
+      if (!delta || mobileCaseJumping) return;
+      mobileCaseJumping = true;
+      caseStage.scrollLeft += delta;
+      requestAnimationFrame(() => { mobileCaseJumping = false; });
+    };
+
+    const normalizeLoop = () => {
+      if (mobileCaseJumping || innerWidth >= 761) return;
+      const width = cycleWidth();
+      if (width <= 0) return;
+      const x = caseStage.scrollLeft;
+      const start = centerStart();
+      const end = nextCycleStart();
+      if (x < start - 2) shiftCycle(width);
+      else if (x >= end - 2) shiftCycle(-width);
+    };
+
+    mobileCaseLoop = true;
+    requestAnimationFrame(() => {
+      caseStage.scrollLeft = centerStart();
+      requestAnimationFrame(normalizeLoop);
+    });
+
+    if ('onscrollend' in caseStage) {
+      caseStage.addEventListener('scrollend', normalizeLoop, { passive:true });
+    } else {
+      caseStage.addEventListener('scroll', () => {
+        clearTimeout(mobileCaseTimer);
+        mobileCaseTimer = setTimeout(normalizeLoop, 120);
+      }, { passive:true });
+    }
+  }
+
   function updateCases() {
     if (!caseStage || !caseCards.length) return;
 
     if (reduceMotion || innerWidth < 761) {
       resetCaseFlow();
+      setupMobileCaseLoop();
       return;
     }
 
-    caseIndex = Math.round(clamp(caseIndex, 0, caseCards.length - 1));
+    caseIndex = wrapCaseIndex(Math.round(caseIndex));
     const activeCard = caseCards[caseIndex];
     if (caseNumber) caseNumber.textContent = String(caseIndex + 1).padStart(2,'0');
 
     caseCards.forEach((card, i) => {
-      const d = i - caseIndex;
+      let d = i - caseIndex;
+      if (d > caseCards.length / 2) d -= caseCards.length;
+      else if (d < -caseCards.length / 2) d += caseCards.length;
+      const previousLoopOffset = Number(card.dataset.caseLoopOffset);
+      const loopWrapped = Number.isFinite(previousLoopOffset) && Math.abs(previousLoopOffset - d) > 1;
+      if (loopWrapped) card.style.setProperty('transition', 'none', 'important');
+      card.dataset.caseLoopOffset = String(d);
       const y = d * 38;
       const z = -Math.abs(d) * 155;
       const rx = d * -2.8;
@@ -248,6 +318,7 @@
       card.style.opacity = opacity;
       card.style.zIndex = String(100 - Math.round(Math.abs(d) * 10));
       card.style.filter = `saturate(${clamp(1 - Math.abs(d) * .23,.55,1)})`;
+      if (loopWrapped) requestAnimationFrame(() => card.style.removeProperty('transition'));
       card.style.pointerEvents = 'none';
       card.setAttribute('tabindex','-1');
       if (isActive) card.removeAttribute('aria-hidden');
@@ -263,9 +334,7 @@
   }
 
   function moveCase(direction) {
-    const next = clamp(caseIndex + direction, 0, caseCards.length - 1);
-    if (next === caseIndex) return false;
-    caseIndex = next;
+    caseIndex = wrapCaseIndex(caseIndex + direction);
     updateCases();
     return true;
   }
@@ -283,13 +352,6 @@
 
       const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
       if (!delta) return;
-      const direction = delta > 0 ? 1 : -1;
-      const atBoundary = (direction > 0 && caseIndex >= caseCards.length - 1) || (direction < 0 && caseIndex <= 0);
-      if (atBoundary) {
-        caseWheel = 0;
-        return;
-      }
-
       e.preventDefault();
       caseWheel += delta;
       const now = performance.now();
