@@ -1,0 +1,24 @@
+/* CM-S17 — four strategic pillars */
+.pillars-section{padding:118px 0 126px;background:var(--paper);position:relative}
+.pillars-section .section-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.6fr);gap:42px;align-items:end;margin-bottom:54px}
+.pillars-section .section-intro p{font-size:20px;line-height:1.5;color:var(--muted-dark);max-width:520px;margin:0 0 8px}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.pillar-card{position:relative;min-height:520px;border:1px solid rgba(9,9,13,.12);border-radius:32px;overflow:hidden;background:#fff;color:var(--ink);padding:28px;display:flex;flex-direction:column;isolation:isolate;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.pillar-card:hover{transform:translateY(-5px);border-color:rgba(129,80,255,.34);box-shadow:0 26px 70px rgba(8,8,14,.11)}
+.pillar-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 20%,rgba(163,92,255,.12),transparent 31%),linear-gradient(145deg,rgba(255,255,255,.9),rgba(236,231,244,.64));z-index:-2}
+.pillar-card.software::before{background:radial-gradient(circle at 80% 20%,rgba(83,216,255,.12),transparent 32%),linear-gradient(145deg,#fff,rgba(231,240,242,.74))}
+.pillar-card.automation::before{background:radial-gradient(circle at 80% 20%,rgba(201,255,91,.12),transparent 30%),linear-gradient(145deg,#fff,rgba(238,241,229,.74))}
+.pillar-card.ai::before{background:radial-gradient(circle at 80% 18%,rgba(163,92,255,.2),transparent 31%),linear-gradient(145deg,#fff,rgba(237,230,246,.78))}
+.pillar-card-head{display:flex;align-items:center;justify-content:space-between;gap:20px;font:700 10px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#74717b}
+.pillar-card-head i{font-style:normal;width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(9,9,13,.12);border-radius:50%;font-size:16px;background:rgba(255,255,255,.72)}
+.pillar-visual{position:relative;min-height:245px;margin:22px 0 18px;border-radius:24px;overflow:hidden;border:1px solid rgba(9,9,13,.08);background:#0c0b11}
+.pillar-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,#000,transparent 92%)}
+.pillar-visual::after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(163,92,255,.24),rgba(163,92,255,.04) 52%,transparent 70%)}
+.pillar-icon{position:absolute;z-index:3;width:72px;height:72px;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;border-radius:22px;border:1px solid rgba(163,92,255,.55);background:rgba(10,9,15,.86);box-shadow:0 0 42px rgba(163,92,255,.25)}
+.pillar-icon img{width:40px;height:40px}.pillar-orbit{position:absolute;z-index:2;border:1px solid rgba(163,92,255,.28);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.pillar-orbit.o1{width:150px;height:150px}.pillar-orbit.o2{width:230px;height:230px;border-color:rgba(83,216,255,.14)}
+.pillar-node{position:absolute;z-index:4;padding:7px 9px;border:1px solid rgba(255,255,255,.13);border-radius:10px;background:rgba(13,12,18,.88);color:#d9d4df;font:650 8px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
+.pillar-node.n1{left:8%;top:18%}.pillar-node.n2{right:8%;top:24%}.pillar-node.n3{left:11%;bottom:17%}.pillar-node.n4{right:9%;bottom:13%}
+.pillar-card-copy{margin-top:auto;position:relative;z-index:2}.pillar-card-copy h3{font:700 clamp(36px,4.1vw,62px)/.92 var(--display);letter-spacing:-.045em;margin:0 0 13px;max-width:560px}.pillar-card-copy p{font-size:17px;line-height:1.48;color:#64616a;max-width:560px;margin:0 0 18px}.pillar-card-link{font-weight:800;font-size:14px}
+@media(max-width:900px){.pillars-section .section-intro{grid-template-columns:1fr;gap:28px}.pillar-grid{grid-template-columns:1fr}.pillar-card{min-height:480px}.pillar-card-copy h3{font-size:48px}}
+@media(max-width:600px){.pillars-section{padding:82px 0 88px}.pillar-card{padding:20px;min-height:445px;border-radius:26px}.pillar-visual{min-height:210px}.pillar-card-copy h3{font-size:39px}}

@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0-site-experiment",
+  "version": "1.6.0-site-quality",
   "profile": "site",
   "publicDir": ".",
   "canonicalDomain": "https://www.custommind.com.br",
@@ -9,12 +9,28 @@
     "maxSupportingMotionPatterns": 3,
     "requireReducedMotionStrategy": true
   },
+  "seo": {
+    "contentSource": ".harness/site/site-content.json",
+    "sitemap": "sitemap.xml",
+    "llms": "llms.txt",
+    "robots": "robots.txt"
+  },
   "quality": {
     "requireDescription": true,
     "requireCanonical": true,
     "requireSingleH1": true,
     "requireLang": true,
-    "requireViewport": true
+    "requireViewport": true,
+    "requireOgImage": true,
+    "allowMissingOgImage": ["politica-de-privacidade.html"],
+    "requireImageAlt": true,
+    "validateStructuredData": true,
+    "validateLocalReferences": true
+  },
+  "performance": {
+    "warnCssImportsAbove": 20,
+    "warnPngBytesAbove": 1200000,
+    "warnRasterBytesAbove": 2200000
   },
   "ignore": [".git", ".harness/reports", "node_modules"]
 }
