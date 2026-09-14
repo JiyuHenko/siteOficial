@@ -44,8 +44,8 @@
   "assetPreservation": {
     "policy": "Assets reais existentes são fonte de verdade visual. Mockups genéricos só podem complementar, nunca substituir produto/case real sem justificativa.",
     "requiredReferences": [
-      "assets/img/jade-inicio.png",
-      "assets/img/zuri-inicio.png",
+      "assets/img/jade-inicio.webp",
+      "assets/img/zuri-inicio.webp",
       "assets/img/loja.webp",
       "assets/img/clients/avelar-fachada.webp",
       "assets/img/clients/lbfit-banner.webp",

@@ -61,6 +61,12 @@ jobs:
       - name: JavaScript syntax
         run: node --check assets/js/custommind-site-v3.js
 
+      - name: Shared header/footer
+        run: node scripts/sync-site-chrome.mjs --check
+
+      - name: Ghost asset audit
+        run: node scripts/audit-unused-assets.mjs
+
       - name: Site harness
         run: node .harness/harness.mjs check
 

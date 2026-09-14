@@ -1,21 +1,12 @@
-# Custom Mind Assets v3
+# Assets do site
 
-## Preservados
-- Logo oficial (`logo.png`, `logo.webp`, `logo1.png`)
-- Favicons oficiais
-- Fotos/logos de clientes
-- Logos de empresas
-- QR codes
-- GIF de preview
+A pasta `assets/` contém somente arquivos usados pelas superfícies atuais do site ou pelo harness de qualidade.
 
-## Recriados
-- `capa.webp` / `capa.png`
-- `jade.webp`, `jade-alt.webp`, `jade-og.jpg`
-- `zuri.webp` / `zuri.png`
-- `loja.webp` / `loja.png`
-- `software-sob-medida.webp`
-- ícones de produtos
-- backgrounds, patterns, textures e ícones auxiliares
-- `custommind-banner.svg` e `custommind-logo-animated.svg` alinhados à logo oficial
+## Regras de manutenção
+- Prefira WebP para imagens raster exibidas no site.
+- PNG/JPG ficam apenas quando o formato é necessário (favicon, QR Code ou imagem social/OG).
+- Não mantenha cópias com nomes diferentes do mesmo arquivo.
+- Antes de adicionar um asset, confirme a referência no HTML/CSS/JS que o consome.
+- O CI executa uma auditoria de assets para evitar novos arquivos fantasma.
 
-Os nomes antigos mais usados pelo site foram mantidos para permitir substituição direta da pasta `assets/`.
+Os originais históricos continuam recuperáveis pelo Git; não precisam permanecer na árvore de produção.
