@@ -1,0 +1,129 @@
+/* CM-S21 — editorial thesis + FAQ scroll rhythm */
+.home-page .statement{
+  position:relative;
+  overflow:hidden;
+  padding:94px 0 102px;
+  background:
+    radial-gradient(circle at 78% 42%,rgba(163,92,255,.095),transparent 30%),
+    radial-gradient(circle at 22% 82%,rgba(83,216,255,.045),transparent 25%),
+    linear-gradient(135deg,#f4f0e8 0%,#f1ede8 54%,#eee9f1 100%);
+  border-bottom:1px solid rgba(9,9,13,.08)
+}
+.home-page .statement::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.42;
+  background-image:
+    linear-gradient(rgba(9,9,13,.032) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(9,9,13,.032) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%)
+}
+.home-page .statement::after{
+  content:"";
+  position:absolute;
+  left:max(20px,calc((100vw - 1240px)/2));
+  right:max(20px,calc((100vw - 1240px)/2));
+  bottom:38px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(163,92,255,.72),rgba(163,92,255,.18) 34%,rgba(83,216,255,.2) 72%,transparent)
+}
+.home-page .statement-grid{
+  position:relative;
+  z-index:2;
+  grid-template-columns:minmax(210px,.34fr) minmax(0,1fr);
+  gap:clamp(42px,6vw,92px);
+  align-items:center
+}
+.home-page .statement-grid::after{
+  content:"";
+  position:absolute;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--purple);
+  left:calc(34% + 3px);
+  bottom:-67px;
+  box-shadow:0 0 0 7px rgba(163,92,255,.08),0 0 24px rgba(163,92,255,.32)
+}
+.home-page .statement-note{
+  position:relative;
+  max-width:290px;
+  padding:30px 0 30px 24px;
+  border-left:1px solid rgba(163,92,255,.5);
+  color:#706c76
+}
+.home-page .statement-note::before{
+  content:"CM / PRINCÍPIO 01";
+  display:block;
+  margin-bottom:18px;
+  color:#8a8490;
+  font:700 9px/1 var(--mono);
+  letter-spacing:.15em;
+  text-transform:uppercase
+}
+.home-page .statement-note .eyebrow{margin-bottom:18px;color:#625e68}
+.home-page .statement-note strong{
+  margin-bottom:12px;
+  font:700 clamp(21px,2vw,28px)/1.04 var(--display);
+  letter-spacing:-.025em
+}
+.home-page .statement-note>span:last-child{display:block;max-width:245px;font-size:14px;line-height:1.6}
+.home-page .statement h2{
+  max-width:980px;
+  font-size:clamp(54px,7.2vw,106px);
+  line-height:.89
+}
+.home-page .statement h2 em{
+  display:block;
+  color:#aaa4b1;
+  text-shadow:0 14px 45px rgba(92,70,118,.07)
+}
+
+/* FAQ follows the same reading rhythm as "Como trabalhamos". */
+.home-page .faq-section{padding:116px 0 132px;background:linear-gradient(180deg,var(--paper) 0%,#f0ece5 100%)}
+.home-page .faq-layout{align-items:start}
+.home-page .faq-layout>div:first-child{position:sticky;top:130px;align-self:start}
+.home-page .faq-list details{
+  position:relative;
+  overflow:hidden;
+  transition:background .22s ease,padding-left .22s ease,padding-right .22s ease
+}
+.home-page .faq-list details:hover{background:rgba(255,255,255,.36);padding-left:14px;padding-right:14px}
+.home-page .faq-list details[open]{background:rgba(255,255,255,.48);padding-left:16px;padding-right:16px}
+.home-page .faq-list details p{animation:cmFaqAnswer .28s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cmFaqAnswer{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+
+@supports (animation-timeline:view()){
+  .home-page .faq-list details{
+    animation:cmFaqReveal both linear;
+    animation-timeline:view();
+    animation-range:entry 2% cover 23%
+  }
+  @keyframes cmFaqReveal{
+    from{opacity:.08;transform:translateY(24px)}
+    to{opacity:1;transform:none}
+  }
+}
+
+@media(max-width:1040px){
+  .home-page .statement-grid{grid-template-columns:190px 1fr;gap:42px}
+  .home-page .statement-grid::after{display:none}
+}
+@media(max-width:760px){
+  .home-page .statement{padding:72px 0 84px}
+  .home-page .statement::after{bottom:26px}
+  .home-page .statement-grid{grid-template-columns:1fr;gap:34px}
+  .home-page .statement-note{max-width:100%;padding:20px 0 20px 20px}
+  .home-page .statement-note>span:last-child{max-width:430px}
+  .home-page .statement h2{font-size:clamp(48px,14vw,72px)}
+  .home-page .statement h2 em{margin-top:4px}
+  .home-page .faq-layout>div:first-child{position:static}
+  .home-page .faq-section{padding:84px 0 96px}
+  .home-page .faq-list details:hover,.home-page .faq-list details[open]{padding-left:10px;padding-right:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .faq-list details,.home-page .faq-list details p{animation:none!important;transform:none!important;opacity:1!important}
+}
