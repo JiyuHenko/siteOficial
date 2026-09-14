@@ -5,8 +5,7 @@ import crypto from 'node:crypto';
 const root = process.cwd();
 const skipDirs = new Set(['.git', 'node_modules']);
 const runtimeExt = new Set(['.html','.css','.js','.mjs','.json','.xml','.py']);
-const docExt = new Set(['.md','.txt','.yml','.yaml']);
-const assetExt = new Set(['.png','.jpg','.jpeg','.webp','.gif','.svg','.ico','.woff','.woff2','.ttf','.mp4','.webm']);
+const assetExtRe = /\.(?:png|jpe?g|webp|gif|svg|ico|woff2?|ttf|mp4|webm)$/i;
 const auditFiles = new Set(['scripts/cleanup-audit.mjs','.github/workflows/cleanup-audit.yml']);
 
 function walk(dir='.') {
@@ -18,79 +17,83 @@ function walk(dir='.') {
   }
   return out;
 }
-
-const files = walk();
-function loadText(exts) {
-  const map=new Map();
-  for (const f of files) {
-    if (auditFiles.has(f) || !exts.has(path.extname(f).toLowerCase())) continue;
-    try { map.set(f, fs.readFileSync(path.join(root,f),'utf8')); } catch {}
-  }
-  return map;
-}
-const runtimeTexts=loadText(runtimeExt);
-const docsTexts=loadText(docExt);
-
-function findRef(asset, texts) {
-  const base = path.posix.basename(asset);
-  const needles = new Set([
-    asset,
-    asset.replace(/^assets\//,''),
-    asset.replace(/^configurator\//,''),
-    asset.replace(/^demo\//,''),
-    base
-  ]);
-  for (const [file, text] of texts) {
-    if (file === asset) continue;
-    for (const n of needles) if (n && text.includes(n)) return {file, needle:n};
-  }
-  return null;
+const files=walk();
+const fileSet=new Set(files);
+const runtimeTexts=new Map();
+for(const f of files){
+  if(auditFiles.has(f)||!runtimeExt.has(path.extname(f).toLowerCase())) continue;
+  try{runtimeTexts.set(f,fs.readFileSync(path.join(root,f),'utf8'));}catch{}
 }
 
-const assets = files.filter(f => assetExt.has(path.extname(f).toLowerCase()));
-const runtimeOrphan=[];
-const runtimeUsed=[];
-for (const a of assets) {
-  const runtimeRef=findRef(a,runtimeTexts);
-  const docRef=findRef(a,docsTexts);
+function normalizeRef(fromFile, raw){
+  let s=raw.trim().replace(/[?#].*$/,'');
+  if(!s||s.startsWith('data:')||s.startsWith('blob:')) return null;
+  if(/^https?:\/\//i.test(s)){
+    try{
+      const u=new URL(s);
+      if(!['www.custommind.com.br','custommind.com.br'].includes(u.hostname)) return null;
+      s=u.pathname;
+    }catch{return null;}
+  }
+  if(s.startsWith('//')) return null;
+  if(s.startsWith('/')) s=s.slice(1);
+  else s=path.posix.normalize(path.posix.join(path.posix.dirname(fromFile),s));
+  while(s.startsWith('../')) s=s.slice(3);
+  return s;
+}
+
+const exactRefs=new Map();
+const candidateRe=/(?:url\(\s*['"]?|["'`])([^"'`()\s<>]+\.(?:png|jpe?g|webp|gif|svg|ico|woff2?|ttf|mp4|webm)(?:[?#][^"'`()\s<>]*)?)/ig;
+for(const [f,text] of runtimeTexts){
+  for(const m of text.matchAll(candidateRe)){
+    const resolved=normalizeRef(f,m[1]);
+    if(!resolved||!fileSet.has(resolved)||!assetExtRe.test(resolved)) continue;
+    if(!exactRefs.has(resolved)) exactRefs.set(resolved,[]);
+    exactRefs.get(resolved).push(f);
+  }
+}
+
+const assets=files.filter(f=>assetExtRe.test(f));
+const orphan=[]; const used=[];
+for(const a of assets){
   const size=fs.statSync(path.join(root,a)).size;
-  (runtimeRef ? runtimeUsed : runtimeOrphan).push({path:a,size,runtimeRef,docRef});
+  const refs=exactRefs.get(a)||[];
+  (refs.length?used:orphan).push({path:a,size,refs});
 }
 
 const hashes=new Map();
-for (const a of assets) {
+for(const a of assets){
   const h=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,a))).digest('hex');
   if(!hashes.has(h)) hashes.set(h,[]);
   hashes.get(h).push(a);
 }
 const duplicates=[...hashes.values()].filter(v=>v.length>1);
 
-console.log('\n=== RUNTIME-ORPHAN ASSETS ===');
-for(const x of runtimeOrphan.sort((a,b)=>b.size-a.size)) console.log(`${String(x.size).padStart(10)}  ${x.path}${x.docRef?`  [docs-only: ${x.docRef.file}]`:''}`);
-console.log(`TOTAL RUNTIME-ORPHAN: ${runtimeOrphan.length} files / ${runtimeOrphan.reduce((s,x)=>s+x.size,0)} bytes`);
+console.log('\n=== EXACT RUNTIME-ORPHAN ASSETS ===');
+for(const x of orphan.sort((a,b)=>b.size-a.size)) console.log(`${String(x.size).padStart(10)}  ${x.path}`);
+console.log(`TOTAL EXACT ORPHAN: ${orphan.length} files / ${orphan.reduce((s,x)=>s+x.size,0)} bytes`);
 
 console.log('\n=== DUPLICATE BINARY CONTENT ===');
 for(const g of duplicates) console.log(g.join('  ==  '));
 
-console.log('\n=== LARGEST RUNTIME-USED ASSETS ===');
-for(const x of runtimeUsed.sort((a,b)=>b.size-a.size).slice(0,40)) console.log(`${String(x.size).padStart(10)}  ${x.path}  <- ${x.runtimeRef.file}`);
+console.log('\n=== LARGEST EXACT RUNTIME-USED ASSETS ===');
+for(const x of used.sort((a,b)=>b.size-a.size).slice(0,50)) console.log(`${String(x.size).padStart(10)}  ${x.path}  <- ${[...new Set(x.refs)].join(', ')}`);
 
-console.log('\n=== LEGACY / MAINTENANCE CANDIDATES (runtime refs only) ===');
-for (const f of ['assets/css/custommind-v2.css','assets/css/extensions.css','assets/css/modern.css','assets/css/site.css','assets/css/styles.css','assets/js/helpers.js','assets/js/modern.js','assets/js/site.js','meta.json','manifest.json','README-ATUALIZACAO.md','REDESIGN-EXPERIMENT.md','configurator/config.py','configurator/teste.html','configurator/theme.css']) {
+console.log('\n=== LEGACY / MAINTENANCE CANDIDATES (exact textual refs) ===');
+for (const f of ['assets/css/custommind-v2.css','assets/css/extensions.css','assets/css/modern.css','assets/css/site.css','assets/css/styles.css','assets/js/helpers.js','assets/js/modern.js','assets/js/site.js','meta.json','manifest.json','README-ATUALIZACAO.md','REDESIGN-EXPERIMENT.md','configurator/config.py','configurator/teste.html']) {
   if(!fs.existsSync(path.join(root,f))) continue;
-  const base=path.posix.basename(f);
   const refs=[];
-  for(const [tf,t] of runtimeTexts) if(tf!==f && (t.includes(f)||t.includes(base))) refs.push(tf);
+  for(const [tf,t] of runtimeTexts) if(tf!==f && (t.includes(f)||t.includes(path.posix.basename(f)))) refs.push(tf);
   console.log(`${f}: ${refs.length ? 'REFERENCED by '+refs.join(', ') : 'NO RUNTIME REFERENCES'}`);
 }
 
 console.log('\n=== CONFIGURATOR NESTED TEMPLATE EXTERNAL REFERENCES ===');
-for(const f of files.filter(f=>f.startsWith('configurator/templates/templates/') && runtimeExt.has(path.extname(f)))) {
-  const base=path.posix.basename(f);
+for(const f of files.filter(f=>f.startsWith('configurator/templates/templates/') && runtimeExt.has(path.extname(f)))){
+  const relFromConfigurator=f.replace(/^configurator\//,'');
   const refs=[];
-  for(const [tf,t] of runtimeTexts) {
-    if(tf===f || tf.startsWith('configurator/templates/templates/')) continue;
-    if(t.includes(f)||t.includes('templates/templates/'+base)||t.includes(base)) refs.push(tf);
+  for(const [tf,t] of runtimeTexts){
+    if(tf===f||tf.startsWith('configurator/templates/templates/')) continue;
+    if(t.includes(f)||t.includes(relFromConfigurator)||t.includes('templates/templates/'+path.posix.basename(f))) refs.push(tf);
   }
   console.log(`${f}: ${refs.length?refs.join(', '):'NO EXTERNAL RUNTIME REFERENCES'}`);
 }
