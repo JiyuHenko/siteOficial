@@ -2,7 +2,22 @@
 .ready-product:nth-child(1) .ready-product-icon{background-image:url('../../img/products/jade/jade-mark.webp')}
 .ready-product:nth-child(2) .ready-product-icon{background-image:url('../../img/products/zuri/zuri-mark.webp')}
 .ready-product:nth-child(3) .ready-product-icon{background-image:url('../../img/products/loja-inteligente/loja-inteligente-mark.webp')}
+
 .pillar-detail-visual:has(.pdv-core img[src*="strategy.svg"]){background-image:url('../../img/pillars/presenca-digital.webp')}
 .pillar-detail-visual:has(.pdv-core img[src*="integration.svg"]){background-image:url('../../img/pillars/software-sob-medida.webp')}
 .pillar-detail-visual:has(.pdv-core img[src*="automation.svg"]){background-image:url('../../img/pillars/automacao.webp')}
 .pillar-detail-visual:has(.pdv-core img[src*="ai.svg"]){background-image:url('../../img/pillars/inteligencia-artificial.webp')}
+
+/* Home — the four pillars use the same final artwork as their detail pages. */
+.home-page .pillar-card .pillar-visual{background-color:#0b0a10;background-repeat:no-repeat;background-position:center;background-size:cover;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);transition:background-size .35s ease,box-shadow .3s ease}
+.home-page .pillar-card.presence .pillar-visual{background-image:url('../../img/pillars/presenca-digital.webp')}
+.home-page .pillar-card.software .pillar-visual{background-image:url('../../img/pillars/software-sob-medida.webp')}
+.home-page .pillar-card.automation .pillar-visual{background-image:url('../../img/pillars/automacao.webp')}
+.home-page .pillar-card.ai .pillar-visual{background-image:url('../../img/pillars/inteligencia-artificial.webp')}
+.home-page .pillar-card .pillar-visual::before{background:linear-gradient(180deg,rgba(7,7,11,.02),rgba(7,7,11,.14));mask-image:none;z-index:1;pointer-events:none}
+.home-page .pillar-card .pillar-visual::after{inset:auto 12% -34px 12%;width:auto;height:72px;left:12%;top:auto;transform:none;background:rgba(129,80,255,.16);filter:blur(30px);z-index:1;pointer-events:none}
+.home-page .pillar-card .pillar-visual>.pillar-orbit,.home-page .pillar-card .pillar-visual>.pillar-icon,.home-page .pillar-card .pillar-visual>.pillar-node{opacity:0;pointer-events:none}
+.home-page .pillar-card:hover .pillar-visual{background-size:104%;box-shadow:inset 0 0 0 1px rgba(163,92,255,.16),0 18px 44px rgba(10,8,16,.12)}
+
+@media(max-width:600px){.home-page .pillar-card .pillar-visual{background-size:cover}.home-page .pillar-card:hover .pillar-visual{background-size:cover}}
+@media(prefers-reduced-motion:reduce){.home-page .pillar-card .pillar-visual{transition:none}.home-page .pillar-card:hover .pillar-visual{background-size:cover}}
