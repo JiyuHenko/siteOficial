@@ -1,0 +1,8 @@
+/* CM-S20 — final high-quality WebP assets */
+.ready-product:nth-child(1) .ready-product-icon{background-image:url('../../img/products/jade/jade-mark.webp')}
+.ready-product:nth-child(2) .ready-product-icon{background-image:url('../../img/products/zuri/zuri-mark.webp')}
+.ready-product:nth-child(3) .ready-product-icon{background-image:url('../../img/products/loja-inteligente/loja-inteligente-mark.webp')}
+.pillar-detail-visual:has(.pdv-core img[src*="strategy.svg"]){background-image:url('../../img/pillars/presenca-digital.webp')}
+.pillar-detail-visual:has(.pdv-core img[src*="integration.svg"]){background-image:url('../../img/pillars/software-sob-medida.webp')}
+.pillar-detail-visual:has(.pdv-core img[src*="automation.svg"]){background-image:url('../../img/pillars/automacao.webp')}
+.pillar-detail-visual:has(.pdv-core img[src*="ai.svg"]){background-image:url('../../img/pillars/inteligencia-artificial.webp')}
