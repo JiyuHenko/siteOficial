@@ -4,8 +4,10 @@ import crypto from 'node:crypto';
 
 const root = process.cwd();
 const skipDirs = new Set(['.git', 'node_modules']);
-const textExt = new Set(['.html','.css','.js','.mjs','.json','.md','.txt','.xml','.yml','.yaml','.py']);
+const runtimeExt = new Set(['.html','.css','.js','.mjs','.json','.xml','.py']);
+const docExt = new Set(['.md','.txt','.yml','.yaml']);
 const assetExt = new Set(['.png','.jpg','.jpeg','.webp','.gif','.svg','.ico','.woff','.woff2','.ttf','.mp4','.webm']);
+const auditFiles = new Set(['scripts/cleanup-audit.mjs','.github/workflows/cleanup-audit.yml']);
 
 function walk(dir='.') {
   const out=[];
@@ -18,15 +20,19 @@ function walk(dir='.') {
 }
 
 const files = walk();
-const texts = new Map();
-for (const f of files) {
-  if (!textExt.has(path.extname(f).toLowerCase())) continue;
-  try { texts.set(f, fs.readFileSync(path.join(root,f),'utf8')); } catch {}
+function loadText(exts) {
+  const map=new Map();
+  for (const f of files) {
+    if (auditFiles.has(f) || !exts.has(path.extname(f).toLowerCase())) continue;
+    try { map.set(f, fs.readFileSync(path.join(root,f),'utf8')); } catch {}
+  }
+  return map;
 }
+const runtimeTexts=loadText(runtimeExt);
+const docsTexts=loadText(docExt);
 
-function referenced(asset) {
+function findRef(asset, texts) {
   const base = path.posix.basename(asset);
-  const noExt = base.replace(/\.[^.]+$/,'');
   const needles = new Set([
     asset,
     asset.replace(/^assets\//,''),
@@ -42,38 +48,49 @@ function referenced(asset) {
 }
 
 const assets = files.filter(f => assetExt.has(path.extname(f).toLowerCase()));
-const orphan = [];
-const used = [];
+const runtimeOrphan=[];
+const runtimeUsed=[];
 for (const a of assets) {
-  const ref = referenced(a);
-  const size = fs.statSync(path.join(root,a)).size;
-  (ref ? used : orphan).push({path:a,size,ref});
+  const runtimeRef=findRef(a,runtimeTexts);
+  const docRef=findRef(a,docsTexts);
+  const size=fs.statSync(path.join(root,a)).size;
+  (runtimeRef ? runtimeUsed : runtimeOrphan).push({path:a,size,runtimeRef,docRef});
 }
 
-const hashes = new Map();
+const hashes=new Map();
 for (const a of assets) {
-  const buf = fs.readFileSync(path.join(root,a));
-  const h = crypto.createHash('sha1').update(buf).digest('hex');
-  if (!hashes.has(h)) hashes.set(h,[]);
+  const h=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,a))).digest('hex');
+  if(!hashes.has(h)) hashes.set(h,[]);
   hashes.get(h).push(a);
 }
-const duplicates = [...hashes.values()].filter(v=>v.length>1);
+const duplicates=[...hashes.values()].filter(v=>v.length>1);
 
-console.log('\n=== ORPHAN ASSETS (no textual reference found) ===');
-for (const x of orphan.sort((a,b)=>b.size-a.size)) console.log(`${String(x.size).padStart(10)}  ${x.path}`);
-console.log(`TOTAL ORPHAN: ${orphan.length} files / ${orphan.reduce((s,x)=>s+x.size,0)} bytes`);
+console.log('\n=== RUNTIME-ORPHAN ASSETS ===');
+for(const x of runtimeOrphan.sort((a,b)=>b.size-a.size)) console.log(`${String(x.size).padStart(10)}  ${x.path}${x.docRef?`  [docs-only: ${x.docRef.file}]`:''}`);
+console.log(`TOTAL RUNTIME-ORPHAN: ${runtimeOrphan.length} files / ${runtimeOrphan.reduce((s,x)=>s+x.size,0)} bytes`);
 
 console.log('\n=== DUPLICATE BINARY CONTENT ===');
-for (const g of duplicates) console.log(g.join('  ==  '));
+for(const g of duplicates) console.log(g.join('  ==  '));
 
-console.log('\n=== LARGEST ASSETS ===');
-for (const x of [...orphan,...used].sort((a,b)=>b.size-a.size).slice(0,40)) console.log(`${String(x.size).padStart(10)}  ${x.path}${x.ref ? `  <- ${x.ref.file}` : '  [ORPHAN]'}`);
+console.log('\n=== LARGEST RUNTIME-USED ASSETS ===');
+for(const x of runtimeUsed.sort((a,b)=>b.size-a.size).slice(0,40)) console.log(`${String(x.size).padStart(10)}  ${x.path}  <- ${x.runtimeRef.file}`);
 
-console.log('\n=== TOP-LEVEL LEGACY CANDIDATES ===');
+console.log('\n=== LEGACY / MAINTENANCE CANDIDATES (runtime refs only) ===');
 for (const f of ['assets/css/custommind-v2.css','assets/css/extensions.css','assets/css/modern.css','assets/css/site.css','assets/css/styles.css','assets/js/helpers.js','assets/js/modern.js','assets/js/site.js','meta.json','manifest.json','README-ATUALIZACAO.md','REDESIGN-EXPERIMENT.md','configurator/config.py','configurator/teste.html','configurator/theme.css']) {
-  if (!fs.existsSync(path.join(root,f))) continue;
-  const base = path.posix.basename(f);
+  if(!fs.existsSync(path.join(root,f))) continue;
+  const base=path.posix.basename(f);
   const refs=[];
-  for (const [tf,t] of texts) if (tf !== f && (t.includes(f) || t.includes(base))) refs.push(tf);
-  console.log(`${f}: ${refs.length ? 'REFERENCED by '+refs.join(', ') : 'NO REFERENCES'}`);
+  for(const [tf,t] of runtimeTexts) if(tf!==f && (t.includes(f)||t.includes(base))) refs.push(tf);
+  console.log(`${f}: ${refs.length ? 'REFERENCED by '+refs.join(', ') : 'NO RUNTIME REFERENCES'}`);
+}
+
+console.log('\n=== CONFIGURATOR NESTED TEMPLATE EXTERNAL REFERENCES ===');
+for(const f of files.filter(f=>f.startsWith('configurator/templates/templates/') && runtimeExt.has(path.extname(f)))) {
+  const base=path.posix.basename(f);
+  const refs=[];
+  for(const [tf,t] of runtimeTexts) {
+    if(tf===f || tf.startsWith('configurator/templates/templates/')) continue;
+    if(t.includes(f)||t.includes('templates/templates/'+base)||t.includes(base)) refs.push(tf);
+  }
+  console.log(`${f}: ${refs.length?refs.join(', '):'NO EXTERNAL RUNTIME REFERENCES'}`);
 }
