@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13",
+  "updatedAt": "2026-09-14",
   "brand": {
     "name": "Custom Mind",
     "alternateName": "Custom Mind Software Solutions",
@@ -10,12 +10,12 @@
     "instagram": "https://www.instagram.com/custommind.solutions/"
   },
   "pages": [
-    {"path": "/", "lastmod": "2026-09-13", "priority": "1.0"},
-    {"path": "/solucoes.html", "lastmod": "2026-09-13", "priority": "0.9"},
-    {"path": "/presenca-digital.html", "lastmod": "2026-09-13", "priority": "0.9"},
-    {"path": "/software-sob-medida.html", "lastmod": "2026-09-13", "priority": "0.9"},
-    {"path": "/automacao.html", "lastmod": "2026-09-13", "priority": "0.9"},
-    {"path": "/inteligencia-artificial.html", "lastmod": "2026-09-13", "priority": "0.9"},
+    {"path": "/", "lastmod": "2026-09-14", "priority": "1.0"},
+    {"path": "/solucoes.html", "lastmod": "2026-09-14", "priority": "0.9"},
+    {"path": "/presenca-digital.html", "lastmod": "2026-09-14", "priority": "0.9"},
+    {"path": "/software-sob-medida.html", "lastmod": "2026-09-14", "priority": "0.9"},
+    {"path": "/automacao.html", "lastmod": "2026-09-14", "priority": "0.9"},
+    {"path": "/inteligencia-artificial.html", "lastmod": "2026-09-14", "priority": "0.9"},
     {"path": "/empresa-de-software-em-passos-mg.html", "lastmod": "2026-08-14", "priority": "0.9"},
     {"path": "/criacao-de-sites-em-passos-mg.html", "lastmod": "2026-08-14", "priority": "0.9"},
     {"path": "/automacao-empresarial-em-passos-mg.html", "lastmod": "2026-08-14", "priority": "0.9"},
