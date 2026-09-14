@@ -1,0 +1,40 @@
+/* CM-S22 — mobile horizontal carousel for strategic pillars */
+@media(max-width:760px){
+  .home-page .pillars-section{overflow:hidden}
+  .home-page .pillar-grid{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-padding-left:0;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding:0 12% 12px 0;
+    margin-right:calc(50% - 50vw)
+  }
+  .home-page .pillar-grid::-webkit-scrollbar{display:none}
+  .home-page .pillar-card{
+    flex:0 0 min(84vw,420px);
+    width:min(84vw,420px);
+    min-height:445px;
+    scroll-snap-align:start;
+    scroll-snap-stop:always
+  }
+  .home-page .pillar-card:hover{transform:none}
+  .home-page .pillar-visual{min-height:210px}
+  .home-page .pillars-section .section-intro{margin-bottom:34px}
+  .home-page .pillars-section .section-intro::after{
+    content:"Arraste para explorar →";
+    grid-column:1/-1;
+    margin-top:-8px;
+    color:#8a8690;
+    font:700 9px/1 var(--mono);
+    letter-spacing:.13em;
+    text-transform:uppercase
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .pillar-grid{scroll-behavior:auto}
+}
