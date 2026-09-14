@@ -21,11 +21,11 @@ DEAD_TEXT = [
 ]
 
 CONVERT = [
-    ('assets/img/Facecustommind.png', 'assets/img/Facecustommind.webp'),
-    ('assets/img/jade-inicio.png', 'assets/img/jade-inicio.webp'),
-    ('assets/img/jade-chat.png', 'assets/img/jade-chat.webp'),
-    ('assets/img/zuri-inicio.png', 'assets/img/zuri-inicio.webp'),
-    ('assets/img/zuri-chat.png', 'assets/img/zuri-chat.webp'),
+    ('assets/img/Facecustommind.webp', 'assets/img/Facecustommind.webp'),
+    ('assets/img/jade-inicio.webp', 'assets/img/jade-inicio.webp'),
+    ('assets/img/jade-chat.webp', 'assets/img/jade-chat.webp'),
+    ('assets/img/zuri-inicio.webp', 'assets/img/zuri-inicio.webp'),
+    ('assets/img/zuri-chat.webp', 'assets/img/zuri-chat.webp'),
 ]
 
 TEXT_EXT = {'.html','.css','.js','.mjs','.json','.md','.txt','.xml','.yml','.yaml','.py'}
@@ -151,7 +151,7 @@ def main():
     for p in DEAD_TEXT: delete(p)
 
     # The configurator/demo used a ~1 MB PNG. The existing official WebP is ~20 KB.
-    replace_text('assets/img/logo.png', 'assets/img/logo.webp')
+    replace_text('assets/img/logo.webp', 'assets/img/logo.webp')
 
     for src,dst in CONVERT:
         convert_webp(src,dst)
