@@ -8,32 +8,28 @@
     "negócios que precisam de site, sistema, automação ou IA sob medida",
     "clientes locais em Passos-MG e projetos remotos no Brasil"
   ],
-  "visualThesis": "Laboratório digital preciso com energia criativa controlada — tecnologia que parece desenhada para o problema, não saída de um template.",
+  "visualThesis": "Estúdio editorial de tecnologia: superfícies claras, tipografia expressiva, roxo preciso e interfaces e projetos reais em primeiro plano.",
   "signature": {
-    "patternId": "CM-S01",
-    "name": "Hero Shrink Frame",
-    "reason": "A home precisa criar uma primeira impressão memorável sem contaminar o restante da narrativa com efeitos concorrentes."
+    "patternId": "CM-S11",
+    "name": "Canvas de produtos reais",
+    "reason": "Duas interfaces reais compõem a abertura editorial; um movimento curto de entrada apresenta o trabalho sem prender o scroll."
   },
   "supportingPatterns": [
     {
-      "patternId": "CM-S05",
-      "name": "Depth Case Deck",
-      "reason": "Projetos são a principal prova visual da Custom Mind e merecem uma apresentação própria. No desktop, o wheel navega o deck somente quando o ponteiro está sobre os cards; fora deles a página continua em fluxo normal."
-    },
-    {
       "patternId": "CM-S09",
-      "name": "Contextual Spotlight",
-      "reason": "Usado somente nos cards de produto para reforçar interação sem virar efeito global."
+      "name": "Enquadramento de projeto",
+      "reason": "Zoom discreto da fotografia ao foco ou hover comunica que o projeto pode ser explorado."
     }
   ],
   "motion": {
     "budget": {
       "signatureCount": 1,
-      "supportingCount": 2,
+      "supportingCount": 1,
       "maxSupporting": 3
     },
-    "reducedMotion": "Todas as transformações de scroll e reveals tornam-se estáticas; o conteúdo permanece visível e navegável.",
-    "mobileFallback": "O hero não encolhe e a galeria de cases usa carrossel horizontal nativo com scroll-snap, sem perspectiva."
+    "reducedMotion": "Entrada, zoom e transições tornam-se estáticos; nenhum conteúdo começa oculto. O próprio SVG da marca respeita a preferência.",
+    "mobileFallback": "Canvas compacto e estático; projetos em coluna, serviços em lista e navegação por botão com alternativa sem JavaScript.",
+    "lowPerformanceFallback": "Somente CSS transform; nenhuma renderização WebGL, loop de animação ou listener de scroll."
   },
   "brandConstraints": [
     "preservar o símbolo oficial da Custom Mind",
@@ -53,5 +49,30 @@
       "assets/img/clients/lara-og.jpg",
       "https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp"
     ]
-  }
+  },
+  "brandAttributes": [
+    "clareza",
+    "personalidade",
+    "precisão",
+    "proximidade"
+  ],
+  "visualWorld": "Papel de estúdio, anotações de projeto e portfólio editorial. Nada de neon ou cenários abstratos substituindo interfaces reais.",
+  "typographyRoles": {
+    "display": "sans-serif pesada, títulos amplos com tracking compacto",
+    "body": "sans-serif neutra e leitura confortável",
+    "labels": "monoespaçada para índices e orientação"
+  },
+  "colorRoles": {
+    "background": "branco quente",
+    "text": "carvão",
+    "accent": "roxo profundo",
+    "support": "lilás claro"
+  },
+  "exclusions": [
+    "scroll hijacking",
+    "carrossel obrigatório",
+    "marquee automático",
+    "efeitos de neon",
+    "conteúdo dependente de JavaScript"
+  ]
 }

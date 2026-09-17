@@ -113,3 +113,16 @@ input[type="number"]{width:130px}
   .kpi{grid-template-columns:1fr}
   .grid2{grid-template-columns:1fr}
 }
+
+/* Editorial framing; theme values still come from the configurator. */
+body{background:var(--bg);line-height:1.5}
+.card{border-radius:6px;box-shadow:none}
+.btn,.cta,.nav a,.kpi .k,.table,input[type="text"],input[type="number"],select{border-radius:4px}
+.btn,.cta{min-height:44px;height:auto;padding:11px 15px}
+.side,.top{background:color-mix(in srgb,var(--bg) 95%,var(--text) 5%);backdrop-filter:none}
+.cta{background:var(--accent);color:var(--bg)}
+.content{padding:28px;max-width:1400px}
+.nav a{padding:13px 14px}.brand img{border-radius:7px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:980px){.shell{height:auto;min-height:100%}.side{position:relative}.top{position:relative}.content{padding:20px}.table{display:block;overflow-x:auto}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

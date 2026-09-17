@@ -1,0 +1,310 @@
+/* Project pages: each client's identity inside the new Custom Mind framing. */
+.client-theme-page {
+  --display:Arial,Helvetica,sans-serif;
+  --body:Arial,Helvetica,sans-serif
+}
+.client-theme-page .client-shell {
+  width:min(1280px,calc(100% - 96px))
+}
+.client-theme-page .client-kicker {
+  font:500 10px/1.5 var(--mono);
+  letter-spacing:.08em
+}
+.client-theme-page .client-section {
+  padding:85px 0
+}
+.client-theme-page .client-section-head {
+  max-width:800px;
+  margin-bottom:40px
+}
+.client-theme-page .client-section-head h2 {
+  font-size:clamp(34px,4.2vw,60px);
+  line-height:1.06;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:15px 0 20px
+}
+.client-theme-page .client-section-head p {
+  font-size:16px;
+  line-height:1.7
+}
+.client-theme-page .client-btn {
+  border-radius:4px;
+  min-height:50px;
+  font-weight:600;
+  font-size:13px;
+  padding:13px 20px
+}
+.client-theme-page .client-credit-band {
+  background:var(--lilac);
+  color:var(--ink);
+  padding:30px 0
+}
+.client-theme-page .client-credit-band small {
+  color:var(--purple);
+  font-size:9px;
+  line-height:1.5
+}
+.client-theme-page .client-credit-band p {
+  color:var(--muted-dark);
+  font-size:14px
+}
+.client-theme-page .client-credit-band a {
+  font-size:13px;
+  font-weight:600
+}
+.client-avelar-hero,.client-lbfit-hero,.client-patricia-hero,.client-lara-hero,.client-caligulas-hero {
+  padding:75px 0 80px
+}
+.client-avelar-hero h1,.client-lbfit-hero h1,.client-patricia-hero h1,.client-lara-hero h1,.client-caligulas-hero h1 {
+  font-family:var(--display);
+  font-size:clamp(44px,5.3vw,78px);
+  line-height:1.03;
+  letter-spacing:-.06em;
+  font-weight:500;
+  margin:20px 0
+}
+.client-avelar-hero p,.client-lbfit-hero p,.client-patricia-hero .client-copy,.client-lara-hero p,.client-caligulas-hero p {
+  font-size:17px;
+  line-height:1.65
+}
+.client-avelar-hero .avelar-grid,.lbfit-hero-grid,.patricia-hero-grid,.lara-hero-grid,.caligulas-hero-grid {
+  gap:65px;
+  grid-template-columns:1fr 1fr
+}
+.avelar-photo-frame,.lbfit-editorial-frame,.patricia-portrait,.lara-photo-frame,.caligulas-hero-card {
+  border-radius:5px;
+  box-shadow:none;
+  border-width:1px
+}
+.avelar-photo-frame>img,.lbfit-editorial-frame img {
+  height:470px;
+  object-fit:contain
+}
+.patricia-portrait,.lara-photo-frame {
+  height:500px
+}
+.avelar-photo-frame {
+  background:#edc435
+}
+.avelar-logo-chip {
+  border-radius:3px;
+  border-width:1px;
+  padding:8px
+}
+.avelar-logo-chip img {
+  width:90px;
+  height:50px;
+  object-fit:contain
+}
+.avelar-proof-photo,.caligulas-room {
+  border-radius:5px;
+  border-width:1px
+}
+.avelar-proof-photo img {
+  transform:none;
+  object-fit:contain
+}
+.avelar-proof-copy article,.avelar-service-grid span,.lbfit-category-grid article,.lara-card-grid article,.lara-social-pills a,.caligulas-principles article,.caligulas-flow-grid article {
+  border-radius:5px;
+  box-shadow:none;
+  border-width:1px
+}
+.avelar-proof-copy h3,.lbfit-category-grid b,.lara-card-grid h3,.caligulas-principles h3,.caligulas-flow-grid h3 {
+  font:500 27px/1.1 var(--display);
+  letter-spacing:-.035em
+}
+.avelar-proof-copy p,.lbfit-category-grid p,.patricia-benefits p,.lara-card-grid p,.caligulas-principles p,.caligulas-flow-grid p {
+  font-size:14px
+}
+.client-lbfit-hero {
+  background:#fcf2f7
+}
+.lbfit-editorial-frame {
+  background:#f5e3ed
+}
+.lbfit-category-grid article {
+  background:#fff9fc;
+  min-height:210px
+}
+.lbfit-night h2,.patricia-wine h2,.lara-blush h2,.caligulas-atmosphere h2 {
+  font-family:var(--display);
+  font-size:clamp(34px,4.5vw,64px);
+  line-height:1.08;
+  letter-spacing:-.05em;
+  font-weight:500
+}
+.lbfit-monogram {
+  border-radius:5px;
+  background:#321f2b;
+  min-height:300px;
+  font-weight:500
+}
+.patricia-benefits h3 {
+  font-family:var(--display);
+  font-size:26px;
+  line-height:1.15;
+  font-weight:500;
+  letter-spacing:-.025em
+}
+.patricia-quote {
+  font-family:var(--display);
+  font-size:27px;
+  line-height:1.15;
+  font-weight:500
+}
+.client-lara-hero {
+  background:#fff5f9
+}
+.client-lara-hero::before,.client-lara-hero::after {
+  display:none
+}
+.lara-profile-chip {
+  width:86px;
+  height:86px;
+  padding:3px;
+  background:#e8cbda;
+  box-shadow:none
+}
+.lara-card-grid article:first-child {
+  background:#30212a
+}
+.lara-blush {
+  background:#f3e6ef
+}
+.lara-photo-frame img {
+  object-position:center 28%
+}
+.client-caligulas-hero {
+  background:#101011
+}
+.client-caligulas-hero::before,.client-caligulas-hero::after {
+  display:none
+}
+.caligulas-hero-card {
+  height:510px;
+  min-height:0;
+  transform:none
+}
+.caligulas-hero-card img {
+  height:100%;
+  object-fit:cover
+}
+.caligulas-hero-card::after {
+  border-radius:0
+}
+.caligulas-flow-grid article {
+  background:#1d1b17
+}
+.caligulas-photo-stack figure {
+  border-radius:5px;
+  transform:none;
+  box-shadow:none
+}
+.client-theme-page .site-footer {
+  background:var(--ink);
+  color:#eae8ef
+}
+@media(max-width:1100px) {
+  .client-theme-page .client-shell {
+    width:calc(100% - 64px)
+  }
+  .client-avelar-hero .avelar-grid,.lbfit-hero-grid,.patricia-hero-grid,.lara-hero-grid,.caligulas-hero-grid {
+    gap:36px
+  }
+  .client-avelar-hero h1,.client-lbfit-hero h1,.client-patricia-hero h1,.client-lara-hero h1,.client-caligulas-hero h1 {
+    font-size:54px
+  }
+  .avelar-photo-frame>img,.lbfit-editorial-frame img {
+    height:400px
+  }
+  .patricia-portrait,.lara-photo-frame,.caligulas-hero-card {
+    height:440px
+  }
+}
+@media(max-width:900px) {
+  .client-avelar-hero .avelar-grid,.lbfit-hero-grid,.patricia-hero-grid,.lara-hero-grid,.caligulas-hero-grid {
+    grid-template-columns:1fr
+  }
+  .client-avelar-hero,.client-lbfit-hero,.client-patricia-hero,.client-lara-hero,.client-caligulas-hero {
+    padding:60px 0
+  }
+  .client-theme-page .client-credit-band .client-shell {
+    grid-template-columns:1fr;
+    gap:15px
+  }
+  .avelar-photo-frame>img,.lbfit-editorial-frame img {
+    height:auto;
+    aspect-ratio:1.7
+  }
+  .caligulas-hero-card {
+    height:500px
+  }
+  .avelar-service-grid,.lbfit-category-grid,.patricia-benefits,.caligulas-flow-grid {
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+@media(max-width:640px) {
+  .client-theme-page .client-shell {
+    width:calc(100% - 40px)
+  }
+  .client-avelar-hero,.client-lbfit-hero,.client-patricia-hero,.client-lara-hero,.client-caligulas-hero {
+    padding:46px 0 55px
+  }
+  .client-avelar-hero h1,.client-lbfit-hero h1,.client-patricia-hero h1,.client-lara-hero h1,.client-caligulas-hero h1 {
+    font-size:clamp(39px,10.5vw,62px);
+    line-height:1.07
+  }
+  .client-avelar-hero p,.client-lbfit-hero p,.client-patricia-hero .client-copy,.client-lara-hero p,.client-caligulas-hero p {
+    font-size:16px
+  }
+  .client-theme-page .client-section {
+    padding:56px 0
+  }
+  .client-theme-page .client-section-head h2 {
+    font-size:34px
+  }
+  .client-theme-page .client-section-head p {
+    font-size:15px
+  }
+  .client-theme-page .client-actions {
+    gap:10px;
+    margin-top:26px
+  }
+  .client-theme-page .client-btn {
+    font-size:12px;
+    min-height:48px;
+    padding-inline:16px
+  }
+  .avelar-photo-frame>img,.lbfit-editorial-frame img {
+    height:auto
+  }
+  .patricia-portrait,.lara-photo-frame {
+    height:410px
+  }
+  .caligulas-hero-card {
+    height:370px
+  }
+  .avelar-service-grid,.lbfit-category-grid,.patricia-benefits,.lara-card-grid,.caligulas-flow-grid {
+    grid-template-columns:1fr
+  }
+  .avelar-proof-photo {
+    min-height:260px
+  }
+  .lbfit-category-grid article {
+    min-height:160px
+  }
+  .lara-card-grid article {
+    min-height:190px;
+    padding:24px
+  }
+  .lara-card-grid article:first-child {
+    grid-column:auto
+  }
+  .client-theme-page .client-kicker {
+    font-size:9px
+  }
+  .lbfit-night-grid,.patricia-wine-grid,.lara-blush-grid {
+    gap:35px
+  }
+}
