@@ -1,0 +1,19 @@
+/* Content additions use the existing page grid, cards and typography. */
+.content-prose a:not(.btn),.page-hero p a{color:inherit;text-decoration-color:currentColor;text-underline-offset:3px}
+.feature h3 a{color:inherit;text-decoration:none}
+.feature h3 a:hover,.feature h3 a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.case-archive-link{color:#fff;text-underline-offset:4px}
+.case-evidence{margin:32px 0 0}
+.case-evidence img{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:24px;background:#e9e6e3}
+.case-evidence figcaption{margin-top:10px;font-size:14px;color:var(--muted-dark)}
+.case-faq{border-top:1px solid var(--line)}
+.case-faq details{padding:20px 0;border-bottom:1px solid var(--line)}
+.case-faq summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.case-faq details p{margin:12px 0 0}
+.case-service-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:28px}
+.case-service-links strong{width:100%;font-size:14px;color:var(--ink)}
+.case-service-links a{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none!important;font-size:14px}
+.case-service-links a:hover,.case-service-links a:focus-visible{border-color:var(--ink)}
+@media(max-width:720px){.case-evidence img{max-height:420px;border-radius:18px}}
+.software-local-page .page-dark-hero h1,.seo-page .page-dark-hero h1,.case-page .page-dark-hero h1{font:700 clamp(46px,5vw,76px)/.94 var(--display);letter-spacing:-.045em;margin:16px 0 0;max-width:850px}
+@media(max-width:720px){.software-local-page .page-dark-hero h1,.seo-page .page-dark-hero h1,.case-page .page-dark-hero h1{font-size:clamp(40px,11vw,58px);line-height:.96}}
