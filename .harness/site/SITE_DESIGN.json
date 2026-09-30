@@ -53,5 +53,35 @@
       "assets/img/clients/lara-og.jpg",
       "https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp"
     ]
+  },
+  "clientProjects": {
+    "/clientes/joias-leopoldina.html": {
+      "pageGoal": "Apresentar a identidade da Joias Leopoldina no portfólio e levar o visitante à loja oficial.",
+      "audience": [
+        "visitantes do portfólio Custom Mind",
+        "pessoas interessadas em joias em Prata 925"
+      ],
+      "primaryCta": "Visitar loja",
+      "visualThesis": "Editorial de joalheria em marfim e areia, tipografia Marcellus e fotografia original. A marca e as peças conduzem a composição.",
+      "typography": {
+        "headings": "Marcellus 400, hospedada localmente, com licença OFL",
+        "body": "fonte de corpo existente na arquitetura v3"
+      },
+      "colors": {
+        "paper": "#faf8f4",
+        "sand": "#eae0d3",
+        "ink": "#292522",
+        "accent": "#755037"
+      },
+      "signature": "Fotografia editorial estática com um enquadramento próprio na abertura.",
+      "supportingInteractions": [
+        "Feedback discreto nos links",
+        "Zoom de 2,5% nas imagens de categorias ao passar o ponteiro"
+      ],
+      "mobileFallback": "Fluxo vertical, imagem específica para celular, categorias em duas colunas e história antes da fotografia.",
+      "reducedMotion": "Sem zoom ou deslocamento nos hovers; todo o conteúdo permanece visível sem animação.",
+      "assetPolicy": "Somente imagens fornecidas pelo usuário, convertidas para WebP. Sem novas imagens sintéticas ou métricas comerciais.",
+      "scope": "CSS isolado em client-leopoldina-v1.css; header, footer e comportamento do portfólio v3 preservados."
+    }
   }
 }

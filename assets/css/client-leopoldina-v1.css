@@ -1,0 +1,194 @@
+/* Joias Leopoldina — warm editorial imagery, silver and the brand's own typography.
+   Only the new page and its portfolio cards are styled here. */
+@font-face {
+  font-family: "CM Marcellus";
+  src: url("../fonts/marcellus/marcellus-latin.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Portfolio entry points retain the existing deck and grid behavior. */
+.case-f { background: #eee2d3; color: #332a23; }
+.case-f .case-card-inner > small,
+.case-f .case-link,
+.case-f .case-card-foot { color: #6c4d37; }
+.case-f .case-asset-panel { background: #e2cfb6; border-color: #c3ac92; }
+.case-f .case-asset-panel img { object-position: 82% center; }
+.client-board.theme-leopoldina { background: #e2cfb6 !important; }
+.client-board.theme-leopoldina .client-index-shot { object-position: 78% center; }
+.client-board.theme-leopoldina .client-index-shade {
+  background: linear-gradient(180deg, rgba(38, 27, 18, .30), rgba(38, 27, 18, .08) 28%, rgba(38, 27, 18, .87));
+}
+
+.theme-leopoldina-page {
+  --leopoldina-paper: #faf8f4;
+  --leopoldina-sand: #eae0d3;
+  --leopoldina-ink: #292522;
+  --leopoldina-muted: #6a5c51;
+  --leopoldina-bronze: #755037;
+  --leopoldina-line: #d8ccbe;
+  --leopoldina-serif: "CM Marcellus", Georgia, "Times New Roman", serif;
+  background: var(--leopoldina-paper);
+  color: var(--leopoldina-ink);
+}
+.theme-leopoldina-page main { background: var(--leopoldina-paper); }
+.theme-leopoldina-page main h1,
+.theme-leopoldina-page main h2,
+.theme-leopoldina-page main h3 { font-family: var(--leopoldina-serif); font-weight: 400; }
+.theme-leopoldina-page main a:focus-visible {
+  outline: 3px solid var(--leopoldina-bronze);
+  outline-offset: 5px;
+}
+.theme-leopoldina-page .client-kicker { color: var(--leopoldina-bronze); }
+.theme-leopoldina-page .client-btn.solid {
+  background: var(--leopoldina-bronze);
+  border-color: var(--leopoldina-bronze);
+  color: #fff;
+}
+.theme-leopoldina-page .client-btn.ghost {
+  background: rgba(255, 255, 255, .6);
+  border-color: #c6b8a9;
+  color: #3b3029;
+}
+.theme-leopoldina-page main p { color: var(--leopoldina-muted); }
+.leopoldina-section { padding: 88px 0; }
+.leopoldina-section-head { max-width: 720px; margin-bottom: 36px; }
+.theme-leopoldina-page .leopoldina-section-head h2,
+.theme-leopoldina-page .leopoldina-story h2,
+.theme-leopoldina-page .leopoldina-detail h2 {
+  font-size: clamp(40px, 4.4vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  margin: 16px 0 22px;
+}
+.leopoldina-section-head p { font-size: 18px; line-height: 1.65; margin: 0; max-width: 620px; }
+
+/* Opening composition uses the supplied desktop/mobile artwork without baked-in text. */
+.leopoldina-hero { padding: 132px 0 78px; border-bottom: 1px solid var(--leopoldina-line); }
+.leopoldina-hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 58px; align-items: center; }
+.leopoldina-hero-copy { min-width: 0; max-width: 560px; }
+.leopoldina-logo { width: 176px; height: auto; margin-bottom: 28px; }
+.theme-leopoldina-page .leopoldina-hero h1 {
+  font-size: clamp(52px, 5.9vw, 80px);
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  margin: 20px 0 22px;
+}
+.leopoldina-hero h1 span { display: block; color: var(--leopoldina-bronze); }
+.leopoldina-hero-copy > p { font-size: 18px; line-height: 1.65; max-width: 470px; margin: 0; }
+.leopoldina-hero-photo { margin: 0; }
+.leopoldina-hero-photo picture {
+  display: block;
+  height: 580px;
+  overflow: hidden;
+  border-radius: 140px 24px 24px 24px;
+  background: #e2cfb6;
+}
+.leopoldina-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 82% center; }
+.leopoldina-hero-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  font: 600 9px/1.4 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--leopoldina-muted);
+}
+
+/* A small, navigable selection, with commercial details kept in the official shop. */
+.leopoldina-collection { scroll-margin-top: 100px; }
+.leopoldina-category-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.leopoldina-category { display: block; min-width: 0; }
+.leopoldina-category-picture { overflow: hidden; border-radius: 12px; background: #e9ddce; }
+.leopoldina-category img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; transition: transform .3s ease; }
+.leopoldina-category:hover img { transform: scale(1.025); }
+.leopoldina-category h3 { display: flex; justify-content: space-between; gap: 12px; font-size: 26px; line-height: 1.2; margin: 17px 0 8px; }
+.leopoldina-category h3 span { font: 400 22px/1.2 var(--body); color: var(--leopoldina-bronze); }
+.leopoldina-category p { font-size: 14px; line-height: 1.55; margin: 0; }
+.leopoldina-more { display: flex; gap: 10px 28px; flex-wrap: wrap; align-items: center; padding-top: 28px; margin-top: 30px; border-top: 1px solid var(--leopoldina-line); }
+.leopoldina-more > span { font-size: 14px; color: var(--leopoldina-muted); }
+.leopoldina-more a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 650; font-size: 14px; }
+.leopoldina-more a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+/* The Coração de Viana symbol and original photograph carry the brand story. */
+.leopoldina-story { background: var(--leopoldina-sand); }
+.leopoldina-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 78px; align-items: center; }
+.leopoldina-story-photo { margin: 0; }
+.leopoldina-story-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 44%; border-radius: 24px; background: #cabbab; }
+.leopoldina-story-copy { max-width: 510px; }
+.leopoldina-symbol { width: 60px; height: auto; margin-bottom: 28px; }
+.leopoldina-story-copy p { font-size: 17px; line-height: 1.75; margin: 0 0 18px; }
+.leopoldina-text-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--leopoldina-bronze); text-decoration: underline; text-underline-offset: 6px; }
+
+.leopoldina-detail-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 78px; align-items: center; }
+.leopoldina-detail-copy > p { font-size: 17px; line-height: 1.75; margin: 0 0 30px; }
+.leopoldina-detail-photo { margin: 0; }
+.leopoldina-detail-photo img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 24px; background: #eadccb; }
+.leopoldina-detail-photo figcaption { margin-top: 14px; font-size: 12px; line-height: 1.5; color: var(--leopoldina-muted); }
+.leopoldina-details { margin: 0; border-top: 1px solid var(--leopoldina-line); }
+.leopoldina-details > div { padding: 18px 0; border-bottom: 1px solid var(--leopoldina-line); }
+.leopoldina-details dt { font-family: var(--leopoldina-serif); font-size: 22px; }
+.leopoldina-details dd { color: var(--leopoldina-muted); font-size: 14px; line-height: 1.6; margin: 7px 0 0; }
+.theme-leopoldina-page .client-credit-band { background: #292522; }
+.theme-leopoldina-page .client-credit-band small { color: #d6bd9f; line-height: 1.5; }
+.theme-leopoldina-page .client-credit-band p { color: #e5ddd4; }
+.theme-leopoldina-page .client-credit-band a { color: #f0d6b6; overflow-wrap: anywhere; }
+.theme-leopoldina-page .client-credit-band a:focus-visible { outline-color: #f0d6b6; }
+
+@media (max-width: 1100px) {
+  .leopoldina-hero-grid { gap: 32px; }
+  .leopoldina-hero-photo picture { height: 560px; border-top-left-radius: 100px; }
+  .leopoldina-story-grid, .leopoldina-detail-grid { gap: 40px; }
+  .leopoldina-category-grid { gap: 14px; }
+}
+@media (max-width: 760px) {
+  .case-f .case-asset-panel {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    transform: none !important;
+  }
+  .case-f .case-asset-panel img { object-position: 82% center !important; }
+  .leopoldina-section { padding: 60px 0; }
+  .leopoldina-hero { padding: 108px 0 48px; }
+  .leopoldina-hero-grid, .leopoldina-story-grid, .leopoldina-detail-grid { grid-template-columns: 1fr; gap: 34px; }
+  .leopoldina-hero-copy { max-width: none; }
+  .leopoldina-logo { width: 148px; margin-bottom: 24px; }
+  .theme-leopoldina-page .leopoldina-hero h1 { font-size: clamp(44px, 12.5vw, 68px); margin: 16px 0 20px; }
+  .leopoldina-hero-copy > p { font-size: 16px; }
+  .theme-leopoldina-page .client-actions { margin-top: 24px; }
+  .theme-leopoldina-page .client-btn { padding-inline: 17px; font-size: 14px; }
+  .leopoldina-hero-photo picture { height: auto; aspect-ratio: 4 / 5; border-radius: 82px 20px 20px 20px; }
+  .leopoldina-hero-photo img { object-position: center 40%; }
+  .leopoldina-hero-photo figcaption { font-size: 8px; letter-spacing: .06em; gap: 8px; }
+  .theme-leopoldina-page .leopoldina-section-head h2,
+  .theme-leopoldina-page .leopoldina-story h2,
+  .theme-leopoldina-page .leopoldina-detail h2 { font-size: clamp(35px, 9.8vw, 46px); margin: 14px 0 20px; }
+  .leopoldina-section-head { margin-bottom: 28px; }
+  .leopoldina-section-head p, .leopoldina-story-copy p, .leopoldina-detail-copy > p { font-size: 16px; }
+  .leopoldina-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
+  .leopoldina-category h3 { font-size: 23px; margin-top: 13px; }
+  .leopoldina-category p { font-size: 13px; }
+  .leopoldina-more { gap: 4px 24px; padding-top: 20px; margin-top: 28px; }
+  .leopoldina-more > span { flex-basis: 100%; }
+  .leopoldina-story-copy { grid-row: 1; max-width: none; }
+  .leopoldina-symbol { width: 44px; margin-bottom: 24px; }
+  .leopoldina-story-photo img { aspect-ratio: 1; border-radius: 20px; }
+  .leopoldina-detail-photo img { border-radius: 20px; }
+  .theme-leopoldina-page .client-credit-band .client-shell { grid-template-columns: 1fr; gap: 12px; }
+  .theme-leopoldina-page .client-credit-band a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 360px) {
+  .theme-leopoldina-page .client-actions { flex-direction: column; align-items: stretch; }
+  .leopoldina-category-grid { gap: 24px 12px; }
+  .leopoldina-category h3 { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-leopoldina-page .leopoldina-category img { transition: none; }
+  .theme-leopoldina-page .leopoldina-category:hover img,
+  .theme-leopoldina-page .client-btn:hover { transform: none; }
+}

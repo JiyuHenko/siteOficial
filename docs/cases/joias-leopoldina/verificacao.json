@@ -1,0 +1,88 @@
+[
+  {
+    "type": "case",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "overflow": [],
+    "h1Count": 1,
+    "brokenImages": [],
+    "heroImage": "/assets/img/clients/leopoldina/hero-desktop.webp",
+    "font": true,
+    "categories": "280px 280px 280px 280px",
+    "visit": "https://joiasleopoldina.com.br/",
+    "whatsapp": "https://wa.me/5511923734039?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Custom%20Mind%20e%20quero%20conversar%20sobre%20um%20projeto."
+  },
+  {
+    "type": "case",
+    "width": 1024,
+    "scrollWidth": 1024,
+    "overflow": [],
+    "h1Count": 1,
+    "brokenImages": [],
+    "heroImage": "/assets/img/clients/leopoldina/hero-desktop.webp",
+    "font": true,
+    "categories": "235.5px 235.5px 235.5px 235.5px",
+    "visit": "https://joiasleopoldina.com.br/",
+    "whatsapp": "https://wa.me/5511923734039?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Custom%20Mind%20e%20quero%20conversar%20sobre%20um%20projeto."
+  },
+  {
+    "type": "case",
+    "width": 760,
+    "scrollWidth": 760,
+    "overflow": [],
+    "h1Count": 1,
+    "brokenImages": [],
+    "heroImage": "/assets/img/clients/leopoldina/hero-mobile.webp",
+    "font": true,
+    "categories": "361px 361px",
+    "visit": "https://joiasleopoldina.com.br/",
+    "whatsapp": "https://wa.me/5511923734039?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Custom%20Mind%20e%20quero%20conversar%20sobre%20um%20projeto."
+  },
+  {
+    "type": "case",
+    "width": 390,
+    "scrollWidth": 390,
+    "overflow": [],
+    "h1Count": 1,
+    "brokenImages": [],
+    "heroImage": "/assets/img/clients/leopoldina/hero-mobile.webp",
+    "font": true,
+    "categories": "176px 176px",
+    "visit": "https://joiasleopoldina.com.br/",
+    "whatsapp": "https://wa.me/5511923734039?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Custom%20Mind%20e%20quero%20conversar%20sobre%20um%20projeto."
+  },
+  {
+    "type": "case",
+    "width": 320,
+    "scrollWidth": 320,
+    "overflow": [],
+    "h1Count": 1,
+    "brokenImages": [],
+    "heroImage": "/assets/img/clients/leopoldina/hero-mobile.webp",
+    "font": true,
+    "categories": "142px 142px",
+    "visit": "https://joiasleopoldina.com.br/",
+    "whatsapp": "https://wa.me/5511923734039?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Custom%20Mind%20e%20quero%20conversar%20sobre%20um%20projeto."
+  },
+  {
+    "type": "navigation",
+    "deckCards": 6,
+    "indexCards": 6,
+    "route": "/clientes/joias-leopoldina.html",
+    "desktopDeck": "keyboard wrap and active link passed",
+    "returnLink": "passed",
+    "directoryLink": "passed"
+  },
+  {
+    "type": "mobile-carousel",
+    "width": 335.390625,
+    "mediaBottom": 387.4375,
+    "titleTop": 401.4375,
+    "navigation": "passed"
+  },
+  {
+    "type": "regression",
+    "view": "home hero 1440x960 reduced motion",
+    "changedPixels": 0
+  }
+]
