@@ -1,0 +1,276 @@
+{
+  "baseCommit": "22bb834388ccfdb7e31d52b993530f758cfc7294",
+  "date": "2026-09-30",
+  "results": [
+    {
+      "type": "page",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1Count": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "textOverflow": [],
+      "canonicalCorrect": true,
+      "schemaCorrect": true,
+      "officialCta": true,
+      "officialLinks": true,
+      "sharedContactCorrect": true,
+      "portrait": "retrato-800.webp",
+      "fontsLoaded": true,
+      "pageErrors": [],
+      "missingLocalResources": [],
+      "mobileMenu": false
+    },
+    {
+      "type": "page",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "h1Count": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "textOverflow": [],
+      "canonicalCorrect": true,
+      "schemaCorrect": true,
+      "officialCta": true,
+      "officialLinks": true,
+      "sharedContactCorrect": true,
+      "portrait": "retrato-480.webp",
+      "fontsLoaded": true,
+      "pageErrors": [],
+      "missingLocalResources": [],
+      "mobileMenu": false
+    },
+    {
+      "type": "page",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 760,
+      "scrollWidth": 760,
+      "h1Count": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "textOverflow": [],
+      "canonicalCorrect": true,
+      "schemaCorrect": true,
+      "officialCta": true,
+      "officialLinks": true,
+      "sharedContactCorrect": true,
+      "portrait": "retrato-480.webp",
+      "fontsLoaded": true,
+      "pageErrors": [],
+      "missingLocalResources": [],
+      "mobileMenu": true
+    },
+    {
+      "type": "page",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1Count": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "textOverflow": [],
+      "canonicalCorrect": true,
+      "schemaCorrect": true,
+      "officialCta": true,
+      "officialLinks": true,
+      "sharedContactCorrect": true,
+      "portrait": "retrato-480.webp",
+      "fontsLoaded": true,
+      "pageErrors": [],
+      "missingLocalResources": [],
+      "mobileMenu": true
+    },
+    {
+      "type": "page",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 320,
+      "scrollWidth": 320,
+      "h1Count": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "textOverflow": [],
+      "canonicalCorrect": true,
+      "schemaCorrect": true,
+      "officialCta": true,
+      "officialLinks": true,
+      "sharedContactCorrect": true,
+      "portrait": "retrato-480.webp",
+      "fontsLoaded": true,
+      "pageErrors": [],
+      "missingLocalResources": [],
+      "mobileMenu": true
+    },
+    {
+      "type": "desktop-navigation",
+      "width": 1440,
+      "exposedCardClicks": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3
+        },
+        {
+          "from": 3,
+          "to": 4
+        },
+        {
+          "from": 4,
+          "to": 5
+        },
+        {
+          "from": 5,
+          "to": 6
+        },
+        {
+          "from": 6,
+          "to": 0
+        },
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        }
+      ],
+      "keyboard": true,
+      "wheel": true,
+      "activeFernandaLink": true
+    },
+    {
+      "type": "desktop-navigation",
+      "width": 1024,
+      "exposedCardClicks": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3
+        },
+        {
+          "from": 3,
+          "to": 4
+        },
+        {
+          "from": 4,
+          "to": 5
+        },
+        {
+          "from": 5,
+          "to": 6
+        },
+        {
+          "from": 6,
+          "to": 0
+        },
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        }
+      ],
+      "keyboard": true,
+      "wheel": true,
+      "activeFernandaLink": true
+    },
+    {
+      "type": "direct-navigation",
+      "width": 1440,
+      "mobileOrReducedMotion": true,
+      "returnLink": true,
+      "directoryLink": true
+    },
+    {
+      "type": "direct-navigation",
+      "width": 390,
+      "mobileOrReducedMotion": true,
+      "returnLink": true,
+      "directoryLink": true
+    },
+    {
+      "type": "direct-navigation",
+      "width": 320,
+      "mobileOrReducedMotion": true,
+      "returnLink": true,
+      "directoryLink": true
+    },
+    {
+      "type": "baseline-visual-match",
+      "route": "/index.html",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "tolerance": 3
+    },
+    {
+      "type": "baseline-source-and-layout-match",
+      "route": "/clientes/joias-leopoldina.html",
+      "layoutElements": 89,
+      "layoutAndStylesEqual": true,
+      "unchangedDependencies": 40,
+      "sourceAndAssetsEqual": true,
+      "rasterComparison": {
+        "changedPixels": 271695,
+        "maxChannelDelta": 23,
+        "note": "Variação restrita a fotografias WebP de bytes idênticos; layout, estilo e dependências conferidos separadamente."
+      }
+    },
+    {
+      "type": "normal-motion-density",
+      "deviceScaleFactor": 2,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "keyboardFocusVisible": true,
+      "portraitSource": "retrato-1179.webp"
+    },
+    {
+      "type": "normal-motion-density",
+      "deviceScaleFactor": 2,
+      "width": 390,
+      "scrollWidth": 390,
+      "keyboardFocusVisible": true,
+      "portraitSource": "retrato-800.webp"
+    }
+  ],
+  "reviewedGitHead": "22bb834388ccfdb7e31d52b993530f758cfc7294",
+  "workingTreeChangedAtReview": true,
+  "reviewedSourceSha256": {
+    "clientes/fernanda-lemos.html": "b720897aa72c75d849817c31f8f7bf2cd44098b158d9e2e94678dd0242855077",
+    "assets/css/client-fernanda-v1.css": "5797f6b1ba24d166b9fe1b4ef9f41db88a537bcc644204b7bc800396102a0946",
+    "index.html": "7bcaa96d4c6e3cea614744cb9de09430dfca34455b9a26cd33df84f73f589c94",
+    "clientes/index.html": "ae5fc23d87037cee33a03b7e4fd9251435c9bc9f5a85d0f175dcb7a340742fd9",
+    ".harness/site/site-content.json": "7fa7c79638dc2f3c008c5622aa0d73672bf718398a01c25139d6bd4047f8926f",
+    ".harness/site/SITE_DESIGN.json": "4a70693181ecfe6406d54a37da544ddf9c4eaec763e3833a5cf8a9b0f87175c9",
+    "sitemap.xml": "39b83dd7ecb82f69586bbf5db44b0110519656f4cc0fe8cd9be7bf144b0279f5",
+    "llms.txt": "13e1ef690be8db557596bee84c628c6b7dd7efc81c6e7ebf60b858e33417852e"
+  },
+  "staticChecks": {
+    "javascriptSyntax": true,
+    "sharedChrome": true,
+    "unusedAssets": true,
+    "harnessErrors": 0,
+    "seoSourceSync": true,
+    "diffWhitespace": true,
+    "preExistingWarnings": [
+      "22 CSS @imports"
+    ]
+  }
+}

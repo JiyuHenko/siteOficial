@@ -1,0 +1,106 @@
+{
+  "repository": "https://github.com/JiyuHenko/siteMamae",
+  "sourceCommit": "3b3cf6df08bd9f554b829b77c8a4b7b3fcad8036",
+  "site": "https://www.nutrifernandalemos.com.br/",
+  "assets": [
+    {
+      "path": "assets/img/clients/fernanda/logo.webp",
+      "source": "assets/img/logo.webp",
+      "format": "WEBP",
+      "width": 650,
+      "height": 334,
+      "bytes": 16020,
+      "sha256": "0304bb721a545eab1ca5debeac34ff64383d26aaf580933a90a69be6b7bc7919",
+      "sourceBytesPreserved": true,
+      "role": "marca fornecida"
+    },
+    {
+      "path": "assets/img/clients/fernanda/retrato-1179.webp",
+      "source": "assets/img/fernanda-lemos.webp",
+      "format": "WEBP",
+      "width": 1179,
+      "height": 1334,
+      "bytes": 116320,
+      "sha256": "e83b4cb0c6cd052f3b2614d560cbd3ea1bfcc8b08f7561a89a0e7d1ea6010d45",
+      "sourceBytesPreserved": true,
+      "role": "retrato profissional fornecido; fundo editado no projeto original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/retrato-800.webp",
+      "source": "assets/img/fernanda-lemos-800.webp",
+      "format": "WEBP",
+      "width": 800,
+      "height": 905,
+      "bytes": 67468,
+      "sha256": "0854ba3d8d43ff99d44fe4c48918c0448074396670d81dd9cef78a29729bde71",
+      "sourceBytesPreserved": true,
+      "role": "retrato profissional fornecido; fundo editado no projeto original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/retrato-480.webp",
+      "source": "assets/img/fernanda-lemos-480.webp",
+      "format": "WEBP",
+      "width": 480,
+      "height": 543,
+      "bytes": 31128,
+      "sha256": "9b21e0d6bc77c441a11588016d7525d9cf1d4d7d42afeeedcb0387c196b6f827",
+      "sourceBytesPreserved": true,
+      "role": "retrato profissional fornecido; fundo editado no projeto original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/mesa-800.webp",
+      "source": "assets/img/hero-800.webp",
+      "format": "WEBP",
+      "width": 800,
+      "height": 1200,
+      "bytes": 165130,
+      "sha256": "902ebfc6dbb31b801f97668286595ab7e33fc39a6cac4ec15935018ad5a86570",
+      "sourceBytesPreserved": true,
+      "role": "composição editorial ilustrativa existente no site original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/mesa-480.webp",
+      "source": "assets/img/hero-480.webp",
+      "format": "WEBP",
+      "width": 480,
+      "height": 720,
+      "bytes": 71824,
+      "sha256": "6ceae5bbd7e3cf6d55c51a3eb01f419dc3b074ea8e4764053ca9ce666560abf6",
+      "sourceBytesPreserved": true,
+      "role": "composição editorial ilustrativa existente no site original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/ritual-1200.webp",
+      "source": "assets/img/ritual-1200.webp",
+      "format": "WEBP",
+      "width": 1200,
+      "height": 800,
+      "bytes": 137416,
+      "sha256": "881993ec87be0375c96b6577d0b52b9d4a36a872153f2a1f5522f642f86b5351",
+      "sourceBytesPreserved": true,
+      "role": "composição editorial ilustrativa existente no site original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/ritual-640.webp",
+      "source": "assets/img/ritual-640.webp",
+      "format": "WEBP",
+      "width": 640,
+      "height": 427,
+      "bytes": 50456,
+      "sha256": "0a86b5cdf8fd22ab45af66e7e1c8f9b894dd0b7d4c23d25eea3a0ed926c9baa7",
+      "sourceBytesPreserved": true,
+      "role": "composição editorial ilustrativa existente no site original"
+    },
+    {
+      "path": "assets/img/clients/fernanda/social.webp",
+      "source": "assets/img/social-cover.jpg",
+      "format": "WEBP",
+      "width": 1200,
+      "height": 630,
+      "bytes": 75080,
+      "sha256": "9ee7951fbc57f6d13ca8a2e78d455652d28c774a15fb27b1132429a8b726f491",
+      "sourceBytesPreserved": false,
+      "role": "composição editorial ilustrativa existente no site original"
+    }
+  ]
+}

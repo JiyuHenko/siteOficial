@@ -167,6 +167,35 @@
       "reducedMotion": "Conteúdo estático, sem deslocamento em hovers.",
       "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
       "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
+    },
+    "/clientes/fernanda-lemos.html": {
+      "pageGoal": "Apresentar Fernanda Lemos, sua identidade e sua proposta de cuidado; encaminhar ao site e ao agendamento oficial.",
+      "audience": [
+        "Visitantes do portfólio Custom Mind",
+        "Pessoas interessadas em acompanhamento nutricional em Passos, MG"
+      ],
+      "primaryCta": "Conheça o site — https://www.nutrifernandalemos.com.br/",
+      "visualThesis": "Editorial acolhedor em papel rosado e rosé, com verde-oliva nos detalhes. Retrato profissional, logo original, Cormorant e DM Sans locais, com imagens editoriais do próprio site.",
+      "typography": {
+        "headings": "Cormorant 500 e itálica, local, SIL OFL",
+        "body": "DM Sans 400 e 600, local, SIL OFL"
+      },
+      "colors": {
+        "paper": "#fcf7f4",
+        "blush": "#f3e6e2",
+        "ink": "#48363e",
+        "rose": "#965963",
+        "olive": "#58614b"
+      },
+      "signature": "Retrato profissional em enquadramento estático com topo em arco. A profissional e sua proposta conduzem a composição.",
+      "supportingInteractions": [
+        "Feedback discreto nos links e botões",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Fluxo vertical, retrato integral responsivo, texto do cuidado antes da imagem e etapas em lista. Home com carrossel nativo; reduced motion com links diretos.",
+      "reducedMotion": "Página estática, transições desativadas e todo o conteúdo visível.",
+      "assetPolicy": "Assets oficiais de siteMamae. Retrato fornecido com edição de fundo documentada; composições editoriais existentes são ilustrativas. Sem novas imagens sintéticas, especialidades, modalidades ou resultados presumidos. Novos rasters em WebP.",
+      "scope": "client-fernanda-v1.css isolado por theme-fernanda-page, case-g e theme-fernanda. Integrações na home, diretório e fonte de SEO; chrome compartilhado preservado."
     }
   }
 }
