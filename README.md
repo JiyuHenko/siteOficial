@@ -11,7 +11,7 @@ A Custom Mind é apresentada pelo site em quatro pilares estratégicos:
 
 Jade, Zuri e Loja Inteligente permanecem como produtos desenvolvidos pela Custom Mind, com páginas próprias em `products/`, mas não definem sozinhos o posicionamento da empresa.
 
-Os projetos em `clientes/` continuam centrados nas empresas atendidas e funcionam como portfólio e descoberta. A home também reaproveita `assets/img/empresas/` como prova social separada dos projetos em destaque.
+As páginas em `clientes/` apresentam as empresas atendidas e seus canais oficiais. Os cases em `projetos/` mostram as entregas da Custom Mind e se conectam às páginas dos clientes. A home também reaproveita `assets/img/empresas/` como prova social separada dos projetos em destaque.
 
 ## Arquitetura
 A camada visual v3 permanece modular: `assets/css/custommind-site-v3.css` carrega os módulos em `assets/css/v3/`. O comportamento principal fica em `assets/js/custommind-site-v3.js`.
@@ -46,7 +46,7 @@ O histórico do Git funciona como arquivo dos assets antigos; não é necessári
 ## SEO e qualidade
 A fonte central das páginas públicas fica em `.harness/site/site-content.json`. O projeto mantém sitemap, `llms.txt`, 404 com `noindex` e validações automáticas de JavaScript, SEO técnico, referências, JSON-LD, sincronização do chrome compartilhado e assets pelo GitHub Actions.
 
-O `llms.txt` diferencia explicitamente os quatro pilares dos produtos próprios para que mecanismos de busca e sistemas de IA entendam a arquitetura correta da marca.
+O `llms.txt` diferencia explicitamente clientes, projetos, os quatro pilares e os produtos próprios para que mecanismos de busca e sistemas de IA entendam a arquitetura correta da marca. O modelo editorial dos novos cases está em `projetos/CASE_TEMPLATE.md`.
 
 ## Publicação
 Antes de levar mudanças da branch de trabalho para `main`, revise a home, `/solucoes.html`, os quatro pilares, produtos, clientes e comportamento mobile.
