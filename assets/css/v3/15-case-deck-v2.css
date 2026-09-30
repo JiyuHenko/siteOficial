@@ -29,7 +29,7 @@
     transition:transform .48s cubic-bezier(.2,.75,.2,1),opacity .34s ease,filter .34s ease,box-shadow .28s ease!important;
   }
   .case-stage.is-wheel-deck::after{
-    content:"role sobre os cards";
+    content:"role ou clique nos projetos ao fundo";
     position:absolute;
     right:9%;
     bottom:7px;

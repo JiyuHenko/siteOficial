@@ -3,7 +3,7 @@
 /* Home portfolio — Lara uses an actual portrait/lifestyle frame, not lara-og.jpg. */
 .case-d .case-asset-panel{
   background-color:#e9d7df;
-  background-image:url("https://raw.githubusercontent.com/JiyuHenko/SiteLara/main/influenciadoras/assets/lara-hero.webp");
+  background-image:url("../../img/clients/lara/retrato.webp");
   background-size:cover;
   background-position:center 24%;
 }
@@ -26,7 +26,7 @@
 }
 .page-main .content-section .product-grid>.theme-lara{
   background-color:#ead8e0!important;
-  background-image:url("https://raw.githubusercontent.com/JiyuHenko/SiteLara/main/influenciadoras/assets/lara-hero.webp")!important;
+  background-image:url("../../img/clients/lara/retrato.webp")!important;
   background-size:cover!important;
   background-position:center 24%!important;
 }
@@ -35,7 +35,7 @@
 /* Avelar detail page — OG artwork stays metadata-only; workshop media is a real shop image. */
 .theme-avelar-page .avelar-proof-photo{
   background-color:#173f83!important;
-  background-image:url("https://autoeletricaavelar.com.br/assets/img/foto-diagnostico-automotivo-avelar.webp")!important;
+  background-image:url("../../img/clients/avelar/diagnostico.webp")!important;
   background-size:cover!important;
   background-position:center!important;
 }
@@ -49,13 +49,13 @@
   position:absolute;
   inset:7px;
   border-radius:50%;
-  background:url("https://raw.githubusercontent.com/JiyuHenko/SiteLara/main/links/assets/lara-profile.webp") center 22%/cover no-repeat;
+  background:url("../../img/clients/lara/retrato.webp") center 22%/cover no-repeat;
   border:4px solid #fff;
   box-sizing:border-box;
 }
 .theme-lara-page .lara-photo-frame{
   background-color:#eed3df!important;
-  background-image:url("https://raw.githubusercontent.com/JiyuHenko/SiteLara/main/influenciadoras/assets/lara-hero.webp")!important;
+  background-image:url("../../img/clients/lara/retrato.webp")!important;
   background-size:cover!important;
   background-position:center 24%!important;
 }

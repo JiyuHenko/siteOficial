@@ -18,7 +18,7 @@
     {
       "patternId": "CM-S05",
       "name": "Depth Case Deck",
-      "reason": "Projetos são a principal prova visual da Custom Mind e merecem uma apresentação própria. No desktop, o wheel navega o deck somente quando o ponteiro está sobre os cards; fora deles a página continua em fluxo normal."
+      "reason": "Projetos são a principal prova visual da Custom Mind. No desktop, a roda do mouse e as setas navegam o deck; clicar num card ao fundo coloca esse projeto em foco, e clicar no projeto em foco abre a página. No celular, carrossel nativo; reduced motion, grade estática."
     },
     {
       "patternId": "CM-S09",
@@ -82,6 +82,91 @@
       "reducedMotion": "Sem zoom ou deslocamento nos hovers; todo o conteúdo permanece visível sem animação.",
       "assetPolicy": "Somente imagens fornecidas pelo usuário, convertidas para WebP. Sem novas imagens sintéticas ou métricas comerciais.",
       "scope": "CSS isolado em client-leopoldina-v1.css; header, footer e comportamento do portfólio v3 preservados."
+    },
+    "/clientes/auto-eletrica-avelar.html": {
+      "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
+      "audience": [
+        "Motoristas e empresas de Passos e região que precisam de atendimento automotivo."
+      ],
+      "primaryCta": "https://autoeletricaavelar.com.br/",
+      "visualThesis": "Oficina técnica em amarelo, azul e vermelho. Fachada e fotografias de diagnóstico, módulos e climatização apresentam o trabalho da Avelar.",
+      "signature": "Fotografia e conteúdo próprios do cliente, sem animação de abertura.",
+      "supportingInteractions": [
+        "Feedback de links ao passar o ponteiro",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Fluxo vertical com imagens e texto dimensionados para celular; grades em uma ou duas colunas conforme o conteúdo.",
+      "reducedMotion": "Conteúdo estático, sem deslocamento em hovers.",
+      "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
+      "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
+    },
+    "/clientes/lb-fit.html": {
+      "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
+      "audience": [
+        "Pessoas interessadas em moda fitness e na loja oficial LB Fit."
+      ],
+      "primaryCta": "https://www.uselbfit.com.br/",
+      "visualThesis": "Editorial de moda fitness em rosa e branco. Marca oficial e campanha ICE original, com categorias comerciais e ligação ao universo da Lara.",
+      "signature": "Fotografia e conteúdo próprios do cliente, sem animação de abertura.",
+      "supportingInteractions": [
+        "Feedback de links ao passar o ponteiro",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Fluxo vertical com imagens e texto dimensionados para celular; grades em uma ou duas colunas conforme o conteúdo.",
+      "reducedMotion": "Conteúdo estático, sem deslocamento em hovers.",
+      "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
+      "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
+    },
+    "/clientes/patricia-biagioni.html": {
+      "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
+      "audience": [
+        "Pessoas interessadas na consultoria individual de treino da Patrícia."
+      ],
+      "primaryCta": "https://consultoria.patriciabiagioni.com.br/",
+      "visualThesis": "Consultoria individual em vinho, marfim e tipografia serifada. Retrato original de Patrícia, experiência profissional e processo de acompanhamento guiam a composição.",
+      "signature": "Fotografia e conteúdo próprios do cliente, sem animação de abertura.",
+      "supportingInteractions": [
+        "Feedback de links ao passar o ponteiro",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Fluxo vertical com imagens e texto dimensionados para celular; grades em uma ou duas colunas conforme o conteúdo.",
+      "reducedMotion": "Conteúdo estático, sem deslocamento em hovers.",
+      "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
+      "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
+    },
+    "/clientes/lara-biagioni.html": {
+      "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
+      "audience": [
+        "Pessoas que acompanham a Lara e procuram seus canais, a LB Fit e os links de parcerias."
+      ],
+      "primaryCta": "https://larabiagioni.com.br/links/",
+      "visualThesis": "Presença pessoal em rosa e lilás suaves. Retrato oficial e logos originais da LB Fit, Growth e Oficial Farma, com links claros para os canais da Lara.",
+      "signature": "Fotografia e conteúdo próprios do cliente, sem animação de abertura.",
+      "supportingInteractions": [
+        "Feedback de links ao passar o ponteiro",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Fluxo vertical com imagens e texto dimensionados para celular; grades em uma ou duas colunas conforme o conteúdo.",
+      "reducedMotion": "Conteúdo estático, sem deslocamento em hovers.",
+      "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
+      "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
+    },
+    "/clientes/caligulas-poker-live.html": {
+      "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
+      "audience": [
+        "Visitantes interessados na casa, na programação e na comunidade do Caligulas em Passos."
+      ],
+      "primaryCta": "https://caligulaspoker.com.br/",
+      "visualThesis": "Clube em preto e dourado com sua marca oficial, fotos locais da casa e da comunidade. História, agenda e competição têm destinos próprios.",
+      "signature": "Fotografia e conteúdo próprios do cliente, sem animação de abertura.",
+      "supportingInteractions": [
+        "Feedback de links ao passar o ponteiro",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Fluxo vertical com imagens e texto dimensionados para celular; grades em uma ou duas colunas conforme o conteúdo.",
+      "reducedMotion": "Conteúdo estático, sem deslocamento em hovers.",
+      "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
+      "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
     }
   }
 }

@@ -10,16 +10,16 @@
     const caseStage = qs('.case-stage');
     if (caseStage && !qs('.case-e', caseStage)) {
       caseStage.insertAdjacentHTML('beforeend', `
-        <a class="case-card case-e" data-case-card href="clientes/caligulas-poker-live.html"><div class="case-card-inner"><small>Poker live • Passos–MG</small><div><h3>Caligulas Poker Live</h3><p>Atmosfera de clube, programação, ranking e comunidade reunidos em uma presença digital própria.</p><span class="case-link">Ver projeto →</span></div><div class="case-asset-panel"><img src="https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"></div><span class="case-card-foot">CM / WORK 05</span></div></a>
+        <a class="case-card case-e" data-case-card href="clientes/caligulas-poker-live.html"><div class="case-card-inner"><small>Poker live • Passos–MG</small><div><h3>Caligulas Poker Live</h3><p>Poker presencial, programação, ranking e encontros da comunidade em Passos–MG.</p><span class="case-link">Ver projeto →</span></div><div class="case-asset-panel"><img src="assets/img/clients/caligulas/hero.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"></div><span class="case-card-foot">CM / WORK 05</span></div></a>
       `);
       const counter = qs('.case-counter');
-      if (counter) counter.innerHTML = '<strong data-case-number>01</strong> / 05 • role sobre os cards';
+      if (counter) counter.innerHTML = '<strong data-case-number>01</strong> / 05 • role ou clique nos projetos ao fundo';
     }
 
     const clientGrid = qs('.page-main .content-section .product-grid');
     if (clientGrid && qs('.client-board', clientGrid) && !qs('.theme-caligulas', clientGrid)) {
       clientGrid.insertAdjacentHTML('beforeend', `
-        <a class="client-board theme-caligulas" href="caligulas-poker-live.html"><img class="client-index-shot" src="https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"><span class="client-index-shade"></span><span>POKER LIVE • PASSOS–MG</span><strong>Caligulas Poker Live</strong><span>Programação, ranking, galeria, eventos e comunidade em uma experiência própria. →</span></a>
+        <a class="client-board theme-caligulas" href="caligulas-poker-live.html"><img class="client-index-shot" src="../assets/img/clients/caligulas/hero.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"><span class="client-index-shade"></span><span>POKER LIVE • PASSOS–MG</span><strong>Caligulas Poker Live</strong><span>Programação, ranking, galeria, eventos e comunidade em uma experiência própria. →</span></a>
       `);
     }
   }
@@ -204,7 +204,7 @@
     caseStage.appendChild(caseClickProxy);
     caseStage.classList.add('is-wheel-deck');
     caseStage.setAttribute('tabindex','0');
-    caseStage.setAttribute('aria-label','Projetos em destaque. Use a roda do mouse sobre o card ou as setas para navegar pelos projetos.');
+    caseStage.setAttribute('aria-label','Projetos em destaque. Role sobre o card, clique em um projeto ao fundo ou use as setas para colocá-lo em foco. Clique no projeto em foco para abri-lo.');
   }
 
   function resetCaseFlow() {
@@ -319,7 +319,7 @@
       card.style.zIndex = String(100 - Math.round(Math.abs(d) * 10));
       card.style.filter = `saturate(${clamp(1 - Math.abs(d) * .23,.55,1)})`;
       if (loopWrapped) requestAnimationFrame(() => card.style.removeProperty('transition'));
-      card.style.pointerEvents = 'none';
+      card.style.pointerEvents = 'auto';
       card.setAttribute('tabindex','-1');
       if (isActive) card.removeAttribute('aria-hidden');
       else card.setAttribute('aria-hidden','true');
@@ -340,6 +340,19 @@
   }
 
   if (caseStage && caseCards.length) {
+    // Exposed cards select their project; the focused card remains a normal link.
+    caseCards.forEach((card, index) => {
+      card.addEventListener('click', e => {
+        if (reduceMotion || innerWidth < 761 || index === caseIndex) return;
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        caseIndex = index;
+        caseWheel = 0;
+        lastCaseMove = performance.now();
+        updateCases();
+      });
+    });
+
     caseStage.addEventListener('wheel', e => {
       if (reduceMotion || innerWidth < 761 || !caseClickProxy) return;
 

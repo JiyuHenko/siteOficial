@@ -1,0 +1,206 @@
+[
+  {
+    "sourceRepository": "siteAutoEletrica",
+    "sourceCommit": "655cbdd749be6f998341fcabb64a5ece25e740cb",
+    "sourcePath": "assets/img/foto-diagnostico-automotivo-avelar.webp",
+    "output": "assets/img/clients/avelar/diagnostico.webp",
+    "dimensions": [
+      720,
+      960
+    ],
+    "bytes": 89254,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "siteAutoEletrica",
+    "sourceCommit": "655cbdd749be6f998341fcabb64a5ece25e740cb",
+    "sourcePath": "assets/img/foto-reparo-modulo-eletronico-avelar.webp",
+    "output": "assets/img/clients/avelar/modulos.webp",
+    "dimensions": [
+      720,
+      960
+    ],
+    "bytes": 91870,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "siteAutoEletrica",
+    "sourceCommit": "655cbdd749be6f998341fcabb64a5ece25e740cb",
+    "sourcePath": "assets/img/foto-ar-condicionado-automotivo-avelar.webp",
+    "output": "assets/img/clients/avelar/climatizacao.webp",
+    "dimensions": [
+      720,
+      960
+    ],
+    "bytes": 136474,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "siteAutoEletrica",
+    "sourceCommit": "655cbdd749be6f998341fcabb64a5ece25e740cb",
+    "sourcePath": "assets/img/foto-linha-pesada-agricola-avelar.webp",
+    "output": "assets/img/clients/avelar/linha-pesada.webp",
+    "dimensions": [
+      960,
+      720
+    ],
+    "bytes": 126924,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "siteAutoEletrica",
+    "sourceCommit": "655cbdd749be6f998341fcabb64a5ece25e740cb",
+    "sourcePath": "assets/img/foto-oficina-auto-eletrica-avelar-passos.webp",
+    "output": "assets/img/clients/avelar/oficina.webp",
+    "dimensions": [
+      960,
+      1280
+    ],
+    "bytes": 144402,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "SiteLara",
+    "sourceCommit": "4d6dfbf59f832c445eb75dea5494e60470a30549",
+    "sourcePath": "links/assets/lara-profile.webp",
+    "output": "assets/img/clients/lara/retrato.webp",
+    "dimensions": [
+      640,
+      640
+    ],
+    "bytes": 37756,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "SiteLara",
+    "sourceCommit": "4d6dfbf59f832c445eb75dea5494e60470a30549",
+    "sourcePath": "links/assets/lbfit.png",
+    "output": "assets/img/clients/lbfit/logo.webp",
+    "dimensions": [
+      400,
+      400
+    ],
+    "bytes": 11026,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "SiteLara",
+    "sourceCommit": "4d6dfbf59f832c445eb75dea5494e60470a30549",
+    "sourcePath": "links/assets/growth.png",
+    "output": "assets/img/clients/lara/growth.webp",
+    "dimensions": [
+      260,
+      260
+    ],
+    "bytes": 9384,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "SiteLara",
+    "sourceCommit": "4d6dfbf59f832c445eb75dea5494e60470a30549",
+    "sourcePath": "links/assets/oficial-farma.png",
+    "output": "assets/img/clients/lara/oficial-farma.webp",
+    "dimensions": [
+      260,
+      260
+    ],
+    "bytes": 7740,
+    "processing": "Redimensionado e convertido para WebP"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/brand/logo-caligulas-white-720.webp",
+    "output": "assets/img/clients/caligulas/logo.webp",
+    "dimensions": [
+      720,
+      336
+    ],
+    "bytes": 39306,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/photos/hero-desktop-1440.webp",
+    "output": "assets/img/clients/caligulas/hero.webp",
+    "dimensions": [
+      1440,
+      810
+    ],
+    "bytes": 98538,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/photos/hero-mobile-720.webp",
+    "output": "assets/img/clients/caligulas/hero-mobile.webp",
+    "dimensions": [
+      720,
+      960
+    ],
+    "bytes": 61492,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/photos/room-master-960.webp",
+    "output": "assets/img/clients/caligulas/casa.webp",
+    "dimensions": [
+      960,
+      1280
+    ],
+    "bytes": 89914,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/photos/community-group-640.webp",
+    "output": "assets/img/clients/caligulas/comunidade.webp",
+    "dimensions": [
+      382,
+      510
+    ],
+    "bytes": 22922,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/photos/champion-woman-640.webp",
+    "output": "assets/img/clients/caligulas/premiacao.webp",
+    "dimensions": [
+      382,
+      510
+    ],
+    "bytes": 34088,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteCaligulas",
+    "sourceCommit": "211860f6e1c1f112e18d7c2633b45b1e6703b167",
+    "sourcePath": "assets/img/perf/photos/trophies-640.webp",
+    "output": "assets/img/clients/caligulas/trofeus.webp",
+    "dimensions": [
+      382,
+      510
+    ],
+    "bytes": 35036,
+    "processing": "WebP original preservado"
+  },
+  {
+    "sourceRepository": "siteAutoEletrica",
+    "sourceCommit": "655cbdd749be6f998341fcabb64a5ece25e740cb",
+    "sourcePath": "assets/img/foto-fachada-auto-eletrica-avelar-passos.webp",
+    "output": "assets/img/clients/avelar/fachada.webp",
+    "dimensions": [
+      1000,
+      890
+    ],
+    "bytes": 108838,
+    "processing": "Redimensionado e convertido para WebP"
+  }
+]

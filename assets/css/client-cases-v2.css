@@ -1,0 +1,247 @@
+/* Client cases: content and assets belong to each client. Shared chrome is unchanged. */
+.client-refresh-page .client-shell{width:min(1180px,calc(100% - 64px))}
+.client-refresh-page figure{margin:0}
+.client-refresh-page .client-section-head h2{font-size:clamp(40px,5.4vw,72px);line-height:1}
+.client-refresh-page:is(.theme-lbfit-page,.theme-patricia-page,.theme-lara-page,.theme-caligulas-page) .client-section-head h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em;line-height:1.08}
+.client-refresh-page .client-section-head p{line-height:1.7}
+.client-refresh-page .client-detail-copy{font-size:18px;line-height:1.7}
+.client-refresh-page .client-inline-link{display:inline-flex;align-items:center;margin-top:24px;font-weight:800;line-height:1.4;border-bottom:1px solid currentColor;padding-bottom:5px}
+.client-refresh-page .client-credit-band small{line-height:1.5}
+.client-refresh-page .client-credit-band p{font-size:14px;line-height:1.6}
+.client-refresh-page .client-btn:focus-visible,.client-refresh-page main a:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+.client-refresh-page .client-actions{gap:12px}
+.client-refresh-page .client-avelar-hero{background:#f7ca21}
+.client-refresh-page .client-avelar-hero .avelar-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:52px}
+.client-refresh-page .client-avelar-hero h1{font-size:clamp(46px,5.5vw,80px);line-height:.96}
+.client-refresh-page .client-avelar-hero p{font-size:18px;line-height:1.65}
+.avelar-brand-mark{display:block;width:190px;height:auto;margin-bottom:24px}
+.client-refresh-page .avelar-photo-frame{border-radius:24px}
+.client-refresh-page .avelar-photo-frame>img{width:100%;height:560px;object-position:center}
+.client-refresh-page .avelar-photo-frame figcaption,.avelar-workshop-photo figcaption{position:absolute;left:18px;right:18px;bottom:18px;padding:12px 16px;border-radius:10px;background:#153e7f;color:#fff;font:700 10px/1.5 var(--mono)}
+.avelar-workshop-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:70px;align-items:center}
+.avelar-workshop-photo{position:relative;overflow:hidden;border-radius:22px;background:#153e7f}
+.avelar-workshop-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.avelar-workshop-grid h2{font:800 clamp(40px,4.8vw,66px)/1 var(--display);letter-spacing:-.04em;margin:16px 0 22px}
+.avelar-method{list-style:none;padding:0;margin:32px 0 0}
+.avelar-method li{display:grid;grid-template-columns:38px 1fr;gap:18px;padding:22px 0;border-top:1px solid #bdbca4}
+.avelar-method li>span{font:700 20px/1.4 var(--mono);color:#b41e2c}
+.avelar-method h3{font:800 23px/1.2 var(--display);margin:0 0 8px}
+.avelar-method p{margin:0;font-size:16px;line-height:1.6}
+.avelar-service-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.avelar-service-gallery>a{display:flex;flex-direction:column;overflow:hidden;border:1px solid #4f6792;border-radius:18px;background:#183f7d}
+.avelar-service-gallery img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.avelar-service-gallery>a>div{display:flex;flex-direction:column;flex:1;padding:22px}
+.avelar-service-gallery small{font:700 9px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#ffd95b}
+.avelar-service-gallery h3{font:800 26px/1.08 var(--display);margin:12px 0}
+.avelar-service-gallery p{font-size:15px;line-height:1.6;color:#d2ddec;margin:0 0 20px}
+.avelar-service-gallery span{font-size:13px;font-weight:800;margin-top:auto;color:#ffd95b}
+.avelar-service-gallery>a:hover{border-color:#ffd95b}
+.avelar-remap-link{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:30px;padding:24px 0;border-block:1px solid #516992;color:#ffd95b}
+.avelar-remap-link>span{font-size:14px;color:#d2ddec}
+.avelar-local{padding:76px 0;background:#f7ca21;color:#153e7f}
+.avelar-local .client-shell{display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center}
+.avelar-local h2{font:800 clamp(38px,4.5vw,60px)/1 var(--display);letter-spacing:-.04em;margin:16px 0}
+.avelar-local p{font-size:18px;line-height:1.7;margin:0;max-width:660px}
+.avelar-local .client-shell>div:last-child{display:flex;flex-direction:column;align-items:flex-start}
+.avelar-local .client-btn.solid{background:#153e7f;border-color:#153e7f}
+
+/* LB Fit: original campaign at its own scale, product families, the actual brand. */
+.client-refresh-page .client-lbfit-hero{padding:132px 0 64px;background:#fff1f6}
+.lbfit-editorial-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:70px;align-items:end}
+.lbfit-brand-line{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.lbfit-brand-line img{width:68px;height:68px;object-fit:contain}
+.client-refresh-page .client-lbfit-hero h1{font-size:clamp(54px,6.4vw,90px);line-height:.96;margin:0}
+.client-refresh-page .lbfit-intro-copy p{font-size:19px;line-height:1.7;margin:0}
+.lbfit-campaign{margin-top:48px!important}
+.lbfit-campaign img{display:block;width:100%;height:auto;border-radius:24px}
+.lbfit-campaign figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:14px;color:#7a4c63;font:700 9px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.lbfit-shop-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.lbfit-shop-grid>a{display:flex;flex-direction:column;min-height:310px;padding:26px 22px;border:1px solid #e8bfd1;border-radius:18px;background:#fff7fa}
+.lbfit-shop-grid>a:first-child{background:#f8d7e6}
+.lbfit-shop-grid span{font:700 9px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#9b4d70}
+.lbfit-shop-grid h3{font:500 clamp(34px,3.5vw,48px)/1.1 Georgia,serif;margin:24px 0 18px}
+.lbfit-shop-grid p{font-size:15px;line-height:1.65;color:#755767;margin:0 0 24px}
+.lbfit-shop-grid strong{font-size:13px;margin-top:auto;color:#a63f70}
+.lbfit-shop-grid>a:hover{background:#f6d5e4;border-color:#c77198}
+.client-refresh-page .lbfit-night-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.client-refresh-page .lbfit-night p{font-size:18px;line-height:1.7}
+.lbfit-brand-seal{display:grid;justify-items:center;gap:24px;padding:32px}
+.lbfit-brand-seal img{width:min(260px,100%);height:auto}
+.lbfit-brand-seal span{font:700 10px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#e2a4c0}
+
+/* Patricia: a professional story and the concrete sequence of her consultation. */
+.client-refresh-page .client-patricia-hero{background:#eee6dd}
+.client-refresh-page .client-patricia-hero h1{font-size:clamp(62px,6.8vw,96px);line-height:.95;margin-bottom:24px}
+.client-refresh-page .patricia-quote{font-weight:500;font-size:clamp(26px,2.8vw,38px);line-height:1.2}
+.client-refresh-page .client-patricia-hero .client-copy{font-size:18px;line-height:1.7}
+.client-refresh-page .patricia-portrait{height:590px;border-radius:24px}
+.client-refresh-page .patricia-portrait img{object-position:center 20%}
+.client-refresh-page .patricia-portrait figcaption{position:absolute;z-index:2;left:22px;right:22px;bottom:22px;color:#fff6ef;font:700 10px/1.6 var(--mono);letter-spacing:.08em}
+.patricia-story{background:#fbf8f2}
+.patricia-story-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:80px;align-items:start}
+.patricia-story h2{font:500 clamp(42px,5vw,68px)/1 Georgia,serif;margin:18px 0;letter-spacing:-.04em}
+.patricia-story-grid p{font-size:18px;line-height:1.7;color:#705e57}
+.patricia-story-grid .patricia-story-lead{font:500 30px/1.35 Georgia,serif;color:#7b2035;margin-top:0}
+.patricia-process{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid #7b2035}
+.patricia-process li{padding:30px 26px 0 0;margin-right:26px;border-right:1px solid #cbbdb5}
+.patricia-process li:last-child{border-right:0;margin-right:0;padding-right:0}
+.patricia-process li>span{font:500 44px/1 Georgia,serif;color:#7b2035}
+.patricia-process h3{font:500 29px/1.15 Georgia,serif;margin:28px 0 16px}
+.patricia-process p{font-size:16px;line-height:1.7;color:#705e57;margin:0}
+.client-refresh-page .patricia-wine-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:70px}
+.client-refresh-page .patricia-wine h2{font-size:clamp(44px,5.2vw,72px);line-height:1}
+.client-refresh-page .patricia-wine p{font-size:18px;line-height:1.7;margin:0}
+.client-refresh-page .patricia-wine .client-btn{color:#fff5ef;border-color:#d4a8af;margin-top:30px}
+
+/* Lara: an official portrait, selected partnerships and her own channels. */
+.client-refresh-page .lara-hero-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+.client-refresh-page .client-lara-hero h1{font-size:clamp(64px,7.2vw,100px);line-height:.96}
+.client-refresh-page .client-lara-hero p{font-size:18px;line-height:1.7}
+.client-refresh-page .client-lara-hero .lara-intro-line{font:500 30px/1.3 Georgia,serif;color:#a55176}
+.client-refresh-page .lara-photo-frame{height:auto;aspect-ratio:1/1;border-radius:28px}
+.client-refresh-page .lara-photo-frame img{height:100%;object-position:center;display:block}
+.client-refresh-page .lara-photo-frame{background-image:none!important}
+.client-refresh-page .lara-photo-frame img{opacity:1!important}
+.client-refresh-page .lara-photo-frame::after{content:none}
+.client-refresh-page .lara-photo-frame figcaption{position:absolute;left:18px;right:18px;bottom:18px;padding:12px 16px;border-radius:12px;background:rgba(255,250,253,.93);font:700 9px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#824660}
+.lara-partner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lara-partner-grid>a{display:flex;flex-direction:column;padding:30px;border-radius:20px;border:1px solid #e4c6d4;background:#fffafd}
+.lara-partner-mark{display:grid;place-items:center;min-height:170px;margin-bottom:26px}
+.lara-partner-mark img{width:150px;height:150px;object-fit:contain}
+.lara-partner-grid small{font:700 9px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#a55176}
+.lara-partner-grid h3{font:500 32px/1.15 Georgia,serif;margin:14px 0}
+.lara-partner-grid p{font-size:16px;line-height:1.7;color:#77606b;margin:0 0 24px}
+.lara-partner-grid>a>span{font-weight:800;font-size:13px;color:#934366;margin-top:auto}
+.lara-partner-grid>a:hover{border-color:#a55176;background:#fff3f8}
+.client-refresh-page .lara-blush p{font-size:18px;line-height:1.7}
+.client-refresh-page .lara-social-pills a{display:grid;grid-template-columns:1fr auto;gap:7px 16px;padding:23px}
+.lara-social-pills a span{grid-column:1;font-size:19px}
+.lara-social-pills a small{grid-column:1;font-size:13px;font-weight:500;color:#77606b}
+.lara-social-pills a b{grid-column:2;grid-row:1/3;align-self:center;font-size:25px;font-weight:500}
+
+/* Caligulas: the house, its history and the people; assets no longer depend on hotlinks. */
+.client-refresh-page .client-caligulas-hero::before{background-image:url("../img/clients/caligulas/hero.webp")}
+.client-refresh-page .client-caligulas-hero h1{font-size:clamp(54px,6vw,84px);line-height:.98}
+.client-refresh-page .caligulas-hero-grid{gap:48px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.client-refresh-page .caligulas-mark{width:250px;height:auto}
+.client-refresh-page .caligulas-hero-card{min-height:530px;border-radius:24px}
+.client-refresh-page .caligulas-hero-card figcaption,.client-refresh-page .caligulas-room figcaption{position:absolute;z-index:2;left:20px;right:20px;bottom:20px;font:700 9px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#e2c985}
+.client-refresh-page .caligulas-house-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;align-items:center}
+.client-refresh-page .caligulas-room{min-height:0}
+.client-refresh-page .caligulas-room img{display:block;height:auto;aspect-ratio:3/4}
+.client-refresh-page .caligulas-room::after{content:"";padding:0;inset:60% 0 0;background:linear-gradient(transparent,rgba(5,5,4,.9));border:0;border-radius:0;pointer-events:none}
+.caligulas-house-story h2{font:500 clamp(46px,5.3vw,76px)/1 Georgia,serif;margin:18px 0 26px;letter-spacing:-.04em}
+.caligulas-house-story p{font-size:18px;line-height:1.7;color:#b5aa9b}
+.caligulas-house-story .client-inline-link{color:#e2c985}
+.caligulas-flow-grid>a{min-height:275px;padding:24px;border:1px solid #d2c5aa;border-radius:18px;background:#f8f3e9;display:flex;flex-direction:column}
+.caligulas-flow-grid>a small{font:700 9px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#806529}
+.caligulas-flow-grid>a h3{font:500 29px/1.1 Georgia,serif;margin:22px 0 16px}
+.caligulas-flow-grid>a p{font-size:16px;line-height:1.65;color:#71695d;margin:0 0 26px}
+.caligulas-flow-grid>a>span{font-size:13px;font-weight:800;color:#806529;margin-top:auto}
+.caligulas-flow-grid>a:hover{border-color:#806529;background:#fffaf0}
+.caligulas-community-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.caligulas-community-gallery figure{min-width:0}
+.caligulas-community-gallery img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:18px}
+.caligulas-community-gallery figcaption{font:500 24px/1.2 Georgia,serif;color:#e2c985;margin-top:18px}
+.client-refresh-page .caligulas-atmosphere .client-section-head p{color:#b5aa9b}
+
+/* Intermediate and touch compositions. */
+@media(max-width:1050px){
+.avelar-service-gallery,.lbfit-shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.client-refresh-page .caligulas-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.client-refresh-page .client-avelar-hero .avelar-grid,.avelar-workshop-grid,.lbfit-editorial-intro,.patricia-story-grid,.client-refresh-page .patricia-wine-grid,.client-refresh-page .lara-hero-grid,.client-refresh-page .caligulas-hero-grid,.client-refresh-page .caligulas-house-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+.avelar-workshop-photo{max-width:640px;width:100%;margin-inline:auto!important}
+.avelar-workshop-photo img{aspect-ratio:4/3;object-position:center 56%}
+.client-refresh-page .avelar-photo-frame>img{height:520px}
+.patricia-process{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+.patricia-process li{border:0;margin:0;padding-right:20px}
+.client-refresh-page .caligulas-hero-card{min-height:440px}
+.client-refresh-page .caligulas-room{max-width:580px;width:100%;margin-inline:auto!important}
+.client-refresh-page .client-patricia-hero h1{font-size:80px}
+}
+@media(max-width:760px){
+.client-refresh-page .client-shell{width:calc(100% - 40px)!important}
+.client-refresh-page .client-section{padding:64px 0}
+.client-refresh-page .client-section-head{margin-bottom:30px}
+.client-refresh-page .client-section-head h2{font-size:clamp(36px,10vw,48px)!important}
+.client-refresh-page .client-section-head p{font-size:16px}
+.client-refresh-page .client-avelar-hero,.client-refresh-page .client-lbfit-hero,.client-refresh-page .client-patricia-hero,.client-refresh-page .client-lara-hero,.client-refresh-page .client-caligulas-hero{padding:108px 0 54px!important}
+.client-refresh-page .client-avelar-hero h1{font-size:clamp(34px,9.5vw,52px)!important}
+.avelar-brand-mark{width:160px;margin-bottom:24px}
+.client-refresh-page .client-avelar-hero p{font-size:16px}
+.client-refresh-page .avelar-photo-frame>img{height:360px!important}
+.client-refresh-page .avelar-photo-frame{box-shadow:10px 10px 0 rgba(21,62,127,.12)}
+.avelar-workshop-grid h2{font-size:40px}
+.avelar-method h3{font-size:22px}
+.avelar-service-gallery{gap:12px}
+.avelar-service-gallery>a>div{padding:18px 14px}
+.avelar-service-gallery h3{font-size:22px}
+.avelar-service-gallery small{font-size:8px;letter-spacing:.07em}
+.avelar-service-gallery p{font-size:14px}
+.avelar-remap-link{display:grid;gap:12px;font-size:15px}
+.avelar-local{padding:60px 0}
+.avelar-local .client-shell{grid-template-columns:1fr;gap:26px}
+.avelar-local p{font-size:16px}
+.lbfit-brand-line img{width:58px;height:58px}
+.client-refresh-page .client-lbfit-hero h1{font-size:clamp(44px,12vw,68px)!important}
+.client-refresh-page .lbfit-intro-copy p{font-size:17px}
+.lbfit-campaign{margin-top:32px!important}
+.lbfit-campaign img{aspect-ratio:4/5;height:auto;object-fit:cover;object-position:56% center}
+.lbfit-campaign figcaption{font-size:8px;flex-wrap:wrap;gap:8px}
+.lbfit-shop-grid{gap:12px}
+.lbfit-shop-grid>a{min-height:300px;padding:22px 16px}
+.lbfit-shop-grid h3{font-size:34px}
+.client-refresh-page .lbfit-night-grid{grid-template-columns:1fr;gap:32px}
+.lbfit-brand-seal{padding:12px 0}
+.lbfit-brand-seal img{width:210px}
+.client-refresh-page .client-patricia-hero h1{font-size:clamp(54px,15vw,72px)!important}
+.client-refresh-page .patricia-quote{font-size:27px}
+.client-refresh-page .client-patricia-hero .client-copy{font-size:16px}
+.client-refresh-page .patricia-portrait,.client-refresh-page .lara-photo-frame{height:auto!important;aspect-ratio:1/1}
+.patricia-story h2{font-size:44px;margin:14px 0 0}
+.patricia-story-grid .patricia-story-lead{font-size:26px}
+.patricia-story-grid p{font-size:16px}
+.patricia-process{grid-template-columns:1fr;gap:0}
+.patricia-process li{padding:24px 0;border-bottom:1px solid #cbbdb5;display:grid;grid-template-columns:44px 1fr;gap:12px 20px}
+.patricia-process li>span{grid-row:1/3;font-size:36px}
+.patricia-process h3{margin:0;font-size:29px}
+.patricia-process p{grid-column:2;font-size:15px}
+.client-refresh-page .patricia-wine h2{font-size:clamp(36px,11vw,44px)}
+.client-refresh-page .patricia-wine p{font-size:17px}
+.client-refresh-page .client-lara-hero h1{font-size:clamp(56px,15vw,72px)!important}
+.client-refresh-page .client-lara-hero p{font-size:16px}
+.client-refresh-page .client-lara-hero .lara-intro-line{font-size:27px}
+.lara-partner-grid{grid-template-columns:1fr}
+.lara-partner-grid>a{padding:26px}
+.lara-partner-mark{min-height:130px;margin-bottom:22px}
+.lara-partner-mark img{width:130px;height:130px}
+.client-refresh-page .lara-blush-grid{gap:30px}
+.client-refresh-page .lara-blush h2{font-size:44px}
+.client-refresh-page .lara-blush p{font-size:16px}
+.client-refresh-page .client-caligulas-hero::before{background-image:url("../img/clients/caligulas/hero-mobile.webp")}
+.client-refresh-page .client-caligulas-hero h1{font-size:clamp(44px,12vw,62px)}
+.client-refresh-page .caligulas-mark{width:215px}
+.client-refresh-page .client-caligulas-hero p{font-size:16px}
+.client-refresh-page .caligulas-hero-card{min-height:380px}
+.caligulas-house-story h2{font-size:48px}
+.caligulas-house-story p{font-size:16px}
+.client-refresh-page .caligulas-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.caligulas-flow-grid>a{min-height:270px;padding:20px 15px}
+.caligulas-flow-grid>a h3{font-size:26px}
+.caligulas-flow-grid>a p{font-size:14px}
+.caligulas-community-gallery{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:480px){
+.client-refresh-page .client-actions{flex-direction:column}
+.client-refresh-page .client-actions .client-btn{width:100%;padding-inline:14px}
+.avelar-service-gallery,.lbfit-shop-grid,.client-refresh-page .caligulas-flow-grid{grid-template-columns:1fr}
+.avelar-service-gallery img{aspect-ratio:4/3;object-position:center 40%}
+.avelar-service-gallery>a>div{padding:24px}
+.lbfit-shop-grid>a{min-height:240px;padding:26px}
+.lbfit-shop-grid h3{font-size:42px;margin:18px 0 14px}
+.caligulas-flow-grid>a{min-height:235px;padding:26px}
+}
+@media(prefers-reduced-motion:reduce){
+.client-refresh-page main a,.client-refresh-page .client-btn{transition:none!important}
+.client-refresh-page .client-btn:hover{transform:none}
+}

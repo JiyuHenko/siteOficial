@@ -23,11 +23,11 @@
     {"path": "/products/zuri.html", "lastmod": "2026-09-13", "priority": "0.8"},
     {"path": "/products/loja-inteligente.html", "lastmod": "2026-08-20", "priority": "0.8"},
     {"path": "/clientes/", "lastmod": "2026-09-30", "priority": "0.9"},
-    {"path": "/clientes/auto-eletrica-avelar.html", "lastmod": "2026-08-13", "priority": "0.8"},
-    {"path": "/clientes/lb-fit.html", "lastmod": "2026-08-13", "priority": "0.8"},
-    {"path": "/clientes/patricia-biagioni.html", "lastmod": "2026-08-13", "priority": "0.8"},
-    {"path": "/clientes/lara-biagioni.html", "lastmod": "2026-08-13", "priority": "0.8"},
-    {"path": "/clientes/caligulas-poker-live.html", "lastmod": "2026-09-12", "priority": "0.8"},
+    {"path": "/clientes/auto-eletrica-avelar.html", "lastmod": "2026-09-30", "priority": "0.8"},
+    {"path": "/clientes/lb-fit.html", "lastmod": "2026-09-30", "priority": "0.8"},
+    {"path": "/clientes/patricia-biagioni.html", "lastmod": "2026-09-30", "priority": "0.8"},
+    {"path": "/clientes/lara-biagioni.html", "lastmod": "2026-09-30", "priority": "0.8"},
+    {"path": "/clientes/caligulas-poker-live.html", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/joias-leopoldina.html", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/sobre.html", "lastmod": "2026-08-14", "priority": "0.7"},
     {"path": "/contato.html", "lastmod": "2026-08-13", "priority": "0.7"},
@@ -50,11 +50,11 @@
     {"label": "Automação empresarial em Passos–MG", "url": "/automacao-empresarial-em-passos-mg.html"}
   ],
   "clients": [
-    {"name": "Auto Elétrica Avelar", "url": "/clientes/auto-eletrica-avelar.html", "description": "auto elétrica e eletrônica automotiva em Passos–MG."},
-    {"name": "LB Fit", "url": "/clientes/lb-fit.html", "description": "moda fitness e e-commerce."},
-    {"name": "Patrícia Biagioni", "url": "/clientes/patricia-biagioni.html", "description": "consultoria individual de treino."},
-    {"name": "Lara Biagioni", "url": "/clientes/lara-biagioni.html", "description": "fitness, lifestyle, LB FIT e links oficiais."},
-    {"name": "Caligulas Poker Live", "url": "/clientes/caligulas-poker-live.html", "description": "programação, ranking, galeria, eventos e comunidade de poker live em Passos–MG."},
+    {"name": "Auto Elétrica Avelar", "url": "/clientes/auto-eletrica-avelar.html", "description": "Auto Elétrica Avelar em Passos–MG: diagnóstico no veículo, análise de módulos na bancada, climatização e atendimento a linhas leve, pesada e agrícola."},
+    {"name": "LB Fit", "url": "/clientes/lb-fit.html", "description": "Conheça a LB Fit: conjuntos, calças, shorts e jaquetas fitness. Cor, movimento e peças para acompanhar o treino e a rotina, com loja online oficial."},
+    {"name": "Patrícia Biagioni", "url": "/clientes/patricia-biagioni.html", "description": "Patrícia Biagioni: personal trainer, ex-atleta e consultoria individual de treino. Conheça sua experiência, o planejamento personalizado e o acompanhamento pelo MFIT."},
+    {"name": "Lara Biagioni", "url": "/clientes/lara-biagioni.html", "description": "Lara Biagioni: fitness, lifestyle, LB Fit e parcerias selecionadas. Encontre seus canais oficiais, favoritos e cupons na página de links da Lara."},
+    {"name": "Caligulas Poker Live", "url": "/clientes/caligulas-poker-live.html", "description": "Caligulas Poker Live em Passos–MG: conheça a casa, sua história do online às mesas, a comunidade, programação, ranking e Caligulas Poker Series."},
     {"name": "Joias Leopoldina", "url": "/clientes/joias-leopoldina.html", "description": "joias em Prata 925, história da marca e loja online com identidade própria."}
   ]
 }

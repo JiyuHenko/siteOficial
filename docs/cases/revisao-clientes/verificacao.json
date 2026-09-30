@@ -1,0 +1,657 @@
+{
+  "capturedAt": "2026-09-30T19:24:37.711050+00:00",
+  "baseHead": "6bc45521daceaad38c9d049ad5aef00bcc0997d0",
+  "branch": "feat/cases-clientes-navegacao",
+  "engine": "Chromium isolado, com requests externos bloqueados somente durante os testes",
+  "runtimeFiles": [
+    {
+      "path": ".harness/site/SITE_DESIGN.json",
+      "sha256": "ef282923dc4e0cc7e8cd9efad762f7d7756fb9eb9a76d4f436418c2f7349db70"
+    },
+    {
+      "path": ".harness/site/site-content.json",
+      "sha256": "607a795f2ca42830191726cc5490cbad97348d36ff8c642858c37ac4c67d5933"
+    },
+    {
+      "path": "assets/css/client-cases-v2.css",
+      "sha256": "a6854b33c2da370d2bdf8edc0290345f8fc6b7774b6b3edec4a6caeca94bd111"
+    },
+    {
+      "path": "assets/css/v3/07-client-media-fixes.css",
+      "sha256": "0a5831e6834fdf92cee0eaaf7c5f472bddd81b9bbfe986fa930d5305ddee6d1d"
+    },
+    {
+      "path": "assets/css/v3/15-case-deck-v2.css",
+      "sha256": "94a155283c35bf17f0374c68f2e2dbc6ba51937a6a28d672e144cdf2fd8a1c0a"
+    },
+    {
+      "path": "assets/img/clients/avelar/climatizacao.webp",
+      "sha256": "2d9e0f0f6bc8d55e3124adf0b3c4a9dc09cee0fe02a1d6e79dca1baf488c08ca"
+    },
+    {
+      "path": "assets/img/clients/avelar/diagnostico.webp",
+      "sha256": "4d5b38f45433c944cf4871e9f6730f53f2da4a48a5413c43d20698bdf8974fb0"
+    },
+    {
+      "path": "assets/img/clients/avelar/fachada.webp",
+      "sha256": "7e2642f3469727aa114ded6f330a6b1c52c0184e63979e7d5f810118115454ae"
+    },
+    {
+      "path": "assets/img/clients/avelar/linha-pesada.webp",
+      "sha256": "3f4b6a033ce84e8b5e952072a8bdc0faf6f3f6fca183a6beed7cc622907ea2bc"
+    },
+    {
+      "path": "assets/img/clients/avelar/modulos.webp",
+      "sha256": "4b33ff4221090b0a07f0c97a80b476575e7e53078a9127875a919e57e2c35e87"
+    },
+    {
+      "path": "assets/img/clients/avelar/oficina.webp",
+      "sha256": "2a805b2c89793ee9ee5105be4ab10b31c8f9b6b1077eb0d6feb06f51f5ffe42d"
+    },
+    {
+      "path": "assets/img/clients/caligulas/casa.webp",
+      "sha256": "970b887c0823faafd49bf4c12ab2cbae8704c0c4d2ad7aa408f0c0dff45388cc"
+    },
+    {
+      "path": "assets/img/clients/caligulas/comunidade.webp",
+      "sha256": "cae5f01644cd0de5b31a8cf9e58c3e49c6d3c9df57db23c73f892144e1080197"
+    },
+    {
+      "path": "assets/img/clients/caligulas/hero-mobile.webp",
+      "sha256": "a815d2182ac5e9cc54296f187a9a7df7fac8a3a052f5f694df5aae57143bae18"
+    },
+    {
+      "path": "assets/img/clients/caligulas/hero.webp",
+      "sha256": "426c2d9ebe0fe5779dd36931a4b8230ca6401056664fddca9fa789a42d75abf9"
+    },
+    {
+      "path": "assets/img/clients/caligulas/logo.webp",
+      "sha256": "052adbe9984a2d99acac644de84a67da96df89f4be3e471c9b3b4871850736a3"
+    },
+    {
+      "path": "assets/img/clients/caligulas/premiacao.webp",
+      "sha256": "54c04a96826f29d0454a9b093770f1a367dd39fac8bb33bffa1816c2f2761260"
+    },
+    {
+      "path": "assets/img/clients/caligulas/trofeus.webp",
+      "sha256": "a354c602c39c309777af9b7faea0daf177f6f95f5525600199c947845b98dd0e"
+    },
+    {
+      "path": "assets/img/clients/lara/growth.webp",
+      "sha256": "03f631aff41cddb7eb687c9cff359feb30ea8a29c729626606850587022a6f7e"
+    },
+    {
+      "path": "assets/img/clients/lara/oficial-farma.webp",
+      "sha256": "4fc8779bcfcff06ad80c2fc044994d42533d6953ad68253c5f7a47c499c055a6"
+    },
+    {
+      "path": "assets/img/clients/lara/retrato.webp",
+      "sha256": "003c14adf50acd8c9b0ccd93354e45af6636b1fd683985af8b83bbca967a8ca9"
+    },
+    {
+      "path": "assets/img/clients/lbfit/logo.webp",
+      "sha256": "3e00a111a968d2cb492e7e74d30fdb123c54e17b202d0406563b4990e01ab7de"
+    },
+    {
+      "path": "assets/js/custommind-site-v3.js",
+      "sha256": "6ac9fe446843dc217b05e5528407d48ee8ca34cb9748bc7c8fdebcbdcf2e8792"
+    },
+    {
+      "path": "clientes/auto-eletrica-avelar.html",
+      "sha256": "01da3618ae5721fed5c537dbd516535c2cc0d9fc0fd63964fa505d3718b7e691"
+    },
+    {
+      "path": "clientes/caligulas-poker-live.html",
+      "sha256": "338c5a8145a49fb36ca476c5ae0145cac169e91888f5e496b2bb1893f74f66ed"
+    },
+    {
+      "path": "clientes/index.html",
+      "sha256": "08582e87ff2f476a7f64824c54deeac1e732b7f615d2634d6f2177fe477af877"
+    },
+    {
+      "path": "clientes/lara-biagioni.html",
+      "sha256": "8720d75c177efeda5db6f8993cd3bc172b8ed3af8b6a177607d2a7f31b332846"
+    },
+    {
+      "path": "clientes/lb-fit.html",
+      "sha256": "099ffe38fd03a3a3f9f3a904849985606444d18f52c2202e57ea05f8c7337957"
+    },
+    {
+      "path": "clientes/patricia-biagioni.html",
+      "sha256": "a27cedd5eaeffa3607e13a3791179bfac6bd05bf69484d32306fe6f1103e3447"
+    },
+    {
+      "path": "index.html",
+      "sha256": "6d3895f8447ccb71b7d308010aa4fc66ca8fb90439972d68bc3050c856e865cb"
+    },
+    {
+      "path": "llms.txt",
+      "sha256": "312032b7fa1b5cf7d7ca525dd836cd6a62cf476255b328e4ddb9825e05fef19b"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "928611ff9df621696f1336502cb39a2cfafe24c24ed8acc469c611d0d16989f3"
+    }
+  ],
+  "checks": [
+    "JavaScript syntax",
+    "Shared header/footer",
+    "Asset audit",
+    "Site harness: 0 errors, 1 pre-existing CSS imports warning",
+    "SEO surfaces",
+    "git diff --check"
+  ],
+  "results": [
+    {
+      "type": "case",
+      "route": "/clientes/auto-eletrica-avelar.html",
+      "width": 1440,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/auto-eletrica-avelar.html",
+      "width": 1024,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/auto-eletrica-avelar.html",
+      "width": 760,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/auto-eletrica-avelar.html",
+      "width": 390,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/auto-eletrica-avelar.html",
+      "width": 320,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lb-fit.html",
+      "width": 1440,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lb-fit.html",
+      "width": 1024,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lb-fit.html",
+      "width": 760,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lb-fit.html",
+      "width": 390,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lb-fit.html",
+      "width": 320,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/patricia-biagioni.html",
+      "width": 1440,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/patricia-biagioni.html",
+      "width": 1024,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/patricia-biagioni.html",
+      "width": 760,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/patricia-biagioni.html",
+      "width": 390,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/patricia-biagioni.html",
+      "width": 320,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lara-biagioni.html",
+      "width": 1440,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lara-biagioni.html",
+      "width": 1024,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lara-biagioni.html",
+      "width": 760,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lara-biagioni.html",
+      "width": 390,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/lara-biagioni.html",
+      "width": 320,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/caligulas-poker-live.html",
+      "width": 1440,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/caligulas-poker-live.html",
+      "width": 1024,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": false
+    },
+    {
+      "type": "case",
+      "route": "/clientes/caligulas-poker-live.html",
+      "width": 760,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/caligulas-poker-live.html",
+      "width": 390,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "case",
+      "route": "/clientes/caligulas-poker-live.html",
+      "width": 320,
+      "viewportHeight": 960,
+      "result": "passed",
+      "singleH1": true,
+      "noDocumentOverflow": true,
+      "noElementOverflow": true,
+      "noTextOverflow": true,
+      "imagesLoaded": true,
+      "structuredDataValid": true,
+      "officialLinkVerified": true,
+      "institutionalContactVerified": true,
+      "mobileMenuChecked": true
+    },
+    {
+      "type": "desktop-navigation",
+      "width": 1440,
+      "exposedCardClicks": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3
+        },
+        {
+          "from": 3,
+          "to": 4
+        },
+        {
+          "from": 4,
+          "to": 5
+        },
+        {
+          "from": 5,
+          "to": 0
+        },
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        }
+      ],
+      "keyboard": true,
+      "wheel": true,
+      "activeLink": "clientes/patricia-biagioni.html"
+    },
+    {
+      "type": "desktop-navigation",
+      "width": 1024,
+      "exposedCardClicks": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3
+        },
+        {
+          "from": 3,
+          "to": 4
+        },
+        {
+          "from": 4,
+          "to": 5
+        },
+        {
+          "from": 5,
+          "to": 0
+        },
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        }
+      ],
+      "keyboard": true,
+      "wheel": true,
+      "activeLink": "clientes/patricia-biagioni.html"
+    },
+    {
+      "type": "direct-navigation",
+      "width": 1440,
+      "mobileOrReducedMotion": true,
+      "returnLink": true,
+      "directoryLink": true
+    },
+    {
+      "type": "direct-navigation",
+      "width": 390,
+      "mobileOrReducedMotion": true,
+      "returnLink": true,
+      "directoryLink": true
+    },
+    {
+      "type": "baseline-visual-match",
+      "route": "/index.html",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "tolerance": 3
+    },
+    {
+      "type": "baseline-visual-match",
+      "route": "/clientes/joias-leopoldina.html",
+      "changedPixels": 0,
+      "maxChannelDelta": 0,
+      "tolerance": 0
+    }
+  ],
+  "reportFormat": "Resultados técnicos agregados; sem contatos, endereços ou dados estruturados completos dos clientes."
+}
