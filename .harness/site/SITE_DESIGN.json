@@ -194,7 +194,7 @@
       ],
       "mobileFallback": "Fluxo vertical, retrato integral responsivo, texto do cuidado antes da imagem e etapas em lista. Home com carrossel nativo; reduced motion com links diretos.",
       "reducedMotion": "Página estática, transições desativadas e todo o conteúdo visível.",
-      "assetPolicy": "Assets oficiais de siteMamae. Retrato fornecido com edição de fundo documentada; composições editoriais existentes são ilustrativas. Sem novas imagens sintéticas, especialidades, modalidades ou resultados presumidos. Novos rasters em WebP.",
+      "assetPolicy": "Assets oficiais de siteMamae e novo retrato original fornecido pelo usuário, apenas redimensionado e convertido para WebP, com proporção 2:3 preservada. Composições editoriais existentes são ilustrativas. Sem novas imagens sintéticas, especialidades, modalidades ou resultados presumidos.",
       "scope": "client-fernanda-v1.css isolado por theme-fernanda-page, case-g e theme-fernanda. Integrações na home, diretório e fonte de SEO; chrome compartilhado preservado."
     }
   }

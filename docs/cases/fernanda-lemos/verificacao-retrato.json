@@ -1,0 +1,204 @@
+{
+  "date": "2026-09-30",
+  "baseCommit": "b9ae292ceb779439e36829fd3327974095de3d8c",
+  "branch": "feat/cliente-fernanda-lemos",
+  "original": {
+    "file": "image(7).png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 2027971,
+    "sha256": "150010374abba5d8a39fcbae976a0de10936c48d6c65ba8648198a68b4d90521"
+  },
+  "derivatives": [
+    {
+      "width": 1024,
+      "height": 1536,
+      "bytes": 92096,
+      "sha256": "e4e37ce9089541e876c66a594a5b9cd430ae5cbd0e1ec454de6f87c283b305ac"
+    },
+    {
+      "width": 800,
+      "height": 1200,
+      "bytes": 62872,
+      "sha256": "5f3d3186719e57451d47576c6e1844dfb1cf4e81b660693fd259b005de43ad25"
+    },
+    {
+      "width": 480,
+      "height": 720,
+      "bytes": 29340,
+      "sha256": "e4efe8d8bf2274a528a74b1e6ffa5970553e11ea13b81b5a9e785a1e7c5adeb5"
+    }
+  ],
+  "sourceHashes": {
+    "index.html": "7f8cd7f6e8180b6dd15de2db1e8486aca56786c041ec495d0f7caa630f9b0284",
+    "clientes/index.html": "0a2723a8d1ec99dc84b323a17083f31aed302227d993a76ed72a0ff0008032c0",
+    "clientes/fernanda-lemos.html": "d6228aa02badaedd50e8ddb104c395d830809e13d21e0c3a4770042d61f211c6",
+    "assets/css/client-fernanda-v1.css": "e98fd7a35c0720f8357e7d885f6d8a9a6794f73604d4c0112ed3af98351ac0c4"
+  },
+  "preview": {
+    "path": "retrato-preview.webp",
+    "width": 1200,
+    "height": 760,
+    "sha256": "a4a839943822d20eb69d5cb7239570188b7c388a549f69e77daca95f9de6a0fa"
+  },
+  "results": [
+    {
+      "repo": "cm",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 1440,
+      "dpr": 1,
+      "state": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "renderedWidth": 522.640625,
+        "renderedHeight": 783.953125,
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-800.webp",
+        "complete": true,
+        "alt": "Fernanda Lemos, nutricionista, sorrindo em seu retrato profissional",
+        "h1Count": 1,
+        "canonical": "https://www.custommind.com.br/clientes/fernanda-lemos.html",
+        "objectFit": "cover",
+        "objectPosition": "50% 50%",
+        "structuredPortraitCurrent": true,
+        "fontReady": true,
+        "widthProperty": 523,
+        "heightProperty": 784
+      },
+      "localErrors": 0
+    },
+    {
+      "repo": "cm",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 1024,
+      "dpr": 1,
+      "state": {
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "renderedWidth": 434.75,
+        "renderedHeight": 652.125,
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-480.webp",
+        "complete": true,
+        "alt": "Fernanda Lemos, nutricionista, sorrindo em seu retrato profissional",
+        "h1Count": 1,
+        "canonical": "https://www.custommind.com.br/clientes/fernanda-lemos.html",
+        "objectFit": "cover",
+        "objectPosition": "50% 50%",
+        "structuredPortraitCurrent": true,
+        "fontReady": true,
+        "widthProperty": 435,
+        "heightProperty": 652
+      },
+      "localErrors": 0
+    },
+    {
+      "repo": "cm",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 390,
+      "dpr": 1,
+      "state": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "renderedWidth": 350,
+        "renderedHeight": 525,
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-480.webp",
+        "complete": true,
+        "alt": "Fernanda Lemos, nutricionista, sorrindo em seu retrato profissional",
+        "h1Count": 1,
+        "canonical": "https://www.custommind.com.br/clientes/fernanda-lemos.html",
+        "objectFit": "cover",
+        "objectPosition": "50% 50%",
+        "structuredPortraitCurrent": true,
+        "fontReady": true,
+        "widthProperty": 350,
+        "heightProperty": 525
+      },
+      "localErrors": 0
+    },
+    {
+      "repo": "cm",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 390,
+      "dpr": 2,
+      "motion": "normal",
+      "source": "/cm/assets/img/clients/fernanda/retrato-profissional-800.webp",
+      "visible": true
+    },
+    {
+      "repo": "cm",
+      "type": "portfolio",
+      "width": 1440,
+      "card": {
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-480.webp",
+        "width": 277.5869140625,
+        "height": 295.25018310546875,
+        "objectFit": "cover",
+        "objectPosition": "50% 12%"
+      },
+      "directory": {
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-800.webp",
+        "width": 611,
+        "height": 520,
+        "objectFit": "cover",
+        "objectPosition": "50% 18%"
+      },
+      "focusByClick": true,
+      "activeLink": true,
+      "directoryLink": true,
+      "returnLink": true
+    },
+    {
+      "repo": "cm",
+      "type": "portfolio",
+      "width": 1024,
+      "card": {
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-480.webp",
+        "width": 125.1771240234375,
+        "height": 295.3302001953125,
+        "objectFit": "cover",
+        "objectPosition": "50% 12%"
+      },
+      "directory": {
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-800.webp",
+        "width": 483,
+        "height": 520,
+        "objectFit": "cover",
+        "objectPosition": "50% 18%"
+      },
+      "focusByClick": true,
+      "activeLink": true,
+      "directoryLink": true,
+      "returnLink": true
+    },
+    {
+      "repo": "cm",
+      "type": "portfolio",
+      "width": 390,
+      "card": {
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-480.webp",
+        "width": 299.390625,
+        "height": 186.359375,
+        "objectFit": "cover",
+        "objectPosition": "50% 12%"
+      },
+      "directory": {
+        "source": "/cm/assets/img/clients/fernanda/retrato-profissional-480.webp",
+        "width": 366,
+        "height": 350,
+        "objectFit": "cover",
+        "objectPosition": "50% 18%"
+      },
+      "focusByClick": false,
+      "activeLink": true,
+      "directoryLink": true,
+      "returnLink": true
+    },
+    {
+      "repo": "cm",
+      "route": "/clientes/fernanda-lemos.html",
+      "width": 1440,
+      "dpr": 2,
+      "source": "/cm/assets/img/clients/fernanda/retrato-profissional-1024.webp",
+      "visible": true
+    }
+  ]
+}

@@ -15,37 +15,37 @@
       "role": "marca fornecida"
     },
     {
-      "path": "assets/img/clients/fernanda/retrato-1179.webp",
-      "source": "assets/img/fernanda-lemos.webp",
+      "path": "assets/img/clients/fernanda/retrato-profissional-1024.webp",
+      "source": "image(7).png — foto original fornecida pelo usuário",
       "format": "WEBP",
-      "width": 1179,
-      "height": 1334,
-      "bytes": 116320,
-      "sha256": "e83b4cb0c6cd052f3b2614d560cbd3ea1bfcc8b08f7561a89a0e7d1ea6010d45",
-      "sourceBytesPreserved": true,
-      "role": "retrato profissional fornecido; fundo editado no projeto original"
+      "width": 1024,
+      "height": 1536,
+      "bytes": 92096,
+      "sha256": "e4e37ce9089541e876c66a594a5b9cd430ae5cbd0e1ec454de6f87c283b305ac",
+      "sourceBytesPreserved": false,
+      "role": "retrato profissional original; redimensionamento proporcional e codificação WebP, sem edição criativa"
     },
     {
-      "path": "assets/img/clients/fernanda/retrato-800.webp",
-      "source": "assets/img/fernanda-lemos-800.webp",
+      "path": "assets/img/clients/fernanda/retrato-profissional-800.webp",
+      "source": "image(7).png — foto original fornecida pelo usuário",
       "format": "WEBP",
       "width": 800,
-      "height": 905,
-      "bytes": 67468,
-      "sha256": "0854ba3d8d43ff99d44fe4c48918c0448074396670d81dd9cef78a29729bde71",
-      "sourceBytesPreserved": true,
-      "role": "retrato profissional fornecido; fundo editado no projeto original"
+      "height": 1200,
+      "bytes": 62872,
+      "sha256": "5f3d3186719e57451d47576c6e1844dfb1cf4e81b660693fd259b005de43ad25",
+      "sourceBytesPreserved": false,
+      "role": "retrato profissional original; redimensionamento proporcional e codificação WebP, sem edição criativa"
     },
     {
-      "path": "assets/img/clients/fernanda/retrato-480.webp",
-      "source": "assets/img/fernanda-lemos-480.webp",
+      "path": "assets/img/clients/fernanda/retrato-profissional-480.webp",
+      "source": "image(7).png — foto original fornecida pelo usuário",
       "format": "WEBP",
       "width": 480,
-      "height": 543,
-      "bytes": 31128,
-      "sha256": "9b21e0d6bc77c441a11588016d7525d9cf1d4d7d42afeeedcb0387c196b6f827",
-      "sourceBytesPreserved": true,
-      "role": "retrato profissional fornecido; fundo editado no projeto original"
+      "height": 720,
+      "bytes": 29340,
+      "sha256": "e4efe8d8bf2274a528a74b1e6ffa5970553e11ea13b81b5a9e785a1e7c5adeb5",
+      "sourceBytesPreserved": false,
+      "role": "retrato profissional original; redimensionamento proporcional e codificação WebP, sem edição criativa"
     },
     {
       "path": "assets/img/clients/fernanda/mesa-800.webp",
@@ -102,5 +102,22 @@
       "sourceBytesPreserved": false,
       "role": "composição editorial ilustrativa existente no site original"
     }
-  ]
+  ],
+  "portraitUpdate": {
+    "date": "2026-09-30",
+    "original": {
+      "file": "image(7).png",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2027971,
+      "sha256": "150010374abba5d8a39fcbae976a0de10936c48d6c65ba8648198a68b4d90521"
+    },
+    "conversion": {
+      "format": "webp",
+      "quality": 86,
+      "fullFrame": true,
+      "upscaled": false
+    },
+    "replaces": "retrato anterior com edição de fundo"
+  }
 }
