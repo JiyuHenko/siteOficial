@@ -8,50 +8,46 @@
     "negócios que precisam de site, sistema, automação ou IA sob medida",
     "clientes locais em Passos-MG e projetos remotos no Brasil"
   ],
-  "visualThesis": "Laboratório digital preciso com energia criativa controlada — tecnologia que parece desenhada para o problema, não saída de um template.",
+  "visualThesis": "Estúdio digital contemporâneo: tipografia de impacto, composições editoriais assimétricas, provas visuais autênticas e roxo em superfícies contidas. Sem decoração neural ou efeitos 3D.",
   "signature": {
-    "patternId": "CM-S01",
-    "name": "Hero Shrink Frame",
-    "reason": "A home precisa criar uma primeira impressão memorável sem contaminar o restante da narrativa com efeitos concorrentes."
+    "patternId": "CM-V4-01",
+    "name": "Editorial proof collage",
+    "reason": "Hero com argumento comercial objetivo e dois projetos reais sobrepostos, mais identidade forte; legível sem JavaScript e sem capturar scroll."
   },
   "supportingPatterns": [
     {
-      "patternId": "CM-S05",
-      "name": "Depth Case Deck",
-      "reason": "Projetos são a principal prova visual da Custom Mind. No desktop, a roda do mouse e as setas navegam o deck; clicar num card ao fundo coloca esse projeto em foco, e clicar no projeto em foco abre a página. No celular, carrossel nativo; reduced motion, grade estática."
-    },
-    {
-      "patternId": "CM-S09",
-      "name": "Contextual Spotlight",
-      "reason": "Usado somente nos cards de produto para reforçar interação sem virar efeito global."
+      "patternId": "CM-V4-02",
+      "name": "Editorial case gallery",
+      "reason": "Cases reais em grades com proporções assimétricas e destinos clicáveis, sem clone de cards, 3D ou bloqueio da rolagem."
     }
   ],
   "motion": {
     "budget": {
-      "signatureCount": 1,
-      "supportingCount": 2,
+      "signatureCount": 0,
+      "supportingCount": 0,
       "maxSupporting": 3
     },
-    "reducedMotion": "Todas as transformações de scroll e reveals tornam-se estáticas; o conteúdo permanece visível e navegável.",
-    "mobileFallback": "O hero não encolhe e a galeria de cases usa carrossel horizontal nativo com scroll-snap, sem perspectiva."
+    "reducedMotion": "Conteúdo estático por padrão; hover exclusivamente em pointer fino; prefers-reduced-motion desativa transformações transitórias.",
+    "mobileFallback": "Hero reordenado verticalmente, cases em lista fotografica, cartões de serviço em coluna e navegação acessível com menu."
   },
   "brandConstraints": [
-    "preservar o símbolo oficial da Custom Mind",
-    "manter roxo como acento, não como gradiente decorativo dominante",
-    "não inventar métricas, clientes ou alcance",
-    "preservar URLs públicas, SEO e dados factuais existentes"
+    "preservar símbolo, contato e identidade Custom Mind",
+    "roxo e lavanda como acentos físicos, sem gradiente decorativo",
+    "não inventar métricas, clientes, capacidades ou depoimentos",
+    "preservar URLs públicas, SEO e dados estruturados consistentes com conteúdo visível",
+    "carregar provas reais e seções essenciais sem JS",
+    "manter CSS próprio de cases para respeitar identidade de cada cliente"
   ],
   "assetPreservation": {
-    "policy": "Assets reais existentes são fonte de verdade visual. Mockups genéricos só podem complementar, nunca substituir produto/case real sem justificativa.",
+    "policy": "Usar fotografias e capturas reais já aprovadas; não gerar imagens sintéticas de clientes; nunca duplicar assets ou reter imagens sem referência de uso.",
     "requiredReferences": [
+      "assets/img/clients/leopoldina/hero-desktop.webp",
+      "assets/img/clients/avelar/fachada.webp",
+      "assets/img/clients/fernanda/retrato-profissional-800.webp",
+      "assets/img/clients/lbfit-banner.webp",
       "assets/img/jade-inicio.webp",
       "assets/img/zuri-inicio.webp",
-      "assets/img/loja.webp",
-      "assets/img/clients/avelar-fachada.webp",
-      "assets/img/clients/lbfit-banner.webp",
-      "assets/img/clients/patricia-hero.webp",
-      "assets/img/clients/lara-og.jpg",
-      "https://caligulaspoker.com.br/assets/img/perf/photos/hero-desktop-1440.webp"
+      "assets/img/loja.webp"
     ]
   },
   "clientProjects": {

@@ -1,52 +1,36 @@
 # Custom Mind — site oficial
 
-Site estático publicado via GitHub Pages.
-
-## Posicionamento
-A Custom Mind é apresentada pelo site em quatro pilares estratégicos:
-- Presença Digital
-- Software sob medida
-- Automação
-- Inteligência Artificial
-
-Jade, Zuri e Loja Inteligente permanecem como produtos desenvolvidos pela Custom Mind, com páginas próprias em `products/`, mas não definem sozinhos o posicionamento da empresa.
-
-Os projetos em `clientes/` continuam centrados nas empresas atendidas e funcionam como portfólio e descoberta. A home também reaproveita `assets/img/empresas/` como prova social separada dos projetos em destaque.
+Site estático da [Custom Mind](https://www.custommind.com.br/), hospedado no GitHub Pages. Atuação: presença digital, software sob medida, automação e inteligência artificial. Produtos próprios: Jade, Zuri e Loja Inteligente. Cases de clientes preservam identidade específica e URLs públicas.
 
 ## Arquitetura
-A camada visual v3 permanece modular: `assets/css/custommind-site-v3.css` carrega os módulos em `assets/css/v3/`. O comportamento principal fica em `assets/js/custommind-site-v3.js`.
 
-As páginas de pilares são:
-- `presenca-digital.html`
-- `software-sob-medida.html`
-- `automacao.html`
-- `inteligencia-artificial.html`
+- `index.html`: home editorial v4 em HTML sem renderização por JavaScript.
+- `assets/css/custommind-home-v4.css`: composição da home (hero de cases reais, serviços, portfólio, produtos, processo e FAQ).
+- `assets/css/custommind-global-v4.css`: cabeçalho, rodapé e retoques globais. É importado ao final de `assets/css/custommind-site-v3.css`.
+- `assets/css/v3/`: **base de compatibilidade** para páginas interiores e produtos. Não adicionar módulos com nomes numéricos novos; migrar estilos de forma planejada.
+- `assets/css/client-*.css`: estilos isolados por cliente — **não** substituir por um tema genérico da agência.
+- `assets/js/custommind-site-v3.js`: apenas conversão de CTAs WhatsApp e comportamento do menu móvel.
+- `scripts/sync-site-chrome.mjs`: fonte do header/footer estáticos de páginas interiores e home; rodar para qualquer mudança no chrome.
+- `.harness/site/site-content.json`: SEO central; `.harness/site/SITE_DESIGN.json`: manifesto de design por marca.
 
-O site publicado continua 100% estático. Header e footer permanecem escritos no HTML final para não depender de JavaScript, mas são mantidos a partir de uma única fonte por `scripts/sync-site-chrome.mjs`. Ao alterar navegação, branding ou footer, rode:
+## Diretórios com finalidade própria
+`configurator/` e `demo/` são superfícies separadas e ficam fora do redesign visual. Não apagar sem confirmar usos externos. `docs/cases/` guarda evidências e QA de projetos reais, não CSS de produção.
 
-```bash
-node scripts/sync-site-chrome.mjs
-```
-
-O CI usa `--check` para impedir que páginas voltem a divergir.
-
-Mudanças visuais exigem revisão em desktop e mobile, especialmente hero neural, deck de projetos, marquee de empresas e carrossel mobile.
-
-## Assets
-A árvore de produção deve conter somente assets efetivamente referenciados pelas superfícies atuais. Imagens raster de interface usam WebP sempre que possível; PNG/JPG ficam reservados para casos em que o formato é necessário.
-
-A auditoria abaixo falha quando um asset fantasma ou um bundle legado volta para a árvore:
+## Qualidade
+Requer Node.js 22+; não há etapa de build nem framework no site público.
 
 ```bash
+node --check assets/js/custommind-site-v3.js
+node scripts/sync-site-chrome.mjs --check
 node scripts/audit-unused-assets.mjs
+node .harness/harness.mjs check
+node .harness/sync-seo.mjs --check
 ```
 
-O histórico do Git funciona como arquivo dos assets antigos; não é necessário manter cópias órfãs dentro de `assets/`.
+Para verificar visualmente, servir os arquivos via servidor HTTP local e testar em desktop (~1440px), tablet (~768px), mobile (~390px), navegação por teclado e reduced motion. A branch de redesign não deve ir para `main` sem essa revisão.
 
-## SEO e qualidade
-A fonte central das páginas públicas fica em `.harness/site/site-content.json`. O projeto mantém sitemap, `llms.txt`, 404 com `noindex` e validações automáticas de JavaScript, SEO técnico, referências, JSON-LD, sincronização do chrome compartilhado e assets pelo GitHub Actions.
-
-O `llms.txt` diferencia explicitamente os quatro pilares dos produtos próprios para que mecanismos de busca e sistemas de IA entendam a arquitetura correta da marca.
+## Política de limpeza
+Excluir somente arquivos cuja ausência de uso foi verificada. Git mantém histórico das versões anteriores; não duplicar imagens nem manter experimentos de interface em produção. O redesign v4 eliminou módulos de hero neural, deck mobile legado e carrossel antigo, e substituiu o JS de efeitos por aprimoramentos mínimos.
 
 ## Publicação
-Antes de levar mudanças da branch de trabalho para `main`, revise a home, `/solucoes.html`, os quatro pilares, produtos, clientes e comportamento mobile.
+As páginas mantêm URLs, sitemap e canonicals. Publicação de produção ocorre ao integrar em `main` após revisão do PR.
