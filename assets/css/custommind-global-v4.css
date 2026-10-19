@@ -46,3 +46,75 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #82
 /* Last surviving rule from the retired case deck: Caligulas directory card. */
 .client-board.theme-caligulas{background:#0b0a08!important;color:#f4efe6}
 .client-board.theme-caligulas .client-index-shade{background:linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.88))}
+
+/* Page families: unify the agency's interior layouts without overwriting client-brand stories. */
+.page-main>.page-hero{background:#e6e0ed;position:relative;padding:110px 0 100px}
+.page-main>.page-hero .container{width:min(1480px,calc(100% - clamp(32px,5.4vw,116px)))}
+.page-main>.page-hero h1{line-height:.95;letter-spacing:-.06em}
+.page-main>.page-hero .eyebrow{color:#5e526e}
+.page-main>.page-hero p{color:#574f5e}
+.page-main>.page-hero .page-hero-grid{gap:clamp(30px,5vw,85px)}
+.page-main>.page-hero .btn{border-radius:5px;min-height:56px}
+.page-main .btn-dark{background:#251d31;color:#fff;border-color:#251d31}
+.page-main .btn:not(.btn-dark){background:rgba(255,255,255,.6)}
+.page-main>.content-section{padding:clamp(75px,9vw,135px) 0}
+.page-main>.content-section:nth-of-type(odd){background:#fff}
+.page-main>.content-section .container{width:min(1480px,calc(100% - clamp(32px,5.4vw,116px)))}
+.page-main .content-grid{grid-template-columns:minmax(260px,.75fr) minmax(0,1fr);gap:clamp(35px,7vw,135px)}
+.page-main .content-grid h2{font-size:clamp(43px,5.15vw,77px);line-height:.98}
+.page-main .content-prose>p{font-size:clamp(17px,1.6vw,21px);line-height:1.65}
+.page-main .feature-list{gap:0 22px}
+.page-main .feature{padding-block:30px}
+.page-main .feature h3{font-size:clamp(26px,2.5vw,37px)}
+.page-main .feature p{font-size:15px;line-height:1.6}
+.page-main .solution-hub-grid{gap:12px}
+.page-main .solution-hub-card{border-radius:5px;background:#efecf4;border:0;box-shadow:none;padding:26px;transition:background .18s ease}
+.page-main .solution-hub-card:nth-child(even){background:#e8e4ee}
+.page-main .solution-hub-card h3{letter-spacing:-.045em}
+.page-main .solution-hub-card strong{color:#513878}
+.page-main .pillar-service{border-color:#d7d0de}
+.page-main .pillar-detail-visual{border-radius:5px}
+.page-main .pillar-combo{background:#251e32}
+.page-main .pillar-combo .container{width:min(1480px,calc(100% - clamp(32px,5.4vw,116px)))}
+.page-main .ready-products{background:#f0eef3}
+.page-main .ready-products-head h2{letter-spacing:-.055em}
+.page-main .ready-product{border-radius:5px;background:#fff;box-shadow:none}
+.page-main .ready-product h3{letter-spacing:-.04em}
+.page-main .contact-card{border-radius:6px;background:#fff}
+.page-main .contact-card.primary{background:#413055}
+.page-main .contact-card h3{letter-spacing:-.055em}
+.page-main .client-board{border-radius:6px}
+.product-hero{padding:165px 0 115px;min-height:0;background:#e8e1ef}
+.product-hero .container{width:min(1480px,calc(100% - clamp(32px,5.4vw,116px)))}
+.product-hero h1{font-size:clamp(64px,7.5vw,110px);line-height:.92}
+.product-hero p{line-height:1.56}
+.product-hero .btn{border-radius:5px;min-height:56px}
+.product-hero .btn-dark{background:#251d31;color:#fff}
+.product-demo{border-radius:6px;transform:none;box-shadow:0 22px 60px rgba(21,14,30,.19)}
+.product-depth-section h2{letter-spacing:-.05em}
+.product-depth-section .product-screen-frame{border-radius:7px}
+@media (hover:hover) and (pointer:fine){
+ .page-main .solution-hub-card:hover{background:#e0d6ec}
+ .page-main .client-board:hover{transform:translateY(-3px)}
+}
+@media(max-width:800px){
+ .page-main>.page-hero{padding:65px 0 65px}
+ .page-main>.page-hero .page-hero-grid{grid-template-columns:1fr}
+ .page-main>.page-hero h1{font-size:clamp(53px,10vw,86px)}
+ .page-main .content-grid{grid-template-columns:1fr;gap:32px}
+ .product-hero{padding:125px 0 78px}
+ .product-hero .product-hero-grid{grid-template-columns:1fr;gap:40px}
+ .product-demo{transform:none}
+}
+@media(max-width:600px){
+ .page-main>.page-hero .container,.page-main>.content-section .container,.page-main .pillar-combo .container,.product-hero .container{width:calc(100% - 32px)}
+ .page-main>.page-hero h1{font-size:clamp(51px,12vw,71px)}
+ .page-main .content-grid h2{font-size:clamp(41px,10vw,60px)}
+ .page-main>.content-section{padding:72px 0}
+ .page-main .feature-list{grid-template-columns:1fr}
+ .page-main .feature:nth-child(n){border-right:0;padding-left:0;padding-right:0}
+ .page-main .contact-card.primary{min-height:350px}
+ .product-hero h1{font-size:clamp(54px,12vw,77px)}
+ .product-hero .page-hero-actions{align-items:stretch;flex-direction:column}
+ .product-hero .page-hero-actions .btn{width:100%}
+}
