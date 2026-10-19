@@ -24,6 +24,14 @@ for (const width of [390, 768, 1440]) {
       content: document.documentElement.scrollWidth,
       viewport: document.documentElement.clientWidth
     }));
+    if (dimensions.content > dimensions.viewport + 2) {
+      const culprits = await page.evaluate(() => [...document.querySelectorAll('*')].filter(el => {
+        const box=el.getBoundingClientRect();
+        const cs=getComputedStyle(el);
+        return box.right > innerWidth+2 && cs.position !== 'fixed' && box.width>0;
+      }).slice(0,30).map(el => ({tag:el.tagName,cls:el.className?.toString().slice(0,90),bounds:Math.round(el.getBoundingClientRect().right),width:Math.round(el.getBoundingClientRect().width)})));
+      console.log('OVERFLOW DIAGNOSIS', width, JSON.stringify(culprits));
+    }
     expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 2);
     await page.screenshot({ path: 'test-results/home-' + width + '.png', fullPage: true, animations: 'disabled' });
   });
