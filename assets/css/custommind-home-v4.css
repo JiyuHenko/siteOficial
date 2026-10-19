@@ -233,3 +233,8 @@
 .v4-trust-logos img{max-width:100%;max-height:54px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.82}
 @media(max-width:800px){.v4-trust-inner{grid-template-columns:1fr;gap:24px}.v4-trust-logos{grid-template-columns:repeat(5,minmax(0,1fr))}.v4-trust-logos li{height:65px;padding:8px}}
 @media(max-width:600px){.v4-trust{padding:18px 0 68px}.v4-trust h2{font-size:28px}.v4-trust-logos{grid-template-columns:repeat(3,minmax(0,1fr))}.v4-trust-logos li{height:67px}}
+
+/* Portfolio grid: one large story, two supporting stories, then a deliberate full-width banner. */
+.v4-work-grid .v4-case-wide{grid-column:1/-1;grid-row:auto}
+.v4-work-grid .v4-case-wide .v4-case-image{aspect-ratio:3 / 1}
+@media(max-width:600px){.v4-work-grid .v4-case-wide{grid-column:auto}.v4-work-grid .v4-case-wide .v4-case-image{aspect-ratio:1.22}}
