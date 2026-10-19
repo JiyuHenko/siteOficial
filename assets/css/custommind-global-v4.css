@@ -42,3 +42,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #82
 @media(max-width:760px){.nav-shell{width:calc(100% - 32px);min-height:70px}.site-header .brand-pill strong{font-size:17px}.site-header .brand-pill small{font-size:8px;display:block}.site-header .brand-pill img{width:35px;height:35px}.mobile-nav{top:64px}.page-main{padding-top:70px}.page-hero{padding-top:65px}.site-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:31px 17px}.site-footer .footer-grid>div:first-child{grid-column:1/-1}.site-footer{padding-top:54px}.site-footer .footer-bottom{flex-direction:column;gap:8px}.final-cta{padding:10px}.final-cta-card{padding:32px 24px}.final-cta h2{font-size:clamp(49px,12vw,70px)}}
 @media(max-width:420px){.site-footer .footer-grid{grid-template-columns:1fr 1fr}.site-footer .footer-col h4{font-size:10px}.site-footer .footer-col a{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site-header .nav-pill a::after{transition:none}}
+
+/* Last surviving rule from the retired case deck: Caligulas directory card. */
+.client-board.theme-caligulas{background:#0b0a08!important;color:#f4efe6}
+.client-board.theme-caligulas .client-index-shade{background:linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.88))}
