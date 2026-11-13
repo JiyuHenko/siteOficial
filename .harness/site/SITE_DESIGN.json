@@ -56,7 +56,7 @@
     ]
   },
   "clientProjects": {
-    "/clientes/joias-leopoldina.html": {
+    "/clientes/joias-leopoldina": {
       "pageGoal": "Apresentar a identidade da Joias Leopoldina no portfólio e levar o visitante à loja oficial.",
       "audience": [
         "visitantes do portfólio Custom Mind",
@@ -84,7 +84,7 @@
       "assetPolicy": "Somente imagens fornecidas pelo usuário, convertidas para WebP. Sem novas imagens sintéticas ou métricas comerciais.",
       "scope": "CSS isolado em client-leopoldina-v1.css; header, footer e comportamento do portfólio v3 preservados."
     },
-    "/clientes/auto-eletrica-avelar.html": {
+    "/clientes/auto-eletrica-avelar": {
       "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
       "audience": [
         "Motoristas e empresas de Passos e região que precisam de atendimento automotivo."
@@ -101,7 +101,7 @@
       "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
       "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
     },
-    "/clientes/lb-fit.html": {
+    "/clientes/lb-fit": {
       "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
       "audience": [
         "Pessoas interessadas em moda fitness e na loja oficial LB Fit."
@@ -118,7 +118,7 @@
       "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
       "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
     },
-    "/clientes/patricia-biagioni.html": {
+    "/clientes/patricia-biagioni": {
       "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
       "audience": [
         "Pessoas interessadas na consultoria individual de treino da Patrícia."
@@ -135,7 +135,7 @@
       "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
       "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
     },
-    "/clientes/lara-biagioni.html": {
+    "/clientes/lara-biagioni": {
       "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
       "audience": [
         "Pessoas que acompanham a Lara e procuram seus canais, a LB Fit e os links de parcerias."
@@ -152,7 +152,7 @@
       "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
       "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
     },
-    "/clientes/caligulas-poker-live.html": {
+    "/clientes/caligulas-poker-live": {
       "pageGoal": "Apresentar o cliente e encaminhar ao seu site ou canal oficial.",
       "audience": [
         "Visitantes interessados na casa, na programação e na comunidade do Caligulas em Passos."
@@ -169,7 +169,7 @@
       "assetPolicy": "Assets originais dos repositórios oficiais; novos rasters em WebP, com dimensões e procedência documentadas.",
       "scope": "client-cases-v2.css isolado pela classe client-refresh-page. Header, footer e página aprovada da Leopoldina preservados."
     },
-    "/clientes/fernanda-lemos.html": {
+    "/clientes/fernanda-lemos": {
       "pageGoal": "Apresentar Fernanda Lemos, sua identidade e sua proposta de cuidado; encaminhar ao site e ao agendamento oficial.",
       "audience": [
         "Visitantes do portfólio Custom Mind",
@@ -198,7 +198,7 @@
       "assetPolicy": "Assets oficiais de siteMamae e novo retrato original fornecido pelo usuário, apenas redimensionado e convertido para WebP, com proporção 2:3 preservada. Composições editoriais existentes são ilustrativas. Sem novas imagens sintéticas, especialidades, modalidades ou resultados presumidos.",
       "scope": "client-fernanda-v1.css isolado por theme-fernanda-page, case-g e theme-fernanda. Integrações na home, diretório e fonte de SEO; chrome compartilhado preservado."
     },
-    "/clientes/livia-lopes.html": {
+    "/clientes/livia-lopes": {
       "pageGoal": "Apresentar Lívia Lopes, seu estilo e seus serviços, com acesso à galeria, ao site oficial e ao atendimento.",
       "audience": [
         "Visitantes do portfólio Custom Mind",

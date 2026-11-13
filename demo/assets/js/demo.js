@@ -103,7 +103,7 @@ function renderNav(mods){
   nav.appendChild(hr);
 
   const b = document.createElement("a");
-  b.href = "../configurator/index.html";
+  b.href = "/configurator/";
   b.textContent = "↩ Voltar ao configurador";
   b.dataset.route = "__back";
   nav.appendChild(b);
@@ -447,7 +447,7 @@ function renderCurrent(){
       <h1 class="h1">Configuração não encontrada</h1>
       <p class="p">Abra primeiro o configurador e salve uma configuração para gerar o teste.</p>
       <div class="row">
-        <a class="cta" href="../configurator/index.html">Ir para o configurador</a>
+        <a class="cta" href="/configurator/">Ir para o configurador</a>
       </div>
     `);
     return;

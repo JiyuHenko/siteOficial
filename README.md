@@ -17,10 +17,10 @@ Os projetos em `clientes/` continuam centrados nas empresas atendidas e funciona
 A camada visual v3 permanece modular: `assets/css/custommind-site-v3.css` carrega os módulos em `assets/css/v3/`. O comportamento principal fica em `assets/js/custommind-site-v3.js`.
 
 As páginas de pilares são:
-- `presenca-digital.html`
-- `software-sob-medida.html`
-- `automacao.html`
-- `inteligencia-artificial.html`
+- `/presenca-digital`
+- `/software-sob-medida`
+- `/automacao`
+- `/inteligencia-artificial`
 
 O site publicado continua 100% estático. Header e footer permanecem escritos no HTML final para não depender de JavaScript, mas são mantidos a partir de uma única fonte por `scripts/sync-site-chrome.mjs`. Ao alterar navegação, branding ou footer, rode:
 
@@ -29,6 +29,8 @@ node scripts/sync-site-chrome.mjs
 ```
 
 O CI usa `--check` para impedir que páginas voltem a divergir.
+
+Nos links internos, use a URL pública sem `.html`, como `/sobre` e `/clientes/livia-lopes`. Diretórios com página de índice usam barra final, como `/clientes/`. O GitHub Pages serve o mesmo arquivo HTML nos endereços com e sem extensão, então links antigos continuam funcionando.
 
 Mudanças visuais exigem revisão em desktop e mobile, especialmente hero neural, deck de projetos, marquee de empresas e carrossel mobile.
 
@@ -49,4 +51,4 @@ A fonte central das páginas públicas fica em `.harness/site/site-content.json`
 O `llms.txt` diferencia explicitamente os quatro pilares dos produtos próprios para que mecanismos de busca e sistemas de IA entendam a arquitetura correta da marca.
 
 ## Publicação
-Antes de levar mudanças da branch de trabalho para `main`, revise a home, `/solucoes.html`, os quatro pilares, produtos, clientes e comportamento mobile.
+Antes de levar mudanças da branch de trabalho para `main`, revise a home, `/solucoes`, os quatro pilares, produtos, clientes e comportamento mobile.
