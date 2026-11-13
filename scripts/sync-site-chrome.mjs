@@ -8,6 +8,7 @@ const whatsappNumber = '5511923734039';
 const defaultWhatsappMessage = 'Olá! Vim pelo site da Custom Mind e quero conversar sobre um projeto.';
 const clientHeaderContacts = new Map([
   ['clientes/livia-lopes.html', { label: 'Falar com a Lívia', href: 'https://wa.me/5535997238058' }],
+  ['clientes/games-retro.html', { label: 'Abrir catálogo', href: 'https://gamesretro.app.br/catalogo/' }],
 ]);
 
 function walk(dir='.') {

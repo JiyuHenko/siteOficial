@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-13",
   "brand": {
     "name": "Custom Mind",
     "alternateName": "Custom Mind Software Solutions",
@@ -10,7 +10,7 @@
     "instagram": "https://www.instagram.com/custommind.solutions/"
   },
   "pages": [
-    {"path": "/", "lastmod": "2026-11-12", "priority": "1.0"},
+    {"path": "/", "lastmod": "2026-11-13", "priority": "1.0"},
     {"path": "/solucoes", "lastmod": "2026-09-14", "priority": "0.9"},
     {"path": "/presenca-digital", "lastmod": "2026-09-14", "priority": "0.9"},
     {"path": "/software-sob-medida", "lastmod": "2026-09-14", "priority": "0.9"},
@@ -22,7 +22,7 @@
     {"path": "/products/jade", "lastmod": "2026-08-20", "priority": "0.8"},
     {"path": "/products/zuri", "lastmod": "2026-09-13", "priority": "0.8"},
     {"path": "/products/loja-inteligente", "lastmod": "2026-08-20", "priority": "0.8"},
-    {"path": "/clientes/", "lastmod": "2026-11-12", "priority": "0.9"},
+    {"path": "/clientes/", "lastmod": "2026-11-13", "priority": "0.9"},
     {"path": "/clientes/auto-eletrica-avelar", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/lb-fit", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/patricia-biagioni", "lastmod": "2026-09-30", "priority": "0.8"},
@@ -31,6 +31,7 @@
     {"path": "/clientes/joias-leopoldina", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/fernanda-lemos", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/livia-lopes", "lastmod": "2026-11-12", "priority": "0.8"},
+    {"path": "/clientes/games-retro", "lastmod": "2026-11-13", "priority": "0.8"},
     {"path": "/sobre", "lastmod": "2026-08-14", "priority": "0.7"},
     {"path": "/contato", "lastmod": "2026-08-13", "priority": "0.7"},
     {"path": "/politica-de-privacidade", "lastmod": "2026-08-13", "priority": "0.3"}
@@ -59,6 +60,7 @@
     {"name": "Caligulas Poker Live", "url": "/clientes/caligulas-poker-live", "description": "Caligulas Poker Live em Passos–MG: conheça a casa, sua história do online às mesas, a comunidade, programação, ranking e Caligulas Poker Series."},
     {"name": "Joias Leopoldina", "url": "/clientes/joias-leopoldina", "description": "joias em Prata 925, história da marca e loja online com identidade própria."},
     {"name": "Fernanda Lemos", "url": "/clientes/fernanda-lemos", "description": "Fernanda Lemos, nutricionista em Passos–MG: escuta, individualidade e cuidado com a alimentação. Conheça a proposta de acompanhamento e acesse seu site oficial."},
-    {"name": "Lívia Lopes", "url": "/clientes/livia-lopes", "description": "Lívia Lopes, maquiadora em Passos–MG: noivas, debutantes, maquiagem social e curso presencial de automaquiagem, com galeria e canais de atendimento."}
+    {"name": "Lívia Lopes", "url": "/clientes/livia-lopes", "description": "Lívia Lopes, maquiadora em Passos–MG: noivas, debutantes, maquiagem social e curso presencial de automaquiagem, com galeria e canais de atendimento."},
+    {"name": "Games Retrô", "url": "/clientes/games-retro", "description": "Guia para descobrir clássicos de navegador, ports, franquias e coleções no Games Retrô, com atalhos para o catálogo, o jogo original Faísca Arcade e a comunidade."}
   ]
 }

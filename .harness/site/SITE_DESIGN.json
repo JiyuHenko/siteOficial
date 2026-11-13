@@ -225,6 +225,30 @@
       "reducedMotion": "Conteúdo estático e feedback de links sem transições.",
       "assetPolicy": "Fotografias, marca e fontes do repositório siteLivia, commit 2c25f36, redimensionadas quando necessário para o portfólio.",
       "scope": "client-livia-v1.css isolado por theme-livia-page, case-h e theme-livia, com links na home e no diretório de projetos."
+    },
+    "/clientes/games-retro": {
+      "pageGoal": "Ajudar o visitante a escolher o que jogar ou explorar no Games Retrô e abrir a área correspondente no site oficial.",
+      "audience": [
+        "Pessoas que procuram clássicos e jogos de navegador",
+        "Quem quer descobrir um jogo para jogar sozinho ou em dupla"
+      ],
+      "primaryCta": "Explorar o catálogo — https://gamesretro.app.br/catalogo/",
+      "visualThesis": "Fliperama editorial com a paleta do Games Retrô, painéis escuros, detalhes em ciano e rosa e arte original do Faísca Arcade.",
+      "colors": {
+        "ink": "#11121b",
+        "paper": "#fff4d9",
+        "cyan": "#66e5e4",
+        "pink": "#fa4f9b",
+        "yellow": "#ffe26b"
+      },
+      "signature": "Abertura inspirada em um painel de fliperama, com arte oficial e acesso direto ao catálogo.",
+      "supportingInteractions": [
+        "Feedback discreto de ponteiro e teclado nos atalhos"
+      ],
+      "mobileFallback": "Abertura em coluna, links de descoberta empilhados e acesso ao Faísca e à comunidade.",
+      "reducedMotion": "A composição permanece estática e os links não dependem de movimento.",
+      "assetPolicy": "Identidade pública do Games Retrô e arte original publicada do Faísca Arcade.",
+      "scope": "client-games-retro-v1.css isolado por theme-games-retro-page, case-i e theme-games-retro, com links na home e no diretório de projetos."
     }
   }
 }

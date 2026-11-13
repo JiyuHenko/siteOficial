@@ -1,0 +1,400 @@
+@font-face {
+  font-family: "Games Retro Barlow";
+  src: url("../fonts/games-retro/heading.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.case-i {
+  color: #fff4d9;
+  background: radial-gradient(ellipse at 94% 16%, #322342 0, transparent 56%), #11121b;
+  border-color: #474255;
+}
+
+.case-i .case-card-inner > small,
+.case-i .case-link,
+.case-i .case-card-foot {
+  color: #66e5e4;
+}
+
+.case-i .case-asset-panel {
+  background: #191b30;
+  border-color: #5a506c;
+}
+
+.case-i .case-asset-panel img {
+  object-position: 68% center;
+}
+
+.client-board.theme-games-retro {
+  justify-content: flex-end;
+  gap: 16px;
+  background: #11121b !important;
+  color: #fff4d9;
+}
+
+.client-board.theme-games-retro .client-index-shot {
+  object-position: 68% center;
+}
+
+.client-board.theme-games-retro .client-index-shade {
+  background: linear-gradient(180deg, #11121baa 0%, transparent 30%, #11121b35 47%, #11121bf5 82%);
+}
+
+.client-board.theme-games-retro .client-index-shade + span {
+  position: absolute;
+  inset: 28px 28px auto;
+  color: #9bf4f3;
+}
+
+.client-board.theme-games-retro > span:last-child {
+  line-height: 1.6;
+}
+
+.theme-games-retro-page {
+  --retro-ink: #11121b;
+  --retro-panel: #1a1b28;
+  --retro-line: #414155;
+  --retro-text: #f4f0e8;
+  --retro-cream: #fff4d9;
+  --retro-muted: #c5bfd0;
+  --retro-cyan: #66e5e4;
+  --retro-pink: #fa4f9b;
+  --retro-yellow: #ffe26b;
+  --retro-heading: "Games Retro Barlow", "Arial Narrow", Impact, sans-serif;
+}
+
+.theme-games-retro-page main {
+  color: var(--retro-text);
+  background: var(--retro-ink);
+}
+
+.theme-games-retro-page main :is(h1, h2) {
+  margin: 0;
+  color: var(--retro-cream);
+  font-family: var(--retro-heading);
+  font-weight: 700;
+  line-height: .98;
+}
+
+.theme-games-retro-page main h2 {
+  font-size: clamp(42px, 6vw, 78px);
+}
+
+.theme-games-retro-page main :is(h1, h2) :is(span, em) {
+  color: var(--retro-cyan);
+  font-style: normal;
+}
+
+.theme-games-retro-page main p {
+  color: var(--retro-muted);
+  line-height: 1.65;
+}
+
+.theme-games-retro-page main a:focus-visible {
+  outline: 2px solid var(--retro-cyan);
+  outline-offset: 4px;
+}
+
+.retro-shell {
+  width: min(1200px, calc(100% - clamp(36px, 8vw, 104px)));
+  margin-inline: auto;
+}
+
+.retro-hero {
+  padding-block: clamp(94px, 9vw, 136px) clamp(54px, 9vw, 116px);
+  border-bottom: 1px solid var(--retro-line);
+  background: radial-gradient(ellipse at 79% 25%, #342444 0, transparent 56%);
+}
+
+.retro-back,
+.retro-text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  color: var(--retro-cyan);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.retro-back {
+  margin-bottom: clamp(18px, 3vw, 35px);
+}
+
+.retro-back:hover,
+.retro-text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.retro-hero-grid,
+.retro-feature-grid,
+.retro-community-grid {
+  display: grid;
+  align-items: center;
+  gap: clamp(28px, 5vw, 74px);
+}
+
+.retro-hero-grid {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+}
+
+.retro-logo {
+  width: clamp(124px, 16vw, 195px);
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.theme-games-retro-page main .retro-kicker {
+  margin: 0 0 11px;
+  color: var(--retro-cyan);
+  font: 700 11px/1.4 var(--mono);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.theme-games-retro-page main h1 {
+  font-size: clamp(66px, 8vw, 124px);
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+
+.retro-lead,
+.retro-feature-copy p,
+.retro-community-grid p {
+  max-width: 49ch;
+  margin: 18px 0 0;
+}
+
+.retro-lead {
+  font-size: clamp(16px, 1.55vw, 20px);
+}
+
+.retro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 22px;
+  margin-top: 25px;
+}
+
+.retro-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 49px;
+  padding: 8px 16px;
+  border: 1px solid var(--retro-pink);
+  border-radius: 5px;
+  background: var(--retro-pink);
+  color: #1d1321;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+  transition: background .15s ease, border-color .15s ease;
+}
+
+.retro-button:hover {
+  border-color: #ff8dbf;
+  background: #ff8dbf;
+}
+
+.retro-hero-media,
+.retro-feature-media {
+  min-width: 0;
+  margin: 0;
+}
+
+.retro-hero-media img,
+.retro-feature-media img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--retro-line);
+  border-radius: 12px;
+  background: var(--retro-panel);
+}
+
+.retro-hero-media img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  box-shadow: 6px 6px 0 #080910;
+}
+
+.retro-hero-media figcaption,
+.retro-feature-media figcaption {
+  margin-top: 12px;
+  color: var(--retro-muted);
+  font-size: 12px;
+}
+
+.retro-discover,
+.retro-feature,
+.retro-community {
+  padding-block: clamp(54px, 8vw, 104px);
+}
+
+.retro-section-heading {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  align-items: end;
+  gap: 12px 40px;
+  margin-bottom: clamp(23px, 4vw, 42px);
+}
+
+.retro-section-heading p {
+  margin: 0;
+}
+
+.retro-route-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.retro-route-list > li {
+  min-width: 0;
+}
+
+.retro-route-list a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 7px 16px;
+  height: 100%;
+  min-height: 105px;
+  padding: 18px clamp(14px, 2.5vw, 26px);
+  border: 1px solid var(--retro-line);
+  border-radius: 8px;
+  background: var(--retro-panel);
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.retro-route-list a:hover {
+  border-color: var(--retro-cyan);
+  background: #222838;
+}
+
+.retro-route-title {
+  grid-column: 1;
+  color: var(--retro-cream);
+  font: 700 clamp(27px, 3vw, 40px)/1 var(--retro-heading);
+}
+
+.retro-route-note {
+  grid-column: 1;
+  color: var(--retro-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.retro-route-arrow {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: var(--retro-cyan);
+  font-size: 21px;
+}
+
+.retro-feature {
+  border-block: 1px solid #55434a;
+  background: radial-gradient(ellipse at 14% 50%, #362735 0, transparent 60%), #1c1c2a;
+}
+
+.retro-feature-grid {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+}
+
+.retro-feature-media img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: 37% center;
+  border-color: #685058;
+}
+
+.theme-games-retro-page main .retro-feature :is(.retro-kicker, h2 span, h2 em) {
+  color: var(--retro-yellow);
+}
+
+.retro-feature .retro-button {
+  border-color: var(--retro-yellow);
+  background: var(--retro-yellow);
+}
+
+.retro-feature .retro-button:hover {
+  border-color: #fff2a2;
+  background: #fff2a2;
+}
+
+.retro-community-grid {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.retro-community-grid .retro-actions {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .case-i .case-asset-panel {
+    aspect-ratio: 16 / 9;
+  }
+
+  .client-board.theme-games-retro .client-index-shade + span {
+    inset: 22px 22px auto;
+  }
+
+  .retro-hero {
+    padding-top: 82px;
+  }
+
+  .retro-hero-grid,
+  .retro-feature-grid,
+  .retro-community-grid,
+  .retro-section-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .retro-logo {
+    margin-bottom: 17px;
+  }
+
+  .theme-games-retro-page main h1 {
+    font-size: clamp(59px, 12vw, 94px);
+  }
+
+  .retro-feature-copy {
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .retro-route-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .retro-route-list a {
+    min-height: 93px;
+  }
+
+  .retro-actions {
+    column-gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .retro-button,
+  .retro-route-list a,
+  .case-i .case-asset-panel,
+  .case-i .case-asset-panel img {
+    transition: none;
+  }
+
+  .case-i:hover .case-asset-panel img {
+    transform: none;
+  }
+}
