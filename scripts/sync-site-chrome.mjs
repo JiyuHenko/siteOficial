@@ -4,6 +4,8 @@ import path from 'node:path';
 const root = process.cwd();
 const check = process.argv.includes('--check');
 const excludedRoots = new Set(['configurator', 'demo', '.git', 'node_modules']);
+const whatsappNumber = '5511923734039';
+const defaultWhatsappMessage = 'Olá! Vim pelo site da Custom Mind e quero conversar sobre um projeto.';
 
 function walk(dir='.') {
   const out=[];
@@ -21,12 +23,11 @@ const solutionPages = new Set([
   'empresa-de-software-em-passos-mg.html','criacao-de-sites-em-passos-mg.html','automacao-empresarial-em-passos-mg.html'
 ]);
 
-function escAttr(s='') { return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
 function activeClass(on) { return on ? ' class="active"' : ''; }
 
 function pageContext(file) {
   const nested=file.includes('/');
-  const prefix=nested?'../':'';
+  const prefix=file==='404.html'?'/':nested?'../':'';
   let active='';
   if(file==='index.html') active='home';
   else if(file.startsWith('clientes/')) active='projects';
@@ -37,12 +38,37 @@ function pageContext(file) {
 
 function extractHeaderMessage(html) {
   const m=html.match(/<a class="nav-cta"[^>]*data-wa="([^"]*)"/);
-  return m ? m[1] : 'Olá! Vim pelo site da Custom Mind e quero conversar sobre um projeto.';
+  return m ? m[1] : defaultWhatsappMessage;
+}
+
+function decodeAttribute(value) {
+  const entities = {amp:'&', quot:'"', apos:"'", lt:'<', gt:'>', nbsp:'\u00a0'};
+  return value.replace(/&(?:amp|AMP|quot|QUOT|apos|lt|LT|gt|GT|nbsp|#\d+|#[xX][\da-fA-F]+);/g, entity => {
+    const key = entity.slice(1, -1).toLowerCase();
+    if (!key.startsWith('#')) return entities[key];
+    const code = key.startsWith('#x') ? Number.parseInt(key.slice(2), 16) : Number(key.slice(1));
+    return code > 0 && code <= 0x10ffff && (code < 0xd800 || code > 0xdfff)
+      ? String.fromCodePoint(code)
+      : '\ufffd';
+  });
+}
+
+function syncWhatsappLinks(html) {
+  return html.replace(/<a\s(?:[^>"']|"[^"]*"|'[^']*')*>/gi, tag => {
+    const attributes = [...tag.matchAll(/\s+([^\s=/>]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g)];
+    const message = attributes.find(([, name]) => name.toLowerCase() === 'data-wa');
+    if (!message) return tag;
+
+    const text = decodeAttribute(message[2] ?? message[3] ?? message[4] ?? '') || defaultWhatsappMessage;
+    const keep = attributes.filter(([, name]) => !['href', 'target', 'rel'].includes(name.toLowerCase()));
+    const href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    return `<a${keep.map(([attr]) => attr).join('')} href="${href}" target="_blank" rel="noopener">`;
+  });
 }
 
 function header(file, message) {
   const {prefix:p,active}=pageContext(file);
-  return `<!-- CM:SHARED-HEADER START -->\n<header class="site-header"><div class="container nav-shell">\n<a class="brand-pill" href="${p}index.html" aria-label="Custom Mind — início"><img src="${p}assets/img/custommind-logo-animated.svg" alt=""><span><strong>Custom Mind</strong><small>Software Solutions</small></span></a>\n<nav class="nav-pill" aria-label="Navegação principal"><a${activeClass(active==='home')} href="${p}index.html">Início</a><a${activeClass(active==='solutions')} href="${p}solucoes.html">Soluções</a><a${activeClass(active==='projects')} href="${p}clientes/index.html">Projetos</a><a${activeClass(active==='about')} href="${p}sobre.html">Sobre</a></nav>\n<a class="nav-cta" data-wa="${escAttr(message)}" href="#">Falar com a gente <i>↗</i></a>\n<button class="menu-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>\n<nav class="mobile-nav" aria-label="Navegação móvel"><a${activeClass(active==='home')} href="${p}index.html">Início</a><a${activeClass(active==='solutions')} href="${p}solucoes.html">Soluções</a><a${activeClass(active==='projects')} href="${p}clientes/index.html">Projetos</a><a${activeClass(active==='about')} href="${p}sobre.html">Sobre</a><a href="${p}contato.html">Contato</a></nav>\n</div></header>\n<!-- CM:SHARED-HEADER END -->`;
+  return `<!-- CM:SHARED-HEADER START -->\n<header class="site-header"><div class="container nav-shell">\n<a class="brand-pill" href="${p}index.html" aria-label="Custom Mind — início"><img src="${p}assets/img/custommind-logo-animated.svg" alt=""><span><strong>Custom Mind</strong><small>Software Solutions</small></span></a>\n<nav class="nav-pill" aria-label="Navegação principal"><a${activeClass(active==='home')} href="${p}index.html">Início</a><a${activeClass(active==='solutions')} href="${p}solucoes.html">Soluções</a><a${activeClass(active==='projects')} href="${p}clientes/index.html">Projetos</a><a${activeClass(active==='about')} href="${p}sobre.html">Sobre</a></nav>\n<a class="nav-cta" data-wa="${message}" href="#">Falar com a gente <i>↗</i></a>\n<button class="menu-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>\n<nav class="mobile-nav" aria-label="Navegação móvel"><a${activeClass(active==='home')} href="${p}index.html">Início</a><a${activeClass(active==='solutions')} href="${p}solucoes.html">Soluções</a><a${activeClass(active==='projects')} href="${p}clientes/index.html">Projetos</a><a${activeClass(active==='about')} href="${p}sobre.html">Sobre</a><a href="${p}contato.html">Contato</a></nav>\n</div></header>\n<!-- CM:SHARED-HEADER END -->`;
 }
 
 function footer(file) {
@@ -60,15 +86,19 @@ for(const file of walk()) {
   const original=fs.readFileSync(abs,'utf8');
   if(!original.includes('<header class="site-header">') || !original.includes('<footer class="site-footer">')) continue;
   const msg=extractHeaderMessage(original);
-  let next=original.replace(headerRe,header(file,msg)).replace(footerRe,footer(file));
+  const eol = original.includes('\r\n') ? '\r\n' : '\n';
+  const chrome = original
+    .replace(headerRe, () => header(file, msg).replaceAll('\n', eol))
+    .replace(footerRe, () => footer(file).replaceAll('\n', eol));
+  const next = syncWhatsappLinks(chrome);
   if(next===original) continue;
   changed++;
   if(check) stale.push(file); else fs.writeFileSync(abs,next);
 }
 
 if(check && stale.length) {
-  console.error('Shared site chrome is out of sync:');
+  console.error('Shared site chrome or WhatsApp links are out of sync:');
   stale.forEach(f=>console.error(` - ${f}`));
   process.exit(1);
 }
-console.log(check ? 'Shared site chrome is synchronized.' : `Synchronized shared header/footer in ${changed} page(s).`);
+console.log(check ? 'Shared site chrome and WhatsApp links are synchronized.' : `Synchronized shared chrome and WhatsApp links in ${changed} page(s).`);

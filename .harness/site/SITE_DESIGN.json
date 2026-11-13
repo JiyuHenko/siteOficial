@@ -196,6 +196,34 @@
       "reducedMotion": "Página estática, transições desativadas e todo o conteúdo visível.",
       "assetPolicy": "Assets oficiais de siteMamae e novo retrato original fornecido pelo usuário, apenas redimensionado e convertido para WebP, com proporção 2:3 preservada. Composições editoriais existentes são ilustrativas. Sem novas imagens sintéticas, especialidades, modalidades ou resultados presumidos.",
       "scope": "client-fernanda-v1.css isolado por theme-fernanda-page, case-g e theme-fernanda. Integrações na home, diretório e fonte de SEO; chrome compartilhado preservado."
+    },
+    "/clientes/livia-lopes.html": {
+      "pageGoal": "Apresentar o site de Lívia Lopes no portfólio da Custom Mind e encaminhar ao site oficial da maquiadora.",
+      "audience": [
+        "Visitantes do portfólio Custom Mind",
+        "Pessoas que buscam maquiagem ou curso de automaquiagem em Passos, MG"
+      ],
+      "primaryCta": "Visitar o site — https://livialopesmakeup.com.br/",
+      "visualThesis": "Editorial de beleza com fotografia de noiva, papel claro, oliva e a tipografia do site da Lívia.",
+      "typography": {
+        "headings": "Cormorant Garamond, hospedada localmente, com licença SIL OFL",
+        "body": "Manrope, hospedada localmente, com licença SIL OFL"
+      },
+      "colors": {
+        "paper": "#f4f2ec",
+        "cream": "#e6e2d7",
+        "ink": "#272923",
+        "olive": "#40413c"
+      },
+      "signature": "Abertura com tipografia editorial e fotografia original do trabalho de noiva.",
+      "supportingInteractions": [
+        "Feedback de links ao passar o ponteiro",
+        "Foco de teclado visível"
+      ],
+      "mobileFallback": "Abertura em coluna, fotos responsivas e links de serviços em sequência.",
+      "reducedMotion": "Conteúdo estático e feedback de links sem transições.",
+      "assetPolicy": "Fotografias, marca e fontes do repositório siteLivia, commit 2c25f36, redimensionadas quando necessário para o portfólio.",
+      "scope": "client-livia-v1.css isolado por theme-livia-page, case-h e theme-livia, com links na home e no diretório de projetos."
     }
   }
 }

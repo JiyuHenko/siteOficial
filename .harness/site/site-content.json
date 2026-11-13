@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-12",
   "brand": {
     "name": "Custom Mind",
     "alternateName": "Custom Mind Software Solutions",
@@ -10,7 +10,7 @@
     "instagram": "https://www.instagram.com/custommind.solutions/"
   },
   "pages": [
-    {"path": "/", "lastmod": "2026-09-30", "priority": "1.0"},
+    {"path": "/", "lastmod": "2026-11-12", "priority": "1.0"},
     {"path": "/solucoes.html", "lastmod": "2026-09-14", "priority": "0.9"},
     {"path": "/presenca-digital.html", "lastmod": "2026-09-14", "priority": "0.9"},
     {"path": "/software-sob-medida.html", "lastmod": "2026-09-14", "priority": "0.9"},
@@ -22,7 +22,7 @@
     {"path": "/products/jade.html", "lastmod": "2026-08-20", "priority": "0.8"},
     {"path": "/products/zuri.html", "lastmod": "2026-09-13", "priority": "0.8"},
     {"path": "/products/loja-inteligente.html", "lastmod": "2026-08-20", "priority": "0.8"},
-    {"path": "/clientes/", "lastmod": "2026-09-30", "priority": "0.9"},
+    {"path": "/clientes/", "lastmod": "2026-11-12", "priority": "0.9"},
     {"path": "/clientes/auto-eletrica-avelar.html", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/lb-fit.html", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/patricia-biagioni.html", "lastmod": "2026-09-30", "priority": "0.8"},
@@ -30,6 +30,7 @@
     {"path": "/clientes/caligulas-poker-live.html", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/joias-leopoldina.html", "lastmod": "2026-09-30", "priority": "0.8"},
     {"path": "/clientes/fernanda-lemos.html", "lastmod": "2026-09-30", "priority": "0.8"},
+    {"path": "/clientes/livia-lopes.html", "lastmod": "2026-11-12", "priority": "0.8"},
     {"path": "/sobre.html", "lastmod": "2026-08-14", "priority": "0.7"},
     {"path": "/contato.html", "lastmod": "2026-08-13", "priority": "0.7"},
     {"path": "/politica-de-privacidade.html", "lastmod": "2026-08-13", "priority": "0.3"}
@@ -57,6 +58,7 @@
     {"name": "Lara Biagioni", "url": "/clientes/lara-biagioni.html", "description": "Lara Biagioni: fitness, lifestyle, LB Fit e parcerias selecionadas. Encontre seus canais oficiais, favoritos e cupons na página de links da Lara."},
     {"name": "Caligulas Poker Live", "url": "/clientes/caligulas-poker-live.html", "description": "Caligulas Poker Live em Passos–MG: conheça a casa, sua história do online às mesas, a comunidade, programação, ranking e Caligulas Poker Series."},
     {"name": "Joias Leopoldina", "url": "/clientes/joias-leopoldina.html", "description": "joias em Prata 925, história da marca e loja online com identidade própria."},
-    {"name": "Fernanda Lemos", "url": "/clientes/fernanda-lemos.html", "description": "Fernanda Lemos, nutricionista em Passos–MG: escuta, individualidade e cuidado com a alimentação. Conheça a proposta de acompanhamento e acesse seu site oficial."}
+    {"name": "Fernanda Lemos", "url": "/clientes/fernanda-lemos.html", "description": "Fernanda Lemos, nutricionista em Passos–MG: escuta, individualidade e cuidado com a alimentação. Conheça a proposta de acompanhamento e acesse seu site oficial."},
+    {"name": "Lívia Lopes", "url": "/clientes/livia-lopes.html", "description": "Site editorial de Lívia Lopes, maquiadora em Passos–MG, com páginas de noivas, debutantes, maquiagem social, curso presencial de automaquiagem e galeria."}
   ]
 }

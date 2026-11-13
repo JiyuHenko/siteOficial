@@ -119,14 +119,6 @@
   }
   initNeuralHero();
 
-  // WhatsApp CTAs preserve the existing public contact number.
-  qsa('[data-wa]').forEach(a => {
-    const text = a.dataset.wa || 'Olá! Vim pelo site da Custom Mind e quero conversar sobre um projeto.';
-    a.href = `https://wa.me/5511923734039?text=${encodeURIComponent(text)}`;
-    a.target = '_blank';
-    a.rel = 'noopener';
-  });
-
   const menuToggle = qs('.menu-toggle');
   const mobileNav = qs('.mobile-nav');
   if (menuToggle && mobileNav) {
