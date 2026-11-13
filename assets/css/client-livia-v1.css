@@ -1,0 +1,461 @@
+@font-face {
+  font-family: "Livia Cormorant";
+  src: url("../fonts/livia/cormorant-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Livia Cormorant";
+  src: url("../fonts/livia/cormorant-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Livia Manrope";
+  src: url("../fonts/livia/manrope.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+.case-h {
+  color: #272923;
+  background: #e6e2d7;
+}
+
+.case-h .case-card-inner > small,
+.case-h .case-link,
+.case-h .case-card-foot {
+  color: #40413c;
+}
+
+.case-h .case-asset-panel {
+  background: #b0aaa2;
+  border-color: #b0aaa2;
+}
+
+.case-h .case-asset-panel img {
+  object-position: center 25%;
+}
+
+.client-board.theme-livia {
+  background: #40413c !important;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.client-board.theme-livia .client-index-shade + span {
+  position: absolute;
+  inset: 28px 28px auto;
+}
+
+.client-board.theme-livia .client-index-shot {
+  object-position: center 25%;
+}
+
+.client-board.theme-livia .client-index-shade {
+  background: linear-gradient(180deg, #272923cc 0%, #27292326 29%, #27292326 54%, #272923f5 100%);
+}
+
+.theme-livia-page {
+  --livia-paper: #f4f2ec;
+  --livia-cream: #e6e2d7;
+  --livia-ink: #272923;
+  --livia-olive: #40413c;
+  --livia-muted: #585950;
+  --livia-rule: #aba99d;
+  --livia-serif: "Livia Cormorant", Georgia, serif;
+  --livia-sans: "Livia Manrope", Arial, sans-serif;
+  color: var(--livia-ink);
+  background: var(--livia-paper);
+}
+
+.theme-livia-page main {
+  font-family: var(--livia-sans);
+}
+
+.livia-shell {
+  width: min(1200px, calc(100% - clamp(40px, 9vw, 112px)));
+  margin-inline: auto;
+}
+
+.theme-livia-page main :is(h1, h2) {
+  margin: 0;
+  font-family: var(--livia-serif);
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: -.048em;
+  text-wrap: balance;
+}
+
+.theme-livia-page main h2 {
+  font-size: clamp(54px, 6.15vw, 92px);
+}
+
+.theme-livia-page main p {
+  line-height: 1.72;
+}
+
+.theme-livia-page main a:focus-visible {
+  outline: 2px solid var(--livia-olive);
+  outline-offset: 5px;
+}
+
+.livia-cover {
+  padding: 107px 0 54px;
+  background: var(--livia-cream);
+}
+
+.livia-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--livia-olive);
+}
+
+.livia-back:hover,
+.livia-text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.livia-cover-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  align-items: center;
+  gap: clamp(40px, 7vw, 104px);
+}
+
+.livia-cover-copy {
+  padding-block: 24px 55px;
+}
+
+.livia-label {
+  margin: 0 0 22px;
+  color: var(--livia-olive);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.theme-livia-page .livia-cover h1 {
+  font-size: clamp(86px, 12vw, 166px);
+  line-height: .76;
+  letter-spacing: -.06em;
+}
+
+.livia-cover h1 em {
+  display: block;
+  font-weight: inherit;
+}
+
+.livia-cover-lead {
+  max-width: 38ch;
+  margin: 30px 0 26px;
+  color: var(--livia-muted);
+  font-size: clamp(16px, 1.55vw, 20px);
+}
+
+.livia-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+}
+
+.livia-button,
+.livia-text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 48px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.livia-button {
+  padding: 12px 18px;
+  color: var(--livia-paper);
+  background: var(--livia-ink);
+  border: 1px solid transparent;
+  transition: color .2s, background-color .2s;
+}
+
+.livia-button:hover {
+  color: var(--livia-ink);
+  background: transparent;
+  border-color: var(--livia-ink);
+}
+
+.livia-text-link {
+  color: var(--livia-olive);
+}
+
+.livia-cover-photo,
+.livia-portrait,
+.livia-momento {
+  margin: 0;
+}
+
+.livia-cover-photo img,
+.livia-portrait img,
+.livia-momento img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #b0aaa2;
+}
+
+.livia-cover-photo img {
+  aspect-ratio: 5 / 6;
+  object-position: center 36%;
+}
+
+.livia-cover-photo figcaption {
+  margin-top: 11px;
+  color: var(--livia-muted);
+  font-size: 12px;
+}
+
+.livia-intro {
+  display: grid;
+  grid-template-columns: .84fr 1.16fr;
+  align-items: center;
+  gap: clamp(46px, 9vw, 132px);
+  padding-block: clamp(74px, 10vw, 148px);
+}
+
+.livia-portrait img {
+  aspect-ratio: 4 / 5;
+  object-position: center 40%;
+}
+
+.livia-intro-copy h2 {
+  max-width: 10ch;
+}
+
+.livia-wordmark {
+  width: 135px;
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.livia-intro-copy > p {
+  max-width: 47ch;
+  margin: 18px 0 0;
+  color: var(--livia-muted);
+}
+
+.livia-intro-copy .livia-text-link {
+  margin-top: 8px;
+}
+
+.livia-experiences {
+  padding-block: clamp(62px, 8vw, 112px);
+  background: var(--livia-cream);
+}
+
+.livia-experiences-grid {
+  display: grid;
+  grid-template-columns: .88fr 1.12fr;
+  align-items: end;
+  gap: clamp(42px, 8vw, 100px);
+}
+
+.livia-experiences-grid h2 {
+  max-width: 9ch;
+}
+
+.livia-momento {
+  margin-top: 26px;
+}
+
+.livia-experience-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--livia-rule);
+}
+
+.livia-experience-list li {
+  border-bottom: 1px solid var(--livia-rule);
+}
+
+.livia-experience-list a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 20px;
+  padding: 16px 5px 17px 0;
+}
+
+.livia-experience-list a:hover strong {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.livia-experience-list strong {
+  font: 500 clamp(31px, 3vw, 46px)/1.04 var(--livia-serif);
+  letter-spacing: -.035em;
+}
+
+.livia-experience-note {
+  grid-row: 2;
+  margin-top: 5px;
+  color: var(--livia-muted);
+  font-size: 14px;
+}
+
+.livia-experience-arrow {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  font-size: 20px;
+}
+
+.livia-contact {
+  padding-block: clamp(50px, 7vw, 95px);
+  color: var(--livia-paper);
+  background: var(--livia-olive);
+}
+
+.livia-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px 48px;
+}
+
+.livia-contact p {
+  max-width: 49ch;
+  margin: 15px 0 0;
+}
+
+.livia-contact .livia-button {
+  color: var(--livia-ink);
+  background: var(--livia-paper);
+}
+
+.livia-contact .livia-button:hover {
+  color: var(--livia-paper);
+  background: transparent;
+  border-color: var(--livia-paper);
+}
+
+.theme-livia-page main .livia-contact a:focus-visible {
+  outline-color: var(--livia-paper);
+}
+
+@media (max-width: 980px) {
+  .livia-cover-grid {
+    gap: 40px;
+  }
+
+  .livia-intro,
+  .livia-experiences-grid {
+    gap: 38px;
+  }
+}
+
+@media (max-width: 760px) {
+  .case-h .case-asset-panel {
+    aspect-ratio: 16 / 10;
+  }
+
+  .client-board.theme-livia .client-index-shade + span {
+    inset: 22px 22px auto;
+  }
+
+  .livia-cover {
+    padding: 84px 0 32px;
+  }
+
+  .livia-cover-grid,
+  .livia-intro,
+  .livia-experiences-grid,
+  .livia-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .livia-cover-copy {
+    padding-block: 4px 0;
+  }
+
+  .livia-label {
+    margin-bottom: 13px;
+  }
+
+  .theme-livia-page .livia-cover h1 {
+    font-size: clamp(69px, 13.5vw, 105px);
+    line-height: .9;
+    text-wrap: initial;
+  }
+
+  .livia-cover h1 em {
+    display: inline;
+  }
+
+  .livia-cover-lead {
+    margin: 15px 0 14px;
+  }
+
+  .livia-cover-photo img {
+    aspect-ratio: 4 / 4.35;
+  }
+
+  .livia-intro {
+    padding-block: 64px;
+  }
+
+  .livia-intro-copy {
+    grid-row: 1;
+  }
+
+  .livia-portrait img {
+    max-width: 490px;
+  }
+
+  .livia-wordmark {
+    width: 116px;
+    margin-bottom: 15px;
+  }
+
+  .theme-livia-page main h2 {
+    font-size: clamp(48px, 9vw, 68px);
+  }
+
+  .livia-experiences-grid h2 {
+    max-width: none;
+  }
+
+  .livia-momento {
+    margin-top: 20px;
+  }
+
+  .livia-contact .livia-button {
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .livia-button,
+  .case-h .case-asset-panel,
+  .case-h .case-asset-panel img {
+    transition: none;
+  }
+
+  .case-h:hover .case-asset-panel img {
+    transform: none;
+  }
+}
