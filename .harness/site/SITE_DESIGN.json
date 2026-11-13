@@ -39,7 +39,8 @@
     "preservar o símbolo oficial da Custom Mind",
     "manter roxo como acento, não como gradiente decorativo dominante",
     "não inventar métricas, clientes ou alcance",
-    "preservar URLs públicas, SEO e dados factuais existentes"
+    "preservar URLs públicas, SEO e dados factuais existentes",
+    "nas páginas de clientes, apresentar a identidade, os serviços e os canais oficiais do cliente; manter discreto o crédito da Custom Mind"
   ],
   "assetPreservation": {
     "policy": "Assets reais existentes são fonte de verdade visual. Mockups genéricos só podem complementar, nunca substituir produto/case real sem justificativa.",
@@ -198,13 +199,13 @@
       "scope": "client-fernanda-v1.css isolado por theme-fernanda-page, case-g e theme-fernanda. Integrações na home, diretório e fonte de SEO; chrome compartilhado preservado."
     },
     "/clientes/livia-lopes.html": {
-      "pageGoal": "Apresentar o site de Lívia Lopes no portfólio da Custom Mind e encaminhar ao site oficial da maquiadora.",
+      "pageGoal": "Apresentar Lívia Lopes, seu estilo e seus serviços, com acesso à galeria, ao site oficial e ao atendimento.",
       "audience": [
         "Visitantes do portfólio Custom Mind",
         "Pessoas que buscam maquiagem ou curso de automaquiagem em Passos, MG"
       ],
-      "primaryCta": "Visitar o site — https://livialopesmakeup.com.br/",
-      "visualThesis": "Editorial de beleza com fotografia de noiva, papel claro, oliva e a tipografia do site da Lívia.",
+      "primaryCta": "Falar com a Lívia pelo WhatsApp oficial — https://wa.me/5535997238058",
+      "visualThesis": "Editorial de beleza com retrato da maquiadora nos cards, fotografia do trabalho de noiva na abertura, papel claro, oliva e a tipografia da Lívia.",
       "typography": {
         "headings": "Cormorant Garamond, hospedada localmente, com licença SIL OFL",
         "body": "Manrope, hospedada localmente, com licença SIL OFL"
