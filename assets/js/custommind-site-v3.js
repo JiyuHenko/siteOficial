@@ -10,7 +10,7 @@
     const caseStage = qs('.case-stage');
     if (caseStage && !qs('.case-e', caseStage)) {
       caseStage.insertAdjacentHTML('beforeend', `
-        <a class="case-card case-e" data-case-card href="clientes/caligulas-poker-live.html"><div class="case-card-inner"><small>Poker live • Passos–MG</small><div><h3>Caligulas Poker Live</h3><p>Poker presencial, programação, ranking e encontros da comunidade em Passos–MG.</p><span class="case-link">Ver projeto →</span></div><div class="case-asset-panel"><img src="assets/img/clients/caligulas/hero.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"></div><span class="case-card-foot">CM / WORK 05</span></div></a>
+        <a class="case-card case-e" data-case-card href="/clientes/caligulas-poker-live"><div class="case-card-inner"><small>Poker live • Passos–MG</small><div><h3>Caligulas Poker Live</h3><p>Poker presencial, programação, ranking e encontros da comunidade em Passos–MG.</p><span class="case-link">Ver projeto →</span></div><div class="case-asset-panel"><img src="assets/img/clients/caligulas/hero.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"></div><span class="case-card-foot">CM / WORK 05</span></div></a>
       `);
       const counter = qs('.case-counter');
       if (counter) counter.innerHTML = '<strong data-case-number>01</strong> / 05 • role ou clique nos projetos ao fundo';
@@ -19,7 +19,7 @@
     const clientGrid = qs('.page-main .content-section .product-grid');
     if (clientGrid && qs('.client-board', clientGrid) && !qs('.theme-caligulas', clientGrid)) {
       clientGrid.insertAdjacentHTML('beforeend', `
-        <a class="client-board theme-caligulas" href="caligulas-poker-live.html"><img class="client-index-shot" src="../assets/img/clients/caligulas/hero.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"><span class="client-index-shade"></span><span>POKER LIVE • PASSOS–MG</span><strong>Caligulas Poker Live</strong><span>Programação, ranking, galeria, eventos e comunidade em uma experiência própria. →</span></a>
+        <a class="client-board theme-caligulas" href="/clientes/caligulas-poker-live"><img class="client-index-shot" src="../assets/img/clients/caligulas/hero.webp" alt="Caligulas Poker Live" loading="lazy" decoding="async"><span class="client-index-shade"></span><span>POKER LIVE • PASSOS–MG</span><strong>Caligulas Poker Live</strong><span>Programação, ranking, galeria, eventos e comunidade em uma experiência própria. →</span></a>
       `);
     }
   }
@@ -38,10 +38,10 @@
     }));
 
     const fallback = [
-      { href:'presenca-digital.html', title:'Presença Digital', subtitle:'busca + posicionamento' },
-      { href:'inteligencia-artificial.html', title:'Inteligência Artificial', subtitle:'agentes + IA aplicada' },
-      { href:'automacao.html', title:'Automação', subtitle:'processos + operação' },
-      { href:'software-sob-medida.html', title:'Software sob medida', subtitle:'sistemas + integrações' }
+      { href:'/presenca-digital', title:'Presença Digital', subtitle:'busca + posicionamento' },
+      { href:'/inteligencia-artificial', title:'Inteligência Artificial', subtitle:'agentes + IA aplicada' },
+      { href:'/automacao', title:'Automação', subtitle:'processos + operação' },
+      { href:'/software-sob-medida', title:'Software sob medida', subtitle:'sistemas + integrações' }
     ];
     const items = existing.length === 4 ? existing : fallback;
     const keys = ['jade','zuri','store','custom'];

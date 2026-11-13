@@ -20,13 +20,15 @@ try { siteData = JSON.parse(fs.readFileSync(siteContentPath, 'utf8')); }
 catch { siteData = null; }
 
 function publicFileForPath(urlPath) {
-  if (urlPath === '/') return 'index.html';
-  if (urlPath.endsWith('/')) return `${urlPath.slice(1)}index.html`;
-  return urlPath.slice(1);
+  const file = urlPath.slice(1);
+  if (urlPath.endsWith('/')) return `${file}index.html`;
+  return path.posix.extname(file) ? file : `${file}.html`;
 }
 
-const publicFiles = new Set((siteData?.pages || []).map(entry => publicFileForPath(entry.path)));
+const publicPaths = new Map((siteData?.pages || []).map(entry => [publicFileForPath(entry.path), entry.path]));
+const publicFiles = new Set(publicPaths.keys());
 publicFiles.add('404.html');
+const canonicalHostname = new URL(config.canonicalDomain).hostname.replace(/^www\./, '');
 
 function ignored(file) {
   const absolute = path.resolve(file);
@@ -67,14 +69,51 @@ function canonicalOf(source) {
   return null;
 }
 
-function resolveLocalReference(fromFile, raw) {
-  const clean = raw.split(/[?#]/)[0];
-  if (!clean) return null;
-  let target;
-  if (clean.startsWith('/')) target = path.resolve(root, `.${clean}`);
-  else target = path.resolve(path.dirname(fromFile), clean);
-  if (clean.endsWith('/')) target = path.join(target, 'index.html');
-  return target;
+function localUrlForReference(fromFile, raw) {
+  const reference = raw.trim();
+  if (!reference || reference.startsWith('#')) return null;
+
+  const file = rel(fromFile);
+  const pageUrl = new URL(publicPaths.get(file) || '/' + file, config.canonicalDomain);
+  const url = URL.parse(reference, pageUrl);
+  if (!url || !['http:', 'https:'].includes(url.protocol)) return null;
+  return url.hostname.replace(/^www\./, '') === canonicalHostname ? url : null;
+}
+
+function isFile(file) {
+  return fs.statSync(file, { throwIfNoEntry: false })?.isFile() ?? false;
+}
+
+function resolveLocalReference(urlPath, allowPage) {
+  const exact = path.resolve(root, '.' + urlPath);
+  if (!allowPage || isFile(exact)) return exact;
+
+  const directoryIndex = path.join(exact, 'index.html');
+  if (isFile(directoryIndex)) return directoryIndex;
+  return path.join(root, publicFileForPath(urlPath));
+}
+
+function checkLocalReferences(file, source) {
+  for (const [tag, tagName] of source.matchAll(/<([a-z][a-z\d:-]*)\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi)) {
+    const name = tagName.toLowerCase();
+    for (const [, attribute, raw] of tag.matchAll(/\s(href|src)=["']([^"']+)["']/gi)) {
+      const url = localUrlForReference(file, raw);
+      if (!url) continue;
+
+      const navigation = name === 'a' && attribute.toLowerCase() === 'href';
+      const canonical = name === 'link' && attrValue(tag, 'rel')?.toLowerCase().split(/\s+/).includes('canonical');
+      const target = resolveLocalReference(url.pathname, navigation || canonical);
+      if (!isFile(target)) {
+        push('ERROR', rel(file), `Referência local quebrada: ${raw}`);
+        continue;
+      }
+
+      const canonicalPath = publicPaths.get(rel(target));
+      if (navigation && canonicalPath && url.pathname !== canonicalPath) {
+        push('ERROR', rel(file), `Link fora da rota canônica: ${raw} → ${canonicalPath}`);
+      }
+    }
+  }
 }
 
 function checkHtml(file) {
@@ -113,14 +152,7 @@ function checkHtml(file) {
     }
   }
 
-  if (quality.validateLocalReferences) {
-    for (const match of source.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
-      const url = match[1];
-      if (!url || url.startsWith('#') || url.startsWith('//') || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(url)) continue;
-      const target = resolveLocalReference(file, url);
-      if (target && !fs.existsSync(target)) push('ERROR', relative, `Referência local quebrada: ${url}`);
-    }
-  }
+  if (quality.validateLocalReferences) checkLocalReferences(file, source);
 
   pages.push({ file: relative, canonical });
 }
