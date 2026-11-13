@@ -39,7 +39,7 @@
 }
 
 .case-h .case-asset-panel img {
-  object-position: center 25%;
+  object-position: center 10%;
 }
 
 .client-board.theme-livia {
@@ -54,7 +54,7 @@
 }
 
 .client-board.theme-livia .client-index-shot {
-  object-position: center 25%;
+  object-position: center 8%;
 }
 
 .client-board.theme-livia .client-index-shade {
@@ -352,6 +352,10 @@
   border-color: var(--livia-paper);
 }
 
+.livia-contact .livia-text-link {
+  color: var(--livia-paper);
+}
+
 .theme-livia-page main .livia-contact a:focus-visible {
   outline-color: var(--livia-paper);
 }
@@ -441,10 +445,6 @@
 
   .livia-momento {
     margin-top: 20px;
-  }
-
-  .livia-contact .livia-button {
-    justify-self: start;
   }
 }
 
