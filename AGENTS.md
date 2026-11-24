@@ -12,6 +12,7 @@ Este branch usa o perfil experimental de sites do Custom Mind Harness.
 - Contexto e objetivo antes de efeito visual.
 - Uma assinatura forte; no máximo três padrões de suporte.
 - Nenhuma métrica, case ou prova pode ser inventada.
+- Novos projetos, nomes de clientes, detalhes de escopo e resultados devem ser confirmados com o responsável antes de qualquer exposição pública. Inventários exploratórios ficam fora do repositório público.
 - SEO, canonical, URLs públicas, analytics e contato devem ser preservados.
 - Mobile é composição própria, não desktop espremido.
 - Reduced motion é obrigatório.

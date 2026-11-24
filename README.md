@@ -11,7 +11,7 @@ A Custom Mind é apresentada pelo site em quatro pilares estratégicos:
 
 Jade, Zuri e Loja Inteligente permanecem como produtos desenvolvidos pela Custom Mind, com páginas próprias em `products/`, mas não definem sozinhos o posicionamento da empresa.
 
-Os projetos em `clientes/` continuam centrados nas empresas atendidas e funcionam como portfólio e descoberta. A home também reaproveita `assets/img/empresas/` como prova social separada dos projetos em destaque.
+As páginas em `clientes/` continuam centradas nas empresas e iniciativas apresentadas. A área `portfolio/` documenta o contexto, a participação da Custom Mind e as entregas verificáveis dos trabalhos publicados. A home também reaproveita `assets/img/empresas/` como prova social separada dos projetos em destaque.
 
 ## Arquitetura
 A camada visual v3 permanece modular: `assets/css/custommind-site-v3.css` carrega os módulos em `assets/css/v3/`. O comportamento principal fica em `assets/js/custommind-site-v3.js`.
@@ -33,6 +33,18 @@ O CI usa `--check` para impedir que páginas voltem a divergir.
 Nos links internos, use a URL pública sem `.html`, como `/sobre` e `/clientes/livia-lopes`. Diretórios com página de índice usam barra final, como `/clientes/`. O GitHub Pages serve o mesmo arquivo HTML nos endereços com e sem extensão, então links antigos continuam funcionando.
 
 Mudanças visuais exigem revisão em desktop e mobile, especialmente hero neural, deck de projetos, marquee de empresas e carrossel mobile.
+
+## Portfólio
+
+As coleções ficam em `/portfolio/clientes` e `/portfolio/produtos`, com a visão geral em `/portfolio/`.
+
+O conteúdo dos cases fica em `.harness/site/portfolio-content.json`; `scripts/sync-portfolio.mjs` gera a listagem e as páginas estáticas. Consulte `docs/portfolio-maintenance.md` para adicionar trabalhos, registrar fontes e publicar resultados medidos.
+
+```bash
+node scripts/sync-site-chrome.mjs
+node scripts/sync-portfolio.mjs
+node .harness/sync-seo.mjs
+```
 
 ## Assets
 A árvore de produção deve conter somente assets efetivamente referenciados pelas superfícies atuais. Imagens raster de interface usam WebP sempre que possível; PNG/JPG ficam reservados para casos em que o formato é necessário.
