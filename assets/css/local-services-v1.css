@@ -1,0 +1,17 @@
+/* Local service discovery: scoped additions for home, solutions and pillar pages. */
+.local-services{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:64px;margin-top:64px;padding-top:44px;border-top:1px solid var(--line)}
+.local-services-intro h2{font:700 clamp(28px,3.4vw,42px)/1.06 var(--display);letter-spacing:-.035em;margin:16px 0}
+.local-services-intro p{max-width:490px;margin:0 0 16px;color:var(--muted-dark);font-size:1rem;line-height:1.6}
+.local-services-list{list-style:none;margin:0;padding:0}
+.local-services-list li+li{border-top:1px solid var(--line)}
+.local-services-list a{display:block;padding:17px 0;color:var(--ink)}
+.local-services-list li:first-child a{padding-top:0}
+.local-services-list strong{display:block;font-size:1.0625rem;line-height:1.4}
+.local-services-list span{display:block;margin-top:4px;color:var(--muted-dark);font-size:1rem;line-height:1.5}
+.local-services-list a:hover strong{text-decoration:underline;text-decoration-color:var(--purple-2);text-underline-offset:4px}
+.local-service-link{font-weight:650;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.local-service-link:hover{color:#6334a7}
+.local-service-link:focus-visible,.local-services-list a:focus-visible{outline:3px solid #8150ff;outline-offset:5px;border-radius:3px}
+.feature>.local-service-link{display:inline-block;margin-top:14px;font-size:1rem;line-height:1.5}
+.content-prose .local-service-context{font-size:1rem;line-height:1.65}
+@media(max-width:760px){.local-services{grid-template-columns:1fr;gap:28px;margin-top:40px;padding-top:32px}.local-services-intro h2{max-width:380px}.local-services-list a{padding:18px 0}.local-services-list li:first-child a{padding-top:0}}

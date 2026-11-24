@@ -1,0 +1,1768 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-24",
+  "projects": [
+    {
+      "slug": "livia-lopes",
+      "name": "Lívia Lopes",
+      "kind": "Site profissional",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "title": "Uma presença digital com a assinatura da Lívia.",
+      "summary": "Composição, fotografia e conteúdo desenhados para expressar a identidade da Lívia e dar a cada experiência de maquiagem um espaço próprio.",
+      "description": "Case Lívia Lopes: site personalizado a partir da identidade da maquiadora, com direção visual, galeria, páginas de serviços e contato.",
+      "image": {
+        "src": "/assets/img/clients/livia/hero-960.webp",
+        "alt": "Trabalho de maquiagem para noiva apresentado no site de Lívia Lopes",
+        "width": 960,
+        "height": 1440,
+        "position": "50% 20%",
+        "caption": "Fotografia do portfólio da Lívia, utilizada no site publicado."
+      },
+      "secondaryImage": {
+        "src": "/assets/img/clients/livia/livia.webp",
+        "alt": "Retrato de Lívia Lopes, maquiadora em Passos",
+        "width": 640,
+        "height": 960,
+        "caption": "A profissional e sua identidade orientam a apresentação."
+      },
+      "officialUrl": "https://livialopesmakeup.com.br/",
+      "officialLabel": "Conhecer o site da Lívia",
+      "profileUrl": "/clientes/livia-lopes",
+      "profileLabel": "Conheça a Lívia",
+      "context": "Lívia Lopes atende noivas, debutantes e ocasiões sociais e oferece curso de automaquiagem em Passos–MG. A apresentação digital reúne essas experiências e seu portfólio fotográfico em um espaço próprio.",
+      "approach": "Criamos uma experiência a partir do estilo e da identidade da Lívia. Composição, tipografia, ritmo das imagens e organização do conteúdo trabalham juntos para transmitir seu olhar e a atenção dedicada a cada atendimento. As páginas dos serviços e o contato pelo WhatsApp fazem parte dessa mesma linguagem.",
+      "deliveries": [
+        {
+          "title": "Uma linguagem visual própria",
+          "text": "A direção visual e a composição das páginas foram pensadas para a Lívia, valorizando suas fotografias, sua forma de trabalhar e a identidade que ela quer apresentar."
+        },
+        {
+          "title": "Uma página para cada experiência",
+          "text": "Noivas, debutantes, maquiagem social e automaquiagem têm espaços próprios para apresentar a proposta e orientar o contato."
+        },
+        {
+          "title": "Fotografia como conteúdo",
+          "text": "A galeria reúne os trabalhos com filtros e ampliação das imagens, permitindo explorar os detalhes da maquiagem."
+        },
+        {
+          "title": "Contato ligado ao serviço",
+          "text": "Os acessos ao WhatsApp carregam uma mensagem relacionada à experiência escolhida, ajudando a iniciar a conversa com contexto."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Identidade ao longo da experiência",
+          "text": "Da apresentação inicial à galeria e às páginas dos serviços, o site mantém uma linguagem visual ligada ao trabalho da Lívia."
+        },
+        {
+          "title": "Trabalho disponível para consulta",
+          "text": "As fotografias podem ser exploradas antes de entrar em contato com a profissional."
+        },
+        {
+          "title": "Atendimento no canal da Lívia",
+          "text": "O site encaminha a conversa para o WhatsApp oficial, com identificação do serviço de interesse."
+        }
+      ],
+      "metrics": [
+        {
+          "value": "4",
+          "label": "experiências com páginas próprias",
+          "source": "Páginas de experiências do site oficial",
+          "asOf": "2026-11-24"
+        },
+        {
+          "value": "24",
+          "label": "fotografias na galeria",
+          "source": "Galeria do site oficial",
+          "asOf": "2026-11-24"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://livialopesmakeup.com.br/",
+          "text": "Explore as experiências, a galeria e os caminhos de contato no site oficial."
+        }
+      ],
+      "category": "clientes"
+    },
+    {
+      "slug": "joias-leopoldina",
+      "name": "Joias Leopoldina",
+      "kind": "Identidade e presença digital",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "title": "Uma identidade digital que conecta marca, busca e compra.",
+      "summary": "Identidade digital, personalização da loja, SEO, redes sociais e presença nos canais do Google trabalhados como partes da mesma marca.",
+      "description": "Case Joias Leopoldina: identidade digital, personalização da loja, SEO, redes sociais, Perfil da Empresa no Google e Google Shopping.",
+      "image": {
+        "src": "/assets/img/clients/leopoldina/hero-desktop.webp",
+        "alt": "Editorial de joias da Joias Leopoldina",
+        "width": 1672,
+        "height": 941,
+        "position": "50% 50%",
+        "caption": "Fotografia editorial original da Joias Leopoldina."
+      },
+      "secondaryImage": {
+        "src": "/assets/img/clients/leopoldina/detalhe-colar.webp",
+        "alt": "Detalhe de colar da Joias Leopoldina",
+        "width": 1100,
+        "height": 1100,
+        "caption": "Fotografias reais apresentam as peças e a identidade da marca."
+      },
+      "officialUrl": "https://joiasleopoldina.com.br/",
+      "officialLabel": "Visitar a loja oficial",
+      "profileUrl": "/clientes/joias-leopoldina",
+      "profileLabel": "Conheça a Joias Leopoldina",
+      "context": "O trabalho com a Joias Leopoldina abrangeu a presença digital da marca: como ela se apresenta na loja, nas redes sociais e nos canais de descoberta do Google. A identidade e a apresentação das joias orientaram essas frentes.",
+      "approach": "Construímos a identidade digital da marca e alinhamos seus pontos de contato. Personalizamos a loja sobre a plataforma de e-commerce existente, trabalhamos o SEO, reestruturamos a apresentação nas redes sociais e ajustamos o Perfil da Empresa no Google e a presença no Google Shopping.",
+      "deliveries": [
+        {
+          "title": "Identidade digital da marca",
+          "text": "Linguagem visual e apresentação digital alinhadas para que a marca mantenha uma identidade própria nos diferentes canais."
+        },
+        {
+          "title": "Loja personalizada",
+          "text": "Personalização da apresentação da loja sobre a plataforma de e-commerce existente, com os materiais e a identidade da Joias Leopoldina."
+        },
+        {
+          "title": "SEO e descoberta",
+          "text": "Trabalho de SEO na presença digital da marca, acompanhado de ajustes no Perfil da Empresa no Google."
+        },
+        {
+          "title": "Redes sociais reestruturadas",
+          "text": "Reorganização da apresentação dos perfis para conectar a comunicação da marca à sua identidade digital."
+        },
+        {
+          "title": "Presença no Google Shopping",
+          "text": "Ajustes na presença da marca e de seus produtos no Google Shopping, como mais um caminho de descoberta do catálogo."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma marca presente em vários pontos de contato",
+          "text": "Loja, redes sociais e canais do Google passam a fazer parte de uma apresentação digital trabalhada em conjunto."
+        },
+        {
+          "title": "Identidade ligada ao catálogo",
+          "text": "A apresentação da marca acompanha o visitante até a exploração das peças na loja oficial."
+        },
+        {
+          "title": "Frentes de descoberta organizadas",
+          "text": "O projeto inclui SEO, Perfil da Empresa no Google e Google Shopping, além da loja e das redes sociais."
+        }
+      ],
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Loja publicada",
+          "url": "https://joiasleopoldina.com.br/",
+          "text": "Confira a apresentação da marca e explore o catálogo no site oficial."
+        }
+      ],
+      "category": "clientes"
+    },
+    {
+      "slug": "auto-eletrica-avelar",
+      "img": "/assets/img/clients/avelar/fachada.webp",
+      "alt": "Fachada da Auto Elétrica Avelar em Passos",
+      "caption": "Fachada e identidade reais da Auto Elétrica Avelar.",
+      "officialUrl": "https://autoeletricaavelar.com.br/",
+      "title": "Uma presença digital que explica o trabalho técnico da oficina.",
+      "summary": "Serviços, diagnóstico e trabalho de bancada apresentados com a identidade e as fotografias reais da Avelar.",
+      "description": "Case Auto Elétrica Avelar: site com serviços, diagnóstico, módulos, fotografia da oficina e contato em Passos–MG.",
+      "context": "A Avelar reúne serviços de diagnóstico automotivo, eletrônica, módulos e climatização em Passos–MG. O site organiza essa atuação para que o visitante possa compreender o atendimento antes de entrar em contato.",
+      "approach": "Construímos uma apresentação ligada à realidade da oficina: fachada, equipe e serviços dão contexto ao conteúdo. A navegação explica o trabalho no veículo e na bancada e aproxima o visitante dos canais de atendimento.",
+      "deliveries": [
+        {
+          "title": "Serviços com contexto",
+          "text": "Organização dos conteúdos de diagnóstico, módulos e atendimento automotivo, com explicações sobre o trabalho realizado na oficina."
+        },
+        {
+          "title": "Identidade da Avelar",
+          "text": "Uso da marca, das cores e de fotografias reais para apresentar a oficina e sua atuação local."
+        },
+        {
+          "title": "Contato e localização",
+          "text": "Caminhos de contato e orientação para quem procura atendimento em Passos e região."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "A oficina pode ser conhecida antes da visita",
+          "text": "O visitante encontra informações sobre serviços e sobre a estrutura apresentada pela Avelar."
+        },
+        {
+          "title": "Conteúdo técnico com organização",
+          "text": "As diferentes frentes de trabalho têm espaço na navegação, com ligação ao atendimento oficial."
+        }
+      ],
+      "name": "Auto Elétrica Avelar",
+      "category": "clientes",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "kind": "Site profissional",
+      "image": {
+        "src": "/assets/img/clients/avelar/fachada.webp",
+        "alt": "Fachada da Auto Elétrica Avelar em Passos",
+        "width": 1000,
+        "height": 890,
+        "position": "50% 50%",
+        "caption": "Fachada e identidade reais da Auto Elétrica Avelar."
+      },
+      "profileUrl": "/clientes/auto-eletrica-avelar",
+      "profileLabel": "Conheça Auto Elétrica Avelar",
+      "officialLabel": "Visitar o site publicado",
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://autoeletricaavelar.com.br/",
+          "text": "Confira a apresentação e os caminhos de navegação no canal oficial."
+        }
+      ]
+    },
+    {
+      "slug": "lb-fit",
+      "img": "/assets/img/clients/lbfit-banner.webp",
+      "alt": "Campanha da marca de moda fitness LB Fit",
+      "caption": "Material original da LB Fit utilizado na apresentação da marca.",
+      "officialUrl": "https://links.uselbfit.com.br/",
+      "kind": "Página de links e canais da marca",
+      "title": "Loja, atendimento e campanhas em um único ponto de entrada.",
+      "summary": "Uma página de links da LB Fit que organiza o acesso à loja, ao WhatsApp e ao programa de influenciadoras.",
+      "description": "Case LB Fit: página de links com identidade da marca e acesso à loja, ao atendimento e ao programa de influenciadoras.",
+      "context": "A LB Fit atende públicos que chegam por diferentes interesses: comprar na loja, conversar com a equipe ou participar de uma campanha. A página de links reúne esses destinos em um endereço da marca.",
+      "approach": "Criamos um ponto de entrada simples, com os materiais oficiais da LB Fit e caminhos identificados por finalidade. A loja continua no seu ambiente de e-commerce; a página organiza o acesso aos canais e campanhas.",
+      "deliveries": [
+        {
+          "title": "Página de links própria",
+          "text": "Endereço da marca para reunir os principais destinos usados na comunicação digital."
+        },
+        {
+          "title": "Caminhos por interesse",
+          "text": "Acesso à loja oficial, ao atendimento no WhatsApp e ao formulário de influenciadoras."
+        },
+        {
+          "title": "Continuidade visual",
+          "text": "Marca e materiais da LB Fit conduzem a apresentação e conectam a página ao universo da campanha."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Os destinos ficam reunidos",
+          "text": "Quem chega pelo link da marca pode escolher como continuar: loja, atendimento ou campanha."
+        },
+        {
+          "title": "Acesso ligado ao canal oficial",
+          "text": "A página encaminha o visitante aos destinos da LB Fit, preservando a identidade na apresentação."
+        }
+      ],
+      "name": "LB Fit",
+      "category": "clientes",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "image": {
+        "src": "/assets/img/clients/lbfit-banner.webp",
+        "alt": "Campanha da marca de moda fitness LB Fit",
+        "width": 1400,
+        "height": 760,
+        "position": "50% 50%",
+        "caption": "Material original da LB Fit utilizado na apresentação da marca."
+      },
+      "profileUrl": "/clientes/lb-fit",
+      "profileLabel": "Conheça LB Fit",
+      "officialLabel": "Visitar o site publicado",
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://links.uselbfit.com.br/",
+          "text": "Confira a apresentação e os caminhos de navegação no canal oficial."
+        }
+      ]
+    },
+    {
+      "slug": "patricia-biagioni",
+      "img": "/assets/img/clients/patricia-hero.webp",
+      "alt": "Retrato de Patrícia Biagioni",
+      "caption": "Retrato original da profissional na apresentação da consultoria.",
+      "officialUrl": "https://consultoria.patriciabiagioni.com.br/",
+      "title": "Uma consultoria individual explicada antes do primeiro contato.",
+      "summary": "Identidade, experiência e processo de acompanhamento organizados em um site dedicado à consultoria de treino da Patrícia.",
+      "description": "Case Patrícia Biagioni: site para apresentar a consultoria individual de treino, a experiência da profissional e os canais de contato.",
+      "context": "A consultoria da Patrícia trabalha com planejamento e acompanhamento individuais. O site apresenta a profissional e explica como esse processo é organizado para quem avalia iniciar o acompanhamento.",
+      "approach": "Demos forma à apresentação da consultoria com retrato, linguagem própria e uma sequência que conecta experiência, planejamento e acompanhamento. Os caminhos de contato ficam ligados à proposta da profissional.",
+      "deliveries": [
+        {
+          "title": "Apresentação da profissional",
+          "text": "Experiência e identidade da Patrícia ganham espaço na abertura e no conteúdo do site."
+        },
+        {
+          "title": "Processo compreensível",
+          "text": "As etapas de conhecer, analisar, planejar e acompanhar são apresentadas na experiência de navegação."
+        },
+        {
+          "title": "Caminhos para começar",
+          "text": "Informações sobre a consultoria, dúvidas e contato ficam organizadas para a conversa inicial."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "A proposta fica disponível para consulta",
+          "text": "O visitante pode conhecer a profissional e o funcionamento da consultoria antes de falar com ela."
+        },
+        {
+          "title": "Informação e contato se conectam",
+          "text": "A navegação apresenta o acompanhamento e conduz aos canais oficiais para continuar a conversa."
+        }
+      ],
+      "name": "Patrícia Biagioni",
+      "category": "clientes",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "kind": "Site profissional",
+      "image": {
+        "src": "/assets/img/clients/patricia-hero.webp",
+        "alt": "Retrato de Patrícia Biagioni",
+        "width": 1254,
+        "height": 1254,
+        "position": "50% 50%",
+        "caption": "Retrato original da profissional na apresentação da consultoria."
+      },
+      "profileUrl": "/clientes/patricia-biagioni",
+      "profileLabel": "Conheça Patrícia Biagioni",
+      "officialLabel": "Visitar o site publicado",
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://consultoria.patriciabiagioni.com.br/",
+          "text": "Confira a apresentação e os caminhos de navegação no canal oficial."
+        }
+      ]
+    },
+    {
+      "slug": "lara-biagioni",
+      "img": "/assets/img/clients/lara/retrato.webp",
+      "alt": "Retrato de Lara Biagioni",
+      "caption": "Retrato original de Lara Biagioni utilizado em sua presença digital.",
+      "officialUrl": "https://larabiagioni.com.br/",
+      "kind": "Presença digital e fluxo de inscrições",
+      "title": "Da presença pessoal a um fluxo organizado de candidaturas.",
+      "summary": "Canais da Lara, conexões com a LB Fit e um processo de inscrição de influenciadoras com revisão e confirmação.",
+      "description": "Case Lara Biagioni: presença digital, links oficiais e fluxo de inscrições para influenciadoras integrado à organização da campanha.",
+      "context": "A presença digital da Lara conecta sua identidade, seus canais e a LB Fit. O projeto também reúne uma campanha de influenciadoras que precisa receber informações organizadas de cada candidata.",
+      "approach": "Construímos a apresentação pública e o fluxo de inscrição. A experiência guia o preenchimento em etapas, permite revisar os dados e trata a confirmação do envio, integrando o formulário ao fluxo de revisão da campanha.",
+      "deliveries": [
+        {
+          "title": "Presença e links oficiais",
+          "text": "Identidade, canais e conexões da Lara organizados em seu endereço próprio."
+        },
+        {
+          "title": "Inscrição em etapas",
+          "text": "Formulário com validação, campos condicionais, revisão antes do envio e recuperação de rascunho no navegador."
+        },
+        {
+          "title": "Envio com confirmação",
+          "text": "Integração do formulário ao fluxo de inscrições, com estados de confirmação e tentativa novamente para a candidata."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma campanha com caminho próprio",
+          "text": "As interessadas podem acessar a inscrição e percorrer uma sequência orientada de preenchimento."
+        },
+        {
+          "title": "Dados organizados para revisão",
+          "text": "O formulário estrutura as informações da candidatura antes de encaminhá-las ao fluxo administrativo."
+        }
+      ],
+      "name": "Lara Biagioni",
+      "category": "clientes",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "image": {
+        "src": "/assets/img/clients/lara/retrato.webp",
+        "alt": "Retrato de Lara Biagioni",
+        "width": 640,
+        "height": 640,
+        "position": "50% 50%",
+        "caption": "Retrato original de Lara Biagioni utilizado em sua presença digital."
+      },
+      "profileUrl": "/clientes/lara-biagioni",
+      "profileLabel": "Conheça Lara Biagioni",
+      "officialLabel": "Visitar o site publicado",
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://larabiagioni.com.br/",
+          "text": "Confira a apresentação e os caminhos de navegação no canal oficial."
+        }
+      ]
+    },
+    {
+      "slug": "caligulas-poker-live",
+      "img": "/assets/img/clients/caligulas/hero.webp",
+      "alt": "Ambiente do Caligulas Poker Live",
+      "caption": "Fotografia original do Caligulas Poker Live.",
+      "officialUrl": "https://caligulaspoker.com.br/",
+      "kind": "Site e informações da comunidade",
+      "title": "A casa, a programação e a comunidade em uma presença própria.",
+      "summary": "Um site que reúne a identidade do Caligulas, informações da casa, agenda, galeria e caminhos para acompanhar a comunidade.",
+      "description": "Case Caligulas Poker Live: site com identidade da casa, programação, galeria, comunidade e páginas de acompanhamento.",
+      "context": "O Caligulas tem informações que mudam com a programação e uma comunidade que acompanha seus encontros. O site reúne a apresentação da casa e os destinos para consultar sua atividade.",
+      "approach": "Organizamos a experiência em páginas com finalidades próprias: conhecer a casa, consultar a agenda, explorar a galeria e acompanhar os conteúdos públicos. Marca e fotografias do espaço dão contexto à navegação.",
+      "deliveries": [
+        {
+          "title": "Identidade e história da casa",
+          "text": "Apresentação do Caligulas com seus materiais, fotografias e informações de localização."
+        },
+        {
+          "title": "Programação e conteúdos próprios",
+          "text": "Páginas dedicadas à agenda, à Caligulas Poker Series, à galeria e ao histórico de eventos."
+        },
+        {
+          "title": "Canais da comunidade",
+          "text": "Acessos aos canais oficiais para acompanhar a programação e continuar a interação com a casa."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Informações reunidas no endereço oficial",
+          "text": "O visitante encontra caminhos diferentes conforme procura a casa, a agenda ou os registros da comunidade."
+        },
+        {
+          "title": "Conteúdo com destinos identificados",
+          "text": "A organização em páginas permite compartilhar informações específicas da programação e da apresentação da casa."
+        }
+      ],
+      "name": "Caligulas Poker Live",
+      "category": "clientes",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "image": {
+        "src": "/assets/img/clients/caligulas/hero.webp",
+        "alt": "Ambiente do Caligulas Poker Live",
+        "width": 1440,
+        "height": 810,
+        "position": "50% 50%",
+        "caption": "Fotografia original do Caligulas Poker Live."
+      },
+      "profileUrl": "/clientes/caligulas-poker-live",
+      "profileLabel": "Conheça Caligulas Poker Live",
+      "officialLabel": "Visitar o site publicado",
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://caligulaspoker.com.br/",
+          "text": "Confira a apresentação e os caminhos de navegação no canal oficial."
+        }
+      ]
+    },
+    {
+      "slug": "fernanda-lemos",
+      "img": "/assets/img/clients/fernanda/retrato-profissional-800.webp",
+      "alt": "Retrato profissional de Fernanda Lemos, nutricionista",
+      "caption": "Retrato profissional fornecido para a presença digital da Fernanda.",
+      "position": "50% 30%",
+      "officialUrl": "https://nutrifernandalemos.com.br/",
+      "title": "Uma presença acolhedora para apresentar um cuidado individual.",
+      "summary": "Identidade, proposta de acompanhamento e informações práticas organizadas em um site com a linguagem da Fernanda.",
+      "description": "Case Fernanda Lemos: site institucional com identidade própria, acompanhamento nutricional, conteúdos, dúvidas e contato.",
+      "context": "Fernanda Lemos apresenta uma proposta de acompanhamento nutricional centrada na individualidade. O site reúne essa apresentação, informações práticas e conteúdos para quem quer conhecer seu trabalho.",
+      "approach": "Construímos uma experiência com fotografia e identidade próprias, organizando apresentação, acompanhamento, conteúdos, dúvidas e contato. A navegação e a linguagem acompanham o modo como a profissional apresenta seu cuidado.",
+      "deliveries": [
+        {
+          "title": "Identidade e retrato da profissional",
+          "text": "Composição visual, tipografia e fotografia orientadas à apresentação da Fernanda."
+        },
+        {
+          "title": "Conteúdo com caminhos próprios",
+          "text": "Páginas para conhecer a profissional, o acompanhamento, os conteúdos e as dúvidas mais frequentes."
+        },
+        {
+          "title": "Contato e localização",
+          "text": "Canais oficiais e informações práticas acessíveis, com escolha do assunto antes de abrir a conversa no WhatsApp."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma apresentação completa para o primeiro contato",
+          "text": "Quem visita pode conhecer a profissional e consultar as informações sobre o acompanhamento."
+        },
+        {
+          "title": "Conteúdo e atendimento conectados",
+          "text": "Dúvidas, endereço e canais oficiais ficam próximos dos caminhos para continuar a conversa."
+        }
+      ],
+      "name": "Fernanda Lemos",
+      "category": "clientes",
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Criação de sites em Passos–MG",
+          "url": "/criacao-de-sites-em-passos-mg"
+        }
+      ],
+      "kind": "Site profissional",
+      "image": {
+        "src": "/assets/img/clients/fernanda/retrato-profissional-800.webp",
+        "alt": "Retrato profissional de Fernanda Lemos, nutricionista",
+        "width": 800,
+        "height": 1200,
+        "position": "50% 30%",
+        "caption": "Retrato profissional fornecido para a presença digital da Fernanda."
+      },
+      "profileUrl": "/clientes/fernanda-lemos",
+      "profileLabel": "Conheça Fernanda Lemos",
+      "officialLabel": "Visitar o site publicado",
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Site publicado",
+          "url": "https://nutrifernandalemos.com.br/",
+          "text": "Confira a apresentação e os caminhos de navegação no canal oficial."
+        }
+      ]
+    },
+    {
+      "slug": "jp-mix-crm",
+      "name": "JP Mix CRM",
+      "kind": "CRM financeiro · Aplicativo desktop",
+      "category": "clientes",
+      "title": "Clientes, fornecedores e contas em um ambiente de trabalho.",
+      "summary": "Um aplicativo desktop para organizar clientes, fornecedores, contas a receber e contas a pagar, com armazenamento local.",
+      "description": "Projeto JP Mix CRM: aplicativo desktop offline para clientes, fornecedores e acompanhamento de contas a receber e a pagar.",
+      "context": "O JP Mix CRM concentra o acompanhamento financeiro e os cadastros de relacionamento de uma operação comercial. Seu escopo reúne clientes, fornecedores, contas a receber e contas a pagar em um aplicativo desktop.",
+      "approach": "A aplicação combina uma interface de trabalho com armazenamento local. Cadastros e rotinas financeiras compõem o mesmo software, com opções de tema claro e escuro para a apresentação da interface.",
+      "deliveries": [
+        {
+          "title": "Contas a receber e a pagar",
+          "text": "O escopo financeiro contempla os dois lados da movimentação comercial: valores a receber e obrigações a pagar."
+        },
+        {
+          "title": "Clientes e fornecedores",
+          "text": "Cadastros de relacionamento fazem parte da aplicação junto às rotinas financeiras."
+        },
+        {
+          "title": "Aplicativo com armazenamento local",
+          "text": "O produto foi estruturado como aplicativo desktop offline, com banco local e interface em temas claro e escuro."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Escopo financeiro reunido",
+          "text": "Recebimentos, pagamentos e cadastros estão contemplados em um mesmo software."
+        },
+        {
+          "title": "Uma aplicação para o ambiente local",
+          "text": "O projeto apresenta uma forma de trabalho desktop com armazenamento local das informações."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "evidence": [],
+      "stage": "Aplicativo desktop"
+    },
+    {
+      "slug": "caligulas-poker-manager",
+      "name": "Caligulas Poker Manager",
+      "kind": "Gestão de torneios · Aplicativo desktop",
+      "category": "clientes",
+      "title": "Software voltado à organização de torneios de poker.",
+      "summary": "Uma aplicação desktop com foco em gestão de torneios, armazenamento local e acompanhamento de pendências.",
+      "description": "Projeto Caligulas Poker Manager: aplicativo desktop para gerenciamento de torneios de poker, banco local e controle de pendências.",
+      "context": "O Caligulas Poker Manager é um software voltado ao gerenciamento de torneios de poker. Seu escopo contempla a organização do torneio e o acompanhamento de pendências em uma aplicação com banco local.",
+      "approach": "O projeto reúne as funções de gerenciamento em um aplicativo desktop com estrutura de armazenamento local. A aplicação tem um contexto de uso definido: apoiar as rotinas de organização de torneios.",
+      "deliveries": [
+        {
+          "title": "Gestão de torneios",
+          "text": "Uma aplicação dedicada ao contexto de torneios de poker, com recursos de gerenciamento próprios desse domínio."
+        },
+        {
+          "title": "Controle de pendências",
+          "text": "O acompanhamento de pendências integra o escopo do gerenciador."
+        },
+        {
+          "title": "Banco local",
+          "text": "As informações administradas pela aplicação utilizam uma estrutura de banco local."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma ferramenta com contexto próprio",
+          "text": "Torneios e pendências fazem parte da proposta do mesmo aplicativo."
+        },
+        {
+          "title": "Estrutura de dados local",
+          "text": "O projeto inclui armazenamento local para as informações administradas pelo gerenciador."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "evidence": [],
+      "stage": "Aplicativo desktop"
+    },
+    {
+      "slug": "avaliacao-de-materiais",
+      "name": "Avaliação de materiais",
+      "kind": "Ferramenta de revisão",
+      "category": "clientes",
+      "stage": "Ferramenta desenvolvida",
+      "title": "Uma forma organizada de revisar, comentar e escolher.",
+      "summary": "Ferramenta de avaliação visual com galeria, seleção de materiais, notas, comentários e continuidade por arquivo.",
+      "description": "Ferramenta de revisão de materiais com seleção visual, notas, comentários e importação e exportação da avaliação.",
+      "context": "A avaliação de materiais envolve comparar opções, registrar preferências e explicar o que precisa mudar. A ferramenta reúne essas ações em um espaço de revisão próprio.",
+      "approach": "Construímos uma galeria interativa com seleção por gesto ou botões, campos de nota e comentário e parecer geral. O progresso fica no navegador e pode ser exportado para continuar a revisão ou compartilhar o arquivo com o responsável.",
+      "deliveries": [
+        {
+          "title": "Escolha junto do material",
+          "text": "Galeria, seleção e avaliação aparecem no mesmo fluxo, com espaço para notas e comentários opcionais."
+        },
+        {
+          "title": "Progresso no navegador",
+          "text": "As respostas são mantidas localmente no aparelho, sem envio automático das avaliações."
+        },
+        {
+          "title": "Continuidade por arquivo",
+          "text": "Exportação e importação em JSON permitem guardar o progresso e retomar uma avaliação, com prévia antes de mesclar ou substituir respostas."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Preferências registradas por peça",
+          "text": "Cada material pode receber uma avaliação própria, mantendo o comentário ligado ao item correspondente."
+        },
+        {
+          "title": "Revisão que pode continuar depois",
+          "text": "O arquivo exportado funciona como uma cópia portátil da avaliação e pode ser importado para continuar o trabalho."
+        },
+        {
+          "title": "Compartilhamento sob controle",
+          "text": "A pessoa decide quando baixar e encaminhar suas respostas; a ferramenta não as envia automaticamente."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ]
+    },
+    {
+      "slug": "jade",
+      "name": "Jade",
+      "kind": "Atendimento com IA · Produto próprio",
+      "category": "produtos",
+      "title": "Uma central de atendimento com contexto e controle humano.",
+      "summary": "Produto para organizar conexões do WhatsApp, conversas, respostas assistidas e os pontos em que a equipe precisa assumir.",
+      "description": "Projeto Jade: central de atendimento para WhatsApp com IA, contexto da empresa, rascunhos, revisão e participação humana.",
+      "image": {
+        "src": "/assets/img/products/jade/jade-icon.png",
+        "alt": "Identidade visual do produto Jade",
+        "width": 512,
+        "height": 512,
+        "position": "50% 50%",
+        "caption": "Identidade visual da Jade.",
+        "presentation": "logo"
+      },
+      "officialUrl": "https://www.custommind.com.br/products/jade",
+      "officialLabel": "Conhecer a Jade",
+      "context": "A Jade reúne atendimento para WhatsApp, informações da empresa e participação humana em uma central operacional. A proposta considera tanto as respostas assistidas por IA quanto a necessidade de acompanhar e controlar o atendimento.",
+      "approach": "O produto organiza conexões, conversas e estado das respostas. Regras e informações da empresa fornecem contexto, enquanto rascunhos, revisão e controles de pausa permitem definir onde a automação atua e quando a equipe assume.",
+      "deliveries": [
+        {
+          "title": "Visão do atendimento",
+          "text": "Conexões do WhatsApp, conversas e estado das respostas podem ser acompanhados pela central."
+        },
+        {
+          "title": "Contexto e respostas assistidas",
+          "text": "Regras e informações da empresa orientam as respostas dentro do escopo de atendimento definido."
+        },
+        {
+          "title": "Revisão e entrada humana",
+          "text": "Rascunhos, aprovação, pausa e sinalização do atendimento humano fazem parte dos controles apresentados pelo produto."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Automação acompanhável",
+          "text": "A proposta torna visíveis o estado das conversas e os pontos que precisam de intervenção da equipe."
+        },
+        {
+          "title": "Contexto na continuidade do atendimento",
+          "text": "Informações e histórico acompanham o fluxo para orientar as respostas e a participação humana."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Inteligência Artificial",
+          "url": "/inteligencia-artificial"
+        },
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Apresentação da Jade",
+          "url": "https://www.custommind.com.br/products/jade",
+          "text": "Explore a central, os recursos de contexto e os controles apresentados pelo produto."
+        }
+      ]
+    },
+    {
+      "slug": "zuri",
+      "name": "Zuri",
+      "kind": "Assistente operacional · Produto próprio",
+      "category": "produtos",
+      "title": "Critérios de público transformados em uma rotina acompanhável.",
+      "summary": "Uma assistente operacional para Instagram que combina critérios, comandos, rotinas de descoberta e acompanhamento de contas.",
+      "description": "Projeto Zuri: assistente operacional para Instagram com critérios de público, comandos, rotinas de descoberta e acompanhamento.",
+      "image": {
+        "src": "/assets/img/products/zuri/zuri-icon.png",
+        "alt": "Identidade visual do produto Zuri",
+        "width": 512,
+        "height": 512,
+        "position": "50% 50%",
+        "caption": "Identidade visual da Zuri.",
+        "presentation": "logo"
+      },
+      "officialUrl": "https://www.custommind.com.br/products/zuri",
+      "officialLabel": "Conhecer a Zuri",
+      "context": "A Zuri reúne orientação e execução de rotinas de descoberta para Instagram. O produto parte de critérios de público, perfis e listas para organizar comandos e acompanhar o estado da operação.",
+      "approach": "Uma central de contas e uma interface conversacional conectam orientação, comandos suportados e acompanhamento. Critérios, cadência e limites orientam a execução, com espaço para revisão humana do que está acontecendo.",
+      "deliveries": [
+        {
+          "title": "Critérios para descoberta",
+          "text": "Nicho, localização, perfis, listas e sinais de interesse podem orientar o trabalho com públicos."
+        },
+        {
+          "title": "Comandos e rotinas",
+          "text": "A assistente reúne orientação e execução das rotinas suportadas, com ritmo e limites definidos para a operação."
+        },
+        {
+          "title": "Contas e status visíveis",
+          "text": "O painel apresenta contas, estado das rotinas e acesso ao console para acompanhamento e revisão."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Da orientação ao acompanhamento",
+          "text": "Critérios e comandos convivem com a leitura do estado da operação no mesmo produto."
+        },
+        {
+          "title": "Revisão como parte do fluxo",
+          "text": "A organização por contas, status e rotinas permite rever critérios e cadência conforme o contexto."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        },
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Apresentação da Zuri",
+          "url": "https://www.custommind.com.br/products/zuri",
+          "text": "Conheça a assistente, a central de contas e as rotinas apresentadas pelo produto."
+        }
+      ]
+    },
+    {
+      "slug": "loja-inteligente",
+      "name": "Loja Inteligente",
+      "kind": "Gestão comercial · Produto próprio",
+      "category": "produtos",
+      "title": "Vendas, estoque e financeiro acompanhando o mesmo fluxo.",
+      "summary": "Uma base modular de gestão comercial para reunir produtos, vendas, estoque, financeiro e regras específicas da operação.",
+      "description": "Projeto Loja Inteligente: produto modular de gestão comercial com vendas, estoque, financeiro e adaptação de rotinas à operação.",
+      "image": {
+        "src": "/assets/img/products/loja-inteligente/loja-inteligente-icon.png",
+        "alt": "Identidade visual do produto Loja Inteligente",
+        "width": 512,
+        "height": 512,
+        "position": "50% 50%",
+        "caption": "Identidade visual da Loja Inteligente.",
+        "presentation": "logo"
+      },
+      "officialUrl": "https://www.custommind.com.br/products/loja-inteligente",
+      "officialLabel": "Conhecer a Loja Inteligente",
+      "context": "A Loja Inteligente foi apresentada como uma base para concentrar partes da operação comercial que costumam ficar distribuídas entre ferramentas e controles paralelos. O projeto trabalha com vendas, estoque, financeiro e regras de negócio em uma estrutura modular.",
+      "approach": "O núcleo comercial organiza produtos, vendas e movimentações financeiras. A família de desenvolvimento também contempla recursos como crediário, comissões e etiquetas, permitindo selecionar o escopo adequado em vez de tratar toda operação como idêntica.",
+      "deliveries": [
+        {
+          "title": "Núcleo de gestão comercial",
+          "text": "Produtos, vendas, estoque e financeiro compõem os principais núcleos apresentados pelo produto."
+        },
+        {
+          "title": "Rotinas conforme o escopo",
+          "text": "A base de desenvolvimento contempla módulos de crediário, comissões, histórico de custos e etiquetas, conforme a configuração da solução."
+        },
+        {
+          "title": "Arquitetura modular",
+          "text": "A proposta permite priorizar a primeira entrega e evoluir módulos e regras a partir das necessidades da operação."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Informações no contexto da operação",
+          "text": "A proposta conecta a leitura de vendas, estoque e financeiro dentro do mesmo sistema."
+        },
+        {
+          "title": "Um produto que pode ser adaptado",
+          "text": "Módulos e regras específicas podem ser definidos de acordo com o processo que será atendido."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Apresentação do produto",
+          "url": "https://www.custommind.com.br/products/loja-inteligente",
+          "text": "Conheça o escopo, a proposta modular e as rotinas apresentadas pela Loja Inteligente."
+        }
+      ]
+    },
+    {
+      "slug": "macro-studio",
+      "name": "Custom Mind Macro Studio",
+      "kind": "Aplicativo desktop · Automação de rotinas",
+      "stage": "Projeto de software",
+      "title": "Rotinas de teclado e mouse em sequências editáveis.",
+      "summary": "Um aplicativo para Windows que reúne gravação, edição, execução e encadeamento de macros em uma interface local.",
+      "description": "Conheça o Custom Mind Macro Studio: gravação de teclado e mouse, editor de ações, cadeias de macros e controles de execução no Windows.",
+      "context": "Repetir uma sequência de ações no computador exige manter a ordem, as pausas e os comandos. O Macro Studio organiza essa rotina em macros que podem ser editadas e combinadas.",
+      "approach": "Construímos uma interface desktop em Electron conectada a um motor Python de captura e reprodução. O projeto reúne o preparo da gravação, a edição das ações e os controles para acompanhar ou interromper a execução.",
+      "deliveries": [
+        {
+          "title": "Gravação e edição",
+          "text": "Ações de teclado, cliques, movimentos e rolagem compõem uma linha do tempo. A interface permite revisar, ativar, desativar e reordenar etapas."
+        },
+        {
+          "title": "Cadeias de macros",
+          "text": "Gravações podem ser combinadas em sequências, com repetições, velocidades e intervalos definidos por etapa."
+        },
+        {
+          "title": "Controle local da execução",
+          "text": "Atalhos, pausa, parada de emergência, histórico e importação ou exportação fazem parte da organização da ferramenta."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma sequência que pode ser revista",
+          "text": "A macro fica representada por ações editáveis, permitindo ajustar a rotina sem refazer toda a gravação."
+        },
+        {
+          "title": "Composição de rotinas",
+          "text": "As cadeias permitem reutilizar macros em combinações diferentes, mantendo as configurações de cada etapa."
+        }
+      ],
+      "services": [
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        },
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "transcritor-wpp",
+      "name": "Transcritor WPP",
+      "kind": "Ferramenta local · Transcrição de áudio",
+      "stage": "Projeto de software",
+      "title": "Do arquivo de áudio ao texto e à legenda.",
+      "summary": "Uma ferramenta com interface para selecionar áudios, acompanhar a transcrição e gerar arquivos de texto e legendas.",
+      "description": "Projeto de transcrição local com Python e faster-whisper: seleção de áudios, processamento em lote e exportação de texto e legendas SRT.",
+      "context": "Consultar um áudio nem sempre é a forma mais prática de encontrar uma informação. O projeto oferece um caminho para transformar arquivos de áudio em texto e legendas que podem ser consultados depois.",
+      "approach": "Combinamos uma interface em Python e Tkinter com o motor faster-whisper. A seleção de arquivos, o progresso da tarefa e a escolha de modelo ficam reunidos no aplicativo; após o download do modelo, a transcrição é processada localmente.",
+      "deliveries": [
+        {
+          "title": "Seleção de arquivos e pastas",
+          "text": "A interface organiza os áudios escolhidos e permite preparar mais de um arquivo para a mesma sessão de trabalho."
+        },
+        {
+          "title": "Texto e legenda",
+          "text": "A transcrição gera um arquivo TXT para leitura e um SRT com marcações de tempo."
+        },
+        {
+          "title": "Interface e linha de comando",
+          "text": "O projeto oferece uma janela para o uso cotidiano e um modo de linha de comando para fluxos locais."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Conteúdo em formatos consultáveis",
+          "text": "O áudio pode ganhar versões em texto simples e legenda, conforme o tipo de consulta ou edição desejada."
+        },
+        {
+          "title": "Processamento no computador",
+          "text": "O modelo de transcrição é executado localmente, sem depender do envio do áudio a uma API de transcrição."
+        }
+      ],
+      "services": [
+        {
+          "label": "Inteligência Artificial",
+          "url": "/inteligencia-artificial"
+        },
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "games-retro",
+      "name": "Games Retrô",
+      "kind": "Plataforma e jogo · Projeto próprio",
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        },
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        }
+      ],
+      "title": "Da descoberta de um clássico ao play em um jogo original.",
+      "summary": "Um projeto que reúne catálogo, caminhos de descoberta e desenvolvimento de um jogo original para navegador.",
+      "description": "Case Games Retrô: catálogo de jogos de navegador, busca por franquia, coleções temáticas e o jogo original Faísca Arcade.",
+      "image": {
+        "src": "/assets/img/clients/games-retro/arcade-1280.webp",
+        "alt": "Dois robôs na paisagem original de Faísca Arcade, do Games Retrô",
+        "width": 1280,
+        "height": 720,
+        "position": "50% 50%",
+        "caption": "Arte original de Faísca Arcade, jogo do Games Retrô."
+      },
+      "secondaryImage": {
+        "src": "/assets/img/clients/games-retro/faisca-640.webp",
+        "alt": "Arte do jogo original Faísca Arcade",
+        "width": 640,
+        "height": 427,
+        "caption": "Faísca Arcade amplia o projeto além da curadoria de jogos."
+      },
+      "officialUrl": "https://gamesretro.app.br/",
+      "officialLabel": "Explorar o Games Retrô",
+      "profileUrl": "/clientes/games-retro",
+      "profileLabel": "Conheça o Games Retrô",
+      "context": "O Games Retrô reúne jogos para navegador, clássicos e ports. O desafio do projeto é dar caminhos para descobrir o que jogar e apresentar cada jogo com as informações necessárias para começar.",
+      "approach": "O projeto combina uma plataforma de descoberta, fichas de jogos e coleções temáticas com desenvolvimento autoral. Faísca Arcade tem espaço próprio como jogo original da Custom Mind. Os demais títulos do catálogo mantêm seus próprios autores e créditos.",
+      "deliveries": [
+        {
+          "title": "Catálogo e descoberta",
+          "text": "Busca por nome ou franquia e coleções temáticas ajudam a explorar jogos a partir de interesses diferentes."
+        },
+        {
+          "title": "Informações antes do play",
+          "text": "As fichas apresentam controles, requisitos e caminhos para acessar cada jogo."
+        },
+        {
+          "title": "Desenvolvimento autoral",
+          "text": "Faísca Arcade faz parte do projeto como jogo original da Custom Mind, com identidade e arte próprias."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma plataforma para explorar",
+          "text": "O catálogo organiza os jogos e oferece mais de um caminho para encontrar a próxima partida."
+        },
+        {
+          "title": "Contexto para começar",
+          "text": "As informações de cada ficha ajudam o visitante a entender os controles e onde jogar."
+        },
+        {
+          "title": "Um projeto além de um site",
+          "text": "A plataforma também apresenta uma experiência de jogo original, desenvolvida pela Custom Mind."
+        }
+      ],
+      "metrics": [],
+      "evidence": [
+        {
+          "label": "Catálogo publicado",
+          "url": "https://gamesretro.app.br/catalogo/",
+          "text": "Confira a busca, os jogos e os caminhos de descoberta no catálogo oficial."
+        },
+        {
+          "label": "Faísca Arcade",
+          "url": "https://gamesretro.app.br/jogos/faisca-arcade/",
+          "text": "Conheça o jogo original da Custom Mind e suas formas de jogar."
+        }
+      ],
+      "category": "produtos"
+    },
+    {
+      "slug": "gerenciamento-de-empresa",
+      "name": "Gerenciamento de Empresa",
+      "kind": "Sistema administrativo · Contratos e financeiro",
+      "category": "produtos",
+      "title": "Contratos recorrentes ligados ao acompanhamento da empresa.",
+      "summary": "Uma base de gestão para clientes, contratos, faturas, despesas, tarefas e equipe, com variações de módulos administrativos.",
+      "description": "Projeto Gerenciamento de Empresa: sistema de clientes, contratos recorrentes, faturas mensais, despesas, tarefas e equipe.",
+      "context": "A gestão de contratos recorrentes exige acompanhar clientes, vigência, cobranças e pagamentos. Este projeto reúne esses elementos com despesas, tarefas e equipe em um sistema administrativo.",
+      "approach": "A estrutura relaciona cada cliente aos seus contratos e às respectivas faturas. O fluxo contempla a criação de faturas mensais, o registro de pagamento e o cancelamento com taxa opcional. As variações da base acrescentam recursos administrativos conforme o escopo.",
+      "deliveries": [
+        {
+          "title": "Clientes e contratos",
+          "text": "Um cliente pode ter múltiplos contratos, com início, duração e valor mensal definidos."
+        },
+        {
+          "title": "Faturas e acompanhamento",
+          "text": "Cada contrato reúne faturas mensais, registro de pagamento e acompanhamento do progresso. O cancelamento pode incluir taxa opcional."
+        },
+        {
+          "title": "Rotinas administrativas",
+          "text": "Despesas, tarefas e equipe complementam a gestão. Uma variante da base também inclui notas e registros de caixa."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Relação entre contrato e cobrança",
+          "text": "O sistema organiza as faturas dentro do contrato correspondente, mantendo cliente, vigência e pagamento relacionados."
+        },
+        {
+          "title": "Uma base que admite variações",
+          "text": "A família do projeto compartilha o núcleo de contratos e contempla variações de módulos administrativos."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "slug": "project-fit",
+      "name": "Project Fit",
+      "kind": "Aplicativo fitness · Produto próprio",
+      "category": "produtos",
+      "stage": "Em desenvolvimento",
+      "title": "O treino do dia, o registro e a evolução no mesmo fluxo.",
+      "summary": "Desenvolvimento de um aplicativo fitness com registro de treino, funcionamento offline e sincronização de dados.",
+      "description": "Project Fit, produto próprio em desenvolvimento: aplicativo fitness com registro de treino, dados locais e sincronização.",
+      "context": "A proposta do Project Fit é tornar o treino do dia claro, o registro rápido e a evolução legível. O produto organiza essas tarefas em um fluxo contínuo para acompanhar a prática ao longo do tempo.",
+      "approach": "Estruturamos um aplicativo mobile com regras de treino e registro separadas da interface. A arquitetura prevê gravação local e sincronização posterior, para que o registro não dependa de uma conexão disponível a cada série.",
+      "deliveries": [
+        {
+          "title": "Treino e registro no mesmo caminho",
+          "text": "A fundação do produto reúne o treino do dia e o registro das séries, com regras próprias para organizar a experiência."
+        },
+        {
+          "title": "Dados locais e sincronização",
+          "text": "A arquitetura combina armazenamento no aparelho e envio posterior ao backend, com tratamento de operações pendentes."
+        },
+        {
+          "title": "Fundação para evoluir o produto",
+          "text": "Aplicativo, domínio e serviços de dados têm responsabilidades separadas, com verificações específicas para cada camada."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Um fluxo centrado na prática",
+          "text": "O produto em desenvolvimento parte do que a pessoa precisa fazer durante o treino: consultar, registrar e acompanhar."
+        },
+        {
+          "title": "Registro sem depender de cada resposta da rede",
+          "text": "A base técnica foi desenhada para preservar o registro local e sincronizar depois."
+        },
+        {
+          "title": "Evolução por etapas",
+          "text": "A implementação permite trabalhar funcionalidades e integrações por marcos, com o estágio de desenvolvimento explícito."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ]
+    },
+    {
+      "slug": "violet",
+      "name": "Violet e API GPT",
+      "kind": "Plataforma de assistentes · Integrações de IA",
+      "stage": "Protótipo",
+      "title": "Contexto, canais e ferramentas em uma linha de evolução.",
+      "summary": "Uma família de protótipos que explora assistentes com contexto, integração de canais e gestão de instâncias de IA.",
+      "description": "Protótipos Violet e API GPT: assistentes, integração de canais, providers de IA, filas e gestão de instâncias, reunidos em uma história de evolução.",
+      "context": "Um assistente conectado a um processo precisa organizar contexto, mensagens e ações. A família Violet explora essas partes em diferentes protótipos de integração e operação.",
+      "approach": "A evolução reúne clientes Python, serviços HTTP e painéis de operação. Uma das frentes combina FastAPI e React para organizar assistentes e instâncias; outras exploram filas, sessões por aplicação e integração com modelos locais ou serviços externos.",
+      "deliveries": [
+        {
+          "title": "Assistentes e instâncias",
+          "text": "Os protótipos incluem configuração de assistentes, contexto e controles para iniciar, parar e acompanhar instâncias."
+        },
+        {
+          "title": "Canais e providers",
+          "text": "A arquitetura reúne adaptadores para simulador, WhatsApp e Instagram e opções de conexão com modelos locais ou serviços HTTP."
+        },
+        {
+          "title": "Fila e operação assistida",
+          "text": "As variantes da API exploram jobs, sessões e cancelamento. Uma frente de uso do ChatGPT pelo navegador mantém o operador responsável por concluir e aprovar a resposta."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Partes do fluxo em módulos",
+          "text": "Configuração do assistente, canal de conversa e provedor de IA podem ser tratados como componentes distintos nos protótipos."
+        },
+        {
+          "title": "Pesquisa aplicada de integração",
+          "text": "O conjunto permite explorar formas de conectar mensagens, contexto e ferramentas. O estágio apresentado é de protótipo de software."
+        }
+      ],
+      "services": [
+        {
+          "label": "Inteligência Artificial",
+          "url": "/inteligencia-artificial"
+        },
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        },
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "dnd-manager",
+      "name": "D&D Manager",
+      "kind": "Aplicação de nicho · Gestão de RPG",
+      "stage": "Projeto de software",
+      "title": "Aventuras, personagens e inventário no mesmo projeto.",
+      "summary": "Uma aplicação para organizar aventuras de RPG, personagens, itens e histórico de rolagens de dados.",
+      "description": "Projeto D&D Manager: aplicação Flask com organização de aventuras, cadastro de personagens, inventário e histórico de rolagens.",
+      "context": "Uma mesa de RPG reúne informações que se relacionam: aventura, personagens, itens e acontecimentos. O projeto transforma parte dessa organização em uma aplicação com telas e registros próprios.",
+      "approach": "Estruturamos o domínio em modelos de aventura, personagem, item e rolagem. A aplicação usa Flask e SQLAlchemy, com rotas e páginas voltadas às tarefas de criação, edição e consulta.",
+      "deliveries": [
+        {
+          "title": "Aventuras e personagens",
+          "text": "Páginas de listagem, detalhe, criação e edição organizam as informações da aventura e de seus personagens."
+        },
+        {
+          "title": "Inventário",
+          "text": "Um módulo próprio trata os itens e sua participação na organização do jogo."
+        },
+        {
+          "title": "Rolagens e histórico",
+          "text": "O projeto inclui funções de rolagem e uma tela para consultar seu histórico."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Um domínio transformado em aplicação",
+          "text": "As relações entre aventuras, personagens e itens orientam a estrutura do software e a navegação entre suas telas."
+        },
+        {
+          "title": "Consulta por tarefa",
+          "text": "O projeto separa os caminhos de administração da aventura, edição de personagens, inventário e histórico."
+        }
+      ],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "editor-violet",
+      "name": "Editor Violet",
+      "kind": "Ferramenta web · Edição de código",
+      "stage": "Protótipo",
+      "title": "Um espaço de edição com controles para o trabalho local.",
+      "summary": "Um protótipo de editor no navegador com Monaco, seleção de linguagem, ajuste de fonte e salvamento de arquivos.",
+      "description": "Protótipo Editor Violet: interface React com Monaco para edição de texto e código, seleção de linguagem, persistência local e salvamento.",
+      "context": "Pequenas edições de texto e código pedem um ambiente direto, com leitura confortável e uma forma simples de salvar o trabalho. O Editor Violet explora essa experiência em uma interface web.",
+      "approach": "Montamos uma interface em React sobre o editor Monaco. O projeto reúne seleção de linguagem, ajustes de apresentação e persistência local em um espaço voltado à edição de texto e código.",
+      "deliveries": [
+        {
+          "title": "Editor de texto e código",
+          "text": "O componente Monaco fornece a área de edição com opções para linguagens como JavaScript, Python, HTML, CSS e JSON."
+        },
+        {
+          "title": "Ajustes de leitura",
+          "text": "A interface oferece controles de tamanho de fonte e seleção de linguagem para adaptar o ambiente ao arquivo."
+        },
+        {
+          "title": "Persistência e salvamento",
+          "text": "O protótipo inclui armazenamento local e a opção de salvar o conteúdo em arquivo."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Controles próximos à edição",
+          "text": "As opções de linguagem, leitura e salvamento ficam disponíveis no mesmo espaço de trabalho."
+        },
+        {
+          "title": "Uma base de ferramenta web",
+          "text": "O projeto apresenta uma interface de edição especializada, em estágio de protótipo."
+        }
+      ],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "siga",
+      "name": "SIGA · Gestão rural",
+      "kind": "Aplicação de gestão · Domínio rural",
+      "stage": "Protótipo",
+      "title": "Cadastros e relações de um sistema de gestão rural.",
+      "summary": "Um projeto que explora cadastro de fazendas, usuários e navegação de gestão, com versões de interface e aplicação Flask.",
+      "description": "Protótipo SIGA de gestão rural: cadastros de fazendas e usuários, modelos de domínio e evolução de interface web para aplicação Flask.",
+      "context": "Uma aplicação voltada à gestão rural precisa representar propriedades, usuários e suas relações. O SIGA explora essa organização por meio de cadastros e páginas de consulta.",
+      "approach": "O trabalho reúne uma frente de interface em HTML, CSS e JavaScript e uma versão em Flask com modelos de usuários e fazendas. Essas duas frentes apresentam a composição de um protótipo de gestão do domínio rural.",
+      "deliveries": [
+        {
+          "title": "Cadastro e consulta de fazendas",
+          "text": "A interface inclui páginas para registrar e visualizar informações de propriedades."
+        },
+        {
+          "title": "Organização de usuários",
+          "text": "A aplicação possui modelos de usuário e tipo de usuário, além de módulos de autenticação e rotas próprias."
+        },
+        {
+          "title": "Estrutura de aplicação",
+          "text": "A versão Flask separa funções, rotas, templates e persistência com SQLAlchemy."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Regras do domínio em modelos",
+          "text": "Usuários, tipos de usuário e fazendas ganham representações próprias na estrutura do software."
+        },
+        {
+          "title": "Uma base para evoluir o fluxo",
+          "text": "As páginas e módulos mostram a composição de um sistema de cadastro e consulta, ainda apresentado como protótipo."
+        }
+      ],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "restaurant-system",
+      "name": "Restaurant System",
+      "kind": "MVP · Integração de pedidos",
+      "stage": "Protótipo",
+      "title": "Do pedido recebido ao acompanhamento de status.",
+      "summary": "Um MVP que conecta a entrada de pedidos a uma fila de processamento e à eventos de atualização de status.",
+      "description": "MVP Restaurant System: recebimento de pedidos por webhook, fila de processamento, atualização de status e acompanhamento de pedidos.",
+      "context": "Receber um pedido em um site e acompanhar sua preparação envolve mais de uma etapa. O projeto explora a conexão entre entrada, processamento e consulta de status para uma operação de restaurante.",
+      "approach": "A implementação usa Flask e uma fila com Redis e RQ para separar o recebimento do processamento. O fluxo inclui validação de assinatura, controle de repetição e eventos para comunicar mudanças de status.",
+      "deliveries": [
+        {
+          "title": "Entrada de pedidos por webhook",
+          "text": "A API recebe pedidos e verifica a assinatura da requisição, o intervalo de tempo e a identificação para evitar processamento repetido da mesma solicitação."
+        },
+        {
+          "title": "Processamento em fila",
+          "text": "Um worker trata os pedidos de forma assíncrona, com modelos de pedido, itens e pagamentos."
+        },
+        {
+          "title": "Status e eventos",
+          "text": "A aplicação inclui listagem e atualização de pedidos, eventos de criação e alteração e uma consulta pública por identificador e token."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Etapas separadas na arquitetura",
+          "text": "Recebimento, processamento e acompanhamento possuem responsabilidades próprias no MVP."
+        },
+        {
+          "title": "Base de integração de pedidos",
+          "text": "O protótipo reúne os caminhos de entrada, processamento e consulta do pedido em uma arquitetura de integração."
+        }
+      ],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        },
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "bluepen-imoveis",
+      "name": "BluePen Imóveis",
+      "kind": "Conceito de produto · Vitrine imobiliária",
+      "stage": "Protótipo",
+      "title": "Uma proposta de navegação para encontrar o próximo imóvel.",
+      "summary": "Um protótipo de vitrine imobiliária com catálogo, filtros, páginas de imóveis e bairros, preparado com dados demonstrativos.",
+      "description": "Protótipo BluePen Imóveis: vitrine em Next.js com catálogo, filtros, páginas de imóveis e bairros e estrutura inicial de administração.",
+      "context": "Explorar uma oferta imobiliária envolve comparar imóveis, entender a localização e encontrar um caminho de contato. A proposta BluePen organiza essa jornada em uma vitrine digital com dados demonstrativos.",
+      "approach": "Construímos a base de interface em Next.js e TypeScript, com páginas de catálogo, detalhe e bairros. O projeto usa dados de demonstração e separa os pontos que podem receber persistência e integrações em uma etapa posterior.",
+      "deliveries": [
+        {
+          "title": "Catálogo com filtros",
+          "text": "A navegação permite explorar os imóveis e manter os filtros representados na URL."
+        },
+        {
+          "title": "Detalhes e localização",
+          "text": "Páginas de imóveis e bairros dão espaço à apresentação da oferta e de seu contexto."
+        },
+        {
+          "title": "Caminhos de contato",
+          "text": "A proposta inclui páginas de contato e captação de imóveis e uma área administrativa inicial."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Uma jornada demonstrável",
+          "text": "A interface conecta catálogo, detalhe, bairro e contato usando conteúdo de demonstração."
+        },
+        {
+          "title": "Escopo de protótipo explícito",
+          "text": "A versão demonstrativa usa dados simulados. A conexão a serviços reais de persistência e captação faz parte da evolução proposta."
+        }
+      ],
+      "services": [
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        },
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "followcheck",
+      "name": "InstaCheck / FollowCheck",
+      "kind": "Ferramenta web · Comparação de conexões",
+      "stage": "Protótipo",
+      "title": "Comparar conexões e acompanhar mudanças entre consultas.",
+      "summary": "Uma família de protótipos para comparar seguidores e perfis seguidos no Instagram, com interface de consulta e resultados.",
+      "description": "Protótipos InstaCheck e FollowCheck: comparação de seguidores e seguidos, consultas de mudanças e automação de navegador em uma aplicação web.",
+      "context": "Comparar listas de conexões exige distinguir o estado de cada consulta e as diferenças entre elas. O projeto explora essa organização em uma interface de busca e resultados.",
+      "approach": "Agrupamos as variantes InstaCheck e FollowCheck como uma linha de desenvolvimento. A implementação combina uma aplicação Flask, modelos SQLAlchemy e automação de navegador com Selenium para obter os dados usados na comparação.",
+      "deliveries": [
+        {
+          "title": "Interface de consulta",
+          "text": "A aplicação organiza a entrada da busca e a apresentação das listas de resultados."
+        },
+        {
+          "title": "Comparação de conexões",
+          "text": "A proposta permite identificar relações de seguir de volta e alterações entre consultas."
+        },
+        {
+          "title": "Automação como componente",
+          "text": "A busca por navegador fica em um módulo próprio, enquanto a aplicação organiza a apresentação dos resultados."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Leitura organizada das listas",
+          "text": "O protótipo apresenta as diferenças de conexões em uma interface voltada à consulta."
+        },
+        {
+          "title": "Uma família de desenvolvimento",
+          "text": "As variantes representam a evolução da mesma ferramenta e são reunidas como um protótipo de comparação de conexões."
+        }
+      ],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        },
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "hytale-automator",
+      "name": "Hytale Automator",
+      "kind": "Pesquisa aplicada · Automação de jogos",
+      "stage": "Protótipo",
+      "title": "Explorar navegação e percepção em um ambiente interativo.",
+      "summary": "Uma linha experimental de automação que reúne planejamento de caminhos, controle local e estudos de percepção por imagem.",
+      "description": "Protótipos Hytale Automator: estudos de navegação com A*, controle de movimento e percepção visual, em duas abordagens experimentais.",
+      "context": "Automatizar tarefas em um ambiente interativo envolve perceber o estado, planejar um caminho e acompanhar a execução. O projeto explora essas partes em duas abordagens experimentais relacionadas.",
+      "approach": "Uma frente combina um plugin Java com leitura do mundo e planejamento de caminhos por A*. Outra investiga um cliente externo Python com captura de tela, fluxo óptico e OCR opcional. As abordagens são apresentadas como pesquisa de software em estágio alpha.",
+      "deliveries": [
+        {
+          "title": "Planejamento e acompanhamento",
+          "text": "A frente Java inclui leitura do mundo, planejamento de caminho, segmentação, recuperação e telemetria."
+        },
+        {
+          "title": "Controle local",
+          "text": "Um cliente local produz comandos de movimento e câmera para explorar a execução dos caminhos."
+        },
+        {
+          "title": "Percepção por imagem",
+          "text": "A frente Python estuda captura de tela, movimento na imagem, leitura opcional de informações visíveis e gravação ou reprodução de macros."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Duas abordagens de um problema",
+          "text": "O projeto permite estudar automação a partir de dados do ambiente e, em outra frente, a partir da imagem da tela."
+        },
+        {
+          "title": "Pesquisa com escopo delimitado",
+          "text": "Os componentes delimitam frentes experimentais de navegação e percepção, em estágio alpha de desenvolvimento."
+        }
+      ],
+      "services": [
+        {
+          "label": "Automação",
+          "url": "/automacao"
+        },
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "category": "produtos",
+      "metrics": [],
+      "evidence": []
+    },
+    {
+      "slug": "agentic-sdlc",
+      "name": "Agentic SDLC Reference",
+      "kind": "Referência de engenharia com IA",
+      "category": "produtos",
+      "stage": "Referência pública",
+      "title": "Um processo explícito para trabalhar com agentes de código.",
+      "summary": "Referência de engenharia que organiza contexto, escopo, validação e retomada do trabalho com agentes de programação.",
+      "description": "Agentic SDLC Reference: método e ferramentas para contexto explícito, escopo delimitado e validação por evidências no desenvolvimento com agentes de IA.",
+      "context": "Agentes de programação podem atuar em muitas partes de um projeto. Para conduzir esse trabalho, é necessário registrar o contexto, o que pode mudar, como verificar o resultado e onde retomar uma execução.",
+      "approach": "Organizamos esses contratos em uma referência pequena, com documentos, modelos e verificadores. O processo conecta entendimento, implementação, validação próxima do comportamento real e registro das evidências.",
+      "deliveries": [
+        {
+          "title": "Contexto e limites registrados",
+          "text": "Documentos e modelos tornam explícitos o estado do projeto, a tarefa atual e as áreas que exigem cuidado."
+        },
+        {
+          "title": "Verificação por evidências",
+          "text": "Os verificadores distinguem estrutura de repositório e evidência de entrega, sem tratar um comando concluído como prova suficiente de funcionamento."
+        },
+        {
+          "title": "Retomada de trabalho",
+          "text": "O método inclui checkpoints e registro do estado autorizado para continuar uma execução a partir de informações verificáveis."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Decisões que podem ser revisadas",
+          "text": "Contexto, autoridade e evidências ficam visíveis para quem precisa acompanhar ou revisar o trabalho."
+        },
+        {
+          "title": "Validação ligada à entrega",
+          "text": "O processo pede testes e observações que correspondam ao comportamento que se pretende entregar."
+        },
+        {
+          "title": "Referência disponível para consulta",
+          "text": "A estrutura foi publicada para leitura, discussão e adaptação a outros projetos."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Inteligência Artificial",
+          "url": "/inteligencia-artificial"
+        },
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ],
+      "officialUrl": "https://github.com/JiyuHenko/agentic-sdlc-reference",
+      "officialLabel": "Conhecer a referência pública",
+      "evidence": [
+        {
+          "label": "Referência publicada",
+          "url": "https://github.com/JiyuHenko/agentic-sdlc-reference",
+          "text": "Consulte os princípios, os modelos e a estrutura de verificação no repositório público."
+        }
+      ]
+    },
+    {
+      "slug": "painel-de-ganhos",
+      "name": "Painel de ganhos",
+      "kind": "Aplicativo de registros",
+      "category": "produtos",
+      "stage": "Protótipo",
+      "title": "Registros por data e uma visão simples dos ganhos.",
+      "summary": "Protótipo de aplicativo para registrar ganhos, editar valores e consultar o histórico por período.",
+      "description": "Protótipo de painel de ganhos com registro por data, edição de valores e filtros de período.",
+      "context": "O aplicativo foi desenvolvido para reunir valores recebidos e suas datas em um histórico consultável. O foco é registrar e revisar as informações em uma interface simples.",
+      "approach": "Organizamos uma área de acesso, um painel e o fluxo de inclusão e edição de ganhos. Os filtros permitem consultar registros recentes ou de um período escolhido.",
+      "deliveries": [
+        {
+          "title": "Registro por data",
+          "text": "O fluxo permite incluir um valor associado a uma data e manter o histórico organizado."
+        },
+        {
+          "title": "Consulta por período",
+          "text": "Filtros de tempo ajudam a localizar registros do dia, dos últimos dias ou do mês."
+        },
+        {
+          "title": "Edição no mesmo painel",
+          "text": "Os valores registrados podem ser revisados pela interface, sem depender de edição manual dos arquivos."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Informações em um histórico",
+          "text": "Datas e valores ficam associados em registros que podem ser consultados pelo painel."
+        },
+        {
+          "title": "Consulta com recorte de tempo",
+          "text": "A interface oferece filtros para examinar diferentes períodos."
+        },
+        {
+          "title": "Um protótipo de sistema próprio",
+          "text": "O projeto reúne acesso, registro, consulta e edição em um fluxo de aplicação."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ]
+    },
+    {
+      "slug": "bolao-copa-2026",
+      "name": "Bolão da Copa",
+      "kind": "Aplicação web privada",
+      "category": "produtos",
+      "stage": "Aplicação privada",
+      "title": "Inscrições, palpites e administração em uma aplicação.",
+      "summary": "Aplicação privada para organizar participantes, palpites, rankings e tarefas de administração de um bolão.",
+      "description": "Aplicação web privada de bolão com autenticação, inscrições, palpites, rankings e painel administrativo.",
+      "context": "Um bolão reúne participantes, inscrições, jogos, palpites e regras de classificação. O projeto organiza essas informações e separa a participação do acompanhamento administrativo.",
+      "approach": "Desenvolvemos uma aplicação com acesso de participantes e painel administrativo. A estrutura reúne palpites por etapa, rankings e gestão dos registros necessários à organização.",
+      "deliveries": [
+        {
+          "title": "Participação organizada",
+          "text": "Login, cadastro e inscrições conectam cada participante aos seus palpites."
+        },
+        {
+          "title": "Palpites e classificação",
+          "text": "A aplicação contempla diferentes etapas da competição e apresenta rankings de inscrições."
+        },
+        {
+          "title": "Administração em área própria",
+          "text": "O painel reúne gestão de jogos, participantes, registros de pagamento e exportação de informações."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Um fluxo para participar",
+          "text": "Inscrição e envio de palpites fazem parte da mesma aplicação."
+        },
+        {
+          "title": "Acompanhamento da competição",
+          "text": "A interface reúne classificações e a posição da inscrição selecionada."
+        },
+        {
+          "title": "Operação separada da participação",
+          "text": "As tarefas administrativas têm área própria, com recursos para consultar e organizar os registros."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        }
+      ]
+    },
+    {
+      "slug": "portal-de-servicos",
+      "name": "Portal de serviços",
+      "kind": "Fundação de produto digital",
+      "category": "produtos",
+      "stage": "Protótipo",
+      "title": "Uma primeira experiência para apresentar e solicitar serviços.",
+      "summary": "Protótipo de portal com apresentação de serviços, diretório inicial e fluxos de solicitação e candidatura.",
+      "description": "Protótipo de portal de serviços com diretório, solicitação de atendimento e candidatura de parceiros.",
+      "context": "O portal explora uma experiência de coordenação de serviços: apresentar possibilidades, receber o contexto de uma demanda e orientar o próximo contato. A versão inicial concentra-se na interface e nos fluxos do produto.",
+      "approach": "Desenvolvemos uma fundação visual e de navegação com diretório de serviços, solicitação padrão e candidatura de parceiros. A versão é um protótipo: os formulários apresentam retorno local e ainda não têm envio ou persistência conectados.",
+      "deliveries": [
+        {
+          "title": "Apresentação e diretório",
+          "text": "O portal reúne uma introdução ao serviço e um diretório inicial para orientar a navegação."
+        },
+        {
+          "title": "Fluxos de solicitação",
+          "text": "A interface organiza o contexto da demanda e uma estimativa de complexidade informada pela pessoa interessada."
+        },
+        {
+          "title": "Entrada de parceiros",
+          "text": "Um fluxo separado apresenta a candidatura de pessoas interessadas em colaborar com a operação."
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Conceito de produto navegável",
+          "text": "A estrutura permite percorrer a proposta e os caminhos principais de solicitação."
+        },
+        {
+          "title": "Fluxos apresentados antes das integrações",
+          "text": "A interface torna os caminhos de atendimento e candidatura visíveis no protótipo."
+        },
+        {
+          "title": "Estágio da entrega explícito",
+          "text": "Envio, armazenamento e operação de solicitações permanecem fora da versão inicial, sem apresentar o protótipo como um serviço em funcionamento."
+        }
+      ],
+      "metrics": [],
+      "services": [
+        {
+          "label": "Software sob medida",
+          "url": "/software-sob-medida"
+        },
+        {
+          "label": "Presença Digital",
+          "url": "/presenca-digital"
+        }
+      ]
+    }
+  ],
+  "featured": [
+    "livia-lopes",
+    "joias-leopoldina",
+    "games-retro"
+  ]
+}

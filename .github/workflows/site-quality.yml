@@ -64,6 +64,9 @@ jobs:
       - name: Shared header/footer
         run: node scripts/sync-site-chrome.mjs --check
 
+      - name: Portfolio pages
+        run: node scripts/sync-portfolio.mjs --check
+
       - name: Ghost asset audit
         run: node scripts/audit-unused-assets.mjs
 

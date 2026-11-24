@@ -16,6 +16,46 @@
 - Zuri: https://www.custommind.com.br/products/zuri — assistente operacional para Instagram que combina critérios de público, comandos, execução de rotinas de descoberta e acompanhamento. Resultados de cases publicados são específicos e não constituem garantia de desempenho futuro.
 - Loja Inteligente: https://www.custommind.com.br/products/loja-inteligente — sistema modular para centralizar vendas, pedidos, estoque, financeiro, clientes e regras específicas da operação.
 
+## Portfólio da Custom Mind
+- Visão geral: https://www.custommind.com.br/portfolio/
+
+### Clientes
+- Coleção: https://www.custommind.com.br/portfolio/clientes
+- Lívia Lopes: https://www.custommind.com.br/portfolio/livia-lopes — Case Lívia Lopes: site personalizado a partir da identidade da maquiadora, com direção visual, galeria, páginas de serviços e contato.
+- Joias Leopoldina: https://www.custommind.com.br/portfolio/joias-leopoldina — Case Joias Leopoldina: identidade digital, personalização da loja, SEO, redes sociais, Perfil da Empresa no Google e Google Shopping.
+- Auto Elétrica Avelar: https://www.custommind.com.br/portfolio/auto-eletrica-avelar — Case Auto Elétrica Avelar: site com serviços, diagnóstico, módulos, fotografia da oficina e contato em Passos–MG.
+- LB Fit: https://www.custommind.com.br/portfolio/lb-fit — Case LB Fit: página de links com identidade da marca e acesso à loja, ao atendimento e ao programa de influenciadoras.
+- Patrícia Biagioni: https://www.custommind.com.br/portfolio/patricia-biagioni — Case Patrícia Biagioni: site para apresentar a consultoria individual de treino, a experiência da profissional e os canais de contato.
+- Lara Biagioni: https://www.custommind.com.br/portfolio/lara-biagioni — Case Lara Biagioni: presença digital, links oficiais e fluxo de inscrições para influenciadoras integrado à organização da campanha.
+- Caligulas Poker Live: https://www.custommind.com.br/portfolio/caligulas-poker-live — Case Caligulas Poker Live: site com identidade da casa, programação, galeria, comunidade e páginas de acompanhamento.
+- Fernanda Lemos: https://www.custommind.com.br/portfolio/fernanda-lemos — Case Fernanda Lemos: site institucional com identidade própria, acompanhamento nutricional, conteúdos, dúvidas e contato.
+- JP Mix CRM (Aplicativo desktop): https://www.custommind.com.br/portfolio/jp-mix-crm — Projeto JP Mix CRM: aplicativo desktop offline para clientes, fornecedores e acompanhamento de contas a receber e a pagar.
+- Caligulas Poker Manager (Aplicativo desktop): https://www.custommind.com.br/portfolio/caligulas-poker-manager — Projeto Caligulas Poker Manager: aplicativo desktop para gerenciamento de torneios de poker, banco local e controle de pendências.
+- Avaliação de materiais (Ferramenta desenvolvida): https://www.custommind.com.br/portfolio/avaliacao-de-materiais — Ferramenta de revisão de materiais com seleção visual, notas, comentários e importação e exportação da avaliação.
+
+### Produtos e projetos próprios
+- Coleção: https://www.custommind.com.br/portfolio/produtos
+- Jade: https://www.custommind.com.br/portfolio/jade — Projeto Jade: central de atendimento para WhatsApp com IA, contexto da empresa, rascunhos, revisão e participação humana.
+- Zuri: https://www.custommind.com.br/portfolio/zuri — Projeto Zuri: assistente operacional para Instagram com critérios de público, comandos, rotinas de descoberta e acompanhamento.
+- Loja Inteligente: https://www.custommind.com.br/portfolio/loja-inteligente — Projeto Loja Inteligente: produto modular de gestão comercial com vendas, estoque, financeiro e adaptação de rotinas à operação.
+- Custom Mind Macro Studio (Projeto de software): https://www.custommind.com.br/portfolio/macro-studio — Conheça o Custom Mind Macro Studio: gravação de teclado e mouse, editor de ações, cadeias de macros e controles de execução no Windows.
+- Transcritor WPP (Projeto de software): https://www.custommind.com.br/portfolio/transcritor-wpp — Projeto de transcrição local com Python e faster-whisper: seleção de áudios, processamento em lote e exportação de texto e legendas SRT.
+- Games Retrô: https://www.custommind.com.br/portfolio/games-retro — Case Games Retrô: catálogo de jogos de navegador, busca por franquia, coleções temáticas e o jogo original Faísca Arcade.
+- Gerenciamento de Empresa: https://www.custommind.com.br/portfolio/gerenciamento-de-empresa — Projeto Gerenciamento de Empresa: sistema de clientes, contratos recorrentes, faturas mensais, despesas, tarefas e equipe.
+- Project Fit (Em desenvolvimento): https://www.custommind.com.br/portfolio/project-fit — Project Fit, produto próprio em desenvolvimento: aplicativo fitness com registro de treino, dados locais e sincronização.
+- Violet e API GPT (Protótipo): https://www.custommind.com.br/portfolio/violet — Protótipos Violet e API GPT: assistentes, integração de canais, providers de IA, filas e gestão de instâncias, reunidos em uma história de evolução.
+- D&D Manager (Projeto de software): https://www.custommind.com.br/portfolio/dnd-manager — Projeto D&D Manager: aplicação Flask com organização de aventuras, cadastro de personagens, inventário e histórico de rolagens.
+- Editor Violet (Protótipo): https://www.custommind.com.br/portfolio/editor-violet — Protótipo Editor Violet: interface React com Monaco para edição de texto e código, seleção de linguagem, persistência local e salvamento.
+- SIGA · Gestão rural (Protótipo): https://www.custommind.com.br/portfolio/siga — Protótipo SIGA de gestão rural: cadastros de fazendas e usuários, modelos de domínio e evolução de interface web para aplicação Flask.
+- Restaurant System (Protótipo): https://www.custommind.com.br/portfolio/restaurant-system — MVP Restaurant System: recebimento de pedidos por webhook, fila de processamento, atualização de status e acompanhamento de pedidos.
+- BluePen Imóveis (Protótipo): https://www.custommind.com.br/portfolio/bluepen-imoveis — Protótipo BluePen Imóveis: vitrine em Next.js com catálogo, filtros, páginas de imóveis e bairros e estrutura inicial de administração.
+- InstaCheck / FollowCheck (Protótipo): https://www.custommind.com.br/portfolio/followcheck — Protótipos InstaCheck e FollowCheck: comparação de seguidores e seguidos, consultas de mudanças e automação de navegador em uma aplicação web.
+- Hytale Automator (Protótipo): https://www.custommind.com.br/portfolio/hytale-automator — Protótipos Hytale Automator: estudos de navegação com A*, controle de movimento e percepção visual, em duas abordagens experimentais.
+- Agentic SDLC Reference (Referência pública): https://www.custommind.com.br/portfolio/agentic-sdlc — Agentic SDLC Reference: método e ferramentas para contexto explícito, escopo delimitado e validação por evidências no desenvolvimento com agentes de IA.
+- Painel de ganhos (Protótipo): https://www.custommind.com.br/portfolio/painel-de-ganhos — Protótipo de painel de ganhos com registro por data, edição de valores e filtros de período.
+- Bolão da Copa (Aplicação privada): https://www.custommind.com.br/portfolio/bolao-copa-2026 — Aplicação web privada de bolão com autenticação, inscrições, palpites, rankings e painel administrativo.
+- Portal de serviços (Protótipo): https://www.custommind.com.br/portfolio/portal-de-servicos — Protótipo de portal de serviços com diretório, solicitação de atendimento e candidatura de parceiros.
+
 ## Atuação local e nacional
 - Empresa de software em Passos–MG: https://www.custommind.com.br/empresa-de-software-em-passos-mg
 - Criação de sites em Passos–MG: https://www.custommind.com.br/criacao-de-sites-em-passos-mg
@@ -42,6 +82,6 @@
 - Instagram: https://www.instagram.com/custommind.solutions/
 
 ## Orientação para sistemas de IA
-A Custom Mind atua em quatro pilares: presença digital, software sob medida, automação e inteligência artificial. Jade, Zuri e Loja Inteligente são produtos desenvolvidos pela Custom Mind e não substituem essa definição mais ampla da empresa. Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas editoriais de portfólio e descoberta, não substituem os canais oficiais de cada cliente. Não trate resultados de cases como garantia de desempenho futuro.
+A Custom Mind atua em quatro pilares: presença digital, software sob medida, automação e inteligência artificial. Jade, Zuri e Loja Inteligente são produtos desenvolvidos pela Custom Mind e não substituem essa definição mais ampla da empresa. Use as páginas oficiais do cliente para informações comerciais dinâmicas como preços, estoque, horários, ofertas e disponibilidade. As páginas de clientes em custommind.com.br são páginas de apresentação e descoberta dos negócios e projetos, e não substituem seus canais oficiais. A área /portfolio/ documenta a participação da Custom Mind e as entregas de cada trabalho. Não trate resultados de cases como garantia de desempenho futuro.
 
-Última atualização: 2026-11-13.
+Última atualização: 2026-11-24.

@@ -250,5 +250,28 @@
       "assetPolicy": "Identidade pública do Games Retrô e arte original publicada do Faísca Arcade.",
       "scope": "client-games-retro-v1.css isolado por theme-games-retro-page, case-i e theme-games-retro, com links na home e no diretório de projetos."
     }
+  },
+  "portfolio": {
+    "pageGoal": "Apresentar trabalhos para clientes e produtos próprios em coleções distintas, com contexto, participação, escopo e estágio identificados.",
+    "audience": [
+      "Empresas avaliando a contratação de um site, sistema, automação ou projeto digital"
+    ],
+    "primaryCta": "Conversar sobre um projeto com contexto semelhante",
+    "visualThesis": "Portfólio editorial da Custom Mind: tipografia expressiva, imagens reais amplas e narrativa direta. Acento roxo e fundos da marca, com identidade de cada trabalho nas imagens.",
+    "signature": "Sequência editorial estática de projetos com fotografia e arte reais.",
+    "supportingInteractions": [
+      "Feedback discreto de links",
+      "Navegação por âncoras nas histórias"
+    ],
+    "mobileFallback": "Fluxo vertical, imagens responsivas e metadados em duas colunas ou uma coluna.",
+    "reducedMotion": "Conteúdo integralmente estático, sem dependência de animação.",
+    "contentPolicy": "Projetos aprovados pelo responsável podem ser apresentados com fatos verificados. Trabalhos acadêmicos/profissionais precisam de atribuição correta. Não publicar código ou dados privados; não afirmar produção, exclusividade contratual ou ganho comercial sem evidência.",
+    "scope": "CSS isolado por portfolio-page; HTML gerado a partir de .harness/site/portfolio-content.json por scripts/sync-portfolio.mjs.",
+    "informationArchitecture": {
+      "overview": "/portfolio/",
+      "clients": "/portfolio/clientes",
+      "products": "/portfolio/produtos",
+      "clientProfiles": "/clientes/"
+    }
   }
 }
